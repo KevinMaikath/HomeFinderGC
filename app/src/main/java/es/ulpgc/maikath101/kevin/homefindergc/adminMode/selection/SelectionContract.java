@@ -1,15 +1,13 @@
-package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
-
-import android.view.View;
+package es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection;
 
 import java.lang.ref.WeakReference;
 
-public interface LoginContract {
+interface SelectionContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(LoginViewModel viewModel);
+        void displayData(SelectionViewModel viewModel);
     }
 
     interface Presenter {
@@ -20,8 +18,6 @@ public interface LoginContract {
         void injectRouter(Router router);
 
         void fetchData();
-
-        void onSignInPressed();
     }
 
     interface Model {
@@ -31,8 +27,8 @@ public interface LoginContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(LoginState state);
+        void passDataToNextScreen(SelectionState state);
 
-        LoginState getDataFromPreviousScreen();
+        SelectionState getDataFromPreviousScreen();
     }
 }

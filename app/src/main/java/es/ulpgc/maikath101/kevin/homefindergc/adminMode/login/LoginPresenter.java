@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
+import android.view.View;
+
 import java.lang.ref.WeakReference;
 
 public class LoginPresenter implements LoginContract.Presenter {
@@ -51,6 +53,11 @@ public class LoginPresenter implements LoginContract.Presenter {
         // update the view
         view.get().displayData(viewModel);
 
+    }
+
+    @Override
+    public void onSignInPressed() {
+        router.navigateToNextScreen();
     }
 
 

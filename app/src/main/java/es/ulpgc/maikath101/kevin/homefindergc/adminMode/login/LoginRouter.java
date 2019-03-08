@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection.SelectionActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 
 public class LoginRouter implements LoginContract.Router {
@@ -18,7 +19,7 @@ public class LoginRouter implements LoginContract.Router {
     @Override
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, LoginActivity.class);
+        Intent intent = new Intent(context, SelectionActivity.class);
         context.startActivity(intent);
     }
 
