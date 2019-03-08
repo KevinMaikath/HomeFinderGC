@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/whiteBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +15,24 @@
         android:layout_height="350dp"
         android:background="#78C4FB">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="213dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="33dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="74dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/loginTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="115dp"
+            android:text="@string/loginTextView"
+            android:textColor="#FFFCFC"
+            android:textSize="25dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -30,16 +49,78 @@
         android:background="@drawable/rectangle"
         android:layout_marginBottom="50dp">
 
+        <RelativeLayout
+            android:layout_width="256dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/user_password_rectangle"
+            android:layout_height="120dp">
+
+            <EditText
+                android:id="@+id/userEditText"
+                android:layout_width="183dp"
+                android:layout_height="70dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Oliver Maikath"
+                android:background="@android:color/transparent"
+                />
+
+            <ImageView
+                android:id="@+id/userImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="210dp"
+                android:src="@drawable/user_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="256dp"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/user_password_rectangle"
+            android:layout_height="120dp">
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="183dp"
+                android:layout_height="70dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="Oliver Maikath"
+                android:inputType="textPassword"
+                android:background="@android:color/transparent"
+                />
+
+            <ImageView
+                android:id="@+id/passwordImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="210dp"
+                android:src="@drawable/password_eye" />
+        </RelativeLayout>
+
         <Button
             android:id="@+id/signInButton"
             android:layout_width="262dp"
-            android:layout_height="62dp"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="40dp"
             android:layout_marginTop="370dp"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="80dp"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/login_button" />
     </RelativeLayout>
 
