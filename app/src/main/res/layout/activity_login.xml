@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/whiteBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".adminMode.login.LoginActivity">
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:background="#FFFFFF"
+    >
 
-    <TextView
-        android:id="@+id/data"
+    <RelativeLayout
+        android:id="@+id/blueBackground"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:text="Hello" />
+        android:layout_height="350dp"
+        android:background="#78C4FB">
 
-</FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/formLayout"
+        android:layout_width="296dp"
+        android:layout_height="337dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="207dp"
+        android:layout_marginRight="33dp"
+        android:background="@drawable/rectangle"
+        android:layout_marginBottom="50dp">
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="262dp"
+            android:layout_height="62dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="370dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/login_button" />
+    </RelativeLayout>
+
+</RelativeLayout>
