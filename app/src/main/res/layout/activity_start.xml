@@ -29,127 +29,127 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
-                <LinearLayout
-                    android:id="@+id/relLay_1"
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_below="@+id/image1"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center">
 
-                    <ImageView
-                        android:id="@+id/image1"
+                    <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:layout_alignParentLeft="true"
+                        android:text="TextView"
+                        android:textAlignment="viewStart" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:text="TextView"
-                            android:textAlignment="viewStart" />
-
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:text="TextView" />
-                    </RelativeLayout>
-
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="TextView" />
+                </RelativeLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
-                <LinearLayout
-                    android:id="@+id/relLay_2"
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_below="@+id/image2"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center">
 
-                    <ImageView
-                        android:id="@+id/image2"
+                    <TextView
+                        android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:layout_alignParentLeft="true"
+                        android:text="TextView"
+                        android:textAlignment="viewStart" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:text="TextView"
-                            android:textAlignment="viewStart" />
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:text="TextView" />
-                    </RelativeLayout>
-
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="TextView" />
+                </RelativeLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
-                <LinearLayout
-                    android:id="@+id/relLay_3"
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_below="@+id/image3"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center">
 
-                    <ImageView
-                        android:id="@+id/image3"
+                    <TextView
+                        android:id="@+id/textView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:layout_alignParentLeft="true"
+                        android:text="TextView"
+                        android:textAlignment="viewStart" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/textView7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:text="TextView"
-                            android:textAlignment="viewStart" />
-
-                        <TextView
-                            android:id="@+id/textView8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:text="TextView" />
-                    </RelativeLayout>
-
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="TextView" />
+                </RelativeLayout>
 
             </RelativeLayout>
         </LinearLayout>
