@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
+
 public class StartScreen {
 
     public static void configure(StartContract.View view) {

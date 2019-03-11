@@ -4,6 +4,8 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
+
 public class StartRouter implements StartContract.Router {
 
     public static String TAG = StartRouter.class.getSimpleName();

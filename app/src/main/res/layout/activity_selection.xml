@@ -21,13 +21,15 @@
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
+        android:layout_alignParentTop="true"
         android:background="@drawable/add_house_button" />
 
     <Button
         android:id="@+id/removeHouseButton"
         android:layout_width="262dp"
         android:layout_height="75dp"
-        android:layout_marginTop="550dp"
+        android:layout_alignTop="@id/addHouseButton"
+        android:layout_marginTop="160dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/remove_house_button" />
 </RelativeLayout>
