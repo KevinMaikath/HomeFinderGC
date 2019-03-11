@@ -1,0 +1,34 @@
+package es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen;
+
+import java.lang.ref.WeakReference;
+
+interface AboutUsContract {
+
+    interface View {
+        void injectPresenter(Presenter presenter);
+
+        void displayData(AboutUsViewModel viewModel);
+    }
+
+    interface Presenter {
+        void injectView(WeakReference<View> view);
+
+        void injectModel(Model model);
+
+        void injectRouter(Router router);
+
+        void fetchData();
+    }
+
+    interface Model {
+        String fetchData();
+    }
+
+    interface Router {
+        void navigateToNextScreen();
+
+        void passDataToNextScreen(AboutUsState state);
+
+        AboutUsState getDataFromPreviousScreen();
+    }
+}
