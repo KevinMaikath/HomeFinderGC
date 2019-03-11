@@ -5,4 +5,9 @@
     <string name="start_label">Inicio</string>
     <string name="about_us_label">Sobre Nosotros</string>
     <string name="about_us_info">Información sobre la empresa</string>
+    <string name="home_details_label">Detalles de la vivienda</string>
+    <string name="resumen_label">Resumen</string>
+    <string name="descripcion_label">Descripción</string>
+    <string name="ubicacion_label">Ubicación</string>
+    <string name="distribucion_label">Distribución</string>
 </resources>

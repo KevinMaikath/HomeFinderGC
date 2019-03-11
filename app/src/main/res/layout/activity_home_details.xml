@@ -1,20 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentEnd="true"
     android:padding="16dp"
     tools:context=".customerMode.homeDetails.HomeDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:id="@+id/topText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:paddingTop="10dp"
+            android:paddingBottom="30dp"
+            android:text="@string/home_details_label"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="15dp">
+
+            <ImageButton
+                android:id="@+id/image_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:elevation="0dp"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageButton
+                android:id="@+id/image_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/image_1"
+                android:elevation="0dp"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageButton
+                android:id="@+id/image_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/image_2"
+                android:elevation="0dp"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageButton
+                android:id="@+id/image_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/image_3"
+                android:elevation="0dp"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resumen_label"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/button_1"
+                android:text="@string/descripcion_label"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/button_2"
+                android:text="@string/ubicacion_label"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/button_3"
+                android:text="@string/distribucion_label"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Información solicitada" />
+
     </LinearLayout>
 </RelativeLayout>
