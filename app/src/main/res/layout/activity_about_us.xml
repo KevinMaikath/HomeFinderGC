@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint="@color/colorPrimary"
             android:src="@drawable/menu"
-            />
+            app:backgroundTint="@color/colorPrimary" />
 
 
         <TextView

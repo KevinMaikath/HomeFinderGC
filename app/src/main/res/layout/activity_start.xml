@@ -9,12 +9,13 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
-        android:background="@mipmap/ic_launcher_round"
-        android:clickable="true" />
+        android:clickable="true"
+        android:src="@drawable/menu"
+        app:backgroundTint="@color/colorPrimary" />
 
 
     <ScrollView
@@ -42,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
@@ -84,7 +85,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
@@ -126,7 +127,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
