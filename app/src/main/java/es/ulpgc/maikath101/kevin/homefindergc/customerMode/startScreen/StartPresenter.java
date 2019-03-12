@@ -36,6 +36,7 @@ public class StartPresenter implements StartContract.Presenter {
     public void fetchData() {
         // Log.e(TAG, "fetchData()");
 
+        /**
         // set passed state
         StartState state = router.getDataFromPreviousScreen();
         if (state != null) {
@@ -49,7 +50,7 @@ public class StartPresenter implements StartContract.Presenter {
             // set initial state
             viewModel.data = data;
         }
-
+**/
         // update the view
         view.get().displayData(viewModel);
 
