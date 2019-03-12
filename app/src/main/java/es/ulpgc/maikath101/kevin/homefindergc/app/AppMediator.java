@@ -9,6 +9,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetai
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartState;
 
 public class AppMediator extends Application {
+
     private LoginState loginState;
     private SelectionState selectionState;
     private StartState startState;
