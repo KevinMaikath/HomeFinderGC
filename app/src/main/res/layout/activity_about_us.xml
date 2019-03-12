@@ -10,12 +10,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
         android:id="@+id/layout">
 
         <android.support.design.widget.FloatingActionButton
-            android:layout_width="56sp"
-            android:layout_height="56sp"
+            android:id="@+id/menu_button"
+            android:layout_width="58sp"
+            android:layout_height="58sp"
             android:layout_centerVertical="true"
+            android:src="@drawable/menu"
+            android:backgroundTint="@color/colorPrimary"
             />
 
 
@@ -23,24 +27,24 @@
             android:id="@+id/topText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="10dp"
-            android:paddingBottom="30dp"
+            android:layout_marginLeft="100sp"
+            android:layout_centerVertical="true"
             android:text="@string/about_us_label"
             android:textAlignment="center"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/layout"
-            android:layout_marginTop="70sp">
+            android:layout_marginTop="100sp">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="130sp"
+                android:layout_height="130sp"
                 android:layout_gravity="left"
                 android:background="@drawable/password_eye"
                 android:paddingLeft="30sp"
