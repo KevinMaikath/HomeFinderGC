@@ -37,19 +37,6 @@ public class AboutUsPresenter implements AboutUsContract.Presenter {
         // Log.e(TAG, "fetchData()");
 
         // set passed state
-        AboutUsState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
         // update the view
         view.get().displayData(viewModel);
 

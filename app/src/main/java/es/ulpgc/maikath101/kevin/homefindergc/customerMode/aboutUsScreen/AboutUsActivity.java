@@ -3,9 +3,12 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.app.FlowTextHelper;
 
 public class AboutUsActivity
         extends AppCompatActivity implements AboutUsContract.View {
@@ -21,6 +24,13 @@ public class AboutUsActivity
 
         // do the setup
         AboutUsScreen.configure(this);
+
+        ImageView thumbnailView = (ImageView) findViewById(R.id.imageView3);
+        TextView messageView = (TextView) findViewById(R.id.textView2);
+        String text = getString(R.string.about_us_info);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        FlowTextHelper.tryFlowText(text, thumbnailView, messageView, display);
     }
 
     @Override
