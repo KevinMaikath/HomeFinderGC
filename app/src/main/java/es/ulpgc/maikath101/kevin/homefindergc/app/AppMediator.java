@@ -5,6 +5,7 @@ import android.app.Application;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection.SelectionState;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen.AboutUsState;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.contactScreen.ContactState;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetailsState;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartState;
 
@@ -15,6 +16,7 @@ public class AppMediator extends Application {
     private StartState startState;
     private HomeDetailsState homeDetailsState;
     private AboutUsState aboutUsState;
+    private ContactState contactState;
     public  AppMediator(){
         loginState = new LoginState();
         selectionState = new SelectionState();
@@ -58,5 +60,13 @@ public class AppMediator extends Application {
 
     public AboutUsState getAboutUsState() {
         return aboutUsState;
+    }
+
+    public void setContactState(ContactState state) {
+        this.contactState = state;
+    }
+
+    public ContactState getContactState() {
+        return contactState;
     }
 }

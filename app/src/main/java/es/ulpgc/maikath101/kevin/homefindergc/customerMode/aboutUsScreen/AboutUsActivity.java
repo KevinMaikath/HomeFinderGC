@@ -25,8 +25,8 @@ public class AboutUsActivity
         // do the setup
         AboutUsScreen.configure(this);
 
-        ImageView thumbnailView = (ImageView) findViewById(R.id.imageView3);
-        TextView messageView = (TextView) findViewById(R.id.textView2);
+        ImageView thumbnailView = (ImageView) findViewById(R.id.aboutUsImageView);
+        TextView messageView = (TextView) findViewById(R.id.aboutUsTextView);
         String text = getString(R.string.about_us_info);
 
         Display display = getWindowManager().getDefaultDisplay();

@@ -29,35 +29,11 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="100sp"
-            android:text="@string/about_us_label"
+            android:text="@string/contact_label"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/layout"
-        android:layout_marginTop="100sp">
-
-        <ImageView
-            android:id="@+id/aboutUsImageView"
-            android:layout_width="130sp"
-            android:layout_height="130sp"
-            android:layout_gravity="left"
-            android:background="@drawable/password_eye"
-            android:paddingLeft="30sp" />
-
-        <TextView
-            android:id="@+id/aboutUsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/aboutUsImageView"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="@string/about_us_info"
-            android:textSize="50sp" />
-    </RelativeLayout>
 
 </RelativeLayout>
