@@ -11,4 +11,6 @@
     <string name="ubicacion_label">Ubicación</string>
     <string name="distribucion_label">Distribución</string>
     <string name="contact_label">Contacto</string>
+    <string name="navigation_drawer_open">DRAWER OPEN</string>
+    <string name="navigation_drawer_close">DRAWER CLOSE</string>
 </resources>
