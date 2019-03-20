@@ -20,6 +20,7 @@ public class AppMediator extends Application {
     public  AppMediator(){
         loginState = new LoginState();
         selectionState = new SelectionState();
+        //
     }
 
     public void setLoginState(LoginState state) {
