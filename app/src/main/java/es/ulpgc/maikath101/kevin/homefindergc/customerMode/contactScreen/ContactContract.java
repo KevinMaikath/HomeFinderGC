@@ -2,6 +2,8 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.contactScreen;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+
 interface ContactContract {
 
     interface View {
@@ -24,11 +26,7 @@ interface ContactContract {
         String fetchData();
     }
 
-    interface Router {
-        void navigateToNextScreen();
+    interface Router extends AppRouter{
 
-        void passDataToNextScreen(ContactState state);
-
-        ContactState getDataFromPreviousScreen();
     }
 }

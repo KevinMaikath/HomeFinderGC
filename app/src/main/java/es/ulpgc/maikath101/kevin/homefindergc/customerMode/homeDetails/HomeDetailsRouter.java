@@ -4,33 +4,22 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.maikath101.kevin.homefindergc.app.AppCustomerRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 
-public class HomeDetailsRouter implements HomeDetailsContract.Router {
+public class HomeDetailsRouter extends AppCustomerRouter implements HomeDetailsContract.Router {
 
     public static String TAG = HomeDetailsRouter.class.getSimpleName();
 
     private AppMediator mediator;
 
     public HomeDetailsRouter(AppMediator mediator) {
-        this.mediator = mediator;
+        super(mediator);
     }
 
     @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, HomeDetailsActivity.class);
-        context.startActivity(intent);
+    public int getDataFromStartScreen() {
+        return 0;
     }
 
-    @Override
-    public void passDataToNextScreen(HomeDetailsState state) {
-        mediator.setHomeDetailsState(state);
-    }
-
-    @Override
-    public HomeDetailsState getDataFromPreviousScreen() {
-        HomeDetailsState state = mediator.getHomeDetailsState();
-        return state;
-    }
 }

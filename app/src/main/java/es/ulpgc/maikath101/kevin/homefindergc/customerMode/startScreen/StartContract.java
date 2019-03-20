@@ -2,6 +2,8 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+
 interface StartContract {
 
     interface View {
@@ -24,11 +26,9 @@ interface StartContract {
         String fetchData();
     }
 
-    interface Router {
-        void navigateToNextScreen();
+    interface Router extends AppRouter {
+        void navigateToHomeDetailScreen();
 
-        void passDataToNextScreen(StartState state);
-
-        StartState getDataFromPreviousScreen();
+        void passDataToHomeDetailScreen(int id);
     }
 }

@@ -38,7 +38,6 @@ public class ContactPresenter implements ContactContract.Presenter {
 
         // update the view
         view.get().displayData(viewModel);
-
     }
 
 
