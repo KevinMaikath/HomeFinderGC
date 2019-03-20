@@ -161,15 +161,7 @@
             </LinearLayout>
         </ScrollView>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton3"
-            android:layout_width="58dp"
-            android:layout_height="58dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:clickable="true"
-            android:src="@drawable/menu"
-            app:backgroundTint="@color/colorPrimary" />
+
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
