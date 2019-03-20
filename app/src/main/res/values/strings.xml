@@ -13,4 +13,10 @@
     <string name="contact_label">Contacto</string>
     <string name="navigation_drawer_open">DRAWER OPEN</string>
     <string name="navigation_drawer_close">DRAWER CLOSE</string>
+    <string name="hint_name">Nombre</string>
+    <string name="hint_telephone">Teléfono</string>
+    <string name="hint_country">País</string>
+    <string name="hint_zipcode">Código Postal</string>
+    <string name="hint_address">Dirección</string>
+    <string name="hint_email">Correo Electrónico</string>
 </resources>

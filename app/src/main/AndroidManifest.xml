@@ -11,7 +11,7 @@
         android:name=".app.AppMediator"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".customerMode.startScreen.StartActivity">
+        <activity android:name=".customerMode.contactScreen.ContactActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

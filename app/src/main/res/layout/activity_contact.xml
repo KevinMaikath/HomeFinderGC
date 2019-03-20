@@ -1,44 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".customerMode.aboutUsScreen.AboutUsActivity">
+    tools:context=".customerMode.contactScreen.ContactActivity">
+
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton3"
+            android:id="@+id/menu_button"
             android:layout_width="58dp"
             android:layout_height="58dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
-            android:clickable="true"
+            android:backgroundTint="@color/colorPrimary"
             android:src="@drawable/menu"
             app:backgroundTint="@color/colorPrimary" />
 
-        <RelativeLayout
-            android:id="@+id/layout"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp">
+            android:layout_height="match_parent">
 
-
-            <TextView
-                android:id="@+id/topText"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="@string/contact_label"
-                android:textAlignment="center"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/topText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100sp"
+                    android:layout_marginTop="30sp"
+                    android:text="@string/contact_label"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/user_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="30dp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <ImageView
+                        android:id="@+id/user_image"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:background="@drawable/user_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"/>
+
+
+                    <EditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_name"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/telephone_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <ImageView
+                        android:id="@+id/telephone_image"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:background="@drawable/user_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"/>
+
+
+                    <EditText
+                        android:id="@+id/telephoneEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_telephone"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/country_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <ImageView
+                        android:id="@+id/country_image"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:background="@drawable/user_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"/>
+
+
+                    <EditText
+                        android:id="@+id/countryEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_country"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/zipcode_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <ImageView
+                        android:id="@+id/zipcode_image"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:background="@drawable/user_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"/>
+
+
+                    <EditText
+                        android:id="@+id/zipcodeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_zipcode"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/address_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <ImageView
+                        android:id="@+id/address_image"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:background="@drawable/user_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"/>
+
+
+                    <EditText
+                        android:id="@+id/addressEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_address"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/email_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <ImageView
+                        android:id="@+id/email_image"
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:background="@drawable/user_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"/>
+
+
+                    <EditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_email"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
@@ -50,7 +260,6 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu"
         android:background="@color/colorPrimary"/>
-
 
 
 </android.support.v4.widget.DrawerLayout>
