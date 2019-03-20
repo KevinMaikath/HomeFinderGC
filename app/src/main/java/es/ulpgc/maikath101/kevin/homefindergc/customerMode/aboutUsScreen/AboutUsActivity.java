@@ -10,9 +10,7 @@ import android.widget.TextView;
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.app.FlowTextHelper;
 
-public class AboutUsActivity
-        extends AppCompatActivity implements AboutUsContract.View {
-
+public class AboutUsActivity extends AppCompatActivity implements AboutUsContract.View {
     public static String TAG = AboutUsActivity.class.getSimpleName();
 
     private AboutUsContract.Presenter presenter;
@@ -50,6 +48,6 @@ public class AboutUsActivity
     public void displayData(AboutUsViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
-        // deal with the data
+        // deal with the data}
     }
 }

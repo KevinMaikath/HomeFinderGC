@@ -29,6 +29,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingBottom="30dp"
+                    android:layout_marginTop="30sp"
                     android:text="@string/start_label"
                     android:textSize="30sp" />
 
