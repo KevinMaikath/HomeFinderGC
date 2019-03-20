@@ -9,15 +9,15 @@ import android.support.v4.app.FragmentActivity;
 
 public class StartModel implements StartContract.Model {
 
-    public static String TAG = StartModel.class.getSimpleName();
+  public static String TAG = StartModel.class.getSimpleName();
 
-    public StartModel() {
+  public StartModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

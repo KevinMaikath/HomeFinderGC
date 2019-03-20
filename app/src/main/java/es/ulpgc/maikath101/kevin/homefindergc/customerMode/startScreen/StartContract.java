@@ -6,29 +6,29 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 
 interface StartContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(StartViewModel viewModel);
-    }
+    void displayData(StartViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
-    }
+    void fetchData();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router extends AppRouter {
-        void navigateToHomeDetailScreen();
+  interface Router extends AppRouter {
+    void navigateToHomeDetailScreen();
 
-        void passDataToHomeDetailScreen(int id);
-    }
+    void passDataToHomeDetailScreen(int id);
+  }
 }

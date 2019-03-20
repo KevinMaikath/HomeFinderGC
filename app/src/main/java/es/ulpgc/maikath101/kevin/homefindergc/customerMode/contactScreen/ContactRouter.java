@@ -8,10 +8,10 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 
 public class ContactRouter extends AppCustomerRouter implements ContactContract.Router {
 
-    public static String TAG = ContactRouter.class.getSimpleName();
+  public static String TAG = ContactRouter.class.getSimpleName();
 
-    public ContactRouter(AppMediator mediator) {
-        super(mediator);
-    }
+  public ContactRouter(AppMediator mediator) {
+    super(mediator);
+  }
 
 }

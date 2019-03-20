@@ -8,36 +8,36 @@ import es.ulpgc.maikath101.kevin.homefindergc.R;
 public class ContactActivity
         extends AppCompatActivity implements ContactContract.View {
 
-    public static String TAG = ContactActivity.class.getSimpleName();
+  public static String TAG = ContactActivity.class.getSimpleName();
 
-    private ContactContract.Presenter presenter;
+  private ContactContract.Presenter presenter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_contact);
 
-        // do the setup
-        ContactScreen.configure(this);
-    }
+    // do the setup
+    ContactScreen.configure(this);
+  }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+  @Override
+  protected void onResume() {
+    super.onResume();
 
-        // do some work
-        presenter.fetchData();
-    }
+    // do some work
+    presenter.fetchData();
+  }
 
-    @Override
-    public void injectPresenter(ContactContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+  @Override
+  public void injectPresenter(ContactContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void displayData(ContactViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+  @Override
+  public void displayData(ContactViewModel viewModel) {
+    //Log.e(TAG, "displayData()");
 
-        // deal with the data
-    }
+    // deal with the data
+  }
 }

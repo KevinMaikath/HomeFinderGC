@@ -9,21 +9,21 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetai
 
 public class StartRouter extends AppCustomerRouter implements StartContract.Router {
 
-    public static String TAG = StartRouter.class.getSimpleName();
+  public static String TAG = StartRouter.class.getSimpleName();
 
-    public StartRouter(AppMediator mediator) {
-        super(mediator);
-    }
+  public StartRouter(AppMediator mediator) {
+    super(mediator);
+  }
 
-    @Override
-    public void navigateToHomeDetailScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, HomeDetailsActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToHomeDetailScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, HomeDetailsActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void passDataToHomeDetailScreen(int id) {
+  @Override
+  public void passDataToHomeDetailScreen(int id) {
 
-    }
+  }
 }

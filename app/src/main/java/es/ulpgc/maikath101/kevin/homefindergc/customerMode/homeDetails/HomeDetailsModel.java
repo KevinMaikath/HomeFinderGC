@@ -9,15 +9,15 @@ import android.support.v4.app.FragmentActivity;
 
 public class HomeDetailsModel implements HomeDetailsContract.Model {
 
-    public static String TAG = HomeDetailsModel.class.getSimpleName();
+  public static String TAG = HomeDetailsModel.class.getSimpleName();
 
-    public HomeDetailsModel() {
+  public HomeDetailsModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

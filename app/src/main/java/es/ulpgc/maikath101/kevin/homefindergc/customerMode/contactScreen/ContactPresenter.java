@@ -4,41 +4,41 @@ import java.lang.ref.WeakReference;
 
 public class ContactPresenter implements ContactContract.Presenter {
 
-    public static String TAG = ContactPresenter.class.getSimpleName();
+  public static String TAG = ContactPresenter.class.getSimpleName();
 
-    private WeakReference<ContactContract.View> view;
-    private ContactViewModel viewModel;
-    private ContactContract.Model model;
-    private ContactContract.Router router;
+  private WeakReference<ContactContract.View> view;
+  private ContactViewModel viewModel;
+  private ContactContract.Model model;
+  private ContactContract.Router router;
 
-    public ContactPresenter(ContactState state) {
-        viewModel = state;
-    }
+  public ContactPresenter(ContactState state) {
+    viewModel = state;
+  }
 
-    @Override
-    public void injectView(WeakReference<ContactContract.View> view) {
-        this.view = view;
-    }
+  @Override
+  public void injectView(WeakReference<ContactContract.View> view) {
+    this.view = view;
+  }
 
-    @Override
-    public void injectModel(ContactContract.Model model) {
-        this.model = model;
-    }
+  @Override
+  public void injectModel(ContactContract.Model model) {
+    this.model = model;
+  }
 
-    @Override
-    public void injectRouter(ContactContract.Router router) {
-        this.router = router;
-    }
+  @Override
+  public void injectRouter(ContactContract.Router router) {
+    this.router = router;
+  }
 
-    @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+  @Override
+  public void fetchData() {
+    // Log.e(TAG, "fetchData()");
 
-        // set passed state
+    // set passed state
 
-        // update the view
-        view.get().displayData(viewModel);
-    }
+    // update the view
+    view.get().displayData(viewModel);
+  }
 
 
 }

@@ -11,63 +11,64 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartStat
 
 public class AppMediator extends Application {
 
-    private LoginState loginState;
-    private SelectionState selectionState;
-    private StartState startState;
-    private HomeDetailsState homeDetailsState;
-    private AboutUsState aboutUsState;
-    private ContactState contactState;
-    public  AppMediator(){
-        loginState = new LoginState();
-        selectionState = new SelectionState();
-        //
-    }
+  private LoginState loginState;
+  private SelectionState selectionState;
+  private StartState startState;
+  private HomeDetailsState homeDetailsState;
+  private AboutUsState aboutUsState;
+  private ContactState contactState;
 
-    public void setLoginState(LoginState state) {
-        this.loginState = state;
-    }
+  public AppMediator() {
+    loginState = new LoginState();
+    selectionState = new SelectionState();
+    //
+  }
 
-    public LoginState getLoginState() {
-        return loginState;
-    }
+  public void setLoginState(LoginState state) {
+    this.loginState = state;
+  }
 
-    public void setSelectionState(SelectionState state) {
-        this.selectionState = state;
-    }
+  public LoginState getLoginState() {
+    return loginState;
+  }
 
-    public SelectionState getSelectionState() {
-        return selectionState;
-    }
+  public void setSelectionState(SelectionState state) {
+    this.selectionState = state;
+  }
 
-    public void setStartState(StartState state) {
-        this.startState = state;
-    }
+  public SelectionState getSelectionState() {
+    return selectionState;
+  }
 
-    public StartState getStartState() {
-        return startState;
-    }
+  public void setStartState(StartState state) {
+    this.startState = state;
+  }
 
-    public void setHomeDetailsState(HomeDetailsState state) {
-        this.homeDetailsState = state;
-    }
+  public StartState getStartState() {
+    return startState;
+  }
 
-    public HomeDetailsState getHomeDetailsState() {
-        return homeDetailsState;
-    }
+  public void setHomeDetailsState(HomeDetailsState state) {
+    this.homeDetailsState = state;
+  }
 
-    public void setAboutUsState(AboutUsState state) {
-        this.aboutUsState = state;
-    }
+  public HomeDetailsState getHomeDetailsState() {
+    return homeDetailsState;
+  }
 
-    public AboutUsState getAboutUsState() {
-        return aboutUsState;
-    }
+  public void setAboutUsState(AboutUsState state) {
+    this.aboutUsState = state;
+  }
 
-    public void setContactState(ContactState state) {
-        this.contactState = state;
-    }
+  public AboutUsState getAboutUsState() {
+    return aboutUsState;
+  }
 
-    public ContactState getContactState() {
-        return contactState;
-    }
+  public void setContactState(ContactState state) {
+    this.contactState = state;
+  }
+
+  public ContactState getContactState() {
+    return contactState;
+  }
 }

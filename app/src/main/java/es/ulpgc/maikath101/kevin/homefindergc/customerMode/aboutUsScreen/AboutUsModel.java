@@ -9,15 +9,15 @@ import android.support.v4.app.FragmentActivity;
 
 public class AboutUsModel implements AboutUsContract.Model {
 
-    public static String TAG = AboutUsModel.class.getSimpleName();
+  public static String TAG = AboutUsModel.class.getSimpleName();
 
-    public AboutUsModel() {
+  public AboutUsModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

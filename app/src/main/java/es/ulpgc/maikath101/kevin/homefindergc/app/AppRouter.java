@@ -1,17 +1,17 @@
 package es.ulpgc.maikath101.kevin.homefindergc.app;
 
-public interface AppRouter{
+public interface AppRouter {
 
-    void navigateToStartScreen();
+  void navigateToStartScreen();
 
-    void navigateToForSaleScreen();
+  void navigateToForSaleScreen();
 
-    void navigateToForRentScreen();
+  void navigateToForRentScreen();
 
-    void navigateToHolidayRentalScreen();
+  void navigateToHolidayRentalScreen();
 
-    void navigateToAboutUsScreen();
+  void navigateToAboutUsScreen();
 
-    void navigateToContactScreen();
+  void navigateToContactScreen();
 
 }

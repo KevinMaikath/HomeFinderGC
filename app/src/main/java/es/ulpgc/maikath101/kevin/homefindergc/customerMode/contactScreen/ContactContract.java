@@ -6,27 +6,27 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 
 interface ContactContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(ContactViewModel viewModel);
-    }
+    void displayData(ContactViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
-    }
+    void fetchData();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router extends AppRouter{
+  interface Router extends AppRouter {
 
-    }
+  }
 }
