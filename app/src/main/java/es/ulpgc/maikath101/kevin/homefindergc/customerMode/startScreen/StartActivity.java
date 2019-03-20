@@ -119,7 +119,7 @@ public class StartActivity
         if (id == R.id.nav_inicio) {
             // Handle the camera action
         } else if (id == R.id.nav_se_vende) {
-
+            
         } else if (id == R.id.nav_se_alquila) {
 
         } else if (id == R.id.nav_alquiler_vacacional) {
