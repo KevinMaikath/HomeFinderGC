@@ -246,6 +246,56 @@
                         android:textSize="20sp" />
 
                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/subject_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <EditText
+                        android:id="@+id/subjectEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:hint="@string/hint_subject"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bodyemail_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="5sp"
+                    android:paddingLeft="10sp"
+                    android:paddingRight="10sp"
+                    android:background="@drawable/user_password_rectangle">
+
+                    <EditText
+                        android:id="@+id/bodyemailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:selectAllOnFocus="false"
+                        android:singleLine="false"
+                        android:hint="@string/hint_bodyemail"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
             </LinearLayout>
         </ScrollView>
 
@@ -260,6 +310,5 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu"
         android:background="@color/colorPrimary"/>
-
 
 </android.support.v4.widget.DrawerLayout>

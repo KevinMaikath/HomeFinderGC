@@ -19,4 +19,6 @@
     <string name="hint_zipcode">Código Postal</string>
     <string name="hint_address">Dirección</string>
     <string name="hint_email">Correo Electrónico</string>
+    <string name="hint_subject">Asunto</string>
+    <string name="hint_bodyemail">Mensaje</string>
 </resources>

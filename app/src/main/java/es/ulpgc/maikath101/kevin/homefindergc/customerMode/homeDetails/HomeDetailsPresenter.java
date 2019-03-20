@@ -37,18 +37,7 @@ public class HomeDetailsPresenter implements HomeDetailsContract.Presenter {
         // Log.e(TAG, "fetchData()");
 
         // set passed state
-        HomeDetailsState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
+        // HomeDetailsState state = router.getDataFromPreviousScreen();
 
         // update the view
         view.get().displayData(viewModel);
