@@ -90,7 +90,7 @@
                         android:id="@+id/telephone_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/user_icon"
+                        android:background="@drawable/phone"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"/>
 
@@ -124,7 +124,7 @@
                         android:id="@+id/country_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/user_icon"
+                        android:background="@drawable/country"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"/>
 
@@ -158,7 +158,7 @@
                         android:id="@+id/zipcode_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/user_icon"
+                        android:background="@drawable/zip_code"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"/>
 
@@ -192,7 +192,7 @@
                         android:id="@+id/address_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/user_icon"
+                        android:background="@drawable/address"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"/>
 
@@ -226,7 +226,7 @@
                         android:id="@+id/email_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/user_icon"
+                        android:background="@drawable/mail"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"/>
 
@@ -294,6 +294,22 @@
                         android:singleLine="false"
                         android:hint="@string/hint_bodyemail"
                         android:textSize="20sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/button_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5sp"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/send_button"
+                        android:layout_width="262sp"
+                        android:layout_height="75sp"
+                        android:background="@drawable/send_button" />
 
                 </RelativeLayout>
             </LinearLayout>
