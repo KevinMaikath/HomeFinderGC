@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".adminMode.selection.SelectionActivity" >
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        app:srcCompat="@drawable/logo_add_screen" />
 
-    <Button
-        android:id="@+id/addHouseButton"
-        android:layout_width="262dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/add_house_button" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/removeHouseButton"
-        android:layout_width="262dp"
-        android:layout_height="75dp"
-        android:layout_alignTop="@id/addHouseButton"
-        android:layout_marginTop="160dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/remove_house_button" />
-</RelativeLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                app:srcCompat="@drawable/logo_add_screen" />
+
+            <Button
+                android:id="@+id/addHouseButton"
+                android:layout_width="262dp"
+                android:layout_height="75dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/add_house_button" />
+
+            <Button
+                android:id="@+id/removeHouseButton"
+                android:layout_width="262dp"
+                android:layout_height="75dp"
+                android:layout_alignTop="@id/addHouseButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="160dp"
+                android:background="@drawable/remove_house_button" />
+        </RelativeLayout>
+    </ScrollView>
+</android.support.v7.widget.LinearLayoutCompat>
