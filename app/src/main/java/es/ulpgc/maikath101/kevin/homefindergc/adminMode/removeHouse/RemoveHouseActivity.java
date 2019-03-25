@@ -2,7 +2,6 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
@@ -17,7 +16,7 @@ public class RemoveHouseActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_remove_house);
+    setContentView(R.layout.activity_add_house);
 
     // do the setup
     RemoveHouseScreen.configure(this);
