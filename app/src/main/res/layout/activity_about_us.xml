@@ -50,6 +50,7 @@
 
                     <ImageView
                         android:id="@+id/aboutUsImageView"
+                        android:layout_marginLeft="10sp"
                         android:layout_width="130sp"
                         android:layout_height="130sp"
                         android:layout_gravity="left"

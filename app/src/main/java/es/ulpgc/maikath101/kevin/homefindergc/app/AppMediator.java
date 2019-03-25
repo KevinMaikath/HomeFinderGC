@@ -2,7 +2,9 @@ package es.ulpgc.maikath101.kevin.homefindergc.app;
 
 import android.app.Application;
 
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection.SelectionState;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen.AboutUsState;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.contactScreen.ContactState;
@@ -17,6 +19,8 @@ public class AppMediator extends Application {
   private HomeDetailsState homeDetailsState;
   private AboutUsState aboutUsState;
   private ContactState contactState;
+  private AddHouseState addHouseState;
+  private RemoveHouseState removeHouseState;
 
   public AppMediator() {
     loginState = new LoginState();
@@ -70,5 +74,21 @@ public class AppMediator extends Application {
 
   public ContactState getContactState() {
     return contactState;
+  }
+
+  public void setAddHouseState(AddHouseState state) {
+    this.addHouseState = state;
+  }
+
+  public AddHouseState getAddHouseState() {
+    return addHouseState;
+  }
+
+  public void setRemoveHouseState(RemoveHouseState state) {
+    this.removeHouseState = state;
+  }
+
+  public RemoveHouseState getRemoveHouseState() {
+    return removeHouseState;
   }
 }
