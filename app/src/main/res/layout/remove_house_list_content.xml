@@ -36,6 +36,15 @@
         android:text="Esto es una prueba para ver como queda"/>
 
 
+    <ImageButton
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="350sp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/minus_button"
+        />
+
+
 
 
 
