@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -16,7 +17,7 @@ public class RemoveHouseActivity
   public static String TAG = RemoveHouseActivity.class.getSimpleName();
 
   private RemoveHouseContract.Presenter presenter;
-
+  private ListView listView;
 
 
   @Override
@@ -28,7 +29,7 @@ public class RemoveHouseActivity
     setSupportActionBar(toolbar);
 
 
-
+    listView = findViewById(R.id.removeHouseListView);
     Button toolbarButton = toolbar.findViewById(R.id.backToolbarButton);
     TextView toolbarTextView = toolbar.findViewById(R.id.toolbarTextView);
 
@@ -39,16 +40,9 @@ public class RemoveHouseActivity
       }
     });
 
-
     // do the setup
     RemoveHouseScreen.configure(this);
-  }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
     presenter.fetchData();
   }
 
@@ -62,5 +56,12 @@ public class RemoveHouseActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
+    listView.setAdapter(new RemoveHouseAdapter(this, viewModel.houses, new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+
+      }
+    }));
+
   }
 }

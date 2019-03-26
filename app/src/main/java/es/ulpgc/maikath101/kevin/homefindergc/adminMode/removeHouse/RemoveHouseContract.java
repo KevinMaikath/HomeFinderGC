@@ -1,6 +1,9 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
 interface RemoveHouseContract {
 
@@ -22,6 +25,7 @@ interface RemoveHouseContract {
 
   interface Model {
     String fetchData();
+    ArrayList<House> getHousess();
   }
 
   interface Router {

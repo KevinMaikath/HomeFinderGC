@@ -37,10 +37,9 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
     // Log.e(TAG, "fetchData()");
 
     // set passed state
-
+    viewModel.houses = model.getHousess();
     // update the view
     view.get().displayData(viewModel);
-
   }
 
 

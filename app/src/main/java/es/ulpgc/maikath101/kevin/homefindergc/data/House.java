@@ -1,4 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc.app;
+package es.ulpgc.maikath101.kevin.homefindergc.data;
 
 public class House {
 

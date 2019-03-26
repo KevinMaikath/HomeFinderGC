@@ -7,14 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
-import es.ulpgc.maikath101.kevin.homefindergc.app.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
-public class RemoveHouseAdapter extends ArrayAdapter {
+public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
   private final List<House> itemList;
   private final View.OnClickListener clickListener;
