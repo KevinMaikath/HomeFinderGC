@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     tools:context=".adminMode.removeHouse.RemoveHouseActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <include
-        android:id="@+id/removeHouseListView"
-        layout="@layout/remove_house_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-</android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <Button
+                android:id="@+id/backToolbarButton"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="20sp"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:id="@+id/toolbarTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                android:textSize="22sp"
+                android:textColor="#FDFEFF"
+                android:layout_marginLeft="20sp"/>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:layout_alignTop="@+id/toolbar"
+        android:layout_marginTop="55sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/remove_house_list"/>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>
