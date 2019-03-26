@@ -105,8 +105,6 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
         alert11.show();
       }
     });
-
-
     apartmentName.setText(itemList.get(position).getDescription());
     referenceNumber.setText(itemList.get(position).getReferenceNumber());
 

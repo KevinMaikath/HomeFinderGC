@@ -11,7 +11,7 @@
         android:name=".app.AppMediator"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"
+        <activity android:name=".adminMode.addHouse.AddHouseActivity"
             android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
