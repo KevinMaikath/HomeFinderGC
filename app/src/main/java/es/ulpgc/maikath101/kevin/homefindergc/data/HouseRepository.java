@@ -6,12 +6,20 @@ public class HouseRepository {
 
   private ArrayList<House> houses;
   private int COUNT = 20;
+  private static HouseRepository instance = null;
 
-  public HouseRepository() {
+  private HouseRepository() {
     houses = new ArrayList<House>();
     for (int i = 1; i < COUNT; i++) {
       addHouse(createHouse(i));
     }
+  }
+
+  public static HouseRepository getInstance(){
+    if(instance == null){
+      instance = new HouseRepository();
+    }
+    return instance;
   }
 
   private House createHouse(int position) {

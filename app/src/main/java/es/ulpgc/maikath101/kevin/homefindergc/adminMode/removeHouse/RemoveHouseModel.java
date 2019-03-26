@@ -18,7 +18,7 @@ public class RemoveHouseModel implements RemoveHouseContract.Model {
   private HouseRepository repository;
 
   public RemoveHouseModel() {
-    repository = new HouseRepository();
+    repository = HouseRepository.getInstance();
   }
 
   @Override

@@ -16,18 +16,21 @@ import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
   private final List<House> itemList;
   private final View.OnClickListener clickListener;
   private Context context;
+  private HouseRepository repository;
 
   public RemoveHouseAdapter(
           Context context, List<House> items, View.OnClickListener listener) {
 
     super(context, 0, items);
 
+    repository = HouseRepository.getInstance();
     this.context = context;
     itemList = items;
     clickListener = listener;
@@ -82,7 +85,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
                 new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int id) {
                     Toast.makeText(context,"Se ha presionado YES", Toast.LENGTH_SHORT).show();
-                    itemList.remove(position);
+                    repository.getHouses().remove(position);
                     notifyDataSetChanged();
                     dialog.cancel();
                   }
