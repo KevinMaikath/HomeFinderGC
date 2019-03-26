@@ -25,6 +25,7 @@ public class AppMediator extends Application {
   public AppMediator() {
     loginState = new LoginState();
     selectionState = new SelectionState();
+    removeHouseState = new RemoveHouseState();
     //
   }
 
