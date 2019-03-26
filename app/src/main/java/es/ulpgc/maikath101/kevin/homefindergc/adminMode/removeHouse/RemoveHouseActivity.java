@@ -29,7 +29,7 @@ public class RemoveHouseActivity
 
 
 
-    Button toolbarButton = toolbar.findViewById(R.id.toolbarButton);
+    Button toolbarButton = toolbar.findViewById(R.id.backToolbarButton);
     TextView toolbarTextView = toolbar.findViewById(R.id.toolbarTextView);
 
     toolbarButton.setOnClickListener(new View.OnClickListener() {
