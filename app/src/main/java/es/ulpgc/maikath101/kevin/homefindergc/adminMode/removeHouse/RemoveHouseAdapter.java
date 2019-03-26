@@ -1,6 +1,8 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +21,14 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
   private final List<House> itemList;
   private final View.OnClickListener clickListener;
+  private Context context;
 
   public RemoveHouseAdapter(
           Context context, List<House> items, View.OnClickListener listener) {
 
     super(context, 0, items);
 
+    this.context = context;
     itemList = items;
     clickListener = listener;
   }
@@ -67,13 +71,40 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
       @Override
       public void onClick(View v) {
         Toast.makeText(getContext(), "Me han presionado en " + itemList.get(position).getId(), Toast.LENGTH_SHORT).show();
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
+        builder1.setTitle("Eliminar");
+        builder1.setMessage("¿Estás seguro que deseas eliminar el apartamento seleccionado? " + itemList.get(position).getReferenceNumber());
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                  public void onClick(DialogInterface dialog, int id) {
+                    Toast.makeText(context,"Se ha presionado YES", Toast.LENGTH_SHORT).show();
+                    itemList.remove(position);
+                    notifyDataSetChanged();
+                    dialog.cancel();
+                  }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                  public void onClick(DialogInterface dialog, int id) {
+                    Toast.makeText(context,"Se ha presionado NO", Toast.LENGTH_SHORT).show();
+                    dialog.cancel();
+                  }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
       }
     });
 
 
     apartmentName.setText(itemList.get(position).getDescription());
     referenceNumber.setText(itemList.get(position).getReferenceNumber());
-
 
     return itemView;
   }

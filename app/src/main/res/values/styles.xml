@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#78C4FB</item>
         <item name="colorPrimaryDark">#1FBAED</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#FC000F</item>
     </style>
 
     <style name="HeaderBar">
