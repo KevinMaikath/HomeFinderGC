@@ -68,8 +68,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
     final TextView apartmentName = itemView.findViewById(R.id.apartmentNameTextView);
     final ImageButton button = itemView.findViewById(R.id.removeHouse);
 
-    //Probando que se presiona el boton de eliminar en cada celda
-    //TODO hay que eliminar la celda cuando se presiona el boton
+    // Cada vez que se presiona un botón aparece un Dialog
     button.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -80,8 +79,9 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
         builder1.setMessage("¿Estás seguro que deseas eliminar el apartamento seleccionado? " + itemList.get(position).getReferenceNumber());
         builder1.setCancelable(true);
 
+        // Si presionamos ELIMINAR se borra el elemento del repositorio
         builder1.setPositiveButton(
-                "Yes",
+                "ELIMINAR",
                 new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int id) {
                     Toast.makeText(context,"Se ha presionado YES", Toast.LENGTH_SHORT).show();
@@ -91,8 +91,9 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
                   }
                 });
 
+        // Si presionamos CANCELAR no hacemos nada
         builder1.setNegativeButton(
-                "No",
+                "CANCELAR",
                 new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int id) {
                     Toast.makeText(context,"Se ha presionado NO", Toast.LENGTH_SHORT).show();
