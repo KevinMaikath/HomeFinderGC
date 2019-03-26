@@ -37,6 +37,7 @@
 
 
     <ImageButton
+        android:id="@+id/removeHouse"
         android:layout_width="30sp"
         android:layout_height="30sp"
         android:layout_marginStart="350sp"

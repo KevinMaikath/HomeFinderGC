@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -42,7 +45,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
   }
 
   @Override
-  public View getView(int position, View convertView, ViewGroup parent) {
+  public View getView(final int position, View convertView, ViewGroup parent) {
     View itemView = convertView;
 
     if (itemView == null) {
@@ -56,6 +59,16 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
     final TextView referenceNumber = itemView.findViewById(R.id.referenceNumberTextView);
     final TextView apartmentName = itemView.findViewById(R.id.apartmentNameTextView);
+    final ImageButton button = itemView.findViewById(R.id.removeHouse);
+
+    //Probando que se presiona el boton de eliminar en cada celda
+    //TODO hay que eliminar la celda cuando se presiona el boton
+    button.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Toast.makeText(getContext(), "Me han presionado en " + itemList.get(position).getId(), Toast.LENGTH_SHORT).show();
+      }
+    });
 
 
     apartmentName.setText(itemList.get(position).getDescription());
