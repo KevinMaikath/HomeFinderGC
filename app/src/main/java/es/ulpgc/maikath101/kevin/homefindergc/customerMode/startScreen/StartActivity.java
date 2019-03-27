@@ -112,17 +112,17 @@ public class StartActivity
     int id = item.getItemId();
 
     if (id == R.id.nav_inicio) {
-
+      presenter.goToStart();
     } else if (id == R.id.nav_se_vende) {
-
+      presenter.goToForSale();
     } else if (id == R.id.nav_se_alquila) {
-
+      presenter.goToForRent();
     } else if (id == R.id.nav_alquiler_vacacional) {
-
+      presenter.goToHolidayRental();
     } else if (id == R.id.nav_sobre_nosotros) {
-
+      presenter.goToAboutUS();
     } else if (id == R.id.nav_contacto) {
-
+      presenter.goToContact();
     }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

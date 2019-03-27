@@ -20,6 +20,18 @@ interface HomeDetailsContract {
     void injectRouter(Router router);
 
     void fetchData();
+
+    void goToStart();
+
+    void goToForSale();
+
+    void goToForRent();
+
+    void goToHolidayRental();
+
+    void goToAboutUS();
+
+    void goToContact();
   }
 
   interface Model {

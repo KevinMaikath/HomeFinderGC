@@ -43,4 +43,34 @@ public class HomeDetailsPresenter implements HomeDetailsContract.Presenter {
   }
 
 
+  @Override
+  public void goToStart() {
+    router.navigateToStartScreen();
+  }
+
+  @Override
+  public void goToForSale() {
+    router.navigateToForSaleScreen();
+  }
+
+  @Override
+  public void goToForRent() {
+    router.navigateToForRentScreen();
+  }
+
+  @Override
+  public void goToHolidayRental() {
+    router.navigateToHolidayRentalScreen();
+  }
+
+  @Override
+  public void goToAboutUS() {
+    router.navigateToAboutUsScreen();
+  }
+
+  @Override
+  public void goToContact() {
+    router.navigateToContactScreen();
+  }
+
 }
