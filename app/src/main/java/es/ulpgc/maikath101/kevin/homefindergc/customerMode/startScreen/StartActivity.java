@@ -29,7 +29,7 @@ public class StartActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_start);
 
-    floatingActionButton = findViewById(R.id.floatingActionButton3);
+    floatingActionButton = findViewById(R.id.floatingOptionsButton);
     floatingActionButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -75,9 +75,8 @@ public class StartActivity
    */
   @Override
   public void onBackPressed() {
-    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    if (drawer.isDrawerOpen(GravityCompat.START)) {
-      drawer.closeDrawer(GravityCompat.START);
+    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+      drawerLayout.closeDrawer(GravityCompat.START);
     } else {
       super.onBackPressed();
     }
@@ -125,8 +124,7 @@ public class StartActivity
       presenter.goToContact();
     }
 
-    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    drawer.closeDrawer(GravityCompat.START);
+    drawerLayout.closeDrawer(GravityCompat.START);
     return true;
   }
 }
