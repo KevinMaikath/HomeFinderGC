@@ -23,11 +23,14 @@ public class StartActivity
   private StartContract.Presenter presenter;
   private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
+  private TextView topText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_start);
+
+    topText = findViewById(R.id.topText);
 
     floatingActionButton = findViewById(R.id.floatingOptionsButton);
     floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +50,9 @@ public class StartActivity
 
     // do the setup
     StartScreen.configure(this);
+
+    presenter.checkCurrentScreen();
+
   }
 
   @Override
@@ -67,12 +73,10 @@ public class StartActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
+    topText.setText(viewModel.topText);
   }
 
 
-  /**
-   * IMPORTADO DEL EJEMPLO
-   */
   @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -82,29 +86,6 @@ public class StartActivity
     }
   }
 
-  /**
-   * MENU DE OPCIONES (no usado aqui)
-   *
-   * @Override public boolean onCreateOptionsMenu(Menu menu) {
-   * // Inflate the menu; this adds items to the action bar if it is present.
-   * getMenuInflater().inflate(R.menu.main, menu);
-   * return true;
-   * }
-   * @Override public boolean onOptionsItemSelected(MenuItem item) {
-   * // Handle action bar item clicks here. The action bar will
-   * // automatically handle clicks on the Home/Up button, so long
-   * // as you specify a parent activity in AndroidManifest.xml.
-   * int id = item.getItemId();
-   * <p>
-   * //noinspection SimplifiableIfStatement
-   * if (id == R.id.action_settings) {
-   * return true;
-   * }
-   * <p>
-   * return super.onOptionsItemSelected(item);
-   * }
-   **/
-  @SuppressWarnings("StatementWithEmptyBody")
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
     // Handle navigation view item clicks here.

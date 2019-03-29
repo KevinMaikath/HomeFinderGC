@@ -4,17 +4,21 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.maikath101.kevin.homefindergc.R;
+
 public class StartPresenter implements StartContract.Presenter {
 
   public static String TAG = StartPresenter.class.getSimpleName();
 
   private WeakReference<StartContract.View> view;
   private StartViewModel viewModel;
+  private StartState state;
   private StartContract.Model model;
   private StartContract.Router router;
 
   public StartPresenter(StartState state) {
     viewModel = state;
+    this.state = state;
   }
 
   @Override
@@ -84,5 +88,23 @@ public class StartPresenter implements StartContract.Presenter {
   @Override
   public void goToContact() {
     router.navigateToContactScreen();
+  }
+
+  @Override
+  public void checkCurrentScreen() {
+    switch (state.currentScreen){
+      case "Start":
+        viewModel.topText = R.string.start_label;
+        break;
+      case "ForSale":
+        viewModel.topText = R.string.for_sale_label;
+        break;
+      case "ForRent":
+        viewModel.topText = R.string.for_rent_label;
+        break;
+      case "HolidayRental":
+        viewModel.topText = R.string.holiday_rental_label;
+        break;
+    }
   }
 }

@@ -96,4 +96,8 @@ public class AppMediator extends Application {
   public RemoveHouseState getRemoveHouseState() {
     return removeHouseState;
   }
+
+  public void changeStartScreenLayout(String layout){
+    startState.currentScreen = layout;
+  }
 }

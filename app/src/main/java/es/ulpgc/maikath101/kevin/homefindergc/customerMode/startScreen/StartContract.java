@@ -32,6 +32,8 @@ interface StartContract {
     void goToAboutUS();
 
     void goToContact();
+
+    void checkCurrentScreen();
   }
 
   interface Model {

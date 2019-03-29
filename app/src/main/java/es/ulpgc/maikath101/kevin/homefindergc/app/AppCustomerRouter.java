@@ -6,6 +6,7 @@ import android.content.Intent;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen.AboutUsActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.contactScreen.ContactActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartActivity;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartState;
 
 public class AppCustomerRouter implements AppRouter {
 
@@ -19,7 +20,9 @@ public class AppCustomerRouter implements AppRouter {
   public void navigateToStartScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
+
     //cambiar estado a Start
+    mediator.changeStartScreenLayout("Start");
     context.startActivity(intent);
   }
 
@@ -27,7 +30,9 @@ public class AppCustomerRouter implements AppRouter {
   public void navigateToForSaleScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
+
     //cambiar estado a For Sale
+    mediator.changeStartScreenLayout("ForSale");
     context.startActivity(intent);
   }
 
@@ -35,7 +40,9 @@ public class AppCustomerRouter implements AppRouter {
   public void navigateToForRentScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
+
     //cambiar estado a For Rent
+    mediator.changeStartScreenLayout("ForRent");
     context.startActivity(intent);
   }
 
@@ -43,7 +50,9 @@ public class AppCustomerRouter implements AppRouter {
   public void navigateToHolidayRentalScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
+
     //cambiar estado a Holiday Rental
+    mediator.changeStartScreenLayout("HolidayRental");
     context.startActivity(intent);
   }
 
