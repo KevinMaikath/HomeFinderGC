@@ -2,6 +2,7 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customerMode.contactScreen.ContactActivity">
@@ -43,17 +44,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="30dp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <ImageView
                         android:id="@+id/user_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/user_icon"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10sp"/>
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/user_icon" />
 
 
                     <EditText
@@ -65,9 +66,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_name"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_name"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -77,17 +78,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <ImageView
                         android:id="@+id/telephone_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/phone"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10sp"/>
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/phone" />
 
 
                     <EditText
@@ -99,9 +100,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_telephone"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_telephone"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -111,17 +112,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <ImageView
                         android:id="@+id/country_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/country"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10sp"/>
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/country" />
 
 
                     <EditText
@@ -133,9 +134,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_country"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_country"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -145,17 +146,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <ImageView
                         android:id="@+id/zipcode_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/zip_code"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10sp"/>
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/zip_code" />
 
 
                     <EditText
@@ -167,9 +168,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_zipcode"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_zipcode"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -179,17 +180,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <ImageView
                         android:id="@+id/address_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/address"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10sp"/>
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/address" />
 
 
                     <EditText
@@ -201,9 +202,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_address"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_address"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -213,17 +214,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <ImageView
                         android:id="@+id/email_image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
-                        android:background="@drawable/mail"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10sp"/>
+                        android:layout_marginLeft="10sp"
+                        android:background="@drawable/mail" />
 
 
                     <EditText
@@ -235,9 +236,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_email"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_email"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -247,9 +248,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <EditText
                         android:id="@+id/subjectEditText"
@@ -260,9 +261,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_subject"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
-                        android:hint="@string/hint_subject"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -272,9 +273,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
                     android:layout_marginTop="5sp"
+                    android:background="@drawable/user_password_rectangle"
                     android:paddingLeft="10sp"
-                    android:paddingRight="10sp"
-                    android:background="@drawable/user_password_rectangle">
+                    android:paddingRight="10sp">
 
                     <EditText
                         android:id="@+id/bodyemailEditText"
@@ -285,9 +286,9 @@
                         android:layout_marginEnd="20sp"
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
+                        android:hint="@string/hint_bodyemail"
                         android:selectAllOnFocus="false"
                         android:singleLine="false"
-                        android:hint="@string/hint_bodyemail"
                         android:textSize="20sp" />
 
                 </RelativeLayout>

@@ -11,7 +11,7 @@
         android:name=".app.AppMediator"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".adminMode.addHouse.AddHouseActivity"
+        <activity android:name=".customerMode.startScreen.StartActivity"
             android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +19,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".customerMode.startScreen.StartActivity"></activity>
+        <!--<activity android:name=".customerMode.startScreen.StartActivity"></activity>-->
         <activity android:name=".customerMode.homeDetails.HomeDetailsActivity"></activity>
+        <activity android:name=".customerMode.aboutUsScreen.AboutUsActivity"></activity>
+        <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
