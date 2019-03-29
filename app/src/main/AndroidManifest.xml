@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".adminMode.login.LoginActivity"
-            android:label="">
+            android:label="LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,7 +23,13 @@
         <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"></activity>
         <activity android:name=".adminMode.addHouse.AddHouseActivity"></activity>
 
-        <activity android:name=".customerMode.startScreen.StartActivity"></activity>
+        <activity android:name=".customerMode.startScreen.StartActivity"
+            android:label="StartScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".customerMode.homeDetails.HomeDetailsActivity"></activity>
         <activity android:name=".customerMode.aboutUsScreen.AboutUsActivity"></activity>
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
