@@ -11,15 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/menu_button"
-            android:layout_width="58dp"
-            android:layout_height="58dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/menu"
-            app:backgroundTint="@color/colorPrimary" />
+        <include
+            android:id="@+id/floatingOptionsButton"
+            layout="@layout/options_floating_button" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -72,15 +66,9 @@
 
     </android.support.design.widget.CoordinatorLayout>
 
-    <android.support.design.widget.NavigationView
+    <include
         android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu"
-        android:background="@color/colorPrimary"/>
+        layout="@layout/options_navigation_view" />
 
 
 </android.support.v4.widget.DrawerLayout>
