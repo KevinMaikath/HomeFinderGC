@@ -187,7 +187,7 @@
                     android:paddingRight="10sp">
 
                     <ImageView
-                        android:id="@+id/add_image_image"
+                        android:id="@+id/add_image_button"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
