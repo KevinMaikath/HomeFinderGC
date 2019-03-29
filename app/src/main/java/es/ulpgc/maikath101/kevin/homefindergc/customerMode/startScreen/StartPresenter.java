@@ -91,6 +91,11 @@ public class StartPresenter implements StartContract.Presenter {
   }
 
   @Override
+  public void goToHomeDetail() {
+    router.navigateToHomeDetailScreen();
+  }
+
+  @Override
   public void checkCurrentScreen() {
     switch (state.currentScreen){
       case "Start":
