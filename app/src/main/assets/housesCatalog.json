@@ -1,0 +1,127 @@
+﻿{
+  "houses": {
+    "forRentHouses": [
+      {
+        "id": 1,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Maspalomas",
+        "rooms": 4,
+        "pricePerMonth": "1.000€"
+      },
+      {
+        "id": 2,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Maspalomas",
+        "rooms": 4,
+        "pricePerMonth": "1.000€"
+      },
+      {
+        "id": 3,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Maspalomas",
+        "rooms": 4,
+        "pricePerMonth": "1.000€"
+      },
+      {
+        "id": 4,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Maspalomas",
+        "rooms": 4,
+        "pricePerMonth": "1.000€"
+      }
+    ],
+    "forSaleHouses": [
+      {
+        "id": 1,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Rico",
+        "rooms": 4,
+        "price": "100.000€"
+      },
+      {
+        "id": 2,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Rico",
+        "rooms": 4,
+        "price": "100.000€"
+      },
+      {
+        "id": 3,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Rico",
+        "rooms": 4,
+        "price": "100.000€"
+      },
+      {
+        "id": 4,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Rico",
+        "rooms": 4,
+        "price": "100.000€"
+      }
+    ],
+    "forHolidayRentalHouses": [
+      {
+        "id": 1,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Mogán",
+        "rooms": 4,
+        "pricePerNight": "40€"
+      },
+      {
+        "id": 2,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Mogán",
+        "rooms": 4,
+        "pricePerNight": "40€"
+      },
+      {
+        "id": 3,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Mogán",
+        "rooms": 4,
+        "pricePerNight": "40€"
+      },
+      {
+        "id": 4,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Mogán",
+        "rooms": 4,
+        "pricePerNight": "40€"
+      },
+      {
+        "id": 5,
+        "referenceNumber": "X.1234.657",
+        "image": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+        "description": "En esta casa se vive bien",
+        "name": "Casa Puerto Mogán",
+        "rooms": 4,
+        "pricePerNight": "40€"
+      }
+    ]
+  }
+}
