@@ -5,6 +5,8 @@ import java.lang.ref.WeakReference;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 public class StartScreen {
 
@@ -16,9 +18,11 @@ public class StartScreen {
     AppMediator mediator = (AppMediator) context.get().getApplication();
     StartState state = mediator.getStartState();
 
+    HouseRepository repository = HouseRepository.getInstance(context.get());
+
     StartContract.Router router = new StartRouter(mediator);
     StartContract.Presenter presenter = new StartPresenter(state);
-    StartContract.Model model = new StartModel();
+    StartContract.Model model = new StartModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));

@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 interface StartContract {
 
@@ -36,10 +37,12 @@ interface StartContract {
     void checkCurrentScreen();
 
     void goToHomeDetail();
+
+    void fetchOnSaleHousesData();
   }
 
   interface Model {
-    String fetchData();
+    void fetchJSONData(HouseRepository.FetchOnSaleHousesDataCallback callback);
   }
 
   interface Router extends AppRouter {

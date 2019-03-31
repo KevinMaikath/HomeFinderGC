@@ -12,13 +12,7 @@
         android:name=".app.AppMediator"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".adminMode.login.LoginActivity"
-            android:label="LoginScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
 
         <activity android:name=".adminMode.selection.SelectionActivity"></activity>
         <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"></activity>
@@ -34,6 +28,14 @@
         <activity android:name=".customerMode.homeDetails.HomeDetailsActivity"></activity>
         <activity android:name=".customerMode.aboutUsScreen.AboutUsActivity"></activity>
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
+
+        <activity android:name=".adminMode.login.LoginActivity"
+            android:label="LoginScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

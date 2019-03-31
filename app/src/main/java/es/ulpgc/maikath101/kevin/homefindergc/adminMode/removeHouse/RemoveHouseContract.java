@@ -25,7 +25,6 @@ interface RemoveHouseContract {
 
   interface Model {
     String fetchData();
-    ArrayList<House> getHousess();
   }
 
   interface Router {

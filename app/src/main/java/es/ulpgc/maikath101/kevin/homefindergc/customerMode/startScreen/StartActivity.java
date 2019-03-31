@@ -51,6 +51,8 @@ public class StartActivity
 
     presenter.checkCurrentScreen();
 
+    presenter.fetchOnSaleHousesData();
+
   }
 
   @Override

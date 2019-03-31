@@ -30,7 +30,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
     super(context, 0, items);
 
-    repository = HouseRepository.getInstance();
+   // repository = HouseRepository.getInstance();
     this.context = context;
     itemList = items;
     clickListener = listener;
@@ -85,7 +85,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
                 new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int id) {
                     Toast.makeText(context,"Se ha presionado YES", Toast.LENGTH_SHORT).show();
-                    repository.getHouses().remove(position);
+                   // repository.getHouses().remove(position);
                     notifyDataSetChanged();
                     dialog.cancel();
                   }

@@ -3,8 +3,11 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SaleHouse;
 
 public class StartPresenter implements StartContract.Presenter {
 
@@ -93,6 +96,18 @@ public class StartPresenter implements StartContract.Presenter {
   @Override
   public void goToHomeDetail() {
     router.navigateToHomeDetailScreen();
+  }
+
+  @Override
+  public void fetchOnSaleHousesData() {
+    model.fetchJSONData(new HouseRepositoryContract.FetchOnSaleHousesDataCallback() {
+      @Override
+      public void setOnSaleHouses(List<SaleHouse> saleHouses) {
+        viewModel.saleHouseList = saleHouses;
+
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override

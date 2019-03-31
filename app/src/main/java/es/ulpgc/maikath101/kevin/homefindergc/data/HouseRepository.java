@@ -1,6 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.data;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -22,7 +23,9 @@ public class HouseRepository implements HouseRepositoryContract {
   public static String TAG = HouseRepository.class.getSimpleName();
 
   public static final String JSON_FILE = "housesCatalog.json";
-  public static final String JSON_ROOT = "categories";
+  public static final String JSON_RENT_HOUSES_ROOT = "forRentHouses";
+  public static final String JSON_SALE_HOUSES_ROOT = "forSaleHouses";
+  public static final String JSON_HOLIDAY_RENTAL_HOUSES_ROOT = "forHolidayRentalHouses";
 
   private static HouseRepository instance = null;
   private Context context;
@@ -75,19 +78,20 @@ public class HouseRepository implements HouseRepositoryContract {
     try {
 
       JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT);
+      JSONArray jsonArrayRentHouses = jsonObject.getJSONArray(JSON_RENT_HOUSES_ROOT);
+      JSONArray jsonArraySaleHouses = jsonObject.getJSONArray(JSON_SALE_HOUSES_ROOT);
+      JSONArray jsonArrayHolidayRentalHouses = jsonObject.getJSONArray(JSON_HOLIDAY_RENTAL_HOUSES_ROOT);
 
-      holidayRentalHouseList = new ArrayList();
 
-      if (jsonArray.length() > 0) {
+      if (jsonArrayHolidayRentalHouses.length() > 0) {
 
         final List<HolidayRentalHouse> holidayRentalHouses = Arrays.asList(
-                gson.fromJson(jsonArray.toString(), HolidayRentalHouse[].class)
+                gson.fromJson(jsonArrayHolidayRentalHouses.toString(), HolidayRentalHouse[].class)
         );
 
-        final List<RentHouse> rentHouses = Arrays.asList(gson.fromJson(jsonArray.toString(), RentHouse[].class));
+        final List<RentHouse> rentHouses = Arrays.asList(gson.fromJson(jsonArrayRentHouses.toString(), RentHouse[].class));
 
-        final List<SaleHouse> saleHouses = Arrays.asList(gson.fromJson(jsonArray.toString(), SaleHouse[].class));
+        final List<SaleHouse> saleHouses = Arrays.asList(gson.fromJson(jsonArraySaleHouses.toString(), SaleHouse[].class));
 
 
         for (HolidayRentalHouse holidayRentalHouse : holidayRentalHouses) {
@@ -126,13 +130,33 @@ public class HouseRepository implements HouseRepositoryContract {
 
 
   @Override
-  public void fetchHousesCatalog(FetchHousesCatalogCallback callback) {
+  public void fetchHousesCatalog(final FetchHousesCatalogCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadCatalogFromJSON(loadJSONFromAsset());
+
+        if (callback != null) {
+          callback.onHousesCatalogLoaded(error);
+          Log.e(TAG, "Hay " + holidayRentalHouseList.size() + " holiday rental houses");
+          Log.e(TAG, "Hay " + saleHouseList.size() + " sale houses");
+          Log.e(TAG, "Hay " + rentHouseList.size() + " rent houses");
+        }
+      }
+    });
 
   }
 
   @Override
-  public void getOnSaleHousesList(FetchOnSaleHousesDataCallback callback) {
-
+  public void getOnSaleHousesList(final FetchOnSaleHousesDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null){
+          callback.setOnSaleHouses(saleHouseList);
+        }
+      }
+    });
   }
 
   @Override
