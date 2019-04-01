@@ -49,10 +49,10 @@ public class StartActivity
     // do the setup
     StartScreen.configure(this);
 
-    presenter.checkCurrentScreen();
-
+    // POR DEFECTO SE CARGAN LAS CASAS QUE ESTÁN EN VENTA
     presenter.fetchOnSaleHousesData();
 
+    presenter.checkCurrentScreen();
   }
 
   @Override
@@ -60,7 +60,8 @@ public class StartActivity
     super.onResume();
 
     // do some work
-    presenter.fetchData();
+    // presenter.fetchData();
+    presenter.checkCurrentScreen();
   }
 
   @Override
@@ -74,6 +75,24 @@ public class StartActivity
 
     // deal with the data
     topText.setText(viewModel.topText);
+  }
+
+  @Override
+  public void displayOnRentHousesList(StartViewModel viewModel) {
+    // TODO Esto es una prueba para que al cambiar de pantalla ver que lo hace bien
+    topText.setText(viewModel.rentHouseList.get(1).getPricePerMonth());
+  }
+
+  @Override
+  public void displayOnHolidayRentalHousesList(StartViewModel viewModel) {
+    // TODO Esto es una prueba para que al cambiar de pantalla ver que lo hace bien
+    topText.setText(viewModel.holidayRentalHousesList.get(1).getPricePerNight());
+  }
+
+  @Override
+  public void displayOnSaleHousesList(StartViewModel viewModel) {
+    // TODO Esto es una prueba para que al cambiar de pantalla ver que lo hace bien
+    topText.setText(viewModel.saleHouseList.get(1).getPrice());
   }
 
 

@@ -7,6 +7,7 @@ import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SaleHouse;
 
 public class StartPresenter implements StartContract.Presenter {
@@ -112,18 +113,22 @@ public class StartPresenter implements StartContract.Presenter {
 
   @Override
   public void checkCurrentScreen() {
-    switch (state.currentScreen){
+    switch (state.currentScreen) {
       case "Start":
         viewModel.topText = R.string.start_label;
+        // view.get().displayOnSaleHousesList(viewModel);
         break;
       case "ForSale":
         viewModel.topText = R.string.for_sale_label;
+        // view.get().displayOnSaleHousesList(viewModel);
         break;
       case "ForRent":
         viewModel.topText = R.string.for_rent_label;
+        // view.get().displayOnRentHousesList(viewModel);
         break;
       case "HolidayRental":
         viewModel.topText = R.string.holiday_rental_label;
+        // view.get().displayOnHolidayRentalHousesList(viewModel);
         break;
     }
   }

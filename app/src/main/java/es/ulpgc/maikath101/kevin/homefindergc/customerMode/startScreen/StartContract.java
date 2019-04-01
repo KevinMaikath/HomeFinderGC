@@ -11,6 +11,12 @@ interface StartContract {
     void injectPresenter(Presenter presenter);
 
     void displayData(StartViewModel viewModel);
+
+    void displayOnRentHousesList(StartViewModel viewModel);
+
+    void displayOnHolidayRentalHousesList(StartViewModel viewModel);
+
+    void displayOnSaleHousesList(StartViewModel viewModel);
   }
 
   interface Presenter {
@@ -43,6 +49,9 @@ interface StartContract {
 
   interface Model {
     void fetchJSONData(HouseRepository.FetchOnSaleHousesDataCallback callback);
+    void fetchOnRentHousesData(HouseRepository.FetchOnRentHousesDataCallback callback);
+    void fetchOnHolidayRentalHousesData(HouseRepository.FetchOnHolidayRentalHousesDataCallback callback);
+    void fetchOnSaleHousesData(HouseRepository.FetchOnSaleHousesDataCallback callback);
   }
 
   interface Router extends AppRouter {
