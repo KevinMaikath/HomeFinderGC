@@ -9,7 +9,7 @@ public interface LoginContract {
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(LoginViewModel viewModel);
+        void wrongCredentials();
     }
 
     interface Presenter {
@@ -19,13 +19,11 @@ public interface LoginContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
-
-        void onSignInPressed();
+        void onSignInPressed(String user, String password);
     }
 
     interface Model {
-        String fetchData();
+        boolean checkCredentials(String user, String password);
     }
 
     interface Router {

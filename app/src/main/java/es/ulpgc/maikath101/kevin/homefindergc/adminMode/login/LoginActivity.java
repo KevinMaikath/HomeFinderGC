@@ -1,56 +1,55 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 
 public class LoginActivity
         extends AppCompatActivity implements LoginContract.View {
 
-    public static String TAG = LoginActivity.class.getSimpleName();
+  public static String TAG = LoginActivity.class.getSimpleName();
 
-    private LoginContract.Presenter presenter;
-    private Button signInButton;
+  private LoginContract.Presenter presenter;
+  private Button signInButton;
+  private EditText userEditText;
+  private EditText passwordEditText;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_login);
 
-        // do the setup
-        LoginScreen.configure(this);
-        signInButton = findViewById(R.id.signInButton);
+    // do the setup
+    LoginScreen.configure(this);
+    userEditText = findViewById(R.id.userEditText);
+    passwordEditText = findViewById(R.id.passwordEditText);
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.onSignInPressed();
-            }
-        });
-    }
+    signInButton = findViewById(R.id.signInButton);
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+    signInButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.onSignInPressed(userEditText.toString(), passwordEditText.toString());
+      }
+    });
+  }
 
-        // do some work
-        presenter.fetchData();
-    }
+  @Override
+  public void injectPresenter(LoginContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void injectPresenter(LoginContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+  @Override
+  public void wrongCredentials() {
+    Toast.makeText(getApplicationContext(), "El usuario o la contraseña son incorrectos", Toast.LENGTH_LONG).show();
+  }
 
-    @Override
-    public void displayData(LoginViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
 
-        // deal with the data
-
-    }
 }
