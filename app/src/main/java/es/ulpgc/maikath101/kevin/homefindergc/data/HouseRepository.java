@@ -128,6 +128,33 @@ public class HouseRepository implements HouseRepositoryContract {
     this.holidayRentalHouseList.add(holidayRentalHouse);
   }
 
+  private SaleHouse getSaleHouseDetail(int id) {
+    for (int i = 0; i < saleHouseList.size(); i++) {
+      if (id == saleHouseList.get(i).getId()) {
+        return saleHouseList.get(i);
+      }
+    }
+    return null;
+  }
+
+  private RentHouse getRentHouseDetail(int id) {
+    for (int i = 0; i < rentHouseList.size(); i++) {
+      if (id == rentHouseList.get(i).getId()) {
+        return rentHouseList.get(i);
+      }
+    }
+    return null;
+  }
+
+  private HolidayRentalHouse getHolidayRentalDetail(int id) {
+    for (int i = 0; i < holidayRentalHouseList.size(); i++) {
+      if (id == holidayRentalHouseList.get(i).getId()) {
+        return holidayRentalHouseList.get(i);
+      }
+    }
+    return null;
+  }
+
 
   @Override
   public void fetchHousesCatalog(final FetchHousesCatalogCallback callback) {
@@ -152,7 +179,7 @@ public class HouseRepository implements HouseRepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (callback != null){
+        if (callback != null) {
           callback.setOnSaleHouses(saleHouseList);
         }
       }
@@ -160,27 +187,62 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
-  public void getOnRentHousesList(FetchOnRentHousesDataCallback callback) {
-
+  public void getOnRentHousesList(final FetchOnRentHousesDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setOnRentHouses(rentHouseList);
+        }
+      }
+    });
   }
 
   @Override
-  public void getOnHolidayRentalHousesList(FetchOnHolidayRentalHousesDataCallback callback) {
-
+  public void getOnHolidayRentalHousesList(final FetchOnHolidayRentalHousesDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setOnHolidayRentalHouses(holidayRentalHouseList);
+        }
+      }
+    });
   }
 
   @Override
-  public void getOnSaleHouseDetail(int id, FetchOnSaleHouseDetailCallback callback) {
-
+  public void getOnSaleHouseDetail(final int id, final FetchOnSaleHouseDetailCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setOnSaleHouseDetail(getSaleHouseDetail(id));
+        }
+      }
+    });
   }
 
   @Override
-  public void getOnRentHouseDetail(int id, FetchOnRentHouseDetailCallback callback) {
-
+  public void getOnRentHouseDetail(final int id, final FetchOnRentHouseDetailCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setOnRentHouseDetail(getRentHouseDetail(id));
+        }
+      }
+    });
   }
 
   @Override
-  public void getOnHolidayRentalHouseDetail(int id, FetchOnHolidayRentalHouseDetailCallback callback) {
-
+  public void getOnHolidayRentalHouseDetail(final int id, final FetchOnHolidayRentalHouseDetailCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setOnHolidayRentalHouseDetail(getHolidayRentalDetail(id));
+        }
+      }
+    });
   }
 }
