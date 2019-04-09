@@ -18,7 +18,9 @@
         <activity android:name=".adminMode.addHouse.AddHouseActivity"></activity>
 
         <activity android:name=".customerMode.startScreen.StartActivity"
-            android:label="StartScreen">
+            android:label="StartScreen"
+            android:icon="@drawable/icono_app_azul"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,7 +31,9 @@
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
 
         <activity android:name=".adminMode.login.LoginActivity"
-            android:label="LoginScreen">
+            android:label="LoginScreen"
+            android:icon="@drawable/icono_app_blanco"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
