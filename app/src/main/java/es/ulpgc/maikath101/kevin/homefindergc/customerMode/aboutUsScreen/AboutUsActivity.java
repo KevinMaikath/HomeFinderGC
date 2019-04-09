@@ -82,7 +82,8 @@ public class AboutUsActivity extends AppCompatActivity implements AboutUsContrac
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      super.onBackPressed();
+      presenter.goToStart();
+      finish();
     }
   }
 

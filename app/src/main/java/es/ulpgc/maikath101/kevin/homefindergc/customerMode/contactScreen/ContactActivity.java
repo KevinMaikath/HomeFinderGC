@@ -71,7 +71,8 @@ public class ContactActivity
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      super.onBackPressed();
+      presenter.goToStart();
+      finish();
     }
   }
 

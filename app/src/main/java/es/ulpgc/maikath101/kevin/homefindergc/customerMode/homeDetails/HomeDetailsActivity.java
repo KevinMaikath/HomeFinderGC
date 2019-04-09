@@ -14,7 +14,7 @@ import android.widget.TextView;
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 
 public class HomeDetailsActivity
-        extends AppCompatActivity implements HomeDetailsContract.View, NavigationView.OnNavigationItemSelectedListener{
+        extends AppCompatActivity implements HomeDetailsContract.View, NavigationView.OnNavigationItemSelectedListener {
 
   public static String TAG = HomeDetailsActivity.class.getSimpleName();
 
@@ -47,8 +47,6 @@ public class HomeDetailsActivity
     navigationView.setNavigationItemSelectedListener(this);
 
 
-
-
     // do the setup
     HomeDetailsScreen.configure(this);
   }
@@ -79,7 +77,7 @@ public class HomeDetailsActivity
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      super.onBackPressed();
+      finish();
     }
   }
 
@@ -108,19 +106,19 @@ public class HomeDetailsActivity
   }
 
 
-  public void onSummaryButtonClicked(View view){
+  public void onSummaryButtonClicked(View view) {
     presenter.summaryButtonClicked();
   }
 
-  public void onDescriptionButtonClicked(View view){
+  public void onDescriptionButtonClicked(View view) {
     presenter.descriptionButtonClicked();
   }
 
-  public void onLocationButtonClicked(View view){
+  public void onLocationButtonClicked(View view) {
     presenter.locationButtonClicked();
   }
 
-  public void onDistributionButtonClicked(View view){
+  public void onDistributionButtonClicked(View view) {
     presenter.distributionButtonClicked();
   }
 

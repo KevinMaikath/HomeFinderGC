@@ -40,6 +40,7 @@ interface HomeDetailsContract {
     void locationButtonClicked();
 
     void distributionButtonClicked();
+
   }
 
   interface Model {
