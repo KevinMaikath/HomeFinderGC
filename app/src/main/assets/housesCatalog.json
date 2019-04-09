@@ -14,7 +14,18 @@
       "parking": false,
       "community": "0€",
       "floor_type": "Residencial",
-      "surface": 85
+      "surface": 85,
+      "imagenes":[
+        {
+          "url":""
+        },
+        {
+          "url":""
+        },
+        {
+          "url":""
+        }
+      ]
     },
     {
       "id": 2,

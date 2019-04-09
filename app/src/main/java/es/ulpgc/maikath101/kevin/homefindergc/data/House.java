@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.data;
 
+import java.util.List;
+
 public class House {
 
   private String description;
@@ -15,8 +17,9 @@ public class House {
   private String community;
   private String floor_type;
   private int surface;
+  private List<String> imagenes;
 
-  public House(String description, String referenceNumber, String image, int id, String name, int rooms, String location, boolean pool, int bathrooms, boolean parking, String community, String floor_type, int surface) {
+  public House(String description, String referenceNumber, String image, int id, String name, int rooms, String location, boolean pool, int bathrooms, boolean parking, String community, String floor_type, int surface, List<String> imagenes) {
     this.description = description;
     this.referenceNumber = referenceNumber;
     this.image = image;
@@ -30,6 +33,15 @@ public class House {
     this.community = community;
     this.floor_type = floor_type;
     this.surface = surface;
+    this.imagenes = imagenes;
+  }
+
+  public List<String> getImagenes() {
+    return imagenes;
+  }
+
+  public void setImagenes(List<String> imagenes) {
+    this.imagenes = imagenes;
   }
 
   public boolean isPool() {
