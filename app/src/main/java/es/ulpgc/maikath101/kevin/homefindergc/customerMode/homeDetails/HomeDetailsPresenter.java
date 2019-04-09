@@ -73,4 +73,32 @@ public class HomeDetailsPresenter implements HomeDetailsContract.Presenter {
     router.navigateToContactScreen();
   }
 
+  @Override
+  public void summaryButtonClicked() {
+    String info = model.changeToSummaryInfo();
+    viewModel.dataShown = info;
+    fetchData();
+  }
+
+  @Override
+  public void descriptionButtonClicked() {
+    String info = model.changeToDescriptionInfo();
+    viewModel.dataShown = info;
+    fetchData();
+  }
+
+  @Override
+  public void locationButtonClicked() {
+    String info = model.changeToLocationInfo();
+    viewModel.dataShown = info;
+    fetchData();
+  }
+
+  @Override
+  public void distributionButtonClicked() {
+    String info = model.changeToDistributionInfo();
+    viewModel.dataShown = info;
+    fetchData();
+  }
+
 }

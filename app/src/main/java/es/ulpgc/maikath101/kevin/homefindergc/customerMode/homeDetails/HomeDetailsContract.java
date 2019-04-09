@@ -32,10 +32,26 @@ interface HomeDetailsContract {
     void goToAboutUS();
 
     void goToContact();
+
+    void summaryButtonClicked();
+
+    void descriptionButtonClicked();
+
+    void locationButtonClicked();
+
+    void distributionButtonClicked();
   }
 
   interface Model {
     String fetchData();
+
+    String changeToSummaryInfo();
+
+    String changeToDescriptionInfo();
+
+    String changeToLocationInfo();
+
+    String changeToDistributionInfo();
   }
 
   interface Router extends AppRouter {

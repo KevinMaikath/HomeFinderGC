@@ -7,7 +7,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -22,11 +21,14 @@ public class HomeDetailsActivity
   private HomeDetailsContract.Presenter presenter;
   private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
+  private TextView textInfo;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home_details);
+
+    textInfo = findViewById(R.id.text_info);
 
     floatingActionButton = findViewById(R.id.floatingOptionsButton);
     floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +70,7 @@ public class HomeDetailsActivity
   public void displayData(HomeDetailsViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
-    // deal with the data
+    textInfo.setText(viewModel.dataShown);
   }
 
 
@@ -103,6 +105,23 @@ public class HomeDetailsActivity
 
     drawerLayout.closeDrawer(GravityCompat.START);
     return true;
+  }
+
+
+  public void onSummaryButtonClicked(View view){
+    presenter.summaryButtonClicked();
+  }
+
+  public void onDescriptionButtonClicked(View view){
+    presenter.descriptionButtonClicked();
+  }
+
+  public void onLocationButtonClicked(View view){
+    presenter.locationButtonClicked();
+  }
+
+  public void onDistributionButtonClicked(View view){
+    presenter.distributionButtonClicked();
   }
 
 }

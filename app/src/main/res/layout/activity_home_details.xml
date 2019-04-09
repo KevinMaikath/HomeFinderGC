@@ -106,40 +106,44 @@
                 android:paddingRight="10dp">
 
                 <Button
-                    android:id="@+id/button_1"
+                    android:id="@+id/button_summary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/resumen_label"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:onClick="onSummaryButtonClicked"/>
 
                 <Button
-                    android:id="@+id/button_2"
+                    android:id="@+id/button_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/button_1"
+                    android:layout_toRightOf="@+id/button_summary"
                     android:text="@string/descripcion_label"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:onClick="onDescriptionButtonClicked"/>
 
                 <Button
-                    android:id="@+id/button_3"
+                    android:id="@+id/button_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/button_2"
+                    android:layout_toRightOf="@+id/button_description"
                     android:text="@string/ubicacion_label"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:onClick="onLocationButtonClicked"/>
 
                 <Button
-                    android:id="@+id/button_4"
+                    android:id="@+id/button_distribution"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/button_3"
+                    android:layout_toRightOf="@+id/button_location"
                     android:text="@string/distribucion_label"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:onClick="onDistributionButtonClicked"/>
 
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/text_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Información solicitada" />
