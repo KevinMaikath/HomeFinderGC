@@ -165,6 +165,7 @@ public class HouseRepository implements HouseRepositoryContract {
         if (callback != null) {
           callback.onHousesCatalogLoaded(error);
           Log.e(TAG, "Hay " + holidayRentalHouseList.size() + " holiday rental houses");
+          Log.e(TAG, "Hay " + holidayRentalHouseList.get(1).getImagenes().size()+ " imagenes");
           Log.e(TAG, "Hay " + saleHouseList.size() + " sale houses");
           Log.e(TAG, "Hay " + rentHouseList.size() + " rent houses");
         }
