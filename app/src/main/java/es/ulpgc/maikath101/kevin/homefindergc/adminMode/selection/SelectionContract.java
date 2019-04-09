@@ -6,8 +6,6 @@ interface SelectionContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
-
-        void displayData(SelectionViewModel viewModel);
     }
 
     interface Presenter {
@@ -17,18 +15,17 @@ interface SelectionContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void goToRemoveHouseScreen();
+
+        void goToAddHouseScreen();
     }
 
     interface Model {
-        String fetchData();
     }
 
     interface Router {
-        void navigateToNextScreen();
+        void navigateToRemoveHouseScreen();
 
-        void passDataToNextScreen(SelectionState state);
-
-        SelectionState getDataFromPreviousScreen();
+        void navigateToAddHouseScreen();
     }
 }

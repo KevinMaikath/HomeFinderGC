@@ -33,26 +33,13 @@ public class SelectionPresenter implements SelectionContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
-        // Log.e(TAG, "fetchData()");
+    public void goToRemoveHouseScreen() {
+        router.navigateToRemoveHouseScreen();
+    }
 
-        // set passed state
-        SelectionState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
-
-        // update the view
-        view.get().displayData(viewModel);
-
+    @Override
+    public void goToAddHouseScreen() {
+        router.navigateToAddHouseScreen();
     }
 
 
