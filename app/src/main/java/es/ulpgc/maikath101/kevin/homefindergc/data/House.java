@@ -17,9 +17,9 @@ public class House {
   private String community;
   private String floor_type;
   private int surface;
-  private List<String> imagenes;
+  private List<ImageHouse> imagenes;
 
-  public House(String description, String referenceNumber, String image, int id, String name, int rooms, String location, boolean pool, int bathrooms, boolean parking, String community, String floor_type, int surface, List<String> imagenes) {
+  public House(String description, String referenceNumber, String image, int id, String name, int rooms, String location, boolean pool, int bathrooms, boolean parking, String community, String floor_type, int surface, List<ImageHouse> imagenes) {
     this.description = description;
     this.referenceNumber = referenceNumber;
     this.image = image;
@@ -36,11 +36,11 @@ public class House {
     this.imagenes = imagenes;
   }
 
-  public List<String> getImagenes() {
+  public List<ImageHouse> getImagenes() {
     return imagenes;
   }
 
-  public void setImagenes(List<String> imagenes) {
+  public void setImagenes(List<ImageHouse> imagenes) {
     this.imagenes = imagenes;
   }
 
