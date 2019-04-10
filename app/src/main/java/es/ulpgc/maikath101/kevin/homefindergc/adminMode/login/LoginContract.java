@@ -20,6 +20,8 @@ public interface LoginContract {
         void injectRouter(Router router);
 
         void onSignInPressed(String user, String password);
+
+        void navigateToNextScreen();
     }
 
     interface Model {

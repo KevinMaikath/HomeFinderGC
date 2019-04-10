@@ -45,6 +45,9 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
     // set passed state
     // viewModel.houses = model.getHousess();
     // update the view
+
+    // TODO esto hay que borrarlo e implementarlo bien
+
     List<House> houses = new ArrayList<>();
     houses.add(0,new HolidayRentalHouse("","","",1,"",2,
             "",true,2,false,"","",20

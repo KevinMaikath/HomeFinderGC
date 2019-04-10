@@ -36,7 +36,8 @@ public class LoginActivity
     signInButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        presenter.onSignInPressed(userEditText.toString(), passwordEditText.toString());
+        presenter.navigateToNextScreen();
+        // presenter.onSignInPressed(userEditText.toString(), passwordEditText.toString());
       }
     });
   }
