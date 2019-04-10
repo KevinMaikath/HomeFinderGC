@@ -16,7 +16,7 @@
             layout="@layout/options_floating_button" />
 
         <ScrollView
-            android:id="@+id/topBar"
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -30,9 +30,9 @@
                     android:id="@+id/topText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="30sp"
                     android:paddingTop="10dp"
                     android:paddingBottom="30dp"
-                    android:layout_marginTop="30sp"
                     android:text="@string/start_label"
                     android:textSize="30sp" />
 
@@ -95,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
-                        android:src="@drawable/password_eye"/>
+                        android:src="@drawable/password_eye" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
-                        android:src="@drawable/password_eye"/>
+                        android:src="@drawable/password_eye" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"

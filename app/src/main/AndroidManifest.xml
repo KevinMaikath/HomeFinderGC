@@ -13,7 +13,7 @@
 
 
 
-        <activity android:name=".adminMode.selection.SelectionActivity"></activity>
+
         <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"></activity>
         <activity android:name=".adminMode.addHouse.AddHouseActivity"></activity>
 
@@ -30,7 +30,7 @@
         <activity android:name=".customerMode.aboutUsScreen.AboutUsActivity"></activity>
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
 
-        <activity android:name=".adminMode.login.LoginActivity"
+        <activity android:name=".adminMode.selection.SelectionActivity"
             android:label="LoginScreen"
             android:icon="@drawable/icono_app_blanco"
             >
