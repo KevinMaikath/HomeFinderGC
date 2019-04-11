@@ -33,6 +33,7 @@
         <activity android:name=".adminMode.login.LoginActivity"
             android:label="LoginScreen"
             android:icon="@drawable/icono_app_blanco"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
