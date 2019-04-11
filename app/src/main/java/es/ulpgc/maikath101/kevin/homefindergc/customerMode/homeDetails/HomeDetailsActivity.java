@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
@@ -77,7 +78,7 @@ public class HomeDetailsActivity
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      finish();
+      super.onBackPressed();
     }
   }
 

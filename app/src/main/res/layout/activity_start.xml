@@ -37,6 +37,7 @@
                     android:textSize="30sp" />
 
                 <RelativeLayout
+                    android:id="@+id/relative_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
@@ -80,6 +81,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/relative_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
@@ -123,6 +125,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/relative_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"

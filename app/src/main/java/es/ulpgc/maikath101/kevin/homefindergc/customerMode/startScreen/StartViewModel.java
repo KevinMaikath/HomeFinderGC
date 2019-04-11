@@ -4,6 +4,7 @@ import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HolidayRentalHouse;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SaleHouse;
 
@@ -13,4 +14,7 @@ public class StartViewModel {
   public List<SaleHouse> saleHouseList;
   public List<RentHouse> rentHouseList;
   public List<HolidayRentalHouse> holidayRentalHousesList;
+
+  // TODO cambiar el viewModel para que solo tenga la lista que debe presentar en pantalla
+  //public List<House> houseList;
 }

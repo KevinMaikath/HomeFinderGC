@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
@@ -74,6 +76,14 @@ public class StartActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
+    int text_string = viewModel.topText;
+    if(text_string == R.string.holiday_rental_label){
+      topText.setTextSize(24);
+      topText.setPadding(40,10,0,30);
+    } else {
+      topText.setTextSize(30);
+      topText.setPadding(0,10,0,30);
+    }
     topText.setText(viewModel.topText);
   }
 
@@ -85,6 +95,8 @@ public class StartActivity
       super.onBackPressed();
     }
   }
+
+
 
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
@@ -112,4 +124,5 @@ public class StartActivity
   public void onHouseClicked(View view){
     presenter.goToHomeDetail();
   }
+
 }

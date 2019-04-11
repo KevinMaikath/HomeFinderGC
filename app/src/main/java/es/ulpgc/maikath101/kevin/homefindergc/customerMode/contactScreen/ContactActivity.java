@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 
@@ -71,8 +72,7 @@ public class ContactActivity
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      presenter.goToStart();
-      finish();
+      super.onBackPressed();
     }
   }
 

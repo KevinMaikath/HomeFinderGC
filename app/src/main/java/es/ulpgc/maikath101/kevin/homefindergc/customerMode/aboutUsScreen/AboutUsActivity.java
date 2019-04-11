@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -82,8 +83,7 @@ public class AboutUsActivity extends AppCompatActivity implements AboutUsContrac
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      presenter.goToStart();
-      finish();
+      super.onBackPressed();
     }
   }
 

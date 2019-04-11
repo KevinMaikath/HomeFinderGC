@@ -6,14 +6,13 @@
 
     <ImageButton
 
+        android:id="@+id/button_nav_header"
         android:layout_width="30sp"
         android:layout_height="30sp"
-        android:id="@+id/button_nav_header"
-        android:background="@drawable/menu"
         android:layout_marginLeft="10sp"
         android:layout_marginTop="20sp"
-        android:scaleType="fitCenter"
-        />
+        android:background="@drawable/menu"
+        android:scaleType="fitCenter" />
 
     <ImageView
         android:layout_width="210sp"
