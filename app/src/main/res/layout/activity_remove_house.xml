@@ -42,7 +42,8 @@
         android:layout_marginTop="55sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include layout="@layout/remove_house_list"/>
+
+        <include layout="@layout/remove_house_list" />
     </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>
