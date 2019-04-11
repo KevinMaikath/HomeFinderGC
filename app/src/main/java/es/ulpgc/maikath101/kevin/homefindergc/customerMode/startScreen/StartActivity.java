@@ -78,25 +78,6 @@ public class StartActivity
   }
 
   @Override
-  public void displayOnRentHousesList(StartViewModel viewModel) {
-    // TODO Esto es una prueba para que al cambiar de pantalla ver que lo hace bien
-    topText.setText(viewModel.rentHouseList.get(1).getPricePerMonth());
-  }
-
-  @Override
-  public void displayOnHolidayRentalHousesList(StartViewModel viewModel) {
-    // TODO Esto es una prueba para que al cambiar de pantalla ver que lo hace bien
-    topText.setText(viewModel.holidayRentalHousesList.get(1).getPricePerNight());
-  }
-
-  @Override
-  public void displayOnSaleHousesList(StartViewModel viewModel) {
-    // TODO Esto es una prueba para que al cambiar de pantalla ver que lo hace bien
-    topText.setText(viewModel.saleHouseList.get(1).getPrice());
-  }
-
-
-  @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);

@@ -12,11 +12,6 @@ interface StartContract {
 
     void displayData(StartViewModel viewModel);
 
-    void displayOnRentHousesList(StartViewModel viewModel);
-
-    void displayOnHolidayRentalHousesList(StartViewModel viewModel);
-
-    void displayOnSaleHousesList(StartViewModel viewModel);
   }
 
   interface Presenter {

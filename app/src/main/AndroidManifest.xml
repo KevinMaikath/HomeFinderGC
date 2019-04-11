@@ -13,13 +13,14 @@
         android:roundIcon="@mipmap/icono_app_azul_round">
 
 
-        <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"></activity>
+        <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"
+            android:label=""></activity>
         <activity android:name=".adminMode.addHouse.AddHouseActivity"></activity>
+        <activity android:name=".adminMode.selection.SelectionActivity"></activity>
 
         <activity android:name=".customerMode.startScreen.StartActivity"
             android:label="StartScreen"
-            android:icon="@drawable/icono_app_azul"
-            >
+            android:icon="@drawable/icono_app_azul">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
