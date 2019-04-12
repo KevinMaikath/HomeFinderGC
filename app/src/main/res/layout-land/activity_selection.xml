@@ -19,10 +19,10 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/addHouseButton" />
+        app:layout_constraintTop_toBottomOf="@+id/removeHouseButton" />
 
     <Button
-        android:id="@+id/addHouseButton"
+        android:id="@+id/removeHouseButton"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="80dp"
@@ -43,7 +43,7 @@
         android:layout_marginEnd="40dp"
         android:background="@drawable/logo_add_screen"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/addHouseButton"
+        app:layout_constraintBottom_toTopOf="@+id/removeHouseButton"
         app:layout_constraintDimensionRatio="h,4:1.5"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.5"
