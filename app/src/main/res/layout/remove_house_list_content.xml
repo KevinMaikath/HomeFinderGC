@@ -1,53 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
+    android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/removeHouseImageView"
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_marginLeft="5sp"
-        android:layout_marginTop="5sp"
-        android:background="@drawable/password_eye" />
+        android:id="@+id/imageView3"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="h,4:3"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/password_eye" />
 
-    <TextView
-        android:id="@+id/referenceNumberTextView"
-        android:layout_width="match_parent"
-        android:layout_height="20sp"
-        android:layout_alignLeft="@+id/removeHouseImageView"
-        android:layout_marginRight="80sp"
-        android:layout_marginLeft="80sp"
-        android:layout_marginTop="10sp"
-        android:text="Esto es una prueba para ver como queda"/>
+    <Button
+        android:id="@+id/removeHouse"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/minus_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="@+id/guideline12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
 
     <TextView
         android:id="@+id/apartmentNameTextView"
-        android:layout_width="match_parent"
-        android:layout_height="20sp"
-        android:layout_alignLeft="@+id/removeHouseImageView"
-        android:layout_alignTop="@+id/referenceNumberTextView"
-        android:layout_marginRight="80sp"
-        android:layout_marginLeft="80sp"
-        android:layout_marginTop="30sp"
-        android:text="Esto es una prueba para ver como queda"/>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Nombre de la casa"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
+    <TextView
+        android:id="@+id/referenceNumberTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Referencia"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/apartmentNameTextView"
+        app:layout_constraintVertical_bias="0.636" />
 
-    <ImageButton
-        android:id="@+id/removeHouse"
-        android:layout_width="30sp"
-        android:layout_height="30sp"
-        android:layout_marginStart="350sp"
-        android:layout_centerVertical="true"
-        android:background="@drawable/minus_button"
-        />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.94160587" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.74" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
