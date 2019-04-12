@@ -66,7 +66,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
     final TextView referenceNumber = itemView.findViewById(R.id.referenceNumberTextView);
     final TextView apartmentName = itemView.findViewById(R.id.apartmentNameTextView);
-    final ImageButton button = itemView.findViewById(R.id.removeHouse);
+    final Button button = itemView.findViewById(R.id.removeHouse);
 
     // Cada vez que se presiona un botón aparece un Dialog
     button.setOnClickListener(new View.OnClickListener() {
