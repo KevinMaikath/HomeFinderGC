@@ -2,10 +2,8 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 
@@ -24,7 +22,7 @@ public class SelectionActivity
         setContentView(R.layout.activity_selection);
 
         addHouseBt = findViewById(R.id.addHouseButton);
-        removeHouseBt = findViewById(R.id.removeHouseButton);
+        removeHouseBt = findViewById(R.id.addHouseButton);
 
         addHouseBt.setOnClickListener(new View.OnClickListener() {
             @Override
