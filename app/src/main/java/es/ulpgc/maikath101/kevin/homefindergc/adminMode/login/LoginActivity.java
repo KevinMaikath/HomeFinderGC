@@ -24,14 +24,14 @@ public class LoginActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_login);
+    setContentView(R.layout.activity_login2);
 
     // do the setup
     LoginScreen.configure(this);
-    userEditText = findViewById(R.id.userEditText);
-    passwordEditText = findViewById(R.id.passwordEditText);
+    userEditText = findViewById(R.id.userEditText2);
+    passwordEditText = findViewById(R.id.passwordEditText2);
 
-    signInButton = findViewById(R.id.signInButton);
+    signInButton = findViewById(R.id.signInButton2);
 
     signInButton.setOnClickListener(new View.OnClickListener() {
       @Override

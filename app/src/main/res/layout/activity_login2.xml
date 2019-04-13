@@ -121,7 +121,7 @@
         app:layout_constraintTop_toTopOf="@+id/whiteRectange" />
 
     <EditText
-        android:id="@+id/userNameEditText"
+        android:id="@+id/userEditText2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -130,9 +130,9 @@
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:hint="Username"
-        android:singleLine="false"
-        android:paddingLeft="10sp"
         android:inputType="textPassword"
+        android:paddingLeft="10sp"
+        android:singleLine="false"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="@+id/userRectangle"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
@@ -167,18 +167,18 @@
         app:layout_constraintTop_toBottomOf="@+id/userRectangle" />
 
     <EditText
-        android:id="@+id/passwdEditText"
+        android:id="@+id/passwordEditText2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:hint="Password"
-        android:singleLine="false"
-        android:inputType="textPassword"
         android:background="@android:color/transparent"
+        android:hint="Password"
+        android:inputType="textPassword"
         android:paddingLeft="10sp"
+        android:singleLine="false"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="@+id/passwdRectangle"
         app:layout_constraintEnd_toStartOf="@+id/imageView8"
@@ -199,7 +199,7 @@
         app:srcCompat="@drawable/password_eye" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signInButton2"
         android:layout_width="298dp"
         android:layout_height="67dp"
         android:layout_marginStart="24dp"
