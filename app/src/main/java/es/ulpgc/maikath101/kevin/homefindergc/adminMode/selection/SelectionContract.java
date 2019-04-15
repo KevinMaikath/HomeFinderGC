@@ -2,7 +2,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection;
 
 import java.lang.ref.WeakReference;
 
-interface SelectionContract {
+public interface SelectionContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
