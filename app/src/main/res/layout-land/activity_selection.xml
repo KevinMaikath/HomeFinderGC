@@ -8,26 +8,22 @@
 
     <Button
         android:id="@+id/removeHouseButton"
-        android:layout_width="0dp"
+        android:layout_width="279dp"
         android:layout_height="70dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/remove_house_button"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/removeHouseButton" />
+        app:layout_constraintStart_toStartOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/removeHouseButton"
-        android:layout_width="0dp"
+        android:id="@+id/addHouseButton"
+        android:layout_width="279dp"
         android:layout_height="70dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/add_house_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,9 +42,10 @@
         app:layout_constraintBottom_toTopOf="@+id/removeHouseButton"
         app:layout_constraintDimensionRatio="h,4:1.5"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/guideline8" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0.064" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
