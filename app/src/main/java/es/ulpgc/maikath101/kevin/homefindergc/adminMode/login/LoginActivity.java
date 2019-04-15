@@ -36,8 +36,8 @@ public class LoginActivity
     signInButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        presenter.navigateToNextScreen();
-        // presenter.onSignInPressed(userEditText.toString(), passwordEditText.toString());
+        // presenter.navigateToNextScreen();
+        presenter.onSignInPressed(userEditText.toString(), passwordEditText.toString());
       }
     });
   }
@@ -49,7 +49,8 @@ public class LoginActivity
 
   @Override
   public void wrongCredentials() {
-    Toast.makeText(getApplicationContext(), "El usuario o la contraseña son incorrectos", Toast.LENGTH_LONG).show();
+    // presenter.navigateToNextScreen();
+    Toast.makeText(getBaseContext(), "El usuario o la contraseña son incorrectos", Toast.LENGTH_LONG).show();
   }
 
 

@@ -18,14 +18,7 @@
         <activity android:name=".adminMode.addHouse.AddHouseActivity"></activity>
         <activity android:name=".adminMode.selection.SelectionActivity"></activity>
 
-        <activity android:name=".customerMode.startScreen.StartActivity"
-            android:label="StartScreen"
-            android:icon="@drawable/icono_app_azul">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity android:name=".customerMode.homeDetails.HomeDetailsActivity"></activity>
         <activity android:name=".customerMode.aboutUsScreen.AboutUsActivity"></activity>
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
@@ -35,6 +28,15 @@
             android:icon="@drawable/icono_app_blanco"
             android:screenOrientation="portrait"
             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".customerMode.startScreen.StartActivity"
+            android:label="StartScreen"
+            android:icon="@drawable/icono_app_azul">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
