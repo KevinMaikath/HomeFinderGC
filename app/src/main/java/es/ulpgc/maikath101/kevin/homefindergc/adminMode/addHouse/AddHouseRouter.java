@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
@@ -32,5 +33,12 @@ public class AddHouseRouter implements AddHouseContract.Router {
   public AddHouseState getDataFromPreviousScreen() {
     AddHouseState state = mediator.getAddHouseState();
     return state;
+  }
+
+  @Override
+  public void launchCamera() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+    context.startActivity(intent);
   }
 }

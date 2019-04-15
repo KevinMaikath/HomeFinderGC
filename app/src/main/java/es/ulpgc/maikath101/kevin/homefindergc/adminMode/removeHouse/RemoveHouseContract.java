@@ -33,5 +33,6 @@ interface RemoveHouseContract {
     void passDataToNextScreen(RemoveHouseState state);
 
     RemoveHouseState getDataFromPreviousScreen();
+
   }
 }

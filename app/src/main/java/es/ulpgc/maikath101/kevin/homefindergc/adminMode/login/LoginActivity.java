@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,8 @@ public class LoginActivity
       @Override
       public void onClick(View v) {
         // presenter.navigateToNextScreen();
-        presenter.onSignInPressed(userEditText.toString(), passwordEditText.toString());
+        presenter.onSignInPressed(userEditText.getText().toString(), passwordEditText.getText().toString());
+        Log.e(TAG, "El usuario es " + userEditText.getText().toString());
       }
     });
   }

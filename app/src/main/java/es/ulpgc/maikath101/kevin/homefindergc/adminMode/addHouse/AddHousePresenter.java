@@ -43,5 +43,10 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
 
   }
 
+  @Override
+  public void launchCamera() {
+    router.launchCamera();
+  }
+
 
 }

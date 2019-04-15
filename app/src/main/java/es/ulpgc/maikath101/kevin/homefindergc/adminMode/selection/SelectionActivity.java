@@ -21,7 +21,7 @@ public class SelectionActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
-        addHouseBt = findViewById(R.id.removeHouseButton);
+        addHouseBt = findViewById(R.id.addHouseButton);
         removeHouseBt = findViewById(R.id.removeHouseButton);
 
         addHouseBt.setOnClickListener(new View.OnClickListener() {

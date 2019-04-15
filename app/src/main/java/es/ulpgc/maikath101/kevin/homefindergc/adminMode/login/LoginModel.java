@@ -13,7 +13,7 @@ public class LoginModel implements LoginContract.Model {
 
   @Override
   public boolean checkCredentials(String user, String password) {
-    if (USER.equals(user) && PASSWORD.equals(password)) {
+    if (user.equals(USER) && password.equals(PASSWORD)) {
       return true;
     } else {
       return false;

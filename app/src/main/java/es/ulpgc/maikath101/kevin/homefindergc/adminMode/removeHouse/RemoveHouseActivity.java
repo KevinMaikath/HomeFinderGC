@@ -36,7 +36,7 @@ public class RemoveHouseActivity
     toolbarButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Toast.makeText(getApplicationContext(),"Esto es una prueba", Toast.LENGTH_LONG).show();
+        finish();
       }
     });
 

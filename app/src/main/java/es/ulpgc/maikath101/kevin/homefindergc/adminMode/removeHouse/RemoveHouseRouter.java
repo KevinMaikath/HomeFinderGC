@@ -33,4 +33,5 @@ public class RemoveHouseRouter implements RemoveHouseContract.Router {
     RemoveHouseState state = mediator.getRemoveHouseState();
     return state;
   }
+
 }

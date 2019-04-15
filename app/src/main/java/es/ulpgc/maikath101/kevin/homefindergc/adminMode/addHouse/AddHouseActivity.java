@@ -26,6 +26,7 @@ public class AddHouseActivity
 
     ImageButton doneButton = toolbar.findViewById(R.id.doneButton);
     ImageButton backButton = toolbar.findViewById(R.id.backToolbarButton);
+    ImageButton addImageButton = findViewById(R.id.add_image_button);
 
     doneButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -36,10 +37,16 @@ public class AddHouseActivity
     backButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Toast.makeText(getApplicationContext(), "Back presionado", Toast.LENGTH_SHORT).show();
+        finish();
       }
     });
 
+    addImageButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.launchCamera();
+      }
+    });
     // do the setup
     AddHouseScreen.configure(this);
   }

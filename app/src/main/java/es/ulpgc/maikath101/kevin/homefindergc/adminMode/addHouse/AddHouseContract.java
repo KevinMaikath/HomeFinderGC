@@ -18,6 +18,8 @@ interface AddHouseContract {
     void injectRouter(Router router);
 
     void fetchData();
+
+    void launchCamera();
   }
 
   interface Model {
@@ -30,5 +32,7 @@ interface AddHouseContract {
     void passDataToNextScreen(AddHouseState state);
 
     AddHouseState getDataFromPreviousScreen();
+
+    void launchCamera();
   }
 }
