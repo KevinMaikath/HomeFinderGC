@@ -6,23 +6,21 @@ import android.arch.persistence.room.PrimaryKey;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "house_rent")
-public class RentHouse{
+@Entity(tableName = "house_sell")
+public class SellHouse {
 
   @PrimaryKey
-  public final int id_house_rent;
+  public final int id_house_sell;
 
   @ForeignKey(entity = House.class, parentColumns = "id_house",
           childColumns = "id_house", onDelete = CASCADE)
   public final int id_house;
 
-  public final boolean animals;
-  public final String utilities;
+  public final String community;
 
-  public RentHouse(int id_house_rent, int id_house, boolean animals, String utilities) {
-    this.id_house_rent = id_house_rent;
+  public SellHouse(int id_house_sell, int id_house, String community) {
+    this.id_house_sell = id_house_sell;
     this.id_house = id_house;
-    this.animals = animals;
-    this.utilities = utilities;
+    this.community = community;
   }
 }

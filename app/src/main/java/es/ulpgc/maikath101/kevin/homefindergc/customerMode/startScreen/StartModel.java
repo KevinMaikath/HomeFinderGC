@@ -1,18 +1,9 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
 import java.util.List;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
-
-import es.ulpgc.maikath101.kevin.homefindergc.data.HolidayRentalHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
-import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
-import es.ulpgc.maikath101.kevin.homefindergc.data.SaleHouse;
 
 public class StartModel implements StartContract.Model {
 

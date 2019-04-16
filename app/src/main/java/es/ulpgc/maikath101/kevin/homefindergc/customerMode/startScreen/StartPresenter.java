@@ -1,14 +1,10 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
-import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
-import es.ulpgc.maikath101.kevin.homefindergc.data.SaleHouse;
 
 public class StartPresenter implements StartContract.Presenter {
 

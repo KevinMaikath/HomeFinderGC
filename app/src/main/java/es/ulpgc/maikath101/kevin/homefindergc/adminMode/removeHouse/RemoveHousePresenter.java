@@ -1,14 +1,8 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-
-import es.ulpgc.maikath101.kevin.homefindergc.data.HolidayRentalHouse;
-import es.ulpgc.maikath101.kevin.homefindergc.data.House;
-import es.ulpgc.maikath101.kevin.homefindergc.data.ImageHouse;
 
 public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
 

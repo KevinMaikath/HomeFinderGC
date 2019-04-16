@@ -3,10 +3,6 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
-import es.ulpgc.maikath101.kevin.homefindergc.data.HolidayRentalHouse;
-import es.ulpgc.maikath101.kevin.homefindergc.data.House;
-import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
-import es.ulpgc.maikath101.kevin.homefindergc.data.SaleHouse;
 
 public class StartViewModel {
 
