@@ -4,41 +4,34 @@ import java.util.List;
 
 public interface HouseRepositoryContract {
 
-  interface FetchOnSaleHousesDataCallback {
-    void setOnSaleHouses(List<SaleHouse> saleHouses);
+  interface FetchHousesInformationCallback {
+    void onHousesInformationFetched(boolean error);
   }
 
-  interface FetchOnRentHousesDataCallback {
-    void setOnRentHouses(List<RentHouse> rentHouses);
+  interface GetRentHousesListCallback {
+    void setRentHousesList(List<RentHouse> houses);
   }
 
-  interface FetchOnHolidayRentalHousesDataCallback {
-    void setOnHolidayRentalHouses(List<HolidayRentalHouse> holidayRentalHouses);
+  interface GetRentHouseCallback {
+    void setRentHouse(House house);
   }
 
-  interface FetchHousesCatalogCallback {
-    void onHousesCatalogLoaded(boolean error);
+  interface GetSellHousesListCallback {
+    void setSellHousesList(List<House> houses);
   }
 
-  interface FetchOnSaleHouseDetailCallback {
-    void setOnSaleHouseDetail(SaleHouse saleHouse);
+  interface  GetSellHouseCallback {
+    void setSellHouse(House house);
   }
 
-  interface FetchOnRentHouseDetailCallback {
-    void setOnRentHouseDetail(RentHouse rentHouse);
-  }
+  void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
-  interface FetchOnHolidayRentalHouseDetailCallback {
-    void setOnHolidayRentalHouseDetail(HolidayRentalHouse holidayRentalHouse);
-  }
+  void getRentHouseList(HouseRepository.GetRentHousesListCallback callback);
 
-  void fetchHousesCatalog(HouseRepository.FetchHousesCatalogCallback callback);
-  void getOnSaleHousesList(HouseRepository.FetchOnSaleHousesDataCallback callback);
-  void getOnRentHousesList(HouseRepository.FetchOnRentHousesDataCallback callback);
-  void getOnHolidayRentalHousesList(HouseRepository.FetchOnHolidayRentalHousesDataCallback callback);
+  void getRentHouse(int id, HouseRepository.GetRentHouseCallback callback);
 
-  void getOnSaleHouseDetail(int id, HouseRepository.FetchOnSaleHouseDetailCallback callback);
-  void getOnRentHouseDetail(int id, HouseRepository.FetchOnRentHouseDetailCallback callback);
-  void getOnHolidayRentalHouseDetail(int id, HouseRepository.FetchOnHolidayRentalHouseDetailCallback callback);
+  void getSellHouseList(HouseRepository.GetSellHousesListCallback callback);
+
+  void getSellHouse(int id, HouseRepository.GetSellHouseCallback callback);
 
 }

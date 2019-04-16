@@ -109,23 +109,23 @@ public class HouseRepository implements HouseRepositoryContract {
         final List<Image> images = Arrays.asList(gson.fromJson(jsonArrayImages.toString(), Image[].class));
 
 
-        for (House house: houses) {
+        for (House house : houses) {
           getHouseDao().insert(house);
         }
 
-        for (Sell_type sell_type: sell_types) {
+        for (Sell_type sell_type : sell_types) {
           getSell_typeDao().insert(sell_type);
         }
 
-        for (SellHouse sellHouse: sellHouses) {
+        for (SellHouse sellHouse : sellHouses) {
           getSellHouseDao().insert(sellHouse);
         }
 
-        for (RentHouse rentHouse: rentHouses) {
+        for (RentHouse rentHouse : rentHouses) {
           getRentHouseDao().insert(rentHouse);
         }
 
-        for (Image image: images) {
+        for (Image image : images) {
           getImageDao().insert(image);
         }
 
@@ -140,112 +140,87 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
 
-  @Override
-  public void fetchHousesCatalog(final FetchHousesCatalogCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        boolean error = !loadCatalogFromJSON(loadJSONFromAsset());
-
-        if (callback != null) {
-          callback.onHousesCatalogLoaded(error);
-        }
-      }
-    });
-
-  }
-
-  @Override
-  public void getOnSaleHousesList(final FetchOnSaleHousesDataCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setOnSaleHouses(saleHouseList);
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getOnRentHousesList(final FetchOnRentHousesDataCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setOnRentHouses(rentHouseList);
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getOnHolidayRentalHousesList(final FetchOnHolidayRentalHousesDataCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setOnHolidayRentalHouses(holidayRentalHouseList);
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getOnSaleHouseDetail(final int id, final FetchOnSaleHouseDetailCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setOnSaleHouseDetail(getSaleHouseDetail(id));
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getOnRentHouseDetail(final int id, final FetchOnRentHouseDetailCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setOnRentHouseDetail(getRentHouseDetail(id));
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getOnHolidayRentalHouseDetail(final int id, final FetchOnHolidayRentalHouseDetailCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setOnHolidayRentalHouseDetail(getHolidayRentalDetail(id));
-        }
-      }
-    });
-  }
-
-  private HouseDao getHouseDao(){
+  private HouseDao getHouseDao() {
     return database.getHouseDao();
   }
 
-  private ImageDao getImageDao(){
+  private ImageDao getImageDao() {
     return database.getImageDao();
   }
 
-  private RentHouseDao getRentHouseDao(){
+  private RentHouseDao getRentHouseDao() {
     return database.getRentHouseDao();
   }
 
-  private Sell_typeDao getSell_typeDao(){
+  private Sell_typeDao getSell_typeDao() {
     return database.getSell_typeDao();
   }
 
-  private SellHouseDao getSellHouseDao(){
+  private SellHouseDao getSellHouseDao() {
     return database.getSellHouseDao();
   }
 
+
+  @Override
+  public void loadHousesInformation(final boolean clearFirst, final FetchHousesInformationCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (clearFirst) {
+          database.clearAllTables();
+        }
+
+        boolean error = false;
+        if (getHouseDao().getForSaleHouses().size() == 0) {
+          error = !loadCatalogFromJSON(loadJSONFromAsset());
+        }
+
+        if (callback != null) {
+          callback.onHousesInformationFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getRentHouseList(final GetRentHousesListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setRentHousesList(getHouseDao().getForRentHouses());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getRentHouse(int id, final GetRentHouseCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getSellHouseList(final GetSellHousesListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setSellHousesList(getHouseDao().getForSaleHouses());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getSellHouse(int id, GetSellHouseCallback callback) {
+
+  }
 
 }
