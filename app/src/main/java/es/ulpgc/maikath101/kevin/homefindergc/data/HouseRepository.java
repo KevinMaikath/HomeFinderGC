@@ -195,12 +195,12 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
-  public void getRentHouse(int id, final GetRentHouseCallback callback) {
+  public void getRentHouse(final int id, final GetRentHouseCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-
+          callback.setRentHouse(getRentHouseDao().getRentHouse(id));
         }
       }
     });
@@ -219,8 +219,15 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
-  public void getSellHouse(int id, GetSellHouseCallback callback) {
-
+  public void getSellHouse(final int id, final GetSellHouseCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setSellHouse(getSellHouseDao().getSellHouse(id));
+        }
+      }
+    });
   }
 
 }

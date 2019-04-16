@@ -28,4 +28,7 @@ public interface HouseDao {
 
   @Query("SELECT * FROM houses WHERE id_sell_type=333")
   List<RentHouse> getHolidayRentalHouses();
+
+  @Query("SELECT * FROM houses WHERE id_house=:id_house")
+  House getHouse(int id_house);
 }

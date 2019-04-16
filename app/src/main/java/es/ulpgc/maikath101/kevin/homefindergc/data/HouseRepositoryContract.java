@@ -13,16 +13,17 @@ public interface HouseRepositoryContract {
   }
 
   interface GetRentHouseCallback {
-    void setRentHouse(House house);
+    void setRentHouse(RentHouse house);
   }
 
   interface GetSellHousesListCallback {
-    void setSellHousesList(List<House> houses);
+    void setSellHousesList(List<SellHouse> houses);
   }
 
-  interface  GetSellHouseCallback {
-    void setSellHouse(House house);
+  interface GetSellHouseCallback {
+    void setSellHouse(SellHouse house);
   }
+
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
