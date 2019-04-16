@@ -1,348 +1,399 @@
 ﻿{
-  "forRentHouses": [
+  "houses": [
     {
-      "id": 1,
+      "id_house": 1,
+      "id_sell_type": 222,
+      "main_image": 9004,
       "referenceNumber": "1012-OM",
-      "image": "https://homefindergc.com/inmuebles/12/medium/L6xGPtgTmQ0QuHx7520RADHnw6G5w70D.jpg",
+      "price": "1.100€",
       "description":"Se alquila magnífica vivienda de 2 dormitorios completamente reformada en la mejor zona de San Fernando de Maspalomas. Parte alta de una casa privada adosada en tranquila zona residencial con entrada completamente independiente. Se compone de cocina independiente completamente equipada y a estrenar , baño completamente reformado con plato de ducha , amplio dormitorio doble con ventana a zona verde , dormitorio individual , cuarto vestidor , salón independiente. Azotea de 85 m² de uso exclusivo para el inquilino . Amplia terraza con magníficas vistas y rincón chill-out con sillones y toldo . Cuarto lavadero y cuarto trastero. Otra terraza pequeña con vistas a zona verde. Aire acondicionado en dormitorio y salón. Un total de 170 m² a disposición del inquilino. Un auténtico privilegio de propiedad en San Fernando de Maspalomas. Condiciones económicas : - Renta mensual de 1.100 € - Agua y luz incluídos en el precio. ( Límite de 100 € / mensuales ) . - 2 meses de fianza - 1 mes de honorarios inmobiliarios . - No se admiten animales. - Se piden referencias laborales y económicas.",
       "name": "Piso de 2 dormitorios con azotea a estrenar en San Fernando de Maspalomas",
       "rooms": 2,
       "location": "San Fernando de Maspalomas",
-      "pricePerMonth": "1.100€",
       "pool": false,
       "bathrooms": 1,
-      "parking": false,
-      "community": "0€",
+      "parking": "No",
       "floor_type": "Residencial",
       "surface": 85,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/12/ihq1KlVaG9I4--h2_Fm9GB6PpZ6II_eE.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/12/Y-n8iwuIygfGMVPlV7JAiFNx3NvKGcNo.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/12/7vVG9kFKS4avAdrQ1olpO9aG2GWVMuC5.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/12/JA41Q2dHl-g5dA3hUTUh3iAWj-AvGRNv.jpg"
-        }
-      ]
+      "furniture": "Totalmente amueblada"
     },
     {
       "id": 2,
+      "id_sell_type": 222,
+      "main_image": 9015,
       "referenceNumber": "1004-OM",
-      "image": "https://homefindergc.com/inmuebles/4/medium/UVjBzHAXG9aNsoa02QHkT5a-soNaCLF4.jpg",
+      "price": "2.600€",
       "description":"Estupenda villa privada con piscina en exclusivo residencial privado en la parte alta de Monte León. Este complejo residencial se caracteriza por su privacidad y por la seguridad del entorno. Acceso por una barrera de seguridad con acceso restringido solo a propietarios y vigilancia con cámaras de seguridad las 24 horas. Esta villa independiente dispone de una parcela de más de 500 m² con magníficas terrazas , jardín y piscina privada . Zona privada de aparcamiento para el coche. Vistas espectaculares a las montañas y a la costa de Maspalomas . Vivir a todo lujo rodeado por el maravilloso paisaje típico canario. A tan solo 10 km. de la orilla del mar en un entorno de lujo en lo alto de Monte León. Consultar condiciones del alquiler...",
       "name": "Exclusiva villa con piscina privada en Monte Leon , Maspalomas",
       "rooms": 2,
       "location": "Monte Leon, Maspalomas",
-      "pricePerMonth": "2.600€",
       "pool": true,
       "bathrooms": 3,
-      "parking": true,
-      "community": "0€",
+      "parking": "Plaza de Aparcamiento Privado",
       "floor_type": "Residencial",
       "surface": 113,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/4/oPkHMBlq4Oz08NIsvqMtAK44hBGPdCmm.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/4/Xf96fWzY7APjVPFExlihkqnHuUBiIoLm.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/4/pFEMhtzkWi1rcnQfthjW9NULdeM5y-LF.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/4/Tg7YYBU4H9unWlxESfoMHcHTEN4hC6mC.jpg"
-        }
-      ]
-    }
-  ],
-  "forSaleHouses": [
+      "furniture": "Totalmente amueblada"
+    },
     {
       "id": 3,
+      "id_sell_type": 111,
+      "main_image": 9025,
       "referenceNumber": "1005-OM",
-      "image": "https://homefindergc.com/inmuebles/5/medium/UbM00s_nPz8MLz6Bo4j5_68KTjJhhklC.jpg",
+      "price": "195.000€",
       "description": "Se vende magnífica casa familiar en el corazón de San Fernando de Maspalomas. Situada en la conocida zona residencial de El Patronato de San Fernando. A escasos metros del centro comercial y de la Avenida de Gáldar en donde nos encontramos con tiendas , panadería , carnicería , farmacia , supermercados , etc. Todo a escasos minutos andando. La planta baja de la propiedad ha sido reformada . Nos encontramos con una terraza en la entrada , un amplio salón , cocina independiente , baño y un segundo y gran salón que se conecta con la terraza de la planta superior a través de una escalera de caracol. La planta alta se distribuye en 3 dormitorios y un baño . Dispone de una terraza interior a la cual se accede desde uno de los dormitorios. Esta propiedad está descalificada y es por tanto de renta libre. Ideal para familias o para inversores que deseen distribuir la propiedad en apartamentos para obtener ingresos por alquiler.",
       "name": "Casa familiar de 3 dormitorios en San Fernando de Maspalomas",
       "rooms": 3,
       "location": "San Fernando de Maspalomas",
-      "price": "195.000€",
       "pool": false,
       "bathrooms": 2,
-      "parking": false,
-      "community": "0€",
+      "parking": "No",
       "floor_type": "Residencial",
       "surface": 120,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/5/MPEwAMiwCA_nNjVIWmAmhMVPoqzGBZU5.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/5/iUZUNe3AMZaACZr5_F1vS_MGF8M2FZL2.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/5/3bre2XDgq3eoEgHNS6yrGW2dK_iz4H4_.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/5/EIgNDyzUy1uViw_Pf78ac1zuOknnvkzs.jpg"
-        }
-      ]
+      "furniture": "Parcialmente amueblada"
     },
     {
       "id": 4,
+      "id_sell_type": 111,
+      "main_image": 9035,
       "referenceNumber": "1001-OM",
-      "image": "https://homefindergc.com/inmuebles/1/medium/3G9au_KEFh98EVto-yfEV5I_vkACPxD8.jpg",
+      "price": "448.000€",
       "description":"Exclusiva villa privada con piscina climatizada en la zona alta de Monte León . Esta magnífica propiedad dispone de una orientación perfecta que le confiere una luminosidad y una calidez únicas en el sur de Gran Canaria. Situado en un complejo residencial caracterizado por su privacidad y por la seguridad del entorno. Acceso por una barrera de seguridad con acceso restringido solo a propietarios y vigilancia con cámaras de seguridad las 24 horas. Esta villa independiente está construída sobre una parcela de 460 m² con magníficas terrazas , piscina climatizada y jardín privado . Distribuída en dos plantas . En la planta principal nos encontramos con un recibidor ,  cocina independiente , despensa , zona comedor ,  1 dormitorio con baño , salón y magníficas terrazas. La planta alta dispone de 1 dormitorio con baño y vestidor . Gran terraza de 26 m² con estupendas vistas a las montañas que alcanzan hasta el mar. Vivir a todo lujo rodeado por el maravilloso paisaje típico canario. A tan solo 15 km. de la orilla del mar en un entorno de lujo en lo alto de Monte León.",
       "name": "Exclusiva villa con piscina privada en Monte Leon , Maspalomas",
       "rooms": 2,
       "location": "Monte Leon, Maspalomas",
-      "price": "448.000€",
       "pool": true,
       "bathrooms": 3,
-      "parking": true,
-      "community": "80€",
+      "parking": "Plaza de Aparcamiento Comunitaria",
       "floor_type": "Residencial",
       "surface": 112,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/1/Pfa-9YnW_RyW-eyd31jdw7inYklxYIIX.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/1/OfN_MWtUMqr8VGnrhO0FHgP23RgVwqjY.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/1/NeBs2qdZGf4zmOpWNIdtvDzmJFdK1pch.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/1/DLL_6hJlVjNheokQ49K3P7zo29RzQOk6.jpg"
-        }
-      ]
+      "furniture": "Parcialmente amueblada"
     },
     {
       "id": 5,
+      "id_sell_type": 111,
+      "main_image": 9045,
       "referenceNumber": "1002-OM",
-      "image": "https://homefindergc.com/inmuebles/2/medium/O9nmU_YG1GJTbj3g5pCENj0h4VelY3-S.jpg",
+      "price": "630.000€",
       "description":"Magnífica casa familiar de 4 dormitorios en la exclusiva zona residencial de Sonnenland , Maspalomas. Esta estupenda propiedad se encuentra distribuída en 3 plantas y dispone de numerosas terrazas y espacios al aire libre que le confieren una encanto muy peculiar. Los propietarios de esta magnífica propiedad han apostado por los mejores materiales para aportarle a esta casa de una sensación de lujo y calidez muy especiales. Ideal para una familia que quiera crear su hogar en un entorno tranquilo o para los amantes del espacio. Aparcamiento privado para varios vehículos con portón eléctrico.",
       "name": "Magnifico chalet con estupendas vistas en Sonnenland , Maspalomas",
       "rooms": 4,
       "location": "Sonneland, Maspalomas",
-      "price": "630.000€",
       "pool": false,
       "bathrooms": 4,
-      "parking": true,
-      "community": "0€",
+      "parking": "Plaza de Aparcamiento Privado",
       "floor_type": "Residencial",
       "surface": 190,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/2/scMyEXRFKZn7G9XJ33ezMCF_H-KVV6OP.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/2/SF7QIa_T_YyRrS7gTF7TQ1O-CY-Ocppo.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/2/xc1jyYoseTcAK5-yH-AqVJcvYJ4cQ0QL.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/2/Bn51Qs6t9JGJLa4E_iztWw6f6x-ValwS.jpg"
-        }
-      ]
+      "furniture": "Sin amueblar"
     },
     {
       "id": 6,
+      "id_sell_type": 111,
+      "main_image": 9055,
       "referenceNumber": "1003-OM",
-      "image": "https://homefindergc.com/inmuebles/3/medium/Cyx2nSxvNQhNtQQP-Eywc0wRqnaUcuDS.jpg",
+      "price": "750.000€",
       "description":"Se vende estupendo chalet con increíbles vistas panorámicas en exclusiva zona residencial de San Agustín , Maspalomas. Esta exclusiva propiedad ha sido reformada completamente y cuenta con materiales de primerísima calidad que le confireren unas calidades y unos acabados difíciles de encontrar. Transmite sensación de auténtico lujo . Dispone de unas distribuciones peculiares y muy diferentes a lo que habitualmante se pueda encontrar. Amplio jardín exterior con césped artificial para disfrutar de estupendas veladas al aire libre en un entorno realmente peculiar. Vistas panorámicas espectaculares sobre la zona sur de Maspalomas desde su solarium que no le dejarán indiferente. Venga a visitar esta peculiar propiedad ubicada en uno de los mejores entornos del sur de la isla de Gran Canaria. ",
       "name": "Exclusivo chalet en  Altos de la Gloria  , San Agustin",
       "rooms": 3,
       "location": "Altos de la Gloria, San Agustin",
-      "price": "750.000€",
       "pool": false,
       "bathrooms": 3,
-      "parking": true,
-      "community": "0€",
+      "parking": "Garaje Privado",
       "floor_type": "Residencial",
       "surface": 185,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/3/4s2LKZ11VXRdU1rxxC3QPogWnVXI_dV0.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/3/FSVt21rV4kFo7I_nWqafykJRSXtNCaWt.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/3/Qj4Tmr3X7qFuLdFQxHU1eXvfVOonHw3y.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/3/P5fH3gqQM5QwF2f9osFuB5kngdgMkXk_.jpg"
-        }
-      ]
-    }
-  ],
-  "forHolidayRentalHouses": [
+      "furniture": "Sin amueblar"
+    },
     {
       "id": 7,
+      "id_sell_type": 333,
+      "main_image": 9065,
       "referenceNumber": "1007-OM",
-      "image": "https://homefindergc.com/inmuebles/7/medium/zUKxRL7mizlBsXqFYcq5FXLV1L5SKTJ4.jpg",
+      "price": "80€",
       "description":"Bungalow completamente reformado en la conocida zona de  Campo de Golf  , Maspalomas. Magnífica terraza exterior. Dispone de 1 dormitorio con aire acondicionado y armarios empotrados . Baño con amplio plato de ducha. Equipado con todo lo necesario . Televisión con canales internacionales . Lavadora , plancha y mesa de planchar , secador de pelo , hormo , microondas , cafetera , extrimidor de zumos , etc. Tarifa media 85€ / noche . Variaciones según temporada. A consultar .",
       "name": "Bungalow reformado en Campo de Golf , Maspalomas",
       "rooms": 1,
       "location": "Campo de Golf, Maspalomas",
-      "pricePerNight": "80€",
       "pool": true,
       "bathrooms": 1,
-      "parking": true,
-      "community": "0€",
+      "parking": "Plaza de Aparcamiento Comunitaria",
       "floor_type": "Turístico",
       "surface": 45,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/7/pxP_vGf4Fce6jvdrKDB84kUF1z3-mNzL.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/7/o2isX1hAxfVuKl7Hpq0k5ZuXOkg-qbtX.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/7/QpoxliuSIr-t5LCVN7uSEeowr72e9if_.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/7/l_oqY2lZKwgO8lPPZYNN8RY0xYJ3UVkT.jpg"
-        }
-      ]
+      "furniture": "Totalmente amueblada"
     },
     {
       "id": 8,
-      "referenceNumber": "1007-OM",
-      "image": "https://homefindergc.com/inmuebles/7/medium/zUKxRL7mizlBsXqFYcq5FXLV1L5SKTJ4.jpg",
-      "description":"Bungalow completamente reformado en la conocida zona de  Campo de Golf  , Maspalomas. Magnífica terraza exterior. Dispone de 1 dormitorio con aire acondicionado y armarios empotrados . Baño con amplio plato de ducha. Equipado con todo lo necesario . Televisión con canales internacionales . Lavadora , plancha y mesa de planchar , secador de pelo , hormo , microondas , cafetera , extrimidor de zumos , etc. Tarifa media 85€ / noche . Variaciones según temporada. A consultar .",
+      "id_sell_type": 222,
+      "main_image": 9075,
+      "referenceNumber": "1015-OM",
+      "price": "1.200€",
+      "description": "Se alquila por larga temporada magnífico bungalow de 1 dormitorio completamente reformado. Decoración moderna y elegante. Este maravilloso bungalow se encuentra en uno de los mejores complejos de la zona de Campo de Golf. Privado , muy tranquilo y con vecinos exquisitos. Magnífica piscina comunitaria. El bungalow está equipado con todo lo necesario sin faltar un detalle.",
       "name": "Bungalow reformado en Campo de Golf , Maspalomas",
       "rooms": 1,
       "location": "Campo de Golf, Maspalomas",
-      "pricePerNight": "80€",
       "pool": true,
       "bathrooms": 1,
-      "parking": true,
-      "community": "0€",
+      "parking": "No",
       "floor_type": "Turístico",
       "surface": 45,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/7/pxP_vGf4Fce6jvdrKDB84kUF1z3-mNzL.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/7/o2isX1hAxfVuKl7Hpq0k5ZuXOkg-qbtX.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/7/QpoxliuSIr-t5LCVN7uSEeowr72e9if_.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/7/l_oqY2lZKwgO8lPPZYNN8RY0xYJ3UVkT.jpg"
-        }
-      ]
+      "furniture": "Totalmente amueblada"
+    }
+  ],
+  "sell_type": [
+    {
+      "id_sell_type": 111,
+      "type": "ForSale"
     },
     {
-      "id": 9,
-      "referenceNumber": "1007-OM",
-      "image": "https://homefindergc.com/inmuebles/7/medium/zUKxRL7mizlBsXqFYcq5FXLV1L5SKTJ4.jpg",
-      "description":"Bungalow completamente reformado en la conocida zona de  Campo de Golf  , Maspalomas. Magnífica terraza exterior. Dispone de 1 dormitorio con aire acondicionado y armarios empotrados . Baño con amplio plato de ducha. Equipado con todo lo necesario . Televisión con canales internacionales . Lavadora , plancha y mesa de planchar , secador de pelo , hormo , microondas , cafetera , extrimidor de zumos , etc. Tarifa media 85€ / noche . Variaciones según temporada. A consultar .",
-      "name": "Bungalow reformado en Campo de Golf , Maspalomas",
-      "rooms": 1,
-      "location": "Campo de Golf, Maspalomas",
-      "pricePerNight": "80€",
-      "pool": true,
-      "bathrooms": 1,
-      "parking": true,
-      "community": "0€",
-      "floor_type": "Turístico",
-      "surface": 45,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/7/pxP_vGf4Fce6jvdrKDB84kUF1z3-mNzL.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/7/o2isX1hAxfVuKl7Hpq0k5ZuXOkg-qbtX.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/7/QpoxliuSIr-t5LCVN7uSEeowr72e9if_.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/7/l_oqY2lZKwgO8lPPZYNN8RY0xYJ3UVkT.jpg"
-        }
-      ]
+      "id_sell_type": 222,
+      "type": "ForRent"
     },
     {
-      "id": 10,
-      "referenceNumber": "1007-OM",
-      "image": "https://homefindergc.com/inmuebles/7/medium/zUKxRL7mizlBsXqFYcq5FXLV1L5SKTJ4.jpg",
-      "description":"Bungalow completamente reformado en la conocida zona de  Campo de Golf  , Maspalomas. Magnífica terraza exterior. Dispone de 1 dormitorio con aire acondicionado y armarios empotrados . Baño con amplio plato de ducha. Equipado con todo lo necesario . Televisión con canales internacionales . Lavadora , plancha y mesa de planchar , secador de pelo , hormo , microondas , cafetera , extrimidor de zumos , etc. Tarifa media 85€ / noche . Variaciones según temporada. A consultar .",
-      "name": "Bungalow reformado en Campo de Golf , Maspalomas",
-      "rooms": 1,
-      "location": "Campo de Golf, Maspalomas",
-      "pricePerNight": "80€",
-      "pool": true,
-      "bathrooms": 1,
-      "parking": true,
-      "community": "0€",
-      "floor_type": "Turístico",
-      "surface": 45,
-      "imagenes":[
-        {
-          "id":1,
-          "url":"https://homefindergc.com/inmuebles/7/pxP_vGf4Fce6jvdrKDB84kUF1z3-mNzL.jpg"
-        },
-        {
-          "id":2,
-          "url":"https://homefindergc.com/inmuebles/7/o2isX1hAxfVuKl7Hpq0k5ZuXOkg-qbtX.jpg"
-        },
-        {
-          "id":3,
-          "url":"https://homefindergc.com/inmuebles/7/QpoxliuSIr-t5LCVN7uSEeowr72e9if_.jpg"
-        },
-        {
-          "id":4,
-          "url":"https://homefindergc.com/inmuebles/7/l_oqY2lZKwgO8lPPZYNN8RY0xYJ3UVkT.jpg"
-        }
-      ]
+      "id_sell_type": 333,
+      "type": "HolidayRental"
+    }
+  ],
+  "house_sell": [
+    {
+      "id_sell_house": 1030,
+      "id_house": 3,
+      "community": "0€"
+    },
+    {
+      "id_sell_house": 1031,
+      "id_house": 4,
+      "community": "80€"
+    },
+    {
+      "id_sell_house": 1032,
+      "id_house": 5,
+      "community": "No"
+    },
+    {
+      "id_sell_house": 1033,
+      "id_house": 6,
+      "community": "0€"
+    }
+  ],
+  "house_rent": [
+    {
+      "id_rent_house": 2030,
+      "id_house": 1,
+      "animals": false,
+      "utilities": "Sí, hasta 100 €"
+    },
+    {
+      "id_rent_house": 2031,
+      "id_house": 2,
+      "animals": false,
+      "utilities": "No"
+    },
+    {
+      "id_rent_house": 2032,
+      "id_house": 7,
+      "animals": false,
+      "utilities": "Sí"
+    },
+    {
+      "id_rent_house": 2033,
+      "id_house": 8,
+      "animals": false,
+      "utilities": "No"
+    }
+  ],
+  "images": [
+    {
+      "id_image": 9001,
+      "url": "https://homefindergc.com/inmuebles/12/ihq1KlVaG9I4--h2_Fm9GB6PpZ6II_eE.jpg",
+      "id_house": 1
+    },
+    {
+      "id_image": 9002,
+      "url": "https://homefindergc.com/inmuebles/12/Y-n8iwuIygfGMVPlV7JAiFNx3NvKGcNo.jpg",
+      "id_house": 1
+    },
+    {
+      "id_image": 9003,
+      "url": "https://homefindergc.com/inmuebles/12/7vVG9kFKS4avAdrQ1olpO9aG2GWVMuC5.jpg",
+      "id_house": 1
+    },
+    {
+      "id_image": 9004,
+      "url": "https://homefindergc.com/inmuebles/12/medium/L6xGPtgTmQ0QuHx7520RADHnw6G5w70D.jpg",
+      "id_house": 1
+    },
+    {
+      "id": 9011,
+      "url": "https://homefindergc.com/inmuebles/2/scMyEXRFKZn7G9XJ33ezMCF_H-KVV6OP.jpg",
+      "id_house": 2
+    },
+    {
+      "id": 9012,
+      "url": "https://homefindergc.com/inmuebles/2/SF7QIa_T_YyRrS7gTF7TQ1O-CY-Ocppo.jpg",
+      "id_house": 2
+    },
+    {
+      "id": 9013,
+      "url": "https://homefindergc.com/inmuebles/2/xc1jyYoseTcAK5-yH-AqVJcvYJ4cQ0QL.jpg",
+      "id_house": 2
+    },
+    {
+      "id": 9014,
+      "url": "https://homefindergc.com/inmuebles/2/Bn51Qs6t9JGJLa4E_iztWw6f6x-ValwS.jpg",
+      "id_house": 2
+    },
+    {
+      "id": 9015,
+      "url": "https://homefindergc.com/inmuebles/4/medium/UVjBzHAXG9aNsoa02QHkT5a-soNaCLF4.jpg",
+      "id_house": 2
+    },
+    {
+      "id": 9021,
+      "url": "https://homefindergc.com/inmuebles/5/MPEwAMiwCA_nNjVIWmAmhMVPoqzGBZU5.jpg",
+      "id_house": 3
+    },
+    {
+      "id": 9022,
+      "url": "https://homefindergc.com/inmuebles/5/iUZUNe3AMZaACZr5_F1vS_MGF8M2FZL2.jpg",
+      "id_house": 3
+    },
+    {
+      "id": 9023,
+      "url": "https://homefindergc.com/inmuebles/5/3bre2XDgq3eoEgHNS6yrGW2dK_iz4H4_.jpg",
+      "id_house": 3
+    },
+    {
+      "id": 9024,
+      "url": "https://homefindergc.com/inmuebles/5/EIgNDyzUy1uViw_Pf78ac1zuOknnvkzs.jpg",
+      "id_house": 3
+    },
+    {
+      "id": 9025,
+      "url": "https://homefindergc.com/inmuebles/5/medium/UbM00s_nPz8MLz6Bo4j5_68KTjJhhklC.jpg",
+      "id_house": 3
+    },
+    {
+      "id": 9031,
+      "url": "https://homefindergc.com/inmuebles/1/Pfa-9YnW_RyW-eyd31jdw7inYklxYIIX.jpg",
+      "id_house": 4
+    },
+    {
+      "id": 9032,
+      "url": "https://homefindergc.com/inmuebles/1/OfN_MWtUMqr8VGnrhO0FHgP23RgVwqjY.jpg",
+      "id_house": 4
+    },
+    {
+      "id": 9033,
+      "url": "https://homefindergc.com/inmuebles/1/NeBs2qdZGf4zmOpWNIdtvDzmJFdK1pch.jpg",
+      "id_house": 4
+    },
+    {
+      "id": 9034,
+      "url": "https://homefindergc.com/inmuebles/1/DLL_6hJlVjNheokQ49K3P7zo29RzQOk6.jpg",
+      "id_house": 4
+    },
+    {
+      "id": 9035,
+      "url":  "https://homefindergc.com/inmuebles/1/medium/3G9au_KEFh98EVto-yfEV5I_vkACPxD8.jpg",
+      "id_house": 4
+    },
+    {
+      "id": 9041,
+      "url": "https://homefindergc.com/inmuebles/2/scMyEXRFKZn7G9XJ33ezMCF_H-KVV6OP.jpg",
+      "id_house": 5
+    },
+    {
+      "id": 9042,
+      "url": "https://homefindergc.com/inmuebles/2/SF7QIa_T_YyRrS7gTF7TQ1O-CY-Ocppo.jpg",
+      "id_house": 5
+    },
+    {
+      "id": 9043,
+      "url": "https://homefindergc.com/inmuebles/2/xc1jyYoseTcAK5-yH-AqVJcvYJ4cQ0QL.jpg",
+      "id_house": 5
+    },
+    {
+      "id": 9044,
+      "url": "https://homefindergc.com/inmuebles/2/Bn51Qs6t9JGJLa4E_iztWw6f6x-ValwS.jpg",
+      "id_house": 5
+    },
+    {
+      "id": 9045,
+      "url": "https://homefindergc.com/inmuebles/2/medium/O9nmU_YG1GJTbj3g5pCENj0h4VelY3-S.jpg",
+      "id_house": 5
+    },
+    {
+      "id": 9051,
+      "url": "https://homefindergc.com/inmuebles/3/4s2LKZ11VXRdU1rxxC3QPogWnVXI_dV0.jpg",
+      "id_house": 6
+    },
+    {
+      "id": 9052,
+      "url": "https://homefindergc.com/inmuebles/3/FSVt21rV4kFo7I_nWqafykJRSXtNCaWt.jpg",
+      "id_house": 6
+    },
+    {
+      "id": 9053,
+      "url": "https://homefindergc.com/inmuebles/3/Qj4Tmr3X7qFuLdFQxHU1eXvfVOonHw3y.jpg",
+      "id_house": 6
+    },
+    {
+      "id": 9054,
+      "url": "https://homefindergc.com/inmuebles/3/P5fH3gqQM5QwF2f9osFuB5kngdgMkXk_.jpg",
+      "id_house": 6
+    },
+    {
+      "id": 9055,
+      "url": "https://homefindergc.com/inmuebles/3/medium/Cyx2nSxvNQhNtQQP-Eywc0wRqnaUcuDS.jpg",
+      "id_house": 6
+    },
+    {
+      "id": 9061,
+      "url": "https://homefindergc.com/inmuebles/7/pxP_vGf4Fce6jvdrKDB84kUF1z3-mNzL.jpg",
+      "id_house": 7
+    },
+    {
+      "id": 9062,
+      "url": "https://homefindergc.com/inmuebles/7/o2isX1hAxfVuKl7Hpq0k5ZuXOkg-qbtX.jpg",
+      "id_house": 7
+    },
+    {
+      "id": 9063,
+      "url": "https://homefindergc.com/inmuebles/7/QpoxliuSIr-t5LCVN7uSEeowr72e9if_.jpg",
+      "id_house": 7
+    },
+    {
+      "id": 9064,
+      "url": "https://homefindergc.com/inmuebles/7/l_oqY2lZKwgO8lPPZYNN8RY0xYJ3UVkT.jpg",
+      "id_house": 7
+    },
+    {
+      "id": 9065,
+      "url": "https://homefindergc.com/inmuebles/7/medium/zUKxRL7mizlBsXqFYcq5FXLV1L5SKTJ4.jpg",
+      "id_house": 7
+    },
+    {
+      "id": 9071,
+      "url": "https://homefindergc.com/inmuebles/15/thumb/zZyJ6wAqZ6a611WBJmKBFnrs9Ynxu_WO.jpg",
+      "id_house": 8
+    },
+    {
+      "id": 9072,
+      "url": "https://homefindergc.com/inmuebles/15/thumb/jzmPKEZAWRARucsPYYtfi80B4mrvN-MC.jpg",
+      "id_house": 8
+    },
+    {
+      "id": 9073,
+      "url": "https://homefindergc.com/inmuebles/15/thumb/mwjLYS-2yiAMOoK53vDabS8Iics5YCd9.jpg",
+      "id_house": 8
+    },
+    {
+      "id": 9074,
+      "url": "https://homefindergc.com/inmuebles/15/thumb/m9zi6C_ULMRVTIdqVSqSZM_NFbuWsQhK.jpg",
+      "id_house": 8
+    },
+    {
+      "id": 9075,
+      "url": "https://homefindergc.com/inmuebles/15/thumb/XiutwSMd67oxjtxkKC4ImebsM5RfQNOF.jpg",
+      "id_house": 8
     }
   ]
 }
