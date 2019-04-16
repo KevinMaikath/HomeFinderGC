@@ -30,9 +30,11 @@ public class HouseRepository implements HouseRepositoryContract {
   public static String TAG = HouseRepository.class.getSimpleName();
 
   public static final String JSON_FILE = "housesCatalog.json";
-  public static final String JSON_RENT_HOUSES_ROOT = "forRentHouses";
-  public static final String JSON_SALE_HOUSES_ROOT = "forSaleHouses";
-  public static final String JSON_HOLIDAY_RENTAL_HOUSES_ROOT = "forHolidayRentalHouses";
+  public static final String HOUSES_ROOT = "houses";
+  public static final String SELL_TYPE_ROOT = "sell_type";
+  public static final String HOUSE_SELL_ROOT = "house_sell";
+  public static final String HOUSE_RENT_ROOT = "house_rent";
+  public static final String IMAGES_ROOT = "images";
 
   public static final String DB_FILE = "housesDatabase.db";
 
@@ -85,32 +87,46 @@ public class HouseRepository implements HouseRepositoryContract {
     try {
 
       JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArrayRentHouses = jsonObject.getJSONArray(JSON_RENT_HOUSES_ROOT);
-      JSONArray jsonArraySaleHouses = jsonObject.getJSONArray(JSON_SALE_HOUSES_ROOT);
-      JSONArray jsonArrayHolidayRentalHouses = jsonObject.getJSONArray(JSON_HOLIDAY_RENTAL_HOUSES_ROOT);
+      JSONArray jsonArrayHouses = jsonObject.getJSONArray(HOUSES_ROOT);
+      JSONArray jsonArraySellType = jsonObject.getJSONArray(SELL_TYPE_ROOT);
+      JSONArray jsonArrayHouseSell = jsonObject.getJSONArray(HOUSE_SELL_ROOT);
+      JSONArray jsonArrayHouseRent = jsonObject.getJSONArray(HOUSE_RENT_ROOT);
+      JSONArray jsonArrayImages = jsonObject.getJSONArray(IMAGES_ROOT);
 
 
-      if (jsonArrayHolidayRentalHouses.length() > 0) {
+      if (jsonArrayHouses.length() > 0) {
 
-        final List<HolidayRentalHouse> holidayRentalHouses = Arrays.asList(
-                gson.fromJson(jsonArrayHolidayRentalHouses.toString(), HolidayRentalHouse[].class)
+        final List<House> houses = Arrays.asList(
+                gson.fromJson(jsonArrayHouses.toString(), House[].class)
         );
 
-        final List<RentHouse> rentHouses = Arrays.asList(gson.fromJson(jsonArrayRentHouses.toString(), RentHouse[].class));
+        final List<Sell_type> sell_types = Arrays.asList(gson.fromJson(jsonArraySellType.toString(), Sell_type[].class));
 
-        final List<SaleHouse> saleHouses = Arrays.asList(gson.fromJson(jsonArraySaleHouses.toString(), SaleHouse[].class));
+        final List<SellHouse> sellHouses = Arrays.asList(gson.fromJson(jsonArrayHouseSell.toString(), SellHouse[].class));
+
+        final List<RentHouse> rentHouses = Arrays.asList(gson.fromJson(jsonArrayHouseRent.toString(), RentHouse[].class));
+
+        final List<Image> images = Arrays.asList(gson.fromJson(jsonArrayImages.toString(), Image[].class));
 
 
-        for (HolidayRentalHouse holidayRentalHouse : holidayRentalHouses) {
-          insertHolidayRentalHouse(holidayRentalHouse);
+        for (House house: houses) {
+          getHouseDao().insert(house);
         }
 
-        for (RentHouse rentHouse : rentHouses) {
-          insertRentHouse(rentHouse);
+        for (Sell_type sell_type: sell_types) {
+          getSell_typeDao().insert(sell_type);
         }
 
-        for (SaleHouse saleHouse : saleHouses) {
-          insertSaleHouse(saleHouse);
+        for (SellHouse sellHouse: sellHouses) {
+          getSellHouseDao().insert(sellHouse);
+        }
+
+        for (RentHouse rentHouse: rentHouses) {
+          getRentHouseDao().insert(rentHouse);
+        }
+
+        for (Image image: images) {
+          getImageDao().insert(image);
         }
 
         return true;
@@ -123,45 +139,6 @@ public class HouseRepository implements HouseRepositoryContract {
     return false;
   }
 
-  private void insertSaleHouse(SaleHouse saleHouse) {
-    this.saleHouseList.add(saleHouse);
-  }
-
-  private void insertRentHouse(RentHouse rentHouse) {
-    this.rentHouseList.add(rentHouse);
-  }
-
-  private void insertHolidayRentalHouse(HolidayRentalHouse holidayRentalHouse) {
-    this.holidayRentalHouseList.add(holidayRentalHouse);
-  }
-
-  private SaleHouse getSaleHouseDetail(int id) {
-    for (int i = 0; i < saleHouseList.size(); i++) {
-      if (id == saleHouseList.get(i).getId()) {
-        return saleHouseList.get(i);
-      }
-    }
-    return null;
-  }
-
-  private RentHouse getRentHouseDetail(int id) {
-    for (int i = 0; i < rentHouseList.size(); i++) {
-      if (id == rentHouseList.get(i).getId()) {
-        return rentHouseList.get(i);
-      }
-    }
-    return null;
-  }
-
-  private HolidayRentalHouse getHolidayRentalDetail(int id) {
-    for (int i = 0; i < holidayRentalHouseList.size(); i++) {
-      if (id == holidayRentalHouseList.get(i).getId()) {
-        return holidayRentalHouseList.get(i);
-      }
-    }
-    return null;
-  }
-
 
   @Override
   public void fetchHousesCatalog(final FetchHousesCatalogCallback callback) {
@@ -172,9 +149,6 @@ public class HouseRepository implements HouseRepositoryContract {
 
         if (callback != null) {
           callback.onHousesCatalogLoaded(error);
-          Log.e(TAG, "Hay " + holidayRentalHouseList.size() + " holiday rental houses");
-          Log.e(TAG, "Hay " + saleHouseList.size() + " sale houses");
-          Log.e(TAG, "Hay " + rentHouseList.size() + " rent houses");
         }
       }
     });
