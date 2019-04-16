@@ -5,7 +5,7 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "houses")
-public class House {
+public abstract class House {
 
   @PrimaryKey
   public final int id_house;
