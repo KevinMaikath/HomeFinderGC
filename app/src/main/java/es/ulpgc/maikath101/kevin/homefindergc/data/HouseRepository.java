@@ -40,10 +40,6 @@ public class HouseRepository implements HouseRepositoryContract {
   private Context context;
   private HousesDatabase database;
 
-  private List<HolidayRentalHouse> holidayRentalHouseList;
-  private List<RentHouse> rentHouseList;
-  private List<SaleHouse> saleHouseList;
-
   public static HouseRepository getInstance(Context context) {
     if (instance == null) {
       instance = new HouseRepository(context);
@@ -53,9 +49,6 @@ public class HouseRepository implements HouseRepositoryContract {
 
   private HouseRepository(Context context) {
     this.context = context;
-    holidayRentalHouseList = new ArrayList<>();
-    rentHouseList = new ArrayList<>();
-    saleHouseList = new ArrayList<>();
 
     database = Room.databaseBuilder(
             context, HousesDatabase.class, DB_FILE
@@ -180,7 +173,6 @@ public class HouseRepository implements HouseRepositoryContract {
         if (callback != null) {
           callback.onHousesCatalogLoaded(error);
           Log.e(TAG, "Hay " + holidayRentalHouseList.size() + " holiday rental houses");
-          Log.e(TAG, "Hay " + holidayRentalHouseList.get(1).getImagenes().size()+ " imagenes");
           Log.e(TAG, "Hay " + saleHouseList.size() + " sale houses");
           Log.e(TAG, "Hay " + rentHouseList.size() + " rent houses");
         }
