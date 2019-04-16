@@ -8,6 +8,8 @@ import android.arch.persistence.room.Query;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 
 @Dao
 public interface HouseDao {
@@ -19,11 +21,11 @@ public interface HouseDao {
   void delete(House house);
 
   @Query("SELECT * FROM houses WHERE id_sell_type=111")
-  List<House> getForSaleHouses();
+  List<SellHouse> getForSaleHouses();
 
   @Query("SELECT * FROM houses WHERE id_sell_type=222")
-  List<House> getForRentHouses();
+  List<RentHouse> getForRentHouses();
 
   @Query("SELECT * FROM houses WHERE id_sell_type=333")
-  List<House> getHolidayRentalHouses();
+  List<RentHouse> getHolidayRentalHouses();
 }
