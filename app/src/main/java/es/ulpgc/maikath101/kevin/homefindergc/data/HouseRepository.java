@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.data;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -17,6 +18,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import es.ulpgc.maikath101.kevin.homefindergc.database.HouseDao;
+import es.ulpgc.maikath101.kevin.homefindergc.database.HousesDatabase;
+import es.ulpgc.maikath101.kevin.homefindergc.database.ImageDao;
+import es.ulpgc.maikath101.kevin.homefindergc.database.RentHouseDao;
+import es.ulpgc.maikath101.kevin.homefindergc.database.SellHouseDao;
+import es.ulpgc.maikath101.kevin.homefindergc.database.Sell_typeDao;
+
 public class HouseRepository implements HouseRepositoryContract {
 
   public static String TAG = HouseRepository.class.getSimpleName();
@@ -26,8 +34,11 @@ public class HouseRepository implements HouseRepositoryContract {
   public static final String JSON_SALE_HOUSES_ROOT = "forSaleHouses";
   public static final String JSON_HOLIDAY_RENTAL_HOUSES_ROOT = "forHolidayRentalHouses";
 
+  public static final String DB_FILE = "housesDatabase.db";
+
   private static HouseRepository instance = null;
   private Context context;
+  private HousesDatabase database;
 
   private List<HolidayRentalHouse> holidayRentalHouseList;
   private List<RentHouse> rentHouseList;
@@ -45,6 +56,10 @@ public class HouseRepository implements HouseRepositoryContract {
     holidayRentalHouseList = new ArrayList<>();
     rentHouseList = new ArrayList<>();
     saleHouseList = new ArrayList<>();
+
+    database = Room.databaseBuilder(
+            context, HousesDatabase.class, DB_FILE
+    ).build();
   }
 
   private String loadJSONFromAsset() {
@@ -245,4 +260,26 @@ public class HouseRepository implements HouseRepositoryContract {
       }
     });
   }
+
+  private HouseDao getHouseDao(){
+    return database.getHouseDao();
+  }
+
+  private ImageDao getImageDao(){
+    return database.getImageDao();
+  }
+
+  private RentHouseDao getRentHouseDao(){
+    return database.getRentHouseDao();
+  }
+
+  private Sell_typeDao getSell_typeDao(){
+    return database.getSell_typeDao();
+  }
+
+  private SellHouseDao getSellHouseDao(){
+    return database.getSellHouseDao();
+  }
+
+
 }
