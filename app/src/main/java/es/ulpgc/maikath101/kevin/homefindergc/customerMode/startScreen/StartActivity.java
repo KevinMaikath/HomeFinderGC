@@ -25,6 +25,7 @@ public class StartActivity
   private DrawerLayout drawerLayout;
   private TextView topText;
 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

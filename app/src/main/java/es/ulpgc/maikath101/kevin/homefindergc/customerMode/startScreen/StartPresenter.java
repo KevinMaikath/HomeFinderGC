@@ -97,14 +97,15 @@ public class StartPresenter implements StartContract.Presenter {
 
   @Override
   public void fetchOnSaleHousesData() {
-    model.fetchJSONData(new HouseRepositoryContract.FetchOnSaleHousesDataCallback() {
-      @Override
-      public void setOnSaleHouses(List<SaleHouse> saleHouses) {
-        viewModel.saleHouseList = saleHouses;
-
-        view.get().displayData(viewModel);
-      }
-    });
+// TODO   ajustar al nuevo repositorio
+// model.fetchJSONData(new HouseRepositoryContract.FetchOnSaleHousesDataCallback() {
+//      @Override
+//      public void setOnSaleHouses(List<SaleHouse> saleHouses) {
+//        viewModel.saleHouseList = saleHouses;
+//
+//        view.get().displayData(viewModel);
+//      }
+//    });
   }
 
   @Override
