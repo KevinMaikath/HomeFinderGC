@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
 public class StartActivity
         extends AppCompatActivity implements StartContract.View, NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +27,7 @@ public class StartActivity
   private DrawerLayout drawerLayout;
   private TextView topText;
 
+  private StartHouseAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class StartActivity
         drawerLayout.openDrawer(GravityCompat.START);
       }
     });
+
     drawerLayout = findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -48,6 +52,19 @@ public class StartActivity
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
     navigationView.setNavigationItemSelectedListener(this);
+
+    listAdapter = new StartHouseAdapter(new View.OnClickListener() {
+
+      @Override
+      public void onClick(View view) {
+        House item = (House) view.getTag();
+        presenter.selectHouse(item);
+      }
+
+    });
+
+    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+    recyclerView.setAdapter(listAdapter);
 
     // do the setup
     StartScreen.configure(this);

@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 public class StartPresenter implements StartContract.Presenter {
@@ -128,5 +129,12 @@ public class StartPresenter implements StartContract.Presenter {
         // view.get().displayOnHolidayRentalHousesList(viewModel);
         break;
     }
+  }
+
+  @Override
+  public void selectHouse(House item) {
+    //  TODO  pasar el item a homeDetail
+    //  passDataTo...
+    router.navigateToHomeDetailScreen();
   }
 }
