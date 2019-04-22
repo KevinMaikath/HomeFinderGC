@@ -20,6 +20,7 @@ public abstract class House {
   public final String refNumber;
   public final String description;
   public final String name;
+  public final String price;
   public final int rooms;
   public final String location;
   public final boolean pool;
@@ -29,7 +30,7 @@ public abstract class House {
   public final int surface;
 
   public House(int id_house, int id_sell_type, int main_image, String refNumber,
-               String description, String name, int rooms, String location,
+               String description, String name, String price, int rooms, String location,
                boolean pool, int bathrooms, String parking, String floor_type, int surface) {
     this.id_house = id_house;
     this.id_sell_type = id_sell_type;
@@ -37,6 +38,7 @@ public abstract class House {
     this.refNumber = refNumber;
     this.description = description;
     this.name = name;
+    this.price = price;
     this.rooms = rooms;
     this.location = location;
     this.pool = pool;

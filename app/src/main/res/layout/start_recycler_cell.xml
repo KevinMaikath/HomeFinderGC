@@ -18,7 +18,7 @@
         android:src="@drawable/password_eye" />
 
     <TextView
-        android:id="@+id/text_1"
+        android:id="@+id/house_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/house_image"
@@ -26,7 +26,7 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/text_2"
+        android:id="@+id/house_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/house_image"
