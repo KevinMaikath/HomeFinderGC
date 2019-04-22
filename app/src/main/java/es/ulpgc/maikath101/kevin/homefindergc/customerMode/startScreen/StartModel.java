@@ -15,6 +15,8 @@ public class StartModel implements StartContract.Model {
   }
 
 
+  //  TODO  adaptar al nuevo repositorio
+  /**
   @Override
   public void fetchJSONData(final HouseRepository.FetchOnSaleHousesDataCallback callback) {
 
@@ -58,4 +60,6 @@ public class StartModel implements StartContract.Model {
       }
     });
   }
+
+  **/
 }
