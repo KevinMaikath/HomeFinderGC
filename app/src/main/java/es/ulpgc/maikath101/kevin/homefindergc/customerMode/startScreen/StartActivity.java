@@ -19,6 +19,18 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
 public class StartActivity
         extends AppCompatActivity implements StartContract.View, NavigationView.OnNavigationItemSelectedListener {
+  /** TODO  crear DrawerLayout
+   * CREAR:
+   *  - DrawerActivity: todas las activities heredan de esta.
+   *          - DrawerLayout: solo drawer con navigationView, las activities que heredan se quedan
+   *            con solo el CoordinatorLayout
+   *  - AppRouter: ya creado
+   *  - DrawerPresenter: para comunicar DrawerActivity con AppRouter, todos los presentadores
+   *      heredan de este
+   *
+   */
+
+
 
   public static String TAG = StartActivity.class.getSimpleName();
 
@@ -28,6 +40,7 @@ public class StartActivity
   private TextView topText;
 
   private StartHouseAdapter listAdapter;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

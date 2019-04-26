@@ -21,14 +21,17 @@ public interface HouseDao {
   void delete(House house);
 
   @Query("SELECT * FROM houses WHERE id_sell_type=111")
-  List<SellHouse> getForSaleHouses();
+  List<House> getForSaleHouses();
 
   @Query("SELECT * FROM houses WHERE id_sell_type=222")
-  List<RentHouse> getForRentHouses();
+  List<House> getForRentHouses();
 
   @Query("SELECT * FROM houses WHERE id_sell_type=333")
-  List<RentHouse> getHolidayRentalHouses();
+  List<House> getHolidayRentalHouses();
 
   @Query("SELECT * FROM houses WHERE id_house=:id_house")
   House getHouse(int id_house);
+
+  @Query("SELECT * FROM houses")
+  List<House> getAllHouses();
 }
