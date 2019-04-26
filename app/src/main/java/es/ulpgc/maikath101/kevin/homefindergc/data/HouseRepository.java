@@ -96,9 +96,7 @@ public class HouseRepository implements HouseRepositoryContract {
 
       if (jsonArrayHouses.length() > 0) {
 
-        final List<House> houses = Arrays.asList(
-                gson.fromJson(jsonArrayHouses.toString(), House[].class)
-        );
+        final List<House> houses = Arrays.asList(gson.fromJson(jsonArrayHouses.toString(), House[].class));
 
         final List<Sell_type> sell_types = Arrays.asList(gson.fromJson(jsonArraySellType.toString(), Sell_type[].class));
 
@@ -188,7 +186,7 @@ public class HouseRepository implements HouseRepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setRentHousesList(getHouseDao().getForRentHouses());
+          callback.setRentHousesList(getRentHouseDao().getAllRentHouses());
         }
       }
     });
@@ -212,7 +210,7 @@ public class HouseRepository implements HouseRepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setSellHousesList(getHouseDao().getForSaleHouses());
+          callback.setSellHousesList(getSellHouseDao().getAllSellHouses());
         }
       }
     });
@@ -225,6 +223,18 @@ public class HouseRepository implements HouseRepositoryContract {
       public void run() {
         if (callback != null) {
           callback.setSellHouse(getSellHouseDao().getSellHouse(id));
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getAllHouses(final GetAllHousesCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null){
+          callback.setAllHouses(getHouseDao().getAllHouses());
         }
       }
     });

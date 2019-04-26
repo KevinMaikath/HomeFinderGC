@@ -24,6 +24,9 @@ public interface HouseRepositoryContract {
     void setSellHouse(SellHouse house);
   }
 
+  interface GetAllHousesCallback {
+    void setAllHouses(List<House> houses);
+  }
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
@@ -34,5 +37,7 @@ public interface HouseRepositoryContract {
   void getSellHouseList(HouseRepository.GetSellHousesListCallback callback);
 
   void getSellHouse(int id, HouseRepository.GetSellHouseCallback callback);
+
+  void getAllHouses(HouseRepository.GetAllHousesCallback callback);
 
 }

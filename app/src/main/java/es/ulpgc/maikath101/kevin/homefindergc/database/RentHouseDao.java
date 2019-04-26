@@ -5,6 +5,8 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
+import java.util.List;
+
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
 
@@ -19,4 +21,7 @@ public interface RentHouseDao {
 
   @Query("SELECT * FROM houses WHERE id_house=:id_house")
   RentHouse getRentHouse(int id_house);
+
+  @Query("SELECT * FROM house_rent")
+  List<RentHouse> getAllRentHouses();
 }
