@@ -14,8 +14,7 @@
       "bathrooms": 1,
       "parking": "No",
       "floor_type": "Residencial",
-      "surface": 85,
-      "furniture": "Totalmente amueblada"
+      "surface": 85
     },
     {
       "id": 2,
@@ -31,8 +30,7 @@
       "bathrooms": 3,
       "parking": "Plaza de Aparcamiento Privado",
       "floor_type": "Residencial",
-      "surface": 113,
-      "furniture": "Totalmente amueblada"
+      "surface": 113
     },
     {
       "id": 3,
@@ -48,8 +46,7 @@
       "bathrooms": 2,
       "parking": "No",
       "floor_type": "Residencial",
-      "surface": 120,
-      "furniture": "Parcialmente amueblada"
+      "surface": 120
     },
     {
       "id": 4,
@@ -65,8 +62,7 @@
       "bathrooms": 3,
       "parking": "Plaza de Aparcamiento Comunitaria",
       "floor_type": "Residencial",
-      "surface": 112,
-      "furniture": "Parcialmente amueblada"
+      "surface": 112
     },
     {
       "id": 5,
@@ -82,8 +78,7 @@
       "bathrooms": 4,
       "parking": "Plaza de Aparcamiento Privado",
       "floor_type": "Residencial",
-      "surface": 190,
-      "furniture": "Sin amueblar"
+      "surface": 190
     },
     {
       "id": 6,
@@ -99,8 +94,7 @@
       "bathrooms": 3,
       "parking": "Garaje Privado",
       "floor_type": "Residencial",
-      "surface": 185,
-      "furniture": "Sin amueblar"
+      "surface": 185
     },
     {
       "id": 7,
@@ -116,8 +110,7 @@
       "bathrooms": 1,
       "parking": "Plaza de Aparcamiento Comunitaria",
       "floor_type": "Turístico",
-      "surface": 45,
-      "furniture": "Totalmente amueblada"
+      "surface": 45
     },
     {
       "id": 8,
@@ -133,8 +126,7 @@
       "bathrooms": 1,
       "parking": "No",
       "floor_type": "Turístico",
-      "surface": 45,
-      "furniture": "Totalmente amueblada"
+      "surface": 45
     }
   ],
   "sell_type": [

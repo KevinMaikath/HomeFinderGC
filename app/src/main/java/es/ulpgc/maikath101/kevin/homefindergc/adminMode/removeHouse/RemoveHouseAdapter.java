@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 public class RemoveHouseAdapter extends ArrayAdapter<House> {
@@ -28,7 +29,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
     super(context, 0, items);
 
-   // repository = HouseRepository.getInstance();
+    repository = HouseRepository.getInstance(context);
     this.context = context;
     itemList = items;
     clickListener = listener;
@@ -46,7 +47,7 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
 
   @Override
   public long getItemId(int position) {
-    return getItem(position).getId();
+    return getItem(position).id_house;
   }
 
   @Override
@@ -70,11 +71,11 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
     button.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Toast.makeText(getContext(), "Me han presionado en " + itemList.get(position).getId(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Me han presionado en " + itemList.get(position).id_house, Toast.LENGTH_SHORT).show();
 
         AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
         builder1.setTitle("Eliminar");
-        builder1.setMessage("¿Estás seguro que deseas eliminar el apartamento seleccionado? " + itemList.get(position).getReferenceNumber());
+        builder1.setMessage("¿Estás seguro que deseas eliminar el apartamento seleccionado? " + itemList.get(position).refNumber);
         builder1.setCancelable(true);
 
         // Si presionamos ELIMINAR se borra el elemento del repositorio
@@ -103,8 +104,8 @@ public class RemoveHouseAdapter extends ArrayAdapter<House> {
         alert11.show();
       }
     });
-    apartmentName.setText(itemList.get(position).getDescription());
-    referenceNumber.setText(itemList.get(position).getReferenceNumber());
+    apartmentName.setText(itemList.get(position).description);
+    referenceNumber.setText(itemList.get(position).refNumber);
 
     return itemView;
   }

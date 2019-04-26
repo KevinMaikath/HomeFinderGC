@@ -17,18 +17,6 @@ public class RemoveHouseRouter implements RemoveHouseContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, RemoveHouseActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
-  public void passDataToNextScreen(RemoveHouseState state) {
-    mediator.setRemoveHouseState(state);
-  }
-
-  @Override
   public RemoveHouseState getDataFromPreviousScreen() {
     RemoveHouseState state = mediator.getRemoveHouseState();
     return state;

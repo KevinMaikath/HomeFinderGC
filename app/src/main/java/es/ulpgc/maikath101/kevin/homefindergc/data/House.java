@@ -4,6 +4,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity(tableName = "houses")
 public class House {
 
@@ -17,6 +19,7 @@ public class House {
   @ForeignKey(entity = Image.class, parentColumns = "id_image", childColumns = "main_image")
   public final int main_image;
 
+  @SerializedName("referenceNumber")
   public final String refNumber;
   public final String description;
   public final String name;

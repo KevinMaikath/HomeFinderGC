@@ -43,7 +43,7 @@ public class RemoveHouseActivity
     // do the setup
     RemoveHouseScreen.configure(this);
 
-    presenter.fetchData();
+    presenter.loadAllHouses();
   }
 
   @Override

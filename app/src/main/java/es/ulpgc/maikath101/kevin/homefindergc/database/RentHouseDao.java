@@ -19,7 +19,7 @@ public interface RentHouseDao {
   @Delete
   void delete(RentHouse rentHouse);
 
-  @Query("SELECT * FROM houses WHERE id_house=:id_house")
+  @Query("SELECT * FROM house_rent WHERE id_house=:id_house")
   RentHouse getRentHouse(int id_house);
 
   @Query("SELECT * FROM house_rent")

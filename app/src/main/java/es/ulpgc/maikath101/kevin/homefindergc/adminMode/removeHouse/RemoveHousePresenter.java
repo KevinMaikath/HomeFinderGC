@@ -4,6 +4,9 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+
 public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
 
   public static String TAG = RemoveHousePresenter.class.getSimpleName();
@@ -33,22 +36,16 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
   }
 
   @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+  public void loadAllHouses() {
+    model.loadAllHouses(new HouseRepositoryContract.GetAllHousesCallback() {
+      @Override
+      public void setAllHouses(List<House> houses) {
+        viewModel.houses = houses;
 
-    // set passed state
-    // viewModel.houses = model.getHousess();
-    // update the view
+        view.get().displayData(viewModel);
+      }
+    });
 
-    // TODO esto hay que borrarlo e implementarlo bien
-
-    List<House> houses = new ArrayList<>();
-    houses.add(0,new HolidayRentalHouse("","","",1,"",2,
-            "",true,2,false,"","",20
-    ,new ArrayList<ImageHouse>(),""));
-
-    viewModel.houses = houses;
-    view.get().displayData(viewModel);
   }
 
 

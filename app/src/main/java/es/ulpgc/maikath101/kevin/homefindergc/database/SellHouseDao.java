@@ -19,7 +19,7 @@ public interface SellHouseDao {
   @Delete
   void delete(SellHouse sellHouse);
 
-  @Query("SELECT * FROM houses WHERE id_house=:id_house")
+  @Query("SELECT * FROM house_sell WHERE id_house=:id_house")
   SellHouse getSellHouse(int id_house);
 
   @Query("SELECT * FROM house_sell")
