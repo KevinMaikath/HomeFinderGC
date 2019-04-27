@@ -52,9 +52,11 @@ public class HouseRepository implements HouseRepositoryContract {
   private HouseRepository(Context context) {
     this.context = context;
 
-    database = Room.databaseBuilder(
-            context, HousesDatabase.class, DB_FILE
-    ).fallbackToDestructiveMigration().build();
+//    database = Room.databaseBuilder(
+//            context, HousesDatabase.class, DB_FILE
+//    ).build();
+
+    database = HousesDatabase.getInstance(context);
   }
 
   private String loadJSONFromAsset() {
@@ -238,11 +240,6 @@ public class HouseRepository implements HouseRepositoryContract {
         }
       }
     });
-  }
-
-  @Override
-  public void insertHouse(House house) {
-
   }
 
 }
