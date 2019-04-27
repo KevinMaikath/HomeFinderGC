@@ -28,6 +28,10 @@ public interface HouseRepositoryContract {
     void setAllHouses(List<House> houses);
   }
 
+  interface GetImageFromHouseCallback {
+    void setImage(List<Image> image);
+  }
+
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
   void getRentHouseList(HouseRepository.GetRentHousesListCallback callback);
@@ -41,5 +45,7 @@ public interface HouseRepositoryContract {
   void getAllHouses(HouseRepository.GetAllHousesCallback callback);
 
   void insertHouse(House house);
+
+  void getImage(int id, HouseRepository.GetImageFromHouseCallback callback);
 
 }

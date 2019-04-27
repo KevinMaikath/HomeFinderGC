@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,7 +32,7 @@ public class RemoveHouseActivity
     setSupportActionBar(toolbar);
 
 
-    listAdapter = new RemoveHouseAdapter(new View.OnClickListener() {
+    listAdapter = new RemoveHouseAdapter(getApplicationContext(), new View.OnClickListener() {
       @Override
       public void onClick(View v) {
 

@@ -242,4 +242,14 @@ public class HouseRepository implements HouseRepositoryContract {
     });
   }
 
+  @Override
+  public void insertHouse(House house) {
+
+  }
+
+  @Override
+  public void getImage(int id, GetImageFromHouseCallback callback) {
+
+  }
+
 }

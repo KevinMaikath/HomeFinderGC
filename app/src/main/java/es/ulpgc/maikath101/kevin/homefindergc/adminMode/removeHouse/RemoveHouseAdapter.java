@@ -19,16 +19,20 @@ import java.util.List;
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.ViewHolder> {
 
   public static String TAG = RemoveHouseAdapter.class.getSimpleName();
   private List<House> itemList;
   private final View.OnClickListener clickListener;
+  private HouseRepository repository;
 
-  public RemoveHouseAdapter(
+  public RemoveHouseAdapter(Context context,
           View.OnClickListener listener) {
 
+    repository = HouseRepository.getInstance(context);
     itemList = new ArrayList<>();
     clickListener = listener;
   }
@@ -63,7 +67,7 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
   }
 
   @Override
-  public void onBindViewHolder(final ViewHolder holder, int position) {
+  public void onBindViewHolder(final ViewHolder holder, final int position) {
     holder.itemView.setTag(itemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
@@ -72,12 +76,14 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
     holder.referenceNumber.setText("Referencia: " + itemList.get(position).refNumber);
     Log.e(TAG, String.valueOf(itemList.get(position).main_image));
 
+
   }
 
 
   class ViewHolder extends RecyclerView.ViewHolder {
     final TextView apartmentName;
     final TextView referenceNumber;
+
 
     ViewHolder(View view) {
       super(view);
