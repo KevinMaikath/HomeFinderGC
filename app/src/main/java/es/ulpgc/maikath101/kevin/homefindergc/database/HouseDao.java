@@ -34,4 +34,7 @@ public interface HouseDao {
 
   @Query("SELECT * FROM houses")
   List<House> getAllHouses();
+
+  @Query("SELECT * FROM houses LIMIT 3")
+  List<House> getStartHouses();
 }

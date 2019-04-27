@@ -16,50 +16,17 @@ public class StartModel implements StartContract.Model {
 
 
   //  TODO  adaptar al nuevo repositorio
-  /**
-  @Override
-  public void fetchJSONData(final HouseRepository.FetchOnSaleHousesDataCallback callback) {
 
-    repository.fetchHousesCatalog(new HouseRepositoryContract.FetchHousesCatalogCallback() {
+  @Override
+  public void loadStartHouses(final HouseRepositoryContract.GetStartHousesCallback callback) {
+    repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
       @Override
-      public void onHousesCatalogLoaded(boolean error) {
+      public void onHousesInformationFetched(boolean error) {
         if (!error) {
-          repository.getOnSaleHousesList(callback);
+          repository.getStartHouses(callback);
         }
       }
     });
   }
 
-  @Override
-  public void fetchOnRentHousesData(final HouseRepository.FetchOnRentHousesDataCallback callback) {
-    repository.getOnRentHousesList(new HouseRepositoryContract.FetchOnRentHousesDataCallback() {
-      @Override
-      public void setOnRentHouses(List<RentHouse> rentHouses) {
-        callback.setOnRentHouses(rentHouses);
-      }
-    });
-  }
-
-  @Override
-  public void fetchOnHolidayRentalHousesData(final HouseRepository.FetchOnHolidayRentalHousesDataCallback callback) {
-    repository.getOnHolidayRentalHousesList(new HouseRepositoryContract.FetchOnHolidayRentalHousesDataCallback() {
-      @Override
-      public void setOnHolidayRentalHouses(List<HolidayRentalHouse> holidayRentalHouses) {
-        callback.setOnHolidayRentalHouses(holidayRentalHouses);
-      }
-    });
-
-  }
-
-  @Override
-  public void fetchOnSaleHousesData(final HouseRepository.FetchOnSaleHousesDataCallback callback) {
-    repository.getOnSaleHousesList(new HouseRepositoryContract.FetchOnSaleHousesDataCallback() {
-      @Override
-      public void setOnSaleHouses(List<SaleHouse> saleHouses) {
-        callback.setOnSaleHouses(saleHouses);
-      }
-    });
-  }
-
-  **/
 }

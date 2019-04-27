@@ -5,6 +5,7 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 interface StartContract {
 
@@ -40,7 +41,13 @@ interface StartContract {
 
     void goToHomeDetail();
 
-    void fetchOnSaleHousesData();
+    void fetchStartHousesData();
+
+    void fetchForSaleHousesData();
+
+    void fetchForRentHousesData();
+
+    void fetchHolidayRentalHousesData();
 
     void selectHouse(House item);
   }
@@ -51,8 +58,10 @@ interface StartContract {
     void fetchJSONData(HouseRepository.FetchOnSaleHousesDataCallback callback);
     void fetchOnRentHousesData(HouseRepository.FetchOnRentHousesDataCallback callback);
     void fetchOnHolidayRentalHousesData(HouseRepository.FetchOnHolidayRentalHousesDataCallback callback);
-    void fetchOnSaleHousesData(HouseRepository.FetchOnSaleHousesDataCallback callback);
+    void fetchForSaleHousesData(HouseRepository.FetchOnSaleHousesDataCallback callback);
      **/
+
+    void loadStartHouses(HouseRepositoryContract.GetStartHousesCallback callback);
   }
 
   interface Router extends AppRouter {

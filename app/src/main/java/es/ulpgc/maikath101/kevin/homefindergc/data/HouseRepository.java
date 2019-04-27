@@ -243,6 +243,18 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
+  public void getStartHouses(final GetStartHousesCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null){
+          callback.setStartHouses(getHouseDao().getStartHouses());
+        }
+      }
+    });
+  }
+
+  @Override
   public void insertHouse(House house) {
 
   }
