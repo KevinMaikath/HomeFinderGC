@@ -19,11 +19,13 @@ import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
@@ -35,10 +37,12 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
   private List<House> itemList;
   private final View.OnClickListener clickListener;
   private HouseRepository repository;
+  private Context context;
 
   public RemoveHouseAdapter(Context context,
           View.OnClickListener listener) {
 
+    this.context = context;
     repository = HouseRepository.getInstance(context);
     itemList = new ArrayList<>();
     clickListener = listener;
@@ -83,10 +87,19 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
     holder.referenceNumber.setText("Referencia: " + itemList.get(position).refNumber);
     Log.e(TAG, String.valueOf(itemList.get(position).main_image));
 
-    repository.getImage(itemList.get(position).id_house, new HouseRepositoryContract.GetImageFromHouseCallback() {
+    repository.getImage(itemList.get(position).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
       @Override
-      public void setImage(Image image) {
-        // holder.imageView3
+      public void setImage(final Image image) {
+        Log.e(TAG, image.url);
+
+        //loadImageFromURL(holder.imageView3, image.url);
+        //
+        ((RemoveHouseActivity)context).runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+            Picasso.get().load(image.url).into(holder.imageView3);
+          }
+        });
       }
     });
   }
