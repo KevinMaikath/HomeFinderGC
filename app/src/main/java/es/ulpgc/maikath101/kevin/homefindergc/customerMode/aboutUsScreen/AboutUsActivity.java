@@ -53,9 +53,10 @@ public class AboutUsActivity extends AppCompatActivity implements AboutUsContrac
     ImageView thumbnailView = (ImageView) findViewById(R.id.aboutUsImageView);
     TextView messageView = (TextView) findViewById(R.id.aboutUsTextView);
     String text = getString(R.string.company_information);
+    messageView.setText(text);
 
-    Display display = getWindowManager().getDefaultDisplay();
-    FlowTextHelper.tryFlowText(text, thumbnailView, messageView, display);
+    //Display display = getWindowManager().getDefaultDisplay();
+    //FlowTextHelper.tryFlowText(text, thumbnailView, messageView, display);
   }
 
   @Override

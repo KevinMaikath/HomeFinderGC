@@ -38,31 +38,29 @@
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
-                <RelativeLayout
+
+                <ImageView
+                    android:id="@+id/aboutUsImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="100sp">
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginLeft="10sp"
+                    android:background="@drawable/oliver_maikath"
+                    android:paddingLeft="30sp"
+                    android:scaleType="centerCrop" />
 
-                    <ImageView
-                        android:id="@+id/aboutUsImageView"
-                        android:layout_width="130sp"
-                        android:layout_height="130sp"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="10sp"
-                        android:background="@drawable/password_eye"
-                        android:paddingLeft="30sp" />
-
-                    <TextView
-                        android:id="@+id/aboutUsTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/aboutUsImageView"
-                        android:fontFamily="sans-serif"
-                        android:paddingLeft="30dp"
-                        android:paddingRight="30dp"
-                        android:text="@string/about_us_info"
-                        android:textSize="14sp" />
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/aboutUsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="2sp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="@string/about_us_info"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
             </LinearLayout>
         </ScrollView>
 
