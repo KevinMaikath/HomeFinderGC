@@ -29,7 +29,7 @@ public interface HouseRepositoryContract {
   }
 
   interface GetImageFromHouseCallback {
-    void setImage(List<Image> image);
+    void setImage(Image image);
   }
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);

@@ -21,5 +21,7 @@ public interface ImageDao {
   @Query("SELECT * FROM images WHERE id_house=:id_house")
   List<Image> getImages(int id_house);
 
+  @Query("SELECT * FROM images WHERE id_image=:id_image")
+  Image getImage(int id_image);
 
 }

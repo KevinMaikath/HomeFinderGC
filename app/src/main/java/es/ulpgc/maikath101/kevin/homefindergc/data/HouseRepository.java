@@ -235,7 +235,7 @@ public class HouseRepository implements HouseRepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (callback != null){
+        if (callback != null) {
           callback.setAllHouses(getHouseDao().getAllHouses());
         }
       }
@@ -248,8 +248,15 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
-  public void getImage(int id, GetImageFromHouseCallback callback) {
-
+  public void getImage(final int id, final GetImageFromHouseCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setImage(getImageDao().getImage(id));
+        }
+      }
+    });
   }
 
 }
