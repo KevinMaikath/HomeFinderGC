@@ -69,15 +69,20 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
 
     // holder.contentView.setText(itemList.get(position).content);
     holder.apartmentName.setText(itemList.get(position).name);
+    holder.referenceNumber.setText("Referencia: " + itemList.get(position).refNumber);
+    Log.e(TAG, String.valueOf(itemList.get(position).main_image));
+
   }
 
 
   class ViewHolder extends RecyclerView.ViewHolder {
     final TextView apartmentName;
+    final TextView referenceNumber;
 
     ViewHolder(View view) {
       super(view);
       apartmentName = view.findViewById(R.id.apartmentNameTextView);
+      referenceNumber = view.findViewById(R.id.referenceNumberTextView);
     }
   }
 }
