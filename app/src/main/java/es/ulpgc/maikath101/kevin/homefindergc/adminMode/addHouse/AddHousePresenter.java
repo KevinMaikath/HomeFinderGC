@@ -43,4 +43,10 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
     view.get().displayData(viewModel);
   }
 
+  @Override
+  public void doneButtonPressed(String name, String location, String price, String description, Uri imageUri) {
+    model.doneButtonPressed(name, location, price, description, imageUri);
+  }
+
+
 }

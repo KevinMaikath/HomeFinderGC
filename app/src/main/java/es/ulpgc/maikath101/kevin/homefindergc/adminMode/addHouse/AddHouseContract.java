@@ -22,10 +22,12 @@ interface AddHouseContract {
     void saveImageFromRotation(Uri imageUri);
 
     void fetchData();
+
+    void doneButtonPressed(String name, String location, String price, String description, Uri imageUri);
   }
 
   interface Model {
-
+    void doneButtonPressed(String name, String location, String price, String description, Uri imageUri);
   }
 
   interface Router {

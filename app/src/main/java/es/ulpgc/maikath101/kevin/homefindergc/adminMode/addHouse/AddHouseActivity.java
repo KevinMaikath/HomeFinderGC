@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,6 +25,10 @@ public class AddHouseActivity
   private static final int PICK_IMAGE = 100;
   private Uri imageURI;
   ImageView imageView;
+  private EditText nameEditText;
+  private EditText locationEditText;
+  private EditText priceEditText;
+  private EditText descriptionEditText;
 
   @Override
   protected void onResume() {
@@ -46,11 +51,22 @@ public class AddHouseActivity
     ImageButton addImageButton = findViewById(R.id.add_image_button);
 
     imageView = findViewById(R.id.imageView9);
+    nameEditText = findViewById(R.id.nameEditText);
+    locationEditText = findViewById(R.id.locationEditText);
+    priceEditText = findViewById(R.id.priceEditText);
+    descriptionEditText = findViewById(R.id.desciptionEditText);
 
     doneButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Toast.makeText(getApplicationContext(), "Done presionado", Toast.LENGTH_SHORT).show();
+        if (checkFields()) {
+          presenter.doneButtonPressed(nameEditText.getText().toString(),
+                  locationEditText.getText().toString(), priceEditText.getText().toString(),
+                  descriptionEditText.getText().toString(), imageURI);
+        } else {
+          Toast.makeText(getApplicationContext(), "Por favor, rellene todos los campos",
+                  Toast.LENGTH_SHORT).show();
+        }
       }
     });
     backButton.setOnClickListener(new View.OnClickListener() {
@@ -97,5 +113,17 @@ public class AddHouseActivity
 
   private void saveImageFromRotation(Uri imageUri) {
     presenter.saveImageFromRotation(imageUri);
+  }
+
+  private boolean checkFields(){
+    // Devuelve true si todos los campos están rellenos
+
+    if(!nameEditText.getText().toString().equals("") &&
+            !locationEditText.getText().toString().equals("") &&
+            !priceEditText.getText().toString().equals("")
+    && !descriptionEditText.getText().toString().equals("") && imageURI != null){
+      return true;
+    }
+    return false;
   }
 }

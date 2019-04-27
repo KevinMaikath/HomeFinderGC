@@ -40,4 +40,6 @@ public interface HouseRepositoryContract {
 
   void getAllHouses(HouseRepository.GetAllHousesCallback callback);
 
+  void insertHouse(House house);
+
 }
