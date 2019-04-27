@@ -8,20 +8,16 @@ public interface HouseRepositoryContract {
     void onHousesInformationFetched(boolean error);
   }
 
-  interface GetRentHousesListCallback {
-    void setRentHousesList(List<RentHouse> houses);
+  interface GetHolidayRentalHousesCallback {
+    void setHolidayRentalHouses(List<House> houses);
   }
 
-  interface GetRentHouseCallback {
-    void setRentHouse(RentHouse house);
+  interface GetForRentHousesCallback {
+    void setForRentHouses(List<House> houses);
   }
 
-  interface GetSellHousesListCallback {
-    void setSellHousesList(List<SellHouse> houses);
-  }
-
-  interface GetSellHouseCallback {
-    void setSellHouse(SellHouse house);
+  interface GetForSaleHousesCallback {
+    void setForSaleHouses(List<House> houses);
   }
 
   interface GetAllHousesCallback {
@@ -39,13 +35,11 @@ public interface HouseRepositoryContract {
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
-  void getRentHouseList(HouseRepository.GetRentHousesListCallback callback);
+  void getForSaleHouses(HouseRepositoryContract.GetForSaleHousesCallback callback);
 
-  void getRentHouse(int id, HouseRepository.GetRentHouseCallback callback);
+  void getForRentHouses(HouseRepositoryContract.GetForRentHousesCallback callback);
 
-  void getSellHouseList(HouseRepository.GetSellHousesListCallback callback);
-
-  void getSellHouse(int id, HouseRepository.GetSellHouseCallback callback);
+  void getHolidayRentalHouses(HouseRepositoryContract.GetHolidayRentalHousesCallback callback);
 
   void getAllHouses(HouseRepository.GetAllHousesCallback callback);
 

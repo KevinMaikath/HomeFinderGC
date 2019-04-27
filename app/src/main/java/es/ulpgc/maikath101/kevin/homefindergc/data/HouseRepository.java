@@ -183,48 +183,36 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
-  public void getRentHouseList(final GetRentHousesListCallback callback) {
+  public void getForSaleHouses(final GetForSaleHousesCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setRentHousesList(getRentHouseDao().getAllRentHouses());
+          callback.setForSaleHouses(getHouseDao().getForSaleHouses());
         }
       }
     });
   }
 
   @Override
-  public void getRentHouse(final int id, final GetRentHouseCallback callback) {
+  public void getForRentHouses(final GetForRentHousesCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setRentHouse(getRentHouseDao().getRentHouse(id));
+          callback.setForRentHouses(getHouseDao().getForRentHouses());
         }
       }
     });
   }
 
   @Override
-  public void getSellHouseList(final GetSellHousesListCallback callback) {
+  public void getHolidayRentalHouses(final GetHolidayRentalHousesCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setSellHousesList(getSellHouseDao().getAllSellHouses());
-        }
-      }
-    });
-  }
-
-  @Override
-  public void getSellHouse(final int id, final GetSellHouseCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setSellHouse(getSellHouseDao().getSellHouse(id));
+          callback.setHolidayRentalHouses(getHouseDao().getHolidayRentalHouses());
         }
       }
     });

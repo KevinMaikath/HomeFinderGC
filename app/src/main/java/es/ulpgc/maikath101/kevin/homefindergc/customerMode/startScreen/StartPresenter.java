@@ -100,15 +100,14 @@ public class StartPresenter implements StartContract.Presenter {
 
   @Override
   public void fetchForSaleHousesData() {
-// TODO   ajustar al nuevo repositorio
-// model.fetchJSONData(new HouseRepositoryContract.FetchOnSaleHousesDataCallback() {
-//      @Override
-//      public void setOnSaleHouses(List<SaleHouse> saleHouses) {
-//        viewModel.saleHouseList = saleHouses;
-//
-//        view.get().displayData(viewModel);
-//      }
-//    });
+    Log.e(TAG, "fetchData()");
+    model.loadForSaleHouses(new HouseRepositoryContract.GetForSaleHousesCallback() {
+      @Override
+      public void setForSaleHouses(List<House> houses) {
+        viewModel.houseList = houses;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override
@@ -118,7 +117,6 @@ public class StartPresenter implements StartContract.Presenter {
       @Override
       public void setStartHouses(List<House> houses) {
         viewModel.houseList = houses;
-        Log.e(TAG, "---------------CASAS GUARDADAS CORRECTAMENTE------------------");
         view.get().displayData(viewModel);
       }
     });
@@ -126,12 +124,26 @@ public class StartPresenter implements StartContract.Presenter {
 
   @Override
   public void fetchForRentHousesData() {
-
+    Log.e(TAG, "fetchData()");
+    model.loadForRentHouses(new HouseRepositoryContract.GetForRentHousesCallback() {
+      @Override
+      public void setForRentHouses(List<House> houses) {
+        viewModel.houseList = houses;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override
   public void fetchHolidayRentalHousesData() {
-
+    Log.e(TAG, "fetchData()");
+    model.loadHolidayRentalHouses(new HouseRepositoryContract.GetHolidayRentalHousesCallback() {
+      @Override
+      public void setHolidayRentalHouses(List<House> houses) {
+        viewModel.houseList = houses;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override
@@ -139,19 +151,19 @@ public class StartPresenter implements StartContract.Presenter {
     switch (state.currentScreen) {
       case "Start":
         viewModel.topText = R.string.start_label;
-        // view.get().displayOnSaleHousesList(viewModel);
+        fetchStartHousesData();
         break;
       case "ForSale":
         viewModel.topText = R.string.for_sale_label;
-        // view.get().displayOnSaleHousesList(viewModel);
+        fetchForSaleHousesData();
         break;
       case "ForRent":
         viewModel.topText = R.string.for_rent_label;
-        // view.get().displayOnRentHousesList(viewModel);
+        fetchForRentHousesData();
         break;
       case "HolidayRental":
         viewModel.topText = R.string.holiday_rental_label;
-        // view.get().displayOnHolidayRentalHousesList(viewModel);
+        fetchHolidayRentalHousesData();
         break;
     }
   }

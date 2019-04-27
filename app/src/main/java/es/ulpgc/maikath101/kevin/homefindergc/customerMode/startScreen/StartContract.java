@@ -53,15 +53,13 @@ interface StartContract {
   }
 
   interface Model {
-    //  TODO  adaptar para cada caso
-    /**
-    void fetchJSONData(HouseRepository.FetchOnSaleHousesDataCallback callback);
-    void fetchOnRentHousesData(HouseRepository.FetchOnRentHousesDataCallback callback);
-    void fetchOnHolidayRentalHousesData(HouseRepository.FetchOnHolidayRentalHousesDataCallback callback);
-    void fetchForSaleHousesData(HouseRepository.FetchOnSaleHousesDataCallback callback);
-     **/
-
     void loadStartHouses(HouseRepositoryContract.GetStartHousesCallback callback);
+
+    void loadForSaleHouses(HouseRepositoryContract.GetForSaleHousesCallback callback);
+
+    void loadForRentHouses(HouseRepositoryContract.GetForRentHousesCallback callback);
+
+    void loadHolidayRentalHouses(HouseRepositoryContract.GetHolidayRentalHousesCallback callback);
   }
 
   interface Router extends AppRouter {
