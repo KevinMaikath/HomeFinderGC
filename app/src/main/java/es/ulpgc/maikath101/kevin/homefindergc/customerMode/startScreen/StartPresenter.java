@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -111,11 +113,12 @@ public class StartPresenter implements StartContract.Presenter {
 
   @Override
   public void fetchStartHousesData() {
+    Log.e(TAG, "fetchData()");
     model.loadStartHouses(new HouseRepositoryContract.GetStartHousesCallback() {
       @Override
       public void setStartHouses(List<House> houses) {
         viewModel.houseList = houses;
-
+        Log.e(TAG, "---------------CASAS GUARDADAS CORRECTAMENTE------------------");
         view.get().displayData(viewModel);
       }
     });

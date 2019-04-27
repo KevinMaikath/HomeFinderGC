@@ -58,7 +58,8 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     holder.itemView.setOnClickListener(clickListener);
 
     holder.house_name.setText(houseList.get(position).name);
-    holder.main_image.setImageResource(houseList.get(position).main_image);
+    //holder.main_image.setImageResource(houseList.get(position).main_image);
+    holder.main_image.setImageResource(R.drawable.password_eye);
     holder.price.setText(houseList.get(position).price);
   }
 

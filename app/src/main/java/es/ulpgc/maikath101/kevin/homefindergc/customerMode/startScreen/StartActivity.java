@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -17,17 +18,16 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
 public class StartActivity
         extends AppCompatActivity implements StartContract.View, NavigationView.OnNavigationItemSelectedListener {
-  /** TODO  crear DrawerLayout
+  /**
+   * TODO  crear DrawerLayout
    * CREAR:
-   *  - DrawerActivity: todas las activities heredan de esta.
-   *          - DrawerLayout: solo drawer con navigationView, las activities que heredan se quedan
-   *            con solo el CoordinatorLayout
-   *  - AppRouter: ya creado
-   *  - DrawerPresenter: para comunicar DrawerActivity con AppRouter, todos los presentadores
-   *      heredan de este
-   *
+   * - DrawerActivity: todas las activities heredan de esta.
+   * - DrawerLayout: solo drawer con navigationView, las activities que heredan se quedan
+   * con solo el CoordinatorLayout
+   * - AppRouter: ya creado
+   * - DrawerPresenter: para comunicar DrawerActivity con AppRouter, todos los presentadores
+   * heredan de este
    */
-
 
 
   public static String TAG = StartActivity.class.getSimpleName();
@@ -81,7 +81,7 @@ public class StartActivity
     StartScreen.configure(this);
 
     // POR DEFECTO SE CARGAN LAS CASAS QUE ESTÁN EN VENTA
-    presenter.fetchForSaleHousesData();
+    presenter.fetchStartHousesData();
 
     presenter.checkCurrentScreen();
   }
@@ -101,21 +101,29 @@ public class StartActivity
   }
 
   @Override
-  public void displayData(StartViewModel viewModel) {
+  public void displayData(final StartViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
-    // deal with the data
-    int text_string = viewModel.topText;
-    if(text_string == R.string.holiday_rental_label){
-      topText.setTextSize(24);
-      topText.setPadding(40,10,0,30);
-    } else {
-      topText.setTextSize(30);
-      topText.setPadding(0,10,0,30);
-    }
-    topText.setText(viewModel.topText);
+    runOnUiThread(new Runnable() {
 
-    listAdapter.setItems(viewModel.houseList);
+      @Override
+      public void run() {
+        int text_string = viewModel.topText;
+
+        if (text_string == R.string.holiday_rental_label) {
+          topText.setTextSize(24);
+          topText.setPadding(40, 10, 0, 30);
+        } else {
+          topText.setTextSize(30);
+          topText.setPadding(0, 10, 0, 30);
+        }
+        topText.setText(viewModel.topText);
+
+        // deal with the data
+        listAdapter.setItems(viewModel.houseList);
+      }
+
+    });
   }
 
   @Override
@@ -126,7 +134,6 @@ public class StartActivity
       super.onBackPressed();
     }
   }
-
 
 
   @Override
@@ -152,7 +159,7 @@ public class StartActivity
     return true;
   }
 
-  public void onHouseClicked(View view){
+  public void onHouseClicked(View view) {
     presenter.goToHomeDetail();
   }
 
