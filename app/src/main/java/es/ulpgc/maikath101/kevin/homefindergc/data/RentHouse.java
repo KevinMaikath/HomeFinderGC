@@ -9,7 +9,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 @Entity(tableName = "house_rent")
 public class RentHouse{
 
-  @PrimaryKey
+  @PrimaryKey(autoGenerate = true)
   public final int id_house_rent;
 
   @ForeignKey(entity = House.class, parentColumns = "id_house",

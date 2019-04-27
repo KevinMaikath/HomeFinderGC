@@ -9,7 +9,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 @Entity(tableName = "images")
 public class Image {
 
-  @PrimaryKey
+  @PrimaryKey(autoGenerate = true)
   public final int id_image;
 
   public final String url;

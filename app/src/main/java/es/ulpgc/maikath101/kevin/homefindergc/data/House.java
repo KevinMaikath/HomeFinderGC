@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 @Entity(tableName = "houses")
 public class House {
 
-  @PrimaryKey
+  @PrimaryKey(autoGenerate = true)
   public final int id_house;
 
   @ForeignKey(entity = Sell_type.class, parentColumns = "id_sell_type",

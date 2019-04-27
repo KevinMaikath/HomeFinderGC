@@ -2,6 +2,8 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -17,7 +19,7 @@ public class RemoveHouseActivity
   public static String TAG = RemoveHouseActivity.class.getSimpleName();
 
   private RemoveHouseContract.Presenter presenter;
-  private ListView listView;
+  private RemoveHouseAdapter listAdapter;
 
 
   @Override
@@ -29,7 +31,17 @@ public class RemoveHouseActivity
     setSupportActionBar(toolbar);
 
 
-    listView = findViewById(R.id.removeHouseListView);
+    listAdapter = new RemoveHouseAdapter(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+
+      }
+    });
+
+
+    RecyclerView recyclerView = findViewById(R.id.removeHouseRecyclerView);
+    recyclerView.setAdapter(listAdapter);
+
     Button toolbarButton = toolbar.findViewById(R.id.backToolbarButton);
     TextView toolbarTextView = toolbar.findViewById(R.id.toolbarTextView);
 
@@ -52,16 +64,15 @@ public class RemoveHouseActivity
   }
 
   @Override
-  public void displayData(RemoveHouseViewModel viewModel) {
+  public void displayData(final RemoveHouseViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
-    // deal with the data
-    listView.setAdapter(new RemoveHouseAdapter(this, viewModel.houses, new View.OnClickListener() {
+    runOnUiThread(new Runnable() {
       @Override
-      public void onClick(View v) {
-
+      public void run() {
+        listAdapter.setItems(viewModel.houses);
       }
-    }));
+    });
 
   }
 }

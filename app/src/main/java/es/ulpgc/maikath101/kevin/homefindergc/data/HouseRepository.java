@@ -54,7 +54,7 @@ public class HouseRepository implements HouseRepositoryContract {
 
     database = Room.databaseBuilder(
             context, HousesDatabase.class, DB_FILE
-    ).build();
+    ).fallbackToDestructiveMigration().build();
   }
 
   private String loadJSONFromAsset() {

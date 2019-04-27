@@ -6,7 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "sell_type")
 public class Sell_type {
 
-  @PrimaryKey
+  @PrimaryKey(autoGenerate = true)
   public final int id_sell_type;
 
   public final String type;

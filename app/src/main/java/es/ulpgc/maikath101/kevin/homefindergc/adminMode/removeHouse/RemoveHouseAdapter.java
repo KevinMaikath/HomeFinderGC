@@ -3,6 +3,8 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,104 +13,71 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
-public class RemoveHouseAdapter extends ArrayAdapter<House> {
+public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.ViewHolder> {
 
-  private final List<House> itemList;
+  public static String TAG = RemoveHouseAdapter.class.getSimpleName();
+  private List<House> itemList;
   private final View.OnClickListener clickListener;
-  private Context context;
-  private HouseRepository repository;
 
   public RemoveHouseAdapter(
-          Context context, List<House> items, View.OnClickListener listener) {
+          View.OnClickListener listener) {
 
-    super(context, 0, items);
-
-    repository = HouseRepository.getInstance(context);
-    this.context = context;
-    itemList = items;
+    itemList = new ArrayList<>();
     clickListener = listener;
   }
 
+  public void addItem(House item){
+    itemList.add(item);
+    notifyDataSetChanged();
+  }
+
+  public void addItems(List<House> items){
+    itemList.addAll(items);
+    notifyDataSetChanged();
+  }
+
+  public void setItems(List<House> items){
+    itemList = items;
+    notifyDataSetChanged();
+  }
+
+
   @Override
-  public int getCount() {
+  public int getItemCount() {
+    Log.e(TAG, String.valueOf(itemList.size()));
     return itemList.size();
   }
 
   @Override
-  public House getItem(int position) {
-    return itemList.get(position);
+  public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    View view = LayoutInflater.from(parent.getContext())
+            .inflate(R.layout.remove_house_list_content, parent, false);
+    return new ViewHolder(view);
   }
 
   @Override
-  public long getItemId(int position) {
-    return getItem(position).id_house;
+  public void onBindViewHolder(final ViewHolder holder, int position) {
+    holder.itemView.setTag(itemList.get(position));
+    holder.itemView.setOnClickListener(clickListener);
+
+    // holder.contentView.setText(itemList.get(position).content);
+    holder.apartmentName.setText(itemList.get(position).name);
   }
 
-  @Override
-  public View getView(final int position, View convertView, ViewGroup parent) {
-    View itemView = convertView;
 
-    if (itemView == null) {
-      itemView = LayoutInflater
-              .from(parent.getContext())
-              .inflate(R.layout.remove_house_list_content, parent, false);
+  class ViewHolder extends RecyclerView.ViewHolder {
+    final TextView apartmentName;
+
+    ViewHolder(View view) {
+      super(view);
+      apartmentName = view.findViewById(R.id.apartmentNameTextView);
     }
-
-    itemView.setTag(itemList.get(position));
-    itemView.setOnClickListener(clickListener);
-
-    final TextView referenceNumber = itemView.findViewById(R.id.referenceNumberTextView);
-    final TextView apartmentName = itemView.findViewById(R.id.apartmentNameTextView);
-    final Button button = itemView.findViewById(R.id.removeHouse);
-
-    // Cada vez que se presiona un botón aparece un Dialog
-    button.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Toast.makeText(getContext(), "Me han presionado en " + itemList.get(position).id_house, Toast.LENGTH_SHORT).show();
-
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
-        builder1.setTitle("Eliminar");
-        builder1.setMessage("¿Estás seguro que deseas eliminar el apartamento seleccionado? " + itemList.get(position).refNumber);
-        builder1.setCancelable(true);
-
-        // Si presionamos ELIMINAR se borra el elemento del repositorio
-        builder1.setPositiveButton(
-                "ELIMINAR",
-                new DialogInterface.OnClickListener() {
-                  public void onClick(DialogInterface dialog, int id) {
-                    Toast.makeText(context,"Se ha presionado YES", Toast.LENGTH_SHORT).show();
-                   // repository.getHouses().remove(position);
-                    notifyDataSetChanged();
-                    dialog.cancel();
-                  }
-                });
-
-        // Si presionamos CANCELAR no hacemos nada
-        builder1.setNegativeButton(
-                "CANCELAR",
-                new DialogInterface.OnClickListener() {
-                  public void onClick(DialogInterface dialog, int id) {
-                    Toast.makeText(context,"Se ha presionado NO", Toast.LENGTH_SHORT).show();
-                    dialog.cancel();
-                  }
-                });
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-      }
-    });
-    apartmentName.setText(itemList.get(position).description);
-    referenceNumber.setText(itemList.get(position).refNumber);
-
-    return itemView;
   }
-
-
 }
