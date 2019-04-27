@@ -19,7 +19,7 @@ interface AddHouseContract {
 
     void fetchData();
 
-    void launchCamera();
+    void openGallery();
   }
 
   interface Model {
@@ -33,6 +33,6 @@ interface AddHouseContract {
 
     AddHouseState getDataFromPreviousScreen();
 
-    void launchCamera();
+    void openGallery();
   }
 }

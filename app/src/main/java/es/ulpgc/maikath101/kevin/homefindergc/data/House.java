@@ -19,7 +19,6 @@ public class House {
   @ForeignKey(entity = Image.class, parentColumns = "id_image", childColumns = "main_image")
   public final int main_image;
 
-  @SerializedName("referenceNumber")
   public final String refNumber;
   public final String description;
   public final String name;

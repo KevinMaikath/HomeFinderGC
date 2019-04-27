@@ -7,9 +7,13 @@ import android.content.Context;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 
+import static android.support.v4.app.ActivityCompat.startActivityForResult;
+
 public class AddHouseRouter implements AddHouseContract.Router {
 
   public static String TAG = AddHouseRouter.class.getSimpleName();
+
+
 
   private AppMediator mediator;
 
@@ -36,9 +40,11 @@ public class AddHouseRouter implements AddHouseContract.Router {
   }
 
   @Override
-  public void launchCamera() {
-    Context context = mediator.getApplicationContext();
+  public void openGallery() {
+    /*Context context = mediator.getApplicationContext();
     Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-    context.startActivity(intent);
+    context.startActivity(intent);*/
+
+
   }
 }
