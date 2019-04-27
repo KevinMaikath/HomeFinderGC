@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
+import android.net.Uri;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
@@ -33,20 +34,13 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
   }
 
   @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchData()");
-
-    // set passed state
-
-    // update the view
-    view.get().displayData(viewModel);
-
+  public void saveImageFromRotation(Uri imageUri) {
+    viewModel.imageUri = imageUri;
   }
 
   @Override
-  public void openGallery() {
-    router.openGallery();
+  public void fetchData() {
+    view.get().displayData(viewModel);
   }
-
 
 }

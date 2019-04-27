@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
+import android.net.Uri;
+
 import java.lang.ref.WeakReference;
 
 interface AddHouseContract {
@@ -17,21 +19,18 @@ interface AddHouseContract {
 
     void injectRouter(Router router);
 
-    void fetchData();
+    void saveImageFromRotation(Uri imageUri);
 
-    void openGallery();
+    void fetchData();
   }
 
   interface Model {
-    String fetchData();
+
   }
 
   interface Router {
-    void navigateToNextScreen();
 
     void passDataToNextScreen(AddHouseState state);
-
-    AddHouseState getDataFromPreviousScreen();
 
     void openGallery();
   }

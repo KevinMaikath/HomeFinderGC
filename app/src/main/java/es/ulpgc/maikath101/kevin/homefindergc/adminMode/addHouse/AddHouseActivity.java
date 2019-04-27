@@ -25,6 +25,12 @@ public class AddHouseActivity
   private Uri imageURI;
   ImageView imageView;
 
+  @Override
+  protected void onResume() {
+    super.onResume();
+    presenter.fetchData();
+  }
+
   private AddHouseContract.Presenter presenter;
 
   @Override
@@ -65,23 +71,13 @@ public class AddHouseActivity
   }
 
   @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
-    presenter.fetchData();
-  }
-
-  @Override
   public void injectPresenter(AddHouseContract.Presenter presenter) {
     this.presenter = presenter;
   }
 
   @Override
   public void displayData(AddHouseViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
-
-    // deal with the data
+    imageView.setImageURI(viewModel.imageUri);
   }
 
   private void openGallery(){
@@ -95,7 +91,11 @@ public class AddHouseActivity
     if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
       imageURI = data.getData();
       imageView.setImageURI(imageURI);
+      saveImageFromRotation(imageURI);
     }
+  }
 
+  private void saveImageFromRotation(Uri imageUri) {
+    presenter.saveImageFromRotation(imageUri);
   }
 }

@@ -22,21 +22,8 @@ public class AddHouseRouter implements AddHouseContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, AddHouseActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
   public void passDataToNextScreen(AddHouseState state) {
     mediator.setAddHouseState(state);
-  }
-
-  @Override
-  public AddHouseState getDataFromPreviousScreen() {
-    AddHouseState state = mediator.getAddHouseState();
-    return state;
   }
 
   @Override
