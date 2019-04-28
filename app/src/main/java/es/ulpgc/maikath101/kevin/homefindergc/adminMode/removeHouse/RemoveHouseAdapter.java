@@ -94,6 +94,7 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
 
         //loadImageFromURL(holder.imageView3, image.url);
         //
+
         ((RemoveHouseActivity)context).runOnUiThread(new Runnable() {
           @Override
           public void run() {

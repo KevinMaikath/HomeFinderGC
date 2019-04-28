@@ -15,10 +15,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
 public class StartActivity
-        extends AppCompatActivity implements StartContract.View, NavigationView.OnNavigationItemSelectedListener {
+        extends DrawerActivity implements StartContract.View {
   /**
    * TODO  crear DrawerLayout
    * CREAR:
@@ -56,6 +58,7 @@ public class StartActivity
       }
     });
 
+    /**
     drawerLayout = findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -64,7 +67,7 @@ public class StartActivity
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
     navigationView.setNavigationItemSelectedListener(this);
-
+**/
     listAdapter = new StartHouseAdapter(new View.OnClickListener() {
 
       @Override
@@ -135,6 +138,7 @@ public class StartActivity
     });
   }
 
+  /**
   @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -143,8 +147,8 @@ public class StartActivity
       super.onBackPressed();
     }
   }
-
-
+**/
+/**
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
     // Handle navigation view item clicks here.
@@ -167,6 +171,7 @@ public class StartActivity
     drawerLayout.closeDrawer(GravityCompat.START);
     return true;
   }
+**/
 
   public void onHouseClicked(View view) {
     presenter.goToHomeDetail();
