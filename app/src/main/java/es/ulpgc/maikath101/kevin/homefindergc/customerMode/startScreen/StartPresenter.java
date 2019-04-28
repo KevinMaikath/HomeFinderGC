@@ -6,10 +6,12 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
-public class StartPresenter implements StartContract.Presenter {
+public class StartPresenter extends DrawerPresenter implements StartContract.Presenter {
 
   public static String TAG = StartPresenter.class.getSimpleName();
 
@@ -25,7 +27,7 @@ public class StartPresenter implements StartContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<StartContract.View> view) {
+  public void injectStartView(WeakReference<StartContract.View> view) {
     this.view = view;
   }
 
@@ -33,6 +35,7 @@ public class StartPresenter implements StartContract.Presenter {
   public void injectModel(StartContract.Model model) {
     this.model = model;
   }
+
 
   @Override
   public void injectRouter(StartContract.Router router) {
@@ -63,6 +66,7 @@ public class StartPresenter implements StartContract.Presenter {
 
   }
 
+  /**
   @Override
   public void goToStart() {
     router.navigateToStartScreen();
@@ -92,7 +96,7 @@ public class StartPresenter implements StartContract.Presenter {
   public void goToContact() {
     router.navigateToContactScreen();
   }
-
+**/
   @Override
   public void goToHomeDetail() {
     router.navigateToHomeDetailScreen();

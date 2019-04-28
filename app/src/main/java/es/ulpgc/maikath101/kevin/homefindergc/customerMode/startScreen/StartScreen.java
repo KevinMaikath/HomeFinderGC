@@ -24,7 +24,7 @@ public class StartScreen {
     StartContract.Model model = new StartModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
-    presenter.injectView(new WeakReference<>(view));
+    presenter.injectStartView(new WeakReference<>(view));
 
     view.injectPresenter(presenter);
 

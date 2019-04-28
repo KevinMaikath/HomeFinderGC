@@ -1,7 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
-import java.util.List;
-
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
