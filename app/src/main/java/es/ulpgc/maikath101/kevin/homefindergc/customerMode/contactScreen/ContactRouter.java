@@ -26,6 +26,7 @@ public class ContactRouter extends AppCustomerRouter implements ContactContract.
     String[] CC = {""}; //Direcciones email con copia.
 
     Context context = mediator.getApplicationContext();
+
     Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
     emailIntent.setData(Uri.parse("mailto:"));
