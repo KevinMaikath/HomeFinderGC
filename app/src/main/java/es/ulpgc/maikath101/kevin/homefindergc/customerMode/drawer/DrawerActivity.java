@@ -18,16 +18,17 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
 
   public static String TAG = StartActivity.class.getSimpleName();
   private DrawerContract.Presenter presenter;
-  private FloatingActionButton floatingActionButton;
+  //private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.drawer_layout);
+   // setContentView(R.layout.drawer_layout);
 
-    presenter = new DrawerPresenter();
+   // presenter = new DrawerPresenter();
 
+    /**
     drawerLayout = findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -36,7 +37,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
     navigationView.setNavigationItemSelectedListener(this);
-
+**/
     DrawerScreen.configure(this);
 
   }
@@ -76,5 +77,20 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     } else {
       super.onBackPressed();
     }
+  }
+
+  public void setDrawerLayout(DrawerLayout drawerLayout) {
+    this.drawerLayout = drawerLayout;
+  }
+
+  public void configureDrawerLayout(){
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+            this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    drawerLayout.addDrawerListener(toggle);
+    toggle.syncState();
+  }
+
+  public void setNavigationView(NavigationView navigationView){
+    navigationView.setNavigationItemSelectedListener(this);
   }
 }
