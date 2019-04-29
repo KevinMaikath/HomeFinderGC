@@ -13,7 +13,7 @@ interface HomeDetailsContract {
   }
 
   interface Presenter {
-    void injectView(WeakReference<View> view);
+    void injectHomeDetailsView(WeakReference<View> view);
 
     void injectModel(Model model);
 

@@ -2,7 +2,9 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
 import java.lang.ref.WeakReference;
 
-public class HomeDetailsPresenter implements HomeDetailsContract.Presenter {
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+
+public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetailsContract.Presenter {
 
   public static String TAG = HomeDetailsPresenter.class.getSimpleName();
 
@@ -16,7 +18,7 @@ public class HomeDetailsPresenter implements HomeDetailsContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<HomeDetailsContract.View> view) {
+  public void injectHomeDetailsView(WeakReference<HomeDetailsContract.View> view) {
     this.view = view;
   }
 

@@ -13,9 +13,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
 
 public class HomeDetailsActivity
-        extends AppCompatActivity implements HomeDetailsContract.View, NavigationView.OnNavigationItemSelectedListener {
+        extends DrawerActivity implements HomeDetailsContract.View, NavigationView.OnNavigationItemSelectedListener {
 
   public static String TAG = HomeDetailsActivity.class.getSimpleName();
 
@@ -38,14 +39,18 @@ public class HomeDetailsActivity
         drawerLayout.openDrawer(GravityCompat.START);
       }
     });
+
     drawerLayout = findViewById(R.id.drawer_layout);
+    super.setDrawerLayout(drawerLayout);
+    /**
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);
     toggle.syncState();
-
+**/
     NavigationView navigationView = findViewById(R.id.navigation_view);
-    navigationView.setNavigationItemSelectedListener(this);
+    super.setNavigationView(navigationView);
+    // navigationView.setNavigationItemSelectedListener(this);
 
 
     // do the setup

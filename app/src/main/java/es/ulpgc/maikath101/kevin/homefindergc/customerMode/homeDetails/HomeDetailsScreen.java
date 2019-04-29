@@ -21,7 +21,7 @@ public class HomeDetailsScreen {
     HomeDetailsContract.Model model = new HomeDetailsModel();
     presenter.injectModel(model);
     presenter.injectRouter(router);
-    presenter.injectView(new WeakReference<>(view));
+    presenter.injectHomeDetailsView(new WeakReference<>(view));
 
     view.injectPresenter(presenter);
 
