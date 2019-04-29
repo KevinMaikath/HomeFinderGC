@@ -9,7 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 
@@ -21,6 +24,15 @@ public class ContactActivity
   private ContactContract.Presenter presenter;
   private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
+  private EditText nameEditText;
+  private EditText telephoneEditText;
+  private EditText countryEditText;
+  private EditText zipcodeEditText;
+  private EditText addressEditText;
+  private EditText emailEditText;
+  private EditText subjectEditText;
+  private EditText bodyemailEditText;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +51,16 @@ public class ContactActivity
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);
     toggle.syncState();
+
+
+    nameEditText = findViewById(R.id.nameEditText);
+    telephoneEditText = findViewById(R.id.telephoneEditText);
+    countryEditText = findViewById(R.id.countryEditText);
+    zipcodeEditText = findViewById(R.id.zipcodeEditText);
+    addressEditText = findViewById(R.id.addressEditText);
+    emailEditText = findViewById(R.id.emailEditText);
+    subjectEditText = findViewById(R.id.subjectEditText);
+    bodyemailEditText = findViewById(R.id.bodyemailEditText);
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
     navigationView.setNavigationItemSelectedListener(this);
@@ -97,6 +119,30 @@ public class ContactActivity
 
     drawerLayout.closeDrawer(GravityCompat.START);
     return true;
+  }
+
+  private boolean checkFields(){
+    // Devuelve true si todos los campos están rellenos
+    if (!nameEditText.getText().toString().equals("") && !telephoneEditText.getText().toString().equals("")
+            && !countryEditText.getText().toString().equals("") && !zipcodeEditText.getText().toString().equals("")
+            && !addressEditText.getText().toString().equals("")
+            && !emailEditText.getText().toString().equals("")
+            && !subjectEditText.getText().toString().equals("")
+            && !bodyemailEditText.getText().toString().equals("")){
+      return true;
+    }
+    return false;
+  }
+
+  public void onSendButtonPressed(View view){
+    if (checkFields()){
+      presenter.onSendButtonPressed(nameEditText.getText().toString(), telephoneEditText.getText().toString(),
+              countryEditText.getText().toString(), zipcodeEditText.getText().toString(),
+              addressEditText.getText().toString(), emailEditText.getText().toString(),
+              subjectEditText.getText().toString(), bodyemailEditText.getText().toString());
+    } else {
+      Toast.makeText(getApplicationContext(), "Rellene todos los campos, por favor", Toast.LENGTH_LONG).show();
+    }
   }
 
 }

@@ -101,6 +101,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
                         android:hint="@string/hint_telephone"
+                        android:inputType="phone"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
                         android:textSize="20sp" />
@@ -169,6 +170,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
                         android:hint="@string/hint_zipcode"
+                        android:inputType="number"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
                         android:textSize="20sp" />
@@ -237,6 +239,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
                         android:hint="@string/hint_email"
+                        android:inputType="textEmailAddress"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
                         android:textSize="20sp" />
@@ -262,6 +265,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center_vertical"
                         android:hint="@string/hint_subject"
+                        android:inputType="textEmailSubject"
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
                         android:textSize="20sp" />
@@ -305,7 +309,8 @@
                         android:id="@+id/send_button"
                         android:layout_width="262sp"
                         android:layout_height="75sp"
-                        android:background="@drawable/send_button" />
+                        android:background="@drawable/send_button"
+                        android:onClick="onSendButtonPressed" />
 
                 </RelativeLayout>
             </LinearLayout>

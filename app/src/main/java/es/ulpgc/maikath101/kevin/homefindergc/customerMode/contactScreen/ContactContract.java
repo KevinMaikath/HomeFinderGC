@@ -32,6 +32,10 @@ interface ContactContract {
     void goToAboutUS();
 
     void goToContact();
+
+    void onSendButtonPressed(String name, String telephone, String country,
+                             String zipcode, String address, String email,
+                             String subject, String bodyemail);
   }
 
   interface Model {
@@ -39,6 +43,8 @@ interface ContactContract {
   }
 
   interface Router extends AppRouter {
-
+    void sendEmail(String name, String telephone, String country,
+                             String zipcode, String address, String email,
+                             String subject, String bodyemail);
   }
 }

@@ -71,4 +71,11 @@ public class ContactPresenter implements ContactContract.Presenter {
     router.navigateToContactScreen();
   }
 
+  @Override
+  public void onSendButtonPressed(String name, String telephone, String country,
+                                  String zipcode, String address, String email,
+                                  String subject, String bodyemail) {
+    router.sendEmail(name, telephone, country, zipcode, address, email, subject, bodyemail);
+  }
+
 }

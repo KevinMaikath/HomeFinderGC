@@ -14,4 +14,8 @@ public class ContactRouter extends AppCustomerRouter implements ContactContract.
     super(mediator);
   }
 
+  @Override
+  public void sendEmail(String name, String telephone, String country, String zipcode, String address, String email, String subject, String bodyemail) {
+
+  }
 }

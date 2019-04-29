@@ -117,7 +117,6 @@ public class AddHouseActivity
 
   private boolean checkFields(){
     // Devuelve true si todos los campos están rellenos
-
     if(!nameEditText.getText().toString().equals("") &&
             !locationEditText.getText().toString().equals("") &&
             !priceEditText.getText().toString().equals("")
