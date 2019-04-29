@@ -44,7 +44,7 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
 
   }
 
-
+/**
   @Override
   public void goToStart() {
     router.navigateToStartScreen();
@@ -74,7 +74,7 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
   public void goToContact() {
     router.navigateToContactScreen();
   }
-
+**/
   @Override
   public void summaryButtonClicked() {
     String info = model.changeToSummaryInfo();

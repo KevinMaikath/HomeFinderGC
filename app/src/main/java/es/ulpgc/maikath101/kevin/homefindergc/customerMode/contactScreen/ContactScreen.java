@@ -21,7 +21,7 @@ public class ContactScreen {
     ContactContract.Model model = new ContactModel();
     presenter.injectModel(model);
     presenter.injectRouter(router);
-    presenter.injectView(new WeakReference<>(view));
+    presenter.injectContactView(new WeakReference<>(view));
 
     view.injectPresenter(presenter);
 

@@ -13,7 +13,7 @@ interface ContactContract {
   }
 
   interface Presenter {
-    void injectView(WeakReference<View> view);
+    void injectContactView(WeakReference<View> view);
 
     void injectModel(Model model);
 

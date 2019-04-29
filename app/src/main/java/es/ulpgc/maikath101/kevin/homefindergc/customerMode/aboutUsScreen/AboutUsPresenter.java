@@ -4,7 +4,9 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
-public class AboutUsPresenter implements AboutUsContract.Presenter {
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+
+public class AboutUsPresenter extends DrawerPresenter implements AboutUsContract.Presenter {
 
   public static String TAG = AboutUsPresenter.class.getSimpleName();
 
@@ -18,7 +20,7 @@ public class AboutUsPresenter implements AboutUsContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<AboutUsContract.View> view) {
+  public void injectAboutUsView(WeakReference<AboutUsContract.View> view) {
     this.view = view;
   }
 
@@ -42,6 +44,7 @@ public class AboutUsPresenter implements AboutUsContract.Presenter {
 
   }
 
+  /**
   @Override
   public void goToStart() {
     router.navigateToStartScreen();
@@ -71,5 +74,6 @@ public class AboutUsPresenter implements AboutUsContract.Presenter {
   public void goToContact() {
     router.navigateToContactScreen();
   }
+  **/
 
 }

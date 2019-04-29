@@ -2,7 +2,9 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.contactScreen;
 
 import java.lang.ref.WeakReference;
 
-public class ContactPresenter implements ContactContract.Presenter {
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+
+public class ContactPresenter extends DrawerPresenter implements ContactContract.Presenter {
 
   public static String TAG = ContactPresenter.class.getSimpleName();
 
@@ -16,7 +18,7 @@ public class ContactPresenter implements ContactContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<ContactContract.View> view) {
+  public void injectContactView(WeakReference<ContactContract.View> view) {
     this.view = view;
   }
 
@@ -40,7 +42,7 @@ public class ContactPresenter implements ContactContract.Presenter {
     view.get().displayData(viewModel);
   }
 
-
+/**
   @Override
   public void goToStart() {
     router.navigateToStartScreen();
@@ -70,7 +72,7 @@ public class ContactPresenter implements ContactContract.Presenter {
   public void goToContact() {
     router.navigateToContactScreen();
   }
-
+**/
   @Override
   public void onSendButtonPressed(String name, String telephone, String country,
                                   String zipcode, String address, String email,

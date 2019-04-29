@@ -13,7 +13,7 @@ interface AboutUsContract {
   }
 
   interface Presenter {
-    void injectView(WeakReference<View> view);
+    void injectAboutUsView(WeakReference<View> view);
 
     void injectModel(Model model);
 

@@ -77,7 +77,7 @@ public class HomeDetailsActivity
     textInfo.setText(viewModel.dataShown);
   }
 
-
+/**
   @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -110,7 +110,7 @@ public class HomeDetailsActivity
     drawerLayout.closeDrawer(GravityCompat.START);
     return true;
   }
-
+**/
 
   public void onSummaryButtonClicked(View view) {
     presenter.summaryButtonClicked();

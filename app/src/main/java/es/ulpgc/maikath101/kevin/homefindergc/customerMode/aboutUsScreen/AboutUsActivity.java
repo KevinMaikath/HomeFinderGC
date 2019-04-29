@@ -17,8 +17,9 @@ import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.app.FlowTextHelper;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
 
-public class AboutUsActivity extends AppCompatActivity implements AboutUsContract.View, NavigationView.OnNavigationItemSelectedListener {
+public class AboutUsActivity extends DrawerActivity implements AboutUsContract.View, NavigationView.OnNavigationItemSelectedListener {
   public static String TAG = AboutUsActivity.class.getSimpleName();
 
   private AboutUsContract.Presenter presenter;
@@ -37,14 +38,18 @@ public class AboutUsActivity extends AppCompatActivity implements AboutUsContrac
         drawerLayout.openDrawer(GravityCompat.START);
       }
     });
+
     drawerLayout = findViewById(R.id.drawer_layout);
+    super.setDrawerLayout(drawerLayout);
+    /**
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);
     toggle.syncState();
-
+**/
     NavigationView navigationView = findViewById(R.id.navigation_view);
-    navigationView.setNavigationItemSelectedListener(this);
+    super.setNavigationView(navigationView);
+   // navigationView.setNavigationItemSelectedListener(this);
 
 
     // do the setup
@@ -79,6 +84,7 @@ public class AboutUsActivity extends AppCompatActivity implements AboutUsContrac
     // deal with the data}
   }
 
+  /**
   @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -110,5 +116,5 @@ public class AboutUsActivity extends AppCompatActivity implements AboutUsContrac
     drawerLayout.closeDrawer(GravityCompat.START);
     return true;
   }
-
+**/
 }

@@ -15,9 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
 
 public class ContactActivity
-        extends AppCompatActivity implements ContactContract.View, NavigationView.OnNavigationItemSelectedListener {
+        extends DrawerActivity implements ContactContract.View, NavigationView.OnNavigationItemSelectedListener {
 
   public static String TAG = ContactActivity.class.getSimpleName();
 
@@ -46,12 +47,15 @@ public class ContactActivity
         drawerLayout.openDrawer(GravityCompat.START);
       }
     });
+
     drawerLayout = findViewById(R.id.drawer_layout);
+    super.setDrawerLayout(drawerLayout);
+    /**
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);
     toggle.syncState();
-
+**/
 
     nameEditText = findViewById(R.id.nameEditText);
     telephoneEditText = findViewById(R.id.telephoneEditText);
@@ -63,7 +67,8 @@ public class ContactActivity
     bodyemailEditText = findViewById(R.id.bodyemailEditText);
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
-    navigationView.setNavigationItemSelectedListener(this);
+    super.setNavigationView(navigationView);
+   // navigationView.setNavigationItemSelectedListener(this);
 
     // do the setup
     ContactScreen.configure(this);
@@ -88,7 +93,7 @@ public class ContactActivity
 
     // deal with the data
   }
-
+/**
   @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -120,7 +125,7 @@ public class ContactActivity
     drawerLayout.closeDrawer(GravityCompat.START);
     return true;
   }
-
+**/
   private boolean checkFields(){
     // Devuelve true si todos los campos están rellenos
     if (!nameEditText.getText().toString().equals("") && !telephoneEditText.getText().toString().equals("")

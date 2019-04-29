@@ -81,9 +81,10 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
 
   public void setDrawerLayout(DrawerLayout drawerLayout) {
     this.drawerLayout = drawerLayout;
+    configureDrawerLayout();
   }
 
-  public void configureDrawerLayout(){
+  private void configureDrawerLayout(){
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);

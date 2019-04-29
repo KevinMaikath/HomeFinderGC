@@ -21,7 +21,7 @@ public class AboutUsScreen {
     AboutUsContract.Model model = new AboutUsModel();
     presenter.injectModel(model);
     presenter.injectRouter(router);
-    presenter.injectView(new WeakReference<>(view));
+    presenter.injectAboutUsView(new WeakReference<>(view));
 
     view.injectPresenter(presenter);
 
