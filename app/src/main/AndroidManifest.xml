@@ -23,6 +23,7 @@
         <activity android:name=".customerMode.homeDetails.HomeDetailsActivity"></activity>
         <activity android:name=".customerMode.aboutUsScreen.AboutUsActivity"></activity>
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
+        <activity android:name=".customerMode.drawer.DrawerActivity"></activity>
 
         <activity android:name=".adminMode.login.LoginActivity"
             android:label="LoginScreen"

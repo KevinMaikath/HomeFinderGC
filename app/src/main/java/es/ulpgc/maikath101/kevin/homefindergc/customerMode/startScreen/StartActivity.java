@@ -67,6 +67,13 @@ public class StartActivity
     NavigationView navigationView = findViewById(R.id.navigation_view);
     navigationView.setNavigationItemSelectedListener(this);
 **/
+
+    drawerLayout = findViewById(R.id.drawer_layout);
+    super.setDrawerLayout(drawerLayout);
+
+    NavigationView navigationView = findViewById(R.id.navigation_view);
+    super.setNavigationView(navigationView);
+
     listAdapter = new StartHouseAdapter(new View.OnClickListener() {
 
       @Override
