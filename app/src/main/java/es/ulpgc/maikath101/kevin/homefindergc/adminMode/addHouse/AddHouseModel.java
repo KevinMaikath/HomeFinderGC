@@ -25,6 +25,6 @@ public class AddHouseModel implements AddHouseContract.Model {
 
   @Override
   public void doneButtonPressed(String name, String location, String price, String description, Uri imageUri) {
-
+   // House house = new House(0, 111, 1, )
   }
 }
