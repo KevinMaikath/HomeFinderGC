@@ -22,15 +22,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/house_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/house_ref_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/house_name"
         android:layout_alignParentLeft="true"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/house_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/house_image"
+        android:layout_below="@+id/house_name"
         android:layout_alignParentRight="true"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="18sp"/>
 
 </RelativeLayout>

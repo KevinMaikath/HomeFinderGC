@@ -88,14 +88,6 @@ public class StartActivity
     RecyclerView recyclerView = findViewById(R.id.recyclerView);
     recyclerView.setAdapter(listAdapter);
 
-    RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this) {
-      @Override
-      public boolean canScrollVertically() {
-        return true;
-      }
-    };
-    recyclerView.setLayoutManager(linearLayoutManager);
-
     // do the setup
     StartScreen.configure(this);
 

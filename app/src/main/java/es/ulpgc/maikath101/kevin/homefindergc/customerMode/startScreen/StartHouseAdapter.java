@@ -61,18 +61,21 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     //holder.main_image.setImageResource(houseList.get(position).main_image);
     holder.main_image.setImageResource(R.drawable.password_eye);
     holder.price.setText(houseList.get(position).price);
+    holder.ref_number.setText(houseList.get(position).refNumber);
   }
 
   class ViewHolder extends RecyclerView.ViewHolder {
     final TextView house_name;
     final ImageView main_image;
     final TextView price;
+    final TextView ref_number;
 
     ViewHolder(View view) {
       super(view);
       house_name = view.findViewById(R.id.house_name);
       main_image = view.findViewById(R.id.house_image);
       price = view.findViewById(R.id.house_price);
+      ref_number = view.findViewById(R.id.house_ref_number);
     }
   }
 }
