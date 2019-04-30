@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 interface RemoveHouseContract {
@@ -28,6 +29,8 @@ interface RemoveHouseContract {
     String fetchData();
 
     void loadAllHouses(HouseRepositoryContract.GetAllHousesCallback callback);
+
+    void loadImages(int id_image, HouseRepository.GetImageFromHouseCallback callback);
   }
 
   interface Router {

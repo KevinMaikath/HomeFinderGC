@@ -1,11 +1,15 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
 
@@ -39,9 +43,25 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
   public void loadAllHouses() {
     model.loadAllHouses(new HouseRepositoryContract.GetAllHousesCallback() {
       @Override
-      public void setAllHouses(List<House> houses) {
-        viewModel.houses = houses;
+      public void setAllHouses(final List<House> houses) {
+        // viewModel.houses = houses;
 
+        final ArrayList<SimpleHouse> list = new ArrayList<>();
+        for (int i = 0; i < houses.size(); i++){
+          final int finalI = i;
+          model.loadImages(houses.get(i).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
+            @Override
+            public void setImage(Image image) {
+              SimpleHouse house = new SimpleHouse(houses.get(finalI).refNumber, houses.get(finalI).name,
+                      image.url, houses.get(finalI).price);
+              Log.e(TAG, String.valueOf(image.url));
+              list.add(house);
+              //viewModel.simpleHouses.add(house);
+            }
+          });
+        }
+        viewModel.simpleHouses = list;
+        Log.e(TAG, String.valueOf(viewModel.simpleHouses.size()));
         view.get().displayData(viewModel);
       }
     });

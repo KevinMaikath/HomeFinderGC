@@ -20,6 +20,7 @@ public class ContactRouter extends AppCustomerRouter implements ContactContract.
   @Override
   public void sendEmail(String name, String telephone, String country, String zipcode,
                         String address, String email, String subject, String bodyemail) {
+
     String[] TO = {"msalaguilo@gmail.com",
     //        "oliver@homefindergc.com"
     }; //Direcciones email  a enviar.

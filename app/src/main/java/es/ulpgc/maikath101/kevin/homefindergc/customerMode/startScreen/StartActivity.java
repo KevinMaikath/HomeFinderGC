@@ -91,7 +91,7 @@ public class StartActivity
     RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this) {
       @Override
       public boolean canScrollVertically() {
-        return false;
+        return true;
       }
     };
     recyclerView.setLayoutManager(linearLayoutManager);

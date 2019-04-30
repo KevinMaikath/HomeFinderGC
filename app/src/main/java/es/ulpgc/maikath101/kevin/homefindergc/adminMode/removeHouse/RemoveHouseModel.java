@@ -34,5 +34,10 @@ public class RemoveHouseModel implements RemoveHouseContract.Model {
     });
   }
 
+  @Override
+  public void loadImages(int id_image, HouseRepository.GetImageFromHouseCallback callback) {
+    repository.getImage(id_image, callback);
+  }
+
 
 }

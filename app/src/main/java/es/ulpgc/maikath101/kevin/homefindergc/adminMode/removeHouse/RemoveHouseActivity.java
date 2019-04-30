@@ -1,18 +1,17 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class RemoveHouseActivity
         extends AppCompatActivity implements RemoveHouseContract.View {
@@ -32,10 +31,12 @@ public class RemoveHouseActivity
     setSupportActionBar(toolbar);
 
 
-    listAdapter = new RemoveHouseAdapter(getApplicationContext(), new View.OnClickListener() {
+    listAdapter = new RemoveHouseAdapter(this, new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-
+        SimpleHouse house = (SimpleHouse) v.getTag();
+        Log.e(TAG, house.referenceNumber);
+        // Toast.makeText(getApplicationContext(), "Pulsada la casa: " + house.referenceNumber).show();
       }
     });
 
@@ -71,7 +72,8 @@ public class RemoveHouseActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        listAdapter.setItems(viewModel.houses);
+        // listAdapter.setItems(viewModel.houses);
+        listAdapter.setSimpleHouseAdaptersList(viewModel.simpleHouses);
       }
     });
 
