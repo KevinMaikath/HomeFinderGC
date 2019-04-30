@@ -61,6 +61,8 @@ interface StartContract {
     void loadForRentHouses(HouseRepositoryContract.GetForRentHousesCallback callback);
 
     void loadHolidayRentalHouses(HouseRepositoryContract.GetHolidayRentalHousesCallback callback);
+
+    void loadImages(int id_image, HouseRepository.GetImageFromHouseCallback callback);
   }
 
   interface Router extends AppRouter {

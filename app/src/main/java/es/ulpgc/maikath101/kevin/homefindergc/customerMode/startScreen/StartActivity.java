@@ -4,19 +4,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
-import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 
 public class StartActivity
@@ -131,13 +125,13 @@ public class StartActivity
         topText.setText(viewModel.topText);
 
         // deal with the data
-        listAdapter.setItems(viewModel.houseList);
+        listAdapter.setItems(viewModel.simpleHouseList);
       }
 
     });
   }
 
-  /**
+/**
   @Override
   public void onBackPressed() {
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

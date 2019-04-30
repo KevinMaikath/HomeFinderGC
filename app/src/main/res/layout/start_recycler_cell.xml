@@ -11,11 +11,11 @@
 
     <ImageView
         android:id="@+id/house_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:src="@drawable/password_eye" />
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/house_name"

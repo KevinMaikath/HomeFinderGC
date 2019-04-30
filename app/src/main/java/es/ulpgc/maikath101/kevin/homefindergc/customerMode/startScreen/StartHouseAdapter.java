@@ -8,15 +8,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.ViewHolder> {
 
-  private List<House> houseList;
+  private List<SimpleHouse> houseList;
   private final View.OnClickListener clickListener;
 
   public StartHouseAdapter(View.OnClickListener clickListener) {
@@ -25,17 +32,17 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     this.clickListener = clickListener;
   }
 
-  public void addItem(House item){
+  public void addItem(SimpleHouse item){
     houseList.add(item);
     notifyDataSetChanged();
   }
 
-  public void addItems(List<House> items){
+  public void addItems(List<SimpleHouse> items){
     houseList.addAll(items);
     notifyDataSetChanged();
   }
 
-  public void setItems(List<House> items) {
+  public void setItems(List<SimpleHouse> items) {
     houseList = items;
     notifyDataSetChanged();
   }
@@ -57,11 +64,26 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     holder.itemView.setTag(houseList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    holder.house_name.setText(houseList.get(position).name);
-    //holder.main_image.setImageResource(houseList.get(position).main_image);
-    holder.main_image.setImageResource(R.drawable.password_eye);
+    holder.house_name.setText(houseList.get(position).apartmentName);
+    //holder.main_image.setImageResource(simpleHouseList.get(position).main_image);
+    //holder.main_image.setImageResource(R.drawable.password_eye);
     holder.price.setText(houseList.get(position).price);
-    holder.ref_number.setText(houseList.get(position).refNumber);
+    holder.ref_number.setText(houseList.get(position).referenceNumber);
+
+
+    loadImageFromURL(holder.main_image, houseList.get(position).imageURL);
+  }
+
+
+
+  private void loadImageFromURL(ImageView imageView, String imageUrl){
+
+    RequestManager reqManager = Glide.with(imageView.getContext());
+    RequestBuilder reqBuilder = reqManager.load(imageUrl);
+    RequestOptions reqOptions = new RequestOptions();
+    reqOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
+    reqBuilder.apply(reqOptions);
+    reqBuilder.into(imageView);
   }
 
   class ViewHolder extends RecyclerView.ViewHolder {
