@@ -7,6 +7,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 interface StartContract {
 
@@ -50,7 +51,7 @@ interface StartContract {
 
     void fetchHolidayRentalHousesData();
 
-    void selectHouse(House item);
+    void selectHouse(SimpleHouse item);
   }
 
   interface Model {

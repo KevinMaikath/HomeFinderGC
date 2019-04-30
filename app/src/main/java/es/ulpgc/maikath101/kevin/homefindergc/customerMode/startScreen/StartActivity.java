@@ -12,6 +12,7 @@ import android.widget.TextView;
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class StartActivity
         extends DrawerActivity implements StartContract.View {
@@ -73,7 +74,7 @@ public class StartActivity
 
       @Override
       public void onClick(View view) {
-        House item = (House) view.getTag();
+        SimpleHouse item = (SimpleHouse) view.getTag();
         presenter.selectHouse(item);
       }
 

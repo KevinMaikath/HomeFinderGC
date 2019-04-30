@@ -236,7 +236,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
   }
 
   @Override
-  public void selectHouse(House item) {
+  public void selectHouse(SimpleHouse item) {
     //  TODO  pasar el item a homeDetail
     //  passDataTo...
     router.navigateToHomeDetailScreen();
