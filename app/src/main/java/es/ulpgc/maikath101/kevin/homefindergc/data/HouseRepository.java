@@ -166,7 +166,7 @@ public class HouseRepository implements HouseRepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (clearFirst) {
+        if (!clearFirst) {
           database.clearAllTables();
         }
 
@@ -241,6 +241,20 @@ public class HouseRepository implements HouseRepositoryContract {
       }
     });
   }
+
+  @Override
+  public void deleteHouse(final int id_house, final OnHouseDeletedCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback!=null) {
+          getHouseDao().deleteByHouseId(id_house);
+          callback.houseDeleted();
+        }
+      }
+    });
+  }
+
 
   @Override
   public void insertHouse(House house) {

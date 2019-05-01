@@ -32,6 +32,10 @@ public interface HouseRepositoryContract {
     void setStartHouses(List<House> houses);
   }
 
+  interface OnHouseDeletedCallback {
+    void houseDeleted();
+  }
+
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
@@ -48,5 +52,7 @@ public interface HouseRepositoryContract {
   void getImage(int id, HouseRepository.GetImageFromHouseCallback callback);
 
   void getStartHouses(HouseRepository.GetStartHousesCallback callback);
+
+  void deleteHouse(int id_house, HouseRepository.OnHouseDeletedCallback callback);
 
 }

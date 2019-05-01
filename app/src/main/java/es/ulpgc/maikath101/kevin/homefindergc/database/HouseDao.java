@@ -38,4 +38,7 @@ public interface HouseDao {
   @Query("SELECT * FROM houses LIMIT 3")
   List<House> getStartHouses();
 
+  @Query("DELETE FROM houses WHERE id_house=:id_house")
+  void deleteByHouseId(int id_house);
+
 }

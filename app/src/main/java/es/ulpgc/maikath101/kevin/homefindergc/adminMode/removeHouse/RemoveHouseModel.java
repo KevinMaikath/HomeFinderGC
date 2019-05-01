@@ -39,5 +39,10 @@ public class RemoveHouseModel implements RemoveHouseContract.Model {
     repository.getImage(id_image, callback);
   }
 
+  @Override
+  public void removeHouse(int id_house, HouseRepository.OnHouseDeletedCallback callback) {
+    repository.deleteHouse(id_house, callback);
+  }
+
 
 }

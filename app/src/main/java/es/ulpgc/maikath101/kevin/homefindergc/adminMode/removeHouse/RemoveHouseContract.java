@@ -13,6 +13,8 @@ interface RemoveHouseContract {
     void injectPresenter(Presenter presenter);
 
     void displayData(RemoveHouseViewModel viewModel);
+
+    void houseDeleted();
   }
 
   interface Presenter {
@@ -23,6 +25,8 @@ interface RemoveHouseContract {
     void injectRouter(Router router);
 
     void loadAllHouses();
+
+    void removeHouse(int id_house);
   }
 
   interface Model {
@@ -31,10 +35,11 @@ interface RemoveHouseContract {
     void loadAllHouses(HouseRepositoryContract.GetAllHousesCallback callback);
 
     void loadImages(int id_image, HouseRepository.GetImageFromHouseCallback callback);
+
+    void removeHouse(int id_house, HouseRepository.OnHouseDeletedCallback callback);
   }
 
   interface Router {
     RemoveHouseState getDataFromPreviousScreen();
-
   }
 }

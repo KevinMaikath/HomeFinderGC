@@ -40,7 +40,7 @@ public class RemoveHouseActivity
     listAdapter.setOnItemClickListener(new RemoveHouseAdapter.OnItemClickListener() {
       @Override
       public void onItemClicked(SimpleHouse house) {
-        showAlert(house.referenceNumber);
+        showAlert(house.referenceNumber, house.house_id);
       }
     });
 
@@ -77,7 +77,19 @@ public class RemoveHouseActivity
     });
   }
 
-  private void showAlert(final String referenceNumber) {
+  @Override
+  public void houseDeleted() {
+    presenter.loadAllHouses();
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        listAdapter.notifyDataSetChanged();
+      }
+    });
+
+  }
+
+  private void showAlert(final String referenceNumber, final int id_house) {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
     builder.setCancelable(true);
@@ -94,6 +106,7 @@ public class RemoveHouseActivity
     builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
+        presenter.removeHouse(id_house);
         Toast.makeText(getApplicationContext(), "House id: " + referenceNumber, Toast.LENGTH_SHORT).show();
       }
     });
@@ -102,4 +115,6 @@ public class RemoveHouseActivity
 
 
   }
+
+
 }

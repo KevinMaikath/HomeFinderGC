@@ -68,5 +68,15 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
 
   }
 
+  @Override
+  public void removeHouse(int id_house) {
+    model.removeHouse(id_house, new HouseRepositoryContract.OnHouseDeletedCallback() {
+      @Override
+      public void houseDeleted() {
+        view.get().houseDeleted();
+      }
+    });
+  }
+
 
 }
