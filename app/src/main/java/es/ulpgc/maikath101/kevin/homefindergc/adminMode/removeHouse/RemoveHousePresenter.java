@@ -53,7 +53,7 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price);
+                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type);
               Log.e(TAG, String.valueOf(image.url));
               list.add(house);
               //viewModel.simpleHouses.add(house);

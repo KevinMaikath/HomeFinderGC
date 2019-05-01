@@ -6,6 +6,7 @@ import android.content.Context;
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppCustomerRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetailsActivity;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetailsState;
 
 public class StartRouter extends AppCustomerRouter implements StartContract.Router {
 
@@ -23,7 +24,7 @@ public class StartRouter extends AppCustomerRouter implements StartContract.Rout
   }
 
   @Override
-  public void passDataToHomeDetailScreen(int id) {
-
+  public void passDataToHomeDetailScreen(HomeDetailsState state) {
+    mediator.setHomeDetailsState(state);
   }
 }

@@ -18,8 +18,8 @@ public class HomeDetailsRouter extends AppCustomerRouter implements HomeDetailsC
   }
 
   @Override
-  public int getDataFromStartScreen() {
-    return 0;
+  public HomeDetailsState getDataFromStartScreen() {
+    return mediator.getHomeDetailsState();
   }
 
 }

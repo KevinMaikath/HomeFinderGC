@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetailsState;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
@@ -69,6 +70,6 @@ interface StartContract {
   interface Router extends AppRouter {
     void navigateToHomeDetailScreen();
 
-    void passDataToHomeDetailScreen(int id);
+    void passDataToHomeDetailScreen(HomeDetailsState state);
   }
 }

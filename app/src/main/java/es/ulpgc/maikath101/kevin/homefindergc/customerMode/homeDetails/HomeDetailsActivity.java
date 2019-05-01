@@ -91,10 +91,18 @@ public class HomeDetailsActivity
   }
 
   @Override
-  public void displayData(HomeDetailsViewModel viewModel) {
+  public void displayData(final HomeDetailsViewModel viewModel) {
     //Log.e(TAG, "displayData()");
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        textInfo.setText(viewModel.dataShown);
 
-    textInfo.setText(viewModel.dataShown);
+        image_list.setItems(viewModel.image_list);
+        loadImageFromURL(current_image, viewModel.current_image.url);
+      }
+    });
+
   }
 
 /**

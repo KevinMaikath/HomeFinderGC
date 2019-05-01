@@ -36,6 +36,14 @@ public interface HouseRepositoryContract {
     void houseDeleted();
   }
 
+  interface LoadCompleteSellHouseInfoCallback {
+    void setCompleteSellInfo(House house, List<Image> images, SellHouse sellHouse);
+  }
+
+  interface LoadCompleteRentHouseInfoCallback {
+    void setCompleteRentInfo(House house, List<Image> images, RentHouse rentHouse);
+  }
+
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
@@ -54,5 +62,9 @@ public interface HouseRepositoryContract {
   void getStartHouses(HouseRepository.GetStartHousesCallback callback);
 
   void deleteHouse(int id_house, HouseRepository.OnHouseDeletedCallback callback);
+
+  void getCompleteSellInfo(int id_house, HouseRepository.LoadCompleteSellHouseInfoCallback callback);
+
+  void getCompleteRentInfo(int id_house, HouseRepository.LoadCompleteRentHouseInfoCallback callback);
 
 }

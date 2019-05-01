@@ -9,6 +9,7 @@ import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails.HomeDetailsState;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
@@ -119,7 +120,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price);
+                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
               //viewModel.simpleHouses.add(house);
@@ -146,7 +147,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price);
+                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
               //viewModel.simpleHouses.add(house);
@@ -173,7 +174,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price);
+                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
               //viewModel.simpleHouses.add(house);
@@ -200,7 +201,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price);
+                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
               //viewModel.simpleHouses.add(house);
@@ -237,8 +238,18 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void selectHouse(SimpleHouse item) {
-    //  TODO  pasar el item a homeDetail
-    //  passDataTo...
+    HomeDetailsState state = new HomeDetailsState();
+    state.forSale = checkForSale(item);
+    state.current_house_id = item.house_id;
     router.navigateToHomeDetailScreen();
   }
+
+  private boolean checkForSale(SimpleHouse house){
+    if(house.sell_type_id == 111){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

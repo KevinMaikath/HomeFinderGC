@@ -273,4 +273,31 @@ public class HouseRepository implements HouseRepositoryContract {
     });
   }
 
+  @Override
+  public void getCompleteSellInfo(final int id_house, final LoadCompleteSellHouseInfoCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setCompleteSellInfo(getHouseDao().getHouse(id_house),
+                  getImageDao().getImages(id_house),
+                  getSellHouseDao().getSellHouse(id_house));
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getCompleteRentInfo(final int id_house, final LoadCompleteRentHouseInfoCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setCompleteRentInfo(getHouseDao().getHouse(id_house),
+                  getImageDao().getImages(id_house),
+                  getRentHouseDao().getRentHouse(id_house));
+        }
+      }
+    });
+  }
 }

@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 interface HomeDetailsContract {
@@ -55,9 +56,13 @@ interface HomeDetailsContract {
     String changeToLocationInfo();
 
     String changeToDistributionInfo();
+
+    void loadSellHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteSellHouseInfoCallback loadCompleteSellHouseInfoCallback);
+
+    void loadRentHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteRentHouseInfoCallback loadCompleteRentHouseInfoCallback);
   }
 
   interface Router extends AppRouter {
-    int getDataFromStartScreen();
+    HomeDetailsState getDataFromStartScreen();
   }
 }

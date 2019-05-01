@@ -1,9 +1,15 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
+import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 
 public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetailsContract.Presenter {
 
@@ -41,8 +47,33 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
     // HomeDetailsState state = router.getDataFromPreviousScreen();
 
     // update the view
-    view.get().displayData(viewModel);
+    HomeDetailsState state = router.getDataFromStartScreen();
+    if (state != null) {
+      if (state.forSale) {
+        model.loadSellHouseInfo(state.current_house_id, new HouseRepositoryContract.LoadCompleteSellHouseInfoCallback() {
 
+          @Override
+          public void setCompleteSellInfo(House house, List<Image> images, SellHouse sellHouse) {
+            viewModel.current_house = house;
+            viewModel.image_list = images;
+            viewModel.current_image = viewModel.image_list.get(0);
+            viewModel.sellHouse = sellHouse;
+          }
+        });
+      } else {
+        model.loadRentHouseInfo(state.current_house_id, new HouseRepositoryContract.LoadCompleteRentHouseInfoCallback(){
+
+          @Override
+          public void setCompleteRentInfo(House house, List<Image> images, RentHouse rentHouse) {
+            viewModel.current_house = house;
+            viewModel.image_list = images;
+            viewModel.current_image = viewModel.image_list.get(0);
+            viewModel.rentHouse = rentHouse;
+          }
+        });
+      }
+    }
+    view.get().displayData(viewModel);
   }
 
 /**
@@ -80,28 +111,25 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
   public void summaryButtonClicked() {
     String info = model.changeToSummaryInfo();
     viewModel.dataShown = info;
-    fetchData();
+    view.get().displayData(viewModel);
   }
 
   @Override
   public void descriptionButtonClicked() {
-    String info = model.changeToDescriptionInfo();
-    viewModel.dataShown = info;
-    fetchData();
+    viewModel.dataShown = viewModel.current_house.description;
+    view.get().displayData(viewModel);
   }
 
   @Override
   public void locationButtonClicked() {
-    String info = model.changeToLocationInfo();
-    viewModel.dataShown = info;
-    fetchData();
+    viewModel.dataShown = viewModel.current_house.location;
+    view.get().displayData(viewModel);
   }
 
   @Override
   public void distributionButtonClicked() {
-    String info = model.changeToDistributionInfo();
-    viewModel.dataShown = info;
-    fetchData();
+    viewModel.dataShown = "jaja";
+    view.get().displayData(viewModel);
   }
 
   @Override
