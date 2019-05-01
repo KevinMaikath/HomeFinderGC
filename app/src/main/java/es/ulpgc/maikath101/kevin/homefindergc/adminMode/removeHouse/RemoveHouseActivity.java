@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -39,7 +41,7 @@ public class RemoveHouseActivity
     listAdapter.setOnItemClickListener(new RemoveHouseAdapter.OnItemClickListener() {
       @Override
       public void onItemClicked(SimpleHouse house) {
-        Toast.makeText(getApplicationContext(), "House id: " + house.house_id, Toast.LENGTH_SHORT).show();
+        showAlert(house.referenceNumber);
       }
     });
 
@@ -74,6 +76,31 @@ public class RemoveHouseActivity
         listAdapter.setSimpleHouseAdaptersList(viewModel.simpleHouses);
       }
     });
+  }
+
+  private void showAlert(final String referenceNumber){
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+    builder.setCancelable(true);
+    builder.setTitle("Eliminar");
+    builder.setMessage("¿Estás seguro que deseas eliminar la casa cuya referencia es: " + referenceNumber + "?");
+
+    builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        dialog.cancel();
+      }
+    });
+
+    builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        Toast.makeText(getApplicationContext(), "House id: " + referenceNumber, Toast.LENGTH_SHORT).show();
+      }
+    });
+
+    builder.show();
+
 
   }
 }
