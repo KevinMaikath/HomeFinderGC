@@ -12,7 +12,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Sell_type;
 
 @Database(entities = {House.class, RentHouse.class, Sell_type.class, SellHouse.class, Image.class},
-        version = 2)
+        version = 3)
 public abstract class HousesDatabase extends RoomDatabase {
 
   private static final String DB_NAME = "houses.db";
@@ -26,7 +26,7 @@ public abstract class HousesDatabase extends RoomDatabase {
   }
 
   private static HousesDatabase create(Context context){
-    return Room.databaseBuilder(context, HousesDatabase.class, DB_NAME).build();
+    return Room.databaseBuilder(context, HousesDatabase.class, DB_NAME).fallbackToDestructiveMigration().build();
   }
 
   public abstract HouseDao getHouseDao();

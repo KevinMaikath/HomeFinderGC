@@ -39,12 +39,11 @@ public class RemoveHouseActivity
     listAdapter.setOnItemClickListener(new RemoveHouseAdapter.OnItemClickListener() {
       @Override
       public void onItemClicked(SimpleHouse house) {
-        Toast.makeText(getApplicationContext(), house.referenceNumber, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "House id: " + house.house_id, Toast.LENGTH_SHORT).show();
       }
     });
 
     Button toolbarButton = toolbar.findViewById(R.id.backToolbarButton);
-    TextView toolbarTextView = toolbar.findViewById(R.id.toolbarTextView);
 
     toolbarButton.setOnClickListener(new View.OnClickListener() {
       @Override
