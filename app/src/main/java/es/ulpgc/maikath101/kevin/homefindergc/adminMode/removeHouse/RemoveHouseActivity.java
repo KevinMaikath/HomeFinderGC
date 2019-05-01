@@ -21,7 +21,6 @@ public class RemoveHouseActivity
   private RemoveHouseContract.Presenter presenter;
   private RemoveHouseAdapter listAdapter;
 
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -31,18 +30,18 @@ public class RemoveHouseActivity
     setSupportActionBar(toolbar);
 
 
-    listAdapter = new RemoveHouseAdapter(this, new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        SimpleHouse house = (SimpleHouse) v.getTag();
-        Log.e(TAG, house.referenceNumber);
-        // Toast.makeText(getApplicationContext(), "Pulsada la casa: " + house.referenceNumber).show();
-      }
-    });
+    listAdapter = new RemoveHouseAdapter(this);
 
 
     RecyclerView recyclerView = findViewById(R.id.removeHouseRecyclerView);
     recyclerView.setAdapter(listAdapter);
+
+    listAdapter.setOnItemClickListener(new RemoveHouseAdapter.OnItemClickListener() {
+      @Override
+      public void onItemClicked(SimpleHouse house) {
+        Toast.makeText(getApplicationContext(), house.referenceNumber, Toast.LENGTH_LONG).show();
+      }
+    });
 
     Button toolbarButton = toolbar.findViewById(R.id.backToolbarButton);
     TextView toolbarTextView = toolbar.findViewById(R.id.toolbarTextView);
