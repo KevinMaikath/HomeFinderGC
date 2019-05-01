@@ -118,7 +118,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
           model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).refNumber, houses.get(finalI).name,
+              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
                       image.url, houses.get(finalI).price);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
@@ -145,7 +145,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
           model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).refNumber, houses.get(finalI).name,
+              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
                       image.url, houses.get(finalI).price);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
@@ -172,7 +172,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
           model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).refNumber, houses.get(finalI).name,
+              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
                       image.url, houses.get(finalI).price);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
@@ -199,7 +199,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
           model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).refNumber, houses.get(finalI).name,
+              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
                       image.url, houses.get(finalI).price);
               Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
