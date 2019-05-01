@@ -93,52 +93,46 @@ public class HomeDetailsActivity
   @Override
   public void displayData(final HomeDetailsViewModel viewModel) {
     //Log.e(TAG, "displayData()");
-    runOnUiThread(new Runnable() {
-      @Override
-      public void run() {
-        textInfo.setText(viewModel.dataShown);
+    textInfo.setText(viewModel.dataShown);
 
-        image_list.setItems(viewModel.image_list);
-        loadImageFromURL(current_image, viewModel.current_image.url);
-      }
-    });
-
+    loadImageFromURL(current_image, viewModel.current_image.url);
   }
-
-/**
-  @Override
-  public void onBackPressed() {
-    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-      drawerLayout.closeDrawer(GravityCompat.START);
-    } else {
-      super.onBackPressed();
-    }
-  }
-
 
   @Override
-  public boolean onNavigationItemSelected(MenuItem item) {
-    // Handle navigation view item clicks here.
-    int id = item.getItemId();
-
-    if (id == R.id.nav_inicio) {
-      presenter.goToStart();
-    } else if (id == R.id.nav_se_vende) {
-      presenter.goToForSale();
-    } else if (id == R.id.nav_se_alquila) {
-      presenter.goToForRent();
-    } else if (id == R.id.nav_alquiler_vacacional) {
-      presenter.goToHolidayRental();
-    } else if (id == R.id.nav_sobre_nosotros) {
-      presenter.goToAboutUS();
-    } else if (id == R.id.nav_contacto) {
-      presenter.goToContact();
-    }
-
-    drawerLayout.closeDrawer(GravityCompat.START);
-    return true;
+  public void setImageList(HomeDetailsViewModel viewModel) {
+    image_list.setItems(viewModel.image_list);
   }
-**/
+
+  /**
+   * @Override public void onBackPressed() {
+   * if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+   * drawerLayout.closeDrawer(GravityCompat.START);
+   * } else {
+   * super.onBackPressed();
+   * }
+   * }
+   * @Override public boolean onNavigationItemSelected(MenuItem item) {
+   * // Handle navigation view item clicks here.
+   * int id = item.getItemId();
+   * <p>
+   * if (id == R.id.nav_inicio) {
+   * presenter.goToStart();
+   * } else if (id == R.id.nav_se_vende) {
+   * presenter.goToForSale();
+   * } else if (id == R.id.nav_se_alquila) {
+   * presenter.goToForRent();
+   * } else if (id == R.id.nav_alquiler_vacacional) {
+   * presenter.goToHolidayRental();
+   * } else if (id == R.id.nav_sobre_nosotros) {
+   * presenter.goToAboutUS();
+   * } else if (id == R.id.nav_contacto) {
+   * presenter.goToContact();
+   * }
+   * <p>
+   * drawerLayout.closeDrawer(GravityCompat.START);
+   * return true;
+   * }
+   **/
 
   public void onSummaryButtonClicked(View view) {
     presenter.summaryButtonClicked();
@@ -156,7 +150,7 @@ public class HomeDetailsActivity
     presenter.distributionButtonClicked();
   }
 
-  private void loadImageFromURL(ImageView imageView, String imageUrl){
+  private void loadImageFromURL(ImageView imageView, String imageUrl) {
     RequestManager reqManager = Glide.with(imageView.getContext());
     RequestBuilder reqBuilder = reqManager.load(imageUrl);
     RequestOptions reqOptions = new RequestOptions();

@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
@@ -12,6 +13,8 @@ interface HomeDetailsContract {
     void injectPresenter(Presenter presenter);
 
     void displayData(HomeDetailsViewModel viewModel);
+
+    void setImageList(HomeDetailsViewModel viewModel);
   }
 
   interface Presenter {
@@ -48,6 +51,10 @@ interface HomeDetailsContract {
 
   interface Model {
     String fetchData();
+
+    House getHouse();
+
+    void setHouse(House house);
 
     String changeToSummaryInfo();
 

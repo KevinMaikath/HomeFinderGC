@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
@@ -7,6 +8,8 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
 
   public static String TAG = HomeDetailsModel.class.getSimpleName();
   private HouseRepository repository;
+
+  private House house;
 
   private String summary_info = "Información de resumen";
   private String description_info = "Descripción de la casa";
@@ -21,6 +24,16 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
   public String fetchData() {
     // Log.e(TAG, "fetchData()");
     return "Hello";
+  }
+
+  @Override
+  public House getHouse() {
+    return house;
+  }
+
+  @Override
+  public void setHouse(House house) {
+    this.house = house;
   }
 
   @Override
@@ -44,12 +57,26 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
   }
 
   @Override
-  public void loadSellHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteSellHouseInfoCallback callback) {
-    repository.getCompleteSellInfo(current_house_id, callback);
+  public void loadSellHouseInfo(final int current_house_id, final HouseRepositoryContract.LoadCompleteSellHouseInfoCallback callback) {
+    repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
+      @Override
+      public void onHousesInformationFetched(boolean error) {
+        if (!error) {
+          repository.getCompleteSellInfo(current_house_id, callback);
+        }
+      }
+    });
   }
 
   @Override
-  public void loadRentHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteRentHouseInfoCallback callback) {
-    repository.getCompleteRentInfo(current_house_id, callback);
+  public void loadRentHouseInfo(final int current_house_id, final HouseRepositoryContract.LoadCompleteRentHouseInfoCallback callback) {
+    repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
+      @Override
+      public void onHousesInformationFetched(boolean error) {
+        if (!error) {
+          repository.getCompleteRentInfo(current_house_id, callback);
+        }
+      }
+    });
   }
 }

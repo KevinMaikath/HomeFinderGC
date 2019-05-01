@@ -54,6 +54,7 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
 
           @Override
           public void setCompleteSellInfo(House house, List<Image> images, SellHouse sellHouse) {
+            model.setHouse(house);
             viewModel.current_house = house;
             viewModel.image_list = images;
             viewModel.current_image = viewModel.image_list.get(0);
@@ -61,10 +62,11 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
           }
         });
       } else {
-        model.loadRentHouseInfo(state.current_house_id, new HouseRepositoryContract.LoadCompleteRentHouseInfoCallback(){
+        model.loadRentHouseInfo(state.current_house_id, new HouseRepositoryContract.LoadCompleteRentHouseInfoCallback() {
 
           @Override
           public void setCompleteRentInfo(House house, List<Image> images, RentHouse rentHouse) {
+            model.setHouse(house);
             viewModel.current_house = house;
             viewModel.image_list = images;
             viewModel.current_image = viewModel.image_list.get(0);
@@ -73,40 +75,30 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
         });
       }
     }
+    view.get().setImageList(viewModel);
     view.get().displayData(viewModel);
   }
 
-/**
-  @Override
-  public void goToStart() {
-    router.navigateToStartScreen();
-  }
-
-  @Override
-  public void goToForSale() {
-    router.navigateToForSaleScreen();
-  }
-
-  @Override
-  public void goToForRent() {
-    router.navigateToForRentScreen();
-  }
-
-  @Override
-  public void goToHolidayRental() {
-    router.navigateToHolidayRentalScreen();
-  }
-
-  @Override
-  public void goToAboutUS() {
-    router.navigateToAboutUsScreen();
-  }
-
-  @Override
-  public void goToContact() {
-    router.navigateToContactScreen();
-  }
-**/
+  /**
+   * @Override public void goToStart() {
+   * router.navigateToStartScreen();
+   * }
+   * @Override public void goToForSale() {
+   * router.navigateToForSaleScreen();
+   * }
+   * @Override public void goToForRent() {
+   * router.navigateToForRentScreen();
+   * }
+   * @Override public void goToHolidayRental() {
+   * router.navigateToHolidayRentalScreen();
+   * }
+   * @Override public void goToAboutUS() {
+   * router.navigateToAboutUsScreen();
+   * }
+   * @Override public void goToContact() {
+   * router.navigateToContactScreen();
+   * }
+   **/
   @Override
   public void summaryButtonClicked() {
     String info = model.changeToSummaryInfo();
@@ -116,13 +108,13 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
 
   @Override
   public void descriptionButtonClicked() {
-    viewModel.dataShown = viewModel.current_house.description;
+    viewModel.dataShown = model.getHouse().description;
     view.get().displayData(viewModel);
   }
 
   @Override
   public void locationButtonClicked() {
-    viewModel.dataShown = viewModel.current_house.location;
+    viewModel.dataShown = model.getHouse().location;
     view.get().displayData(viewModel);
   }
 
@@ -135,6 +127,7 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
   @Override
   public void imageClicked(Image image) {
     viewModel.current_image = image;
+    view.get().displayData(viewModel);
   }
 
 }

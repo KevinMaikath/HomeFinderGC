@@ -11,8 +11,6 @@ public class HomeDetailsRouter extends AppCustomerRouter implements HomeDetailsC
 
   public static String TAG = HomeDetailsRouter.class.getSimpleName();
 
-  private AppMediator mediator;
-
   public HomeDetailsRouter(AppMediator mediator) {
     super(mediator);
   }

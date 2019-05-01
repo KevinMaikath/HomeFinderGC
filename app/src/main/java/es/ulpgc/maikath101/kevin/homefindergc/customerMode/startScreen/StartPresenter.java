@@ -241,6 +241,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
     HomeDetailsState state = new HomeDetailsState();
     state.forSale = checkForSale(item);
     state.current_house_id = item.house_id;
+    router.passDataToHomeDetailScreen(state);
     router.navigateToHomeDetailScreen();
   }
 
