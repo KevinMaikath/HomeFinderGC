@@ -59,6 +59,9 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
             viewModel.image_list = images;
             viewModel.current_image = viewModel.image_list.get(0);
             viewModel.sellHouse = sellHouse;
+
+            view.get().setImageList(viewModel);
+            view.get().displayData(viewModel);
           }
         });
       } else {
@@ -71,12 +74,14 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
             viewModel.image_list = images;
             viewModel.current_image = viewModel.image_list.get(0);
             viewModel.rentHouse = rentHouse;
+
+            view.get().setImageList(viewModel);
+            view.get().displayData(viewModel);
           }
         });
       }
     }
-    view.get().setImageList(viewModel);
-    view.get().displayData(viewModel);
+
   }
 
   /**

@@ -95,7 +95,12 @@ public class HomeDetailsActivity
     //Log.e(TAG, "displayData()");
     textInfo.setText(viewModel.dataShown);
 
-    loadImageFromURL(current_image, viewModel.current_image.url);
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        loadImageFromURL(current_image, viewModel.current_image.url);
+      }
+    });
   }
 
   @Override
