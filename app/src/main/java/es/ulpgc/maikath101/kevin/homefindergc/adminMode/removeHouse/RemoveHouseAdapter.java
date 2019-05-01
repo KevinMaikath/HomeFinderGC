@@ -1,6 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
@@ -21,22 +19,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
-import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
-import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.ViewHolder> {
 
   public static String TAG = RemoveHouseAdapter.class.getSimpleName();
-  private final AppCompatActivity activity;
-  // private final View.OnClickListener clickListener;
   private List<SimpleHouse> simpleHouseAdaptersList;
   private OnItemClickListener mListener;
 
-  public RemoveHouseAdapter(AppCompatActivity activity) {
-    this.activity = activity;
+  public RemoveHouseAdapter() {
     simpleHouseAdaptersList = new ArrayList<>();
-    // clickListener = listener;
   }
 
 

@@ -32,8 +32,7 @@ public class RemoveHouseActivity
     setSupportActionBar(toolbar);
 
 
-    listAdapter = new RemoveHouseAdapter(this);
-
+    listAdapter = new RemoveHouseAdapter();
 
     RecyclerView recyclerView = findViewById(R.id.removeHouseRecyclerView);
     recyclerView.setAdapter(listAdapter);
@@ -78,7 +77,7 @@ public class RemoveHouseActivity
     });
   }
 
-  private void showAlert(final String referenceNumber){
+  private void showAlert(final String referenceNumber) {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
     builder.setCancelable(true);
