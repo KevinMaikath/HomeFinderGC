@@ -235,7 +235,7 @@ public class HouseRepository implements HouseRepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (callback != null){
+        if (callback != null) {
           callback.setStartHouses(getHouseDao().getStartHouses());
         }
       }
@@ -247,7 +247,7 @@ public class HouseRepository implements HouseRepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (callback!=null) {
+        if (callback != null) {
           getHouseDao().deleteByHouseId(id_house);
           callback.houseDeleted();
         }

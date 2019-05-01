@@ -16,17 +16,6 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class StartActivity
         extends DrawerActivity implements StartContract.View {
-  /**
-   * TODO  crear DrawerLayout
-   * CREAR:
-   * - DrawerActivity: todas las activities heredan de esta.
-   * - DrawerLayout: solo drawer con navigationView, las activities que heredan se quedan
-   * con solo el CoordinatorLayout
-   * - AppRouter: ya creado
-   * - DrawerPresenter: para comunicar DrawerActivity con AppRouter, todos los presentadores
-   * heredan de este
-   */
-
 
   public static String TAG = StartActivity.class.getSimpleName();
 
@@ -52,17 +41,6 @@ public class StartActivity
         drawerLayout.openDrawer(GravityCompat.START);
       }
     });
-
-    /**
-    drawerLayout = findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-    drawerLayout.addDrawerListener(toggle);
-    toggle.syncState();
-
-    NavigationView navigationView = findViewById(R.id.navigation_view);
-    navigationView.setNavigationItemSelectedListener(this);
-**/
 
     drawerLayout = findViewById(R.id.drawer_layout);
     super.setDrawerLayout(drawerLayout);

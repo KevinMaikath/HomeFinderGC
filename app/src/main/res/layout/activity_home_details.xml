@@ -17,142 +17,86 @@
             android:id="@+id/floatingOptionsButton"
             layout="@layout/options_floating_button" />
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/topText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="30dp"
+                android:text="@string/home_details_label"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/current_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/password_eye" />
+
+            <include
+                android:id="@+id/image_list"
+                layout="@layout/home_details_image_recycler_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
 
-                <TextView
-                    android:id="@+id/topText"
+                <Button
+                    android:id="@+id/button_summary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30sp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="30dp"
-                    android:text="@string/home_details_label"
-                    android:textSize="30sp" />
+                    android:onClick="onSummaryButtonClicked"
+                    android:text="@string/resumen_label"
+                    android:textSize="10sp" />
 
-                <ImageView
-                    android:id="@+id/imageView4"
+                <Button
+                    android:id="@+id/button_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:src="@drawable/password_eye" />
+                    android:layout_toRightOf="@+id/button_summary"
+                    android:onClick="onDescriptionButtonClicked"
+                    android:text="@string/descripcion_label"
+                    android:textSize="10sp" />
 
-                <RelativeLayout
-                    android:id="@+id/image_options"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:paddingLeft="15dp">
-
-                    <ImageButton
-                        android:id="@+id/image_1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:elevation="0dp"
-                        android:padding="0dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/password_eye" />
-
-                    <ImageButton
-                        android:id="@+id/image_2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_toRightOf="@+id/image_1"
-                        android:elevation="0dp"
-                        android:padding="0dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/password_eye" />
-
-                    <ImageButton
-                        android:id="@+id/image_3"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_toRightOf="@+id/image_2"
-                        android:elevation="0dp"
-                        android:padding="0dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/password_eye" />
-
-                    <ImageButton
-                        android:id="@+id/image_4"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_toRightOf="@+id/image_3"
-                        android:elevation="0dp"
-                        android:padding="0dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/password_eye" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
-
-                    <Button
-                        android:id="@+id/button_summary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onSummaryButtonClicked"
-                        android:text="@string/resumen_label"
-                        android:textSize="10sp" />
-
-                    <Button
-                        android:id="@+id/button_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/button_summary"
-                        android:onClick="onDescriptionButtonClicked"
-                        android:text="@string/descripcion_label"
-                        android:textSize="10sp" />
-
-                    <Button
-                        android:id="@+id/button_location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/button_description"
-                        android:onClick="onLocationButtonClicked"
-                        android:text="@string/ubicacion_label"
-                        android:textSize="10sp" />
-
-                    <Button
-                        android:id="@+id/button_distribution"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/button_location"
-                        android:onClick="onDistributionButtonClicked"
-                        android:text="@string/distribucion_label"
-                        android:textSize="10sp" />
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/text_info"
+                <Button
+                    android:id="@+id/button_location"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/button_description"
+                    android:onClick="onLocationButtonClicked"
+                    android:text="@string/ubicacion_label"
+                    android:textSize="10sp" />
 
-            </LinearLayout>
-        </ScrollView>
+                <Button
+                    android:id="@+id/button_distribution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/button_location"
+                    android:onClick="onDistributionButtonClicked"
+                    android:text="@string/distribucion_label"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

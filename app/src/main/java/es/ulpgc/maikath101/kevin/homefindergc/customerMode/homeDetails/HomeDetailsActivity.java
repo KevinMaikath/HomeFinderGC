@@ -7,13 +7,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
+import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 public class HomeDetailsActivity
         extends DrawerActivity implements HomeDetailsContract.View, NavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +34,8 @@ public class HomeDetailsActivity
   private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
   private TextView textInfo;
+  private ImageView current_image;
+  private ImageListAdapter image_list;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +43,7 @@ public class HomeDetailsActivity
     setContentView(R.layout.activity_home_details);
 
     textInfo = findViewById(R.id.text_info);
+    current_image = findViewById(R.id.current_image);
 
     floatingActionButton = findViewById(R.id.floatingOptionsButton);
     floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -42,12 +55,19 @@ public class HomeDetailsActivity
 
     drawerLayout = findViewById(R.id.drawer_layout);
     super.setDrawerLayout(drawerLayout);
-    /**
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-    drawerLayout.addDrawerListener(toggle);
-    toggle.syncState();
-**/
+
+    image_list = new ImageListAdapter(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Image image = (Image) view.getTag();
+        presenter.imageClicked(image);
+      }
+    });
+
+    RecyclerView image_recycler = findViewById(R.id.image_list);
+    image_recycler.setAdapter(image_list);
+    image_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
     NavigationView navigationView = findViewById(R.id.navigation_view);
     super.setNavigationView(navigationView);
     // navigationView.setNavigationItemSelectedListener(this);
@@ -126,6 +146,15 @@ public class HomeDetailsActivity
 
   public void onDistributionButtonClicked(View view) {
     presenter.distributionButtonClicked();
+  }
+
+  private void loadImageFromURL(ImageView imageView, String imageUrl){
+    RequestManager reqManager = Glide.with(imageView.getContext());
+    RequestBuilder reqBuilder = reqManager.load(imageUrl);
+    RequestOptions reqOptions = new RequestOptions();
+    reqOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
+    reqBuilder.apply(reqOptions);
+    reqBuilder.into(imageView);
   }
 
 }

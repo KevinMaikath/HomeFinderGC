@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetailsContract.Presenter {
 
@@ -101,6 +102,11 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
     String info = model.changeToDistributionInfo();
     viewModel.dataShown = info;
     fetchData();
+  }
+
+  @Override
+  public void imageClicked(Image image) {
+    viewModel.current_image = image;
   }
 
 }

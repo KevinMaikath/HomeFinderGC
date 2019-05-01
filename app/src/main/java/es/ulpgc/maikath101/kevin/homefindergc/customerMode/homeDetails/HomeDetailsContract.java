@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 interface HomeDetailsContract {
 
@@ -41,6 +42,7 @@ interface HomeDetailsContract {
 
     void distributionButtonClicked();
 
+    void imageClicked(Image image);
   }
 
   interface Model {
