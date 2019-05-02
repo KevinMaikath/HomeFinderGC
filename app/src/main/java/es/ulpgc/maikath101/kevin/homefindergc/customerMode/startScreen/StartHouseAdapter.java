@@ -1,7 +1,9 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,8 +72,11 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     holder.price.setText(houseList.get(position).price);
     holder.ref_number.setText(houseList.get(position).referenceNumber);
 
-
-    loadImageFromURL(holder.main_image, houseList.get(position).imageURL);
+    if (houseList.get(position).imageUri != null) {
+      holder.main_image.setImageURI(Uri.parse(houseList.get(position).imageUri));
+    } else {
+      loadImageFromURL(holder.main_image, houseList.get(position).imageURL);
+    }
   }
 
 
