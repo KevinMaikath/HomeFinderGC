@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
+import android.app.Activity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
@@ -101,11 +102,13 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
     router.navigateToContactScreen();
   }
 **/
+
+  /**
   @Override
-  public void goToHomeDetail() {
+  public void goToHomeDetail(Activity activity) {
     router.navigateToHomeDetailScreen();
   }
-
+**/
   @Override
   public void fetchForSaleHousesData() {
     Log.e(TAG, "fetchData()");
@@ -237,12 +240,12 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
   }
 
   @Override
-  public void selectHouse(SimpleHouse item) {
+  public void selectHouse(Activity activity, SimpleHouse item) {
     HomeDetailsState state = new HomeDetailsState();
     state.forSale = checkForSale(item);
     state.current_house_id = item.house_id;
     router.passDataToHomeDetailScreen(state);
-    router.navigateToHomeDetailScreen();
+    router.navigateToHomeDetailScreen(activity);
   }
 
   private boolean checkForSale(SimpleHouse house){

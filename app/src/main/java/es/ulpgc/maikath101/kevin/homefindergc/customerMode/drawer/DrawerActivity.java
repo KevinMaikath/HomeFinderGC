@@ -48,17 +48,17 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     int id = item.getItemId();
 
     if (id == R.id.nav_inicio) {
-      presenter.goToStart();
+      presenter.goToStart(this);
     } else if (id == R.id.nav_se_vende) {
-      presenter.goToForSale();
+      presenter.goToForSale(this);
     } else if (id == R.id.nav_se_alquila) {
-      presenter.goToForRent();
+      presenter.goToForRent(this);
     } else if (id == R.id.nav_alquiler_vacacional) {
-      presenter.goToHolidayRental();
+      presenter.goToHolidayRental(this);
     } else if (id == R.id.nav_sobre_nosotros) {
-      presenter.goToAboutUS();
+      presenter.goToAboutUS(this);
     } else if (id == R.id.nav_contacto) {
-      presenter.goToContact();
+      presenter.goToContact(this);
     }
 
     drawerLayout.closeDrawer(GravityCompat.START);

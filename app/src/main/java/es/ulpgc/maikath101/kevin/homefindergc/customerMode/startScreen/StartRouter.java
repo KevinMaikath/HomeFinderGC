@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
 
@@ -17,10 +18,11 @@ public class StartRouter extends AppCustomerRouter implements StartContract.Rout
   }
 
   @Override
-  public void navigateToHomeDetailScreen() {
+  public void navigateToHomeDetailScreen(Activity activity) {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, HomeDetailsActivity.class);
-    context.startActivity(intent);
+   // context.startActivity(intent);
+    activity.startActivity(intent);
   }
 
   @Override

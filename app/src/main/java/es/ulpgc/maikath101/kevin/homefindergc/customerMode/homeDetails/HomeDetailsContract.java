@@ -25,7 +25,7 @@ interface HomeDetailsContract {
     void injectRouter(Router router);
 
     void fetchData();
-
+/**
     void goToStart();
 
     void goToForSale();
@@ -37,7 +37,7 @@ interface HomeDetailsContract {
     void goToAboutUS();
 
     void goToContact();
-
+**/
     void summaryButtonClicked();
 
     void descriptionButtonClicked();

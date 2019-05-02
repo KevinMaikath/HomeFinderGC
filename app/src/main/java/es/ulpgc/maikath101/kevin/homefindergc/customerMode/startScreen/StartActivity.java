@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
+import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,7 +27,6 @@ public class StartActivity
 
   private StartHouseAdapter listAdapter;
 
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -47,13 +47,14 @@ public class StartActivity
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
     super.setNavigationView(navigationView);
+    final Activity activity = this;
 
     listAdapter = new StartHouseAdapter(new View.OnClickListener() {
 
       @Override
       public void onClick(View view) {
         SimpleHouse item = (SimpleHouse) view.getTag();
-        presenter.selectHouse(item);
+        presenter.selectHouse(activity , item);
       }
 
     });
@@ -144,9 +145,9 @@ public class StartActivity
     return true;
   }
 **/
-
+/**
   public void onHouseClicked(View view) {
     presenter.goToHomeDetail();
   }
-
+**/
 }

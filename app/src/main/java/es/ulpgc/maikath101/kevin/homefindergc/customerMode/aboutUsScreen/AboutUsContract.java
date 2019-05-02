@@ -20,7 +20,7 @@ interface AboutUsContract {
     void injectRouter(Router router);
 
     void fetchData();
-
+    /**
     void goToStart();
 
     void goToForSale();
@@ -32,6 +32,7 @@ interface AboutUsContract {
     void goToAboutUS();
 
     void goToContact();
+     **/
   }
 
   interface Model {

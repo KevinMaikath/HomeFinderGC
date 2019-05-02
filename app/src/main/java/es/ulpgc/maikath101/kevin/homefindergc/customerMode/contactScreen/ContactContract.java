@@ -20,7 +20,7 @@ interface ContactContract {
     void injectRouter(Router router);
 
     void fetchData();
-
+    /**
     void goToStart();
 
     void goToForSale();
@@ -32,7 +32,7 @@ interface ContactContract {
     void goToAboutUS();
 
     void goToContact();
-
+**/
     void onSendButtonPressed(String name, String telephone, String country,
                              String zipcode, String address, String email,
                              String subject, String bodyemail);

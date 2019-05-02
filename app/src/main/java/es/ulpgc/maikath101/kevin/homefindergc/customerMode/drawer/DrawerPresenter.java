@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer;
 
+import android.app.Activity;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
@@ -25,33 +27,33 @@ public class DrawerPresenter implements DrawerContract.Presenter{
   }
 
   @Override
-  public void goToStart() {
-    router.navigateToStartScreen();
+  public void goToStart(Activity activity) {
+    router.navigateToStartScreen(activity);
   }
 
   @Override
-  public void goToForSale() {
-    router.navigateToForSaleScreen();
+  public void goToForSale(Activity activity) {
+    router.navigateToForSaleScreen(activity);
   }
 
   @Override
-  public void goToForRent() {
-    router.navigateToForRentScreen();
+  public void goToForRent(Activity activity) {
+    router.navigateToForRentScreen(activity);
   }
 
   @Override
-  public void goToHolidayRental() {
-    router.navigateToHolidayRentalScreen();
+  public void goToHolidayRental(Activity activity) {
+    router.navigateToHolidayRentalScreen(activity);
   }
 
   @Override
-  public void goToAboutUS() {
-    router.navigateToAboutUsScreen();
+  public void goToAboutUS(Activity activity) {
+    router.navigateToAboutUsScreen(activity);
   }
 
   @Override
-  public void goToContact() {
-    router.navigateToContactScreen();
+  public void goToContact(Activity activity) {
+    router.navigateToContactScreen(activity);
   }
 
 }

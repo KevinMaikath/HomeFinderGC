@@ -1,17 +1,19 @@
 package es.ulpgc.maikath101.kevin.homefindergc.app;
 
+import android.app.Activity;
+
 public interface AppRouter {
 
-  void navigateToStartScreen();
+  void navigateToStartScreen(Activity activity);
 
-  void navigateToForSaleScreen();
+  void navigateToForSaleScreen(Activity activity);
 
-  void navigateToForRentScreen();
+  void navigateToForRentScreen(Activity activity);
 
-  void navigateToHolidayRentalScreen();
+  void navigateToHolidayRentalScreen(Activity activity);
 
-  void navigateToAboutUsScreen();
+  void navigateToAboutUsScreen(Activity activity);
 
-  void navigateToContactScreen();
+  void navigateToContactScreen(Activity activity);
 
 }

@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
+import android.app.Activity;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
@@ -27,7 +29,7 @@ interface StartContract {
     void injectRouter(Router router);
 
     void fetchData();
-
+/**
     void goToStart();
 
     void goToForSale();
@@ -39,10 +41,10 @@ interface StartContract {
     void goToAboutUS();
 
     void goToContact();
-
+**/
     void checkCurrentScreen();
 
-    void goToHomeDetail();
+    //void goToHomeDetail(Activity activity);
 
     void fetchStartHousesData();
 
@@ -52,7 +54,7 @@ interface StartContract {
 
     void fetchHolidayRentalHousesData();
 
-    void selectHouse(SimpleHouse item);
+    void selectHouse(Activity activity, SimpleHouse item);
   }
 
   interface Model {
@@ -68,7 +70,7 @@ interface StartContract {
   }
 
   interface Router extends AppRouter {
-    void navigateToHomeDetailScreen();
+    void navigateToHomeDetailScreen(Activity activity);
 
     void passDataToHomeDetailScreen(HomeDetailsState state);
   }
