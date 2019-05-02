@@ -13,6 +13,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.database.HouseDao;
 
 public class AddHouseModel implements AddHouseContract.Model {
@@ -58,6 +59,11 @@ public class AddHouseModel implements AddHouseContract.Model {
 
             Image imageToInsert = new Image((int) imageId, "", houseId, imageUri.toString());
             repository.updateImage(imageToInsert);
+
+            SellHouse sellhouse = new SellHouse(0, houseId, "No tiene comunidad");
+            repository.insertSellHouse(sellhouse);
+
+
             callback.houseInserted();
           }
         });

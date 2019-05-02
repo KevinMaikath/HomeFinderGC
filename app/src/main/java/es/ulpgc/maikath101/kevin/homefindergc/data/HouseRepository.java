@@ -341,4 +341,14 @@ public class HouseRepository implements HouseRepositoryContract {
     });
 
   }
+
+  @Override
+  public void insertSellHouse(final SellHouse sellHouse) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        getSellHouseDao().insert(sellHouse);
+      }
+    });
+  }
 }

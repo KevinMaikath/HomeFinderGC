@@ -84,4 +84,6 @@ public interface HouseRepositoryContract {
 
   void updateHouse(House house);
 
+  void insertSellHouse(SellHouse sellHouse);
+
 }

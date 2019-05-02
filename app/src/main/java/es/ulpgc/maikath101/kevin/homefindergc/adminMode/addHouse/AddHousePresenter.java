@@ -46,7 +46,8 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
   }
 
   @Override
-  public void doneButtonPressed(String name, String location, String price, String description, Uri imageUri) {
+  public void doneButtonPressed(String name, String location, String price, String description,
+                                Uri imageUri) {
     model.doneButtonPressed(name, location, price, description, imageUri,
             new HouseRepositoryContract.OnHouseCompleteleyInsertedCallback() {
       @Override
