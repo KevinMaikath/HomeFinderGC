@@ -26,8 +26,8 @@ public class AddHouseModel implements AddHouseContract.Model {
   }
 
   @Override
-  public void doneButtonPressed(final String name, final String location, final String price,
-                                final String description, final Uri imageUri) {
+  public void doneButtonPressed(final String name, final String location, final String price, final String description,
+                                final Uri imageUri, final HouseRepository.OnHouseCompleteleyInsertedCallback callback) {
     final double random = Math.random() * 100 + 17 % 3 * 87;
     final double random2 = Math.random() * 1823 + 79 % 10 * 8;
 
@@ -35,7 +35,6 @@ public class AddHouseModel implements AddHouseContract.Model {
 
     House house = new House(0, 111, 1, String.valueOf(intRandom), description, name,
             price, 4, location, false, 4, "", "", 0);
-
 
 
     repository.insertHouse(house, new HouseRepositoryContract.OnHouseInsertedCallback() {
@@ -59,15 +58,11 @@ public class AddHouseModel implements AddHouseContract.Model {
 
             Image imageToInsert = new Image((int) imageId, "", houseId, imageUri.toString());
             repository.updateImage(imageToInsert);
+            callback.houseInserted();
           }
         });
 
       }
     });
-
-
-    final int[] id_image = new int[1];
-
-
   }
 }

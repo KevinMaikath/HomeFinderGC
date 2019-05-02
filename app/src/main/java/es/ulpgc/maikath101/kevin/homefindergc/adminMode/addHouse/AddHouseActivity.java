@@ -135,4 +135,13 @@ public class AddHouseActivity
     return false;
   }
 
+  public void houseInsertedCorrectly(){
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        Toast.makeText(getApplicationContext(), "La casa ha sido añadida correctamente", Toast.LENGTH_SHORT).show();
+      }
+    });
+  }
+
 }

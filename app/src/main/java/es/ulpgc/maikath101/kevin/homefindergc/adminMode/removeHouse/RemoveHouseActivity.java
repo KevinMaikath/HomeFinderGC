@@ -107,7 +107,8 @@ public class RemoveHouseActivity
       @Override
       public void onClick(DialogInterface dialog, int which) {
         presenter.removeHouse(id_house);
-        Toast.makeText(getApplicationContext(), "House id: " + referenceNumber, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "La casa con referencia: " + referenceNumber
+                + " ha sido eliminada correctamente.", Toast.LENGTH_LONG).show();
       }
     });
 

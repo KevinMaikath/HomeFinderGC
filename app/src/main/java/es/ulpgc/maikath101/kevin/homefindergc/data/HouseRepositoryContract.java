@@ -52,6 +52,10 @@ public interface HouseRepositoryContract {
     void setImageId(int imageId);
   }
 
+  interface OnHouseCompleteleyInsertedCallback {
+    void houseInserted();
+  }
+
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
   void getForSaleHouses(HouseRepositoryContract.GetForSaleHousesCallback callback);

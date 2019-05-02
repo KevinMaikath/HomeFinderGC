@@ -5,6 +5,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+
 public class AddHousePresenter implements AddHouseContract.Presenter {
 
   public static String TAG = AddHousePresenter.class.getSimpleName();
@@ -45,7 +47,13 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
 
   @Override
   public void doneButtonPressed(String name, String location, String price, String description, Uri imageUri) {
-    model.doneButtonPressed(name, location, price, description, imageUri);
+    model.doneButtonPressed(name, location, price, description, imageUri,
+            new HouseRepositoryContract.OnHouseCompleteleyInsertedCallback() {
+      @Override
+      public void houseInserted() {
+        view.get().houseInsertedCorrectly();
+      }
+    });
   }
 
 
