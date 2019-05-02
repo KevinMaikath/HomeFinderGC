@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -59,9 +60,12 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
     holder.referenceNumber.setText("Referencia: " + simpleHouseAdaptersList.get(position).referenceNumber);
     Log.e(TAG, String.valueOf(simpleHouseAdaptersList.get(position).imageURL));
 
-
-    loadImageFromURL(holder.imageView3, simpleHouseAdaptersList.get(position).imageURL);
-
+    if (simpleHouseAdaptersList.get(position).imageUri != null) {
+      Log.e(TAG, simpleHouseAdaptersList.get(position).imageUri);
+      holder.imageView3.setImageURI(Uri.parse(simpleHouseAdaptersList.get(position).imageUri));
+    } else {
+      loadImageFromURL(holder.imageView3, simpleHouseAdaptersList.get(position).imageURL);
+    }
   }
 
   private void loadImageFromURL(ImageView imageView, String imageUrl) {

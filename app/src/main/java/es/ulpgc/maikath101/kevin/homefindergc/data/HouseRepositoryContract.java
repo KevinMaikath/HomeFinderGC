@@ -44,6 +44,13 @@ public interface HouseRepositoryContract {
     void setCompleteRentInfo(House house, List<Image> images, RentHouse rentHouse);
   }
 
+  interface OnHouseInsertedCallback {
+    void setHouseId(int houseId);
+  }
+
+  interface OnImageInsertedCallback {
+    void setImageId(int imageId);
+  }
 
   void loadHousesInformation(boolean clearFirst, HouseRepository.FetchHousesInformationCallback callback);
 
@@ -55,7 +62,7 @@ public interface HouseRepositoryContract {
 
   void getAllHouses(HouseRepository.GetAllHousesCallback callback);
 
-  long insertHouse(House house);
+  void insertHouse(House house, HouseRepository.OnHouseInsertedCallback callback);
 
   void getImage(int id, HouseRepository.GetImageFromHouseCallback callback);
 
@@ -67,7 +74,7 @@ public interface HouseRepositoryContract {
 
   void getCompleteRentInfo(int id_house, HouseRepository.LoadCompleteRentHouseInfoCallback callback);
 
-  long insertImage(Image image);
+  void insertImage(Image image, HouseRepository.OnImageInsertedCallback callback);
 
   void updateImage(Image image);
 

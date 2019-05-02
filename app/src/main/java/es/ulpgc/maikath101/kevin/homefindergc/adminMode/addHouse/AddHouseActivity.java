@@ -1,6 +1,8 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +26,7 @@ public class AddHouseActivity
   public static String TAG = AddHouseActivity.class.getSimpleName();
   private static final int PICK_IMAGE = 100;
   private Uri imageURI;
-  ImageView imageView;
+  private ImageView imageView;
   private EditText nameEditText;
   private EditText locationEditText;
   private EditText priceEditText;
@@ -69,6 +71,8 @@ public class AddHouseActivity
         }
       }
     });
+
+
     backButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -98,6 +102,7 @@ public class AddHouseActivity
 
   private void openGallery(){
     Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+    gallery.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
     startActivityForResult(gallery, PICK_IMAGE);
   }
 
@@ -124,5 +129,9 @@ public class AddHouseActivity
       return true;
     }
     return false;
+  }
+
+  private void verifyPermissions(){
+
   }
 }

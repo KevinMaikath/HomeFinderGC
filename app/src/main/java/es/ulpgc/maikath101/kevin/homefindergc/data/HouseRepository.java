@@ -52,9 +52,9 @@ public class HouseRepository implements HouseRepositoryContract {
   private HouseRepository(Context context) {
     this.context = context;
 
-//    database = Room.databaseBuilder(
-//            context, HousesDatabase.class, DB_FILE
-//    ).build();
+    //    database = Room.databaseBuilder(
+    //            context, HousesDatabase.class, DB_FILE
+    //    ).build();
 
     database = HousesDatabase.getInstance(context);
   }
@@ -231,6 +231,18 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
+  public void insertHouse(final House house, final OnHouseInsertedCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setHouseId((int) getHouseDao().insert(house));
+        }
+      }
+    });
+  }
+
+  @Override
   public void getStartHouses(final GetStartHousesCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
@@ -255,12 +267,6 @@ public class HouseRepository implements HouseRepositoryContract {
     });
   }
 
-
-  @Override
-  public long insertHouse(House house) {
-    long id_house = getHouseDao().insert(house);
-    return id_house;
-  }
 
   @Override
   public void getImage(final int id, final GetImageFromHouseCallback callback) {
@@ -303,18 +309,36 @@ public class HouseRepository implements HouseRepositoryContract {
   }
 
   @Override
-  public long insertImage(Image image) {
-    long id_image = getImageDao().insert(image);
-    return id_image;
+  public void insertImage(final Image image, final OnImageInsertedCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+            callback.setImageId((int) getImageDao().insert(image));
+        }
+      }
+    });
   }
 
   @Override
-  public void updateImage(Image image) {
-    getImageDao().updateImage(image);
+  public void updateImage(final Image image) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        getImageDao().updateImage(image);
+      }
+    });
+
   }
 
   @Override
-  public void updateHouse(House house) {
-    getHouseDao().updateHouse(house);
+  public void updateHouse(final House house) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        getHouseDao().updateHouse(house);
+      }
+    });
+
   }
 }

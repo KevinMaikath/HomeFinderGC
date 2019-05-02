@@ -47,15 +47,17 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
         // viewModel.houses = houses;
 
         final ArrayList<SimpleHouse> list = new ArrayList<>();
-        for (int i = 0; i < houses.size(); i++){
+        for (int i = 0; i < houses.size(); i++) {
           final int finalI = i;
           model.loadImages(houses.get(i).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type);
-              Log.e(TAG, String.valueOf(image.url));
-              list.add(house);
+              if (image != null) {
+                SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
+                        image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type, image.imageUri);
+                Log.e(TAG, String.valueOf(image.url));
+                list.add(house);
+              }
               //viewModel.simpleHouses.add(house);
             }
           });
