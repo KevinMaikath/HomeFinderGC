@@ -27,11 +27,22 @@ public class AddHouseModel implements AddHouseContract.Model {
 
   @Override
   public void doneButtonPressed(String name, String location, String price, String description, Uri imageUri) {
-    int random = (int) Math.random()*60;
+    int random = (int) Math.random() / 10000;
 
-   House house = new House(0, 111, 1, String.valueOf(random), description, name,
-           price, 4, location, false, 4, "", "", 0);
-   //Image image = new Image(0, );
-   Log.e(TAG, String.valueOf(house.id_house));
+    House house = new House(0, 111, 1, String.valueOf(random), description, name,
+            price, 4, location, false, 4, "", "", 0);
+    long id_house = repository.insertHouse(house);
+    Image image = new Image(0, "", (int) id_house, imageUri.toString());
+    long id_image = repository.insertImage(image);
+
+    House houseToInsert = new House((int) id_house, 111, (int) id_image,
+            String.valueOf(random), description, name, price, 4, location, false,
+            4, "", "", 0);
+
+    repository.updateHouse(houseToInsert);
+
+    Image imageToInsert = new Image((int) id_image, "", (int) id_house, imageUri.toString());
+    repository.updateImage(imageToInsert);
+    Log.e(TAG, String.valueOf(id_house));
   }
 }

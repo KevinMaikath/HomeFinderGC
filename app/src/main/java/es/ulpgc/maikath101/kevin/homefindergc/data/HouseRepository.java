@@ -257,8 +257,9 @@ public class HouseRepository implements HouseRepositoryContract {
 
 
   @Override
-  public void insertHouse(House house) {
-
+  public long insertHouse(House house) {
+    long id_house = getHouseDao().insert(house);
+    return id_house;
   }
 
   @Override
@@ -299,5 +300,21 @@ public class HouseRepository implements HouseRepositoryContract {
         }
       }
     });
+  }
+
+  @Override
+  public long insertImage(Image image) {
+    long id_image = getImageDao().insert(image);
+    return id_image;
+  }
+
+  @Override
+  public void updateImage(Image image) {
+    getImageDao().updateImage(image);
+  }
+
+  @Override
+  public void updateHouse(House house) {
+    getHouseDao().updateHouse(house);
   }
 }

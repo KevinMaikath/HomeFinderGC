@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 public interface ImageDao {
 
   @Insert
-  void insert(Image image);
+  long insert(Image image);
 
   @Delete
   void delete(Image image);
@@ -23,5 +24,8 @@ public interface ImageDao {
 
   @Query("SELECT * FROM images WHERE id_image=:id_house")
   Image getImage(int id_house);
+
+  @Update
+  void updateImage(Image image);
 
 }
