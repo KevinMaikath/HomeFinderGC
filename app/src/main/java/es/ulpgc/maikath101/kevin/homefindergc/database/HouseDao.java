@@ -15,7 +15,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 public interface HouseDao {
 
   @Insert
-  void insert(House house);
+  long insert(House house);
 
   @Delete
   void delete(House house);

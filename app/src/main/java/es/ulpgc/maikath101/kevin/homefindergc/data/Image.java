@@ -3,6 +3,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.data;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
+import android.net.Uri;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
@@ -18,9 +19,12 @@ public class Image {
           childColumns = "id_house", onDelete = CASCADE)
   public final int id_house;
 
-  public Image(int id_image, String url, int id_house) {
+  public final String imageUri;
+
+  public Image(int id_image, String url, int id_house, String imageUri) {
     this.id_image = id_image;
     this.url = url;
     this.id_house = id_house;
+    this.imageUri = imageUri;
   }
 }
