@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -98,7 +99,11 @@ public class HomeDetailsActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        loadImageFromURL(current_image, viewModel.current_image.url);
+        if (viewModel.current_image.url != null) {
+          loadImageFromURL(current_image, viewModel.current_image.url);
+        } else if (viewModel.current_image.imageUri != null){
+          current_image.setImageURI(Uri.parse(viewModel.current_image.imageUri));
+        }
       }
     });
   }
