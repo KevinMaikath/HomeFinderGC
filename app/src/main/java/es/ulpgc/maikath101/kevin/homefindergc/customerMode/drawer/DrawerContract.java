@@ -30,6 +30,8 @@ public interface DrawerContract {
     void goToAboutUS(Activity activity);
 
     void goToContact(Activity activity);
+
+    void onBackPressed(Activity activity);
   }
 
   interface Router extends AppRouter {

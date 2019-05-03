@@ -1,6 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
@@ -49,77 +50,24 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
 
-    /**
-     // set passed state
-     StartState state = router.getDataFromPreviousScreen();
-     if (state != null) {
-     viewModel.data = state.data;
-     }
-
-     if (viewModel.data == null) {
-     // call the model
-     String data = model.fetchData();
-
-     // set initial state
-     viewModel.data = data;
-     }
-     **/
     // update the view
     view.get().displayData(viewModel);
 
   }
 
-  /**
-  @Override
-  public void goToStart() {
-    router.navigateToStartScreen();
-  }
-
-  @Override
-  public void goToForSale() {
-    router.navigateToForSaleScreen();
-  }
-
-  @Override
-  public void goToForRent() {
-    router.navigateToForRentScreen();
-  }
-
-  @Override
-  public void goToHolidayRental() {
-    router.navigateToHolidayRentalScreen();
-  }
-
-  @Override
-  public void goToAboutUS() {
-    router.navigateToAboutUsScreen();
-  }
-
-  @Override
-  public void goToContact() {
-    router.navigateToContactScreen();
-  }
-**/
-
-  /**
-  @Override
-  public void goToHomeDetail(Activity activity) {
-    router.navigateToHomeDetailScreen();
-  }
-**/
   @Override
   public void fetchForSaleHousesData() {
     Log.e(TAG, "fetchData()");
+    viewModel.topText = R.string.for_sale_label;
     model.loadForSaleHouses(new HouseRepositoryContract.GetForSaleHousesCallback() {
       @Override
       public void setForSaleHouses(final List<House> houses) {
         //viewModel.simpleHouseList = houses;
         final ArrayList<SimpleHouse> simpleHouses = new ArrayList<>();
-        for (int i = 0; i < houses.size(); i++){
+        for (int i = 0; i < houses.size(); i++) {
           final int finalI = i;
-          model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
+          model.loadImages(houses.get(i).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
@@ -139,14 +87,15 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
   @Override
   public void fetchStartHousesData() {
     Log.e(TAG, "fetchData()");
+    viewModel.topText = R.string.start_label;
     model.loadStartHouses(new HouseRepositoryContract.GetStartHousesCallback() {
       @Override
       public void setStartHouses(final List<House> houses) {
         //viewModel.simpleHouseList = houses;
         final ArrayList<SimpleHouse> simpleHouses = new ArrayList<>();
-        for (int i = 0; i < houses.size(); i++){
+        for (int i = 0; i < houses.size(); i++) {
           final int finalI = i;
-          model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
+          model.loadImages(houses.get(i).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
@@ -166,14 +115,15 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
   @Override
   public void fetchForRentHousesData() {
     Log.e(TAG, "fetchData()");
+    viewModel.topText = R.string.for_rent_label;
     model.loadForRentHouses(new HouseRepositoryContract.GetForRentHousesCallback() {
       @Override
       public void setForRentHouses(final List<House> houses) {
         //viewModel.simpleHouseList = houses;
         final ArrayList<SimpleHouse> simpleHouses = new ArrayList<>();
-        for (int i = 0; i < houses.size(); i++){
+        for (int i = 0; i < houses.size(); i++) {
           final int finalI = i;
-          model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
+          model.loadImages(houses.get(i).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
@@ -193,14 +143,15 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
   @Override
   public void fetchHolidayRentalHousesData() {
     Log.e(TAG, "fetchData()");
+    viewModel.topText = R.string.holiday_rental_label;
     model.loadHolidayRentalHouses(new HouseRepositoryContract.GetHolidayRentalHousesCallback() {
       @Override
       public void setHolidayRentalHouses(final List<House> houses) {
         //viewModel.simpleHouseList = houses;
         final ArrayList<SimpleHouse> simpleHouses = new ArrayList<>();
-        for (int i = 0; i < houses.size(); i++){
+        for (int i = 0; i < houses.size(); i++) {
           final int finalI = i;
-          model.loadImages(houses.get(i).main_image,new HouseRepositoryContract.GetImageFromHouseCallback() {
+          model.loadImages(houses.get(i).main_image, new HouseRepositoryContract.GetImageFromHouseCallback() {
             @Override
             public void setImage(Image image) {
               SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house, houses.get(finalI).refNumber, houses.get(finalI).name,
@@ -221,26 +172,22 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
   public void checkCurrentScreen() {
     switch (state.currentScreen) {
       case "Start":
-        viewModel.topText = R.string.start_label;
         fetchStartHousesData();
         break;
       case "ForSale":
-        viewModel.topText = R.string.for_sale_label;
         fetchForSaleHousesData();
         break;
       case "ForRent":
-        viewModel.topText = R.string.for_rent_label;
         fetchForRentHousesData();
         break;
       case "HolidayRental":
-        viewModel.topText = R.string.holiday_rental_label;
         fetchHolidayRentalHousesData();
         break;
     }
   }
 
   @Override
-  public void selectHouse(Activity activity, SimpleHouse item) {
+  public void selectHouse(Context activity, SimpleHouse item) {
     HomeDetailsState state = new HomeDetailsState();
     state.forSale = checkForSale(item);
     state.current_house_id = item.house_id;
@@ -248,11 +195,21 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
     router.navigateToHomeDetailScreen(activity);
   }
 
-  private boolean checkForSale(SimpleHouse house){
-    if(house.sell_type_id == 111){
+  private boolean checkForSale(SimpleHouse house) {
+    if (house.sell_type_id == 111) {
       return true;
     } else {
       return false;
+    }
+  }
+
+  @Override
+  public void onBackPressed(Activity activity) {
+    if (state.currentScreen.equals("Start")) {
+      activity.finish();
+    } else {
+      state.currentScreen = "Start";
+      fetchStartHousesData();
     }
   }
 

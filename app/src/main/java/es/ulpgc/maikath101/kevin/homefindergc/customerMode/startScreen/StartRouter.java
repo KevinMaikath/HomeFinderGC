@@ -18,10 +18,9 @@ public class StartRouter extends AppCustomerRouter implements StartContract.Rout
   }
 
   @Override
-  public void navigateToHomeDetailScreen(Activity activity) {
+  public void navigateToHomeDetailScreen(Context activity) {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, HomeDetailsActivity.class);
-   // context.startActivity(intent);
     activity.startActivity(intent);
   }
 
@@ -29,4 +28,5 @@ public class StartRouter extends AppCustomerRouter implements StartContract.Rout
   public void passDataToHomeDetailScreen(HomeDetailsState state) {
     mediator.setHomeDetailsState(state);
   }
+
 }

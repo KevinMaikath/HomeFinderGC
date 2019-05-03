@@ -24,22 +24,8 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-   // setContentView(R.layout.drawer_layout);
 
-   // presenter = new DrawerPresenter();
-
-    /**
-    drawerLayout = findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-    drawerLayout.addDrawerListener(toggle);
-    toggle.syncState();
-
-    NavigationView navigationView = findViewById(R.id.navigation_view);
-    navigationView.setNavigationItemSelectedListener(this);
-**/
     DrawerScreen.configure(this);
-
   }
 
   @Override
@@ -75,7 +61,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
       drawerLayout.closeDrawer(GravityCompat.START);
     } else {
-      super.onBackPressed();
+      presenter.onBackPressed(this);
     }
   }
 
@@ -94,4 +80,5 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
   public void setNavigationView(NavigationView navigationView){
     navigationView.setNavigationItemSelectedListener(this);
   }
+
 }

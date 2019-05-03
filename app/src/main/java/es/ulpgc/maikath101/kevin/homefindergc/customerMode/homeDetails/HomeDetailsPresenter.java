@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
+import android.app.Activity;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -133,6 +135,12 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
   public void imageClicked(Image image) {
     viewModel.current_image = image;
     view.get().displayData(viewModel);
+  }
+
+
+  @Override
+  public void onBackPressed(Activity activity) {
+    activity.finish();
   }
 
 }

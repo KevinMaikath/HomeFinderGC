@@ -52,14 +52,13 @@ public class StartActivity
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
     super.setNavigationView(navigationView);
-    final Activity activity = this;
 
     listAdapter = new StartHouseAdapter(new View.OnClickListener() {
 
       @Override
       public void onClick(View view) {
         SimpleHouse item = (SimpleHouse) view.getTag();
-        presenter.selectHouse(activity , item);
+        presenter.selectHouse(view.getContext() , item);
       }
 
     });
@@ -130,43 +129,9 @@ public class StartActivity
     }
   }
 
-/**
   @Override
   public void onBackPressed() {
-    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-      drawerLayout.closeDrawer(GravityCompat.START);
-    } else {
-      super.onBackPressed();
-    }
+    presenter.onBackPressed(this);
   }
-**/
-/**
-  @Override
-  public boolean onNavigationItemSelected(MenuItem item) {
-    // Handle navigation view item clicks here.
-    int id = item.getItemId();
 
-    if (id == R.id.nav_inicio) {
-      presenter.goToStart();
-    } else if (id == R.id.nav_se_vende) {
-      presenter.goToForSale();
-    } else if (id == R.id.nav_se_alquila) {
-      presenter.goToForRent();
-    } else if (id == R.id.nav_alquiler_vacacional) {
-      presenter.goToHolidayRental();
-    } else if (id == R.id.nav_sobre_nosotros) {
-      presenter.goToAboutUS();
-    } else if (id == R.id.nav_contacto) {
-      presenter.goToContact();
-    }
-
-    drawerLayout.closeDrawer(GravityCompat.START);
-    return true;
-  }
-**/
-/**
-  public void onHouseClicked(View view) {
-    presenter.goToHomeDetail();
-  }
-**/
 }
