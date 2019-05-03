@@ -14,6 +14,7 @@
       "bathrooms": 1,
       "parking": "No",
       "floor_type": "Residencial",
+      "distribution":"Distribución no disponible.",
       "surface": 85
     },
     {
@@ -29,6 +30,7 @@
       "pool": true,
       "bathrooms": 3,
       "parking": "Plaza de Aparcamiento Privado",
+      "distribution":"Esta propiedad tiene una única planta y se distribuye en : 2 dormitorios , cocina independiente , salón con zona comedor , dos baños , aseo , vestíbulo , 2 porches , jardín y piscina privada.",
       "floor_type": "Residencial",
       "surface": 113
     },
@@ -46,6 +48,7 @@
       "bathrooms": 2,
       "parking": "No",
       "floor_type": "Residencial",
+      "distribution":"Planta baja : terraza , salón , cocina independiente , baño y segundo salón amplio. \n\nPlanta alta : 3 dormitorios ( 2 dobles y 1 individual ) , baño y patio interior.",
       "surface": 120
     },
     {
@@ -62,6 +65,7 @@
       "bathrooms": 3,
       "parking": "Plaza de Aparcamiento Comunitaria",
       "floor_type": "Residencial",
+      "distribution":"Distribuída en dos plantas . En la planta principal nos encontramos con un recibidor ,  cocina independiente , despensa , zona comedor ,  1 dormitorio con baño , salón y magníficas terrazas. \n\nLa planta alta dispone de 1 dormitorio con baño y vestidor . Gran terraza de 26 m² con estupendas vistas.",
       "surface": 112
     },
     {
@@ -78,6 +82,7 @@
       "bathrooms": 4,
       "parking": "Plaza de Aparcamiento Privado",
       "floor_type": "Residencial",
+      "distribution":"Propiedad distribuída en tres plantas. \n\nPlanta baja ( 74,35 m² ) : encontramos un amplio salón-comedor , cocina de grandes dimensiones, 1 cuarto de baño , 1 aseo y cuarto de servicio. \n\nPlanta primera ( 80,05 m² ) :  distribuida en 3 dormitorios  ( uno en suite ) y 2 baños. Balcón. \n\nPlanta alta  ( 36,20 m² ) : dormitorio principal con baño y vestidor. Magnifica terraza con estupendas vistas que alcanzan hasta el mar.",
       "surface": 190
     },
     {
@@ -94,6 +99,7 @@
       "bathrooms": 3,
       "parking": "Garaje Privado",
       "floor_type": "Residencial",
+      "distribution":"La propiedad dispone de  3 dormitorios , 3 baños , 1 aseo , terraza exterior , solarium privado y plaza de garaje.",
       "surface": 185
     },
     {
@@ -110,6 +116,7 @@
       "bathrooms": 1,
       "parking": "Plaza de Aparcamiento Comunitaria",
       "floor_type": "Turístico",
+      "distribution":"Distribución no disponible.",
       "surface": 45
     },
     {
@@ -126,6 +133,7 @@
       "bathrooms": 1,
       "parking": "No",
       "floor_type": "Turístico",
+      "distribution":"Distribución no disponible.",
       "surface": 45
     }
   ],

@@ -18,21 +18,25 @@ public abstract class HousesDatabase extends RoomDatabase {
   private static final String DB_NAME = "houses.db";
   private static volatile HousesDatabase instance;
 
-  public static HousesDatabase getInstance(Context context){
-    if (instance == null){
+  public static HousesDatabase getInstance(Context context) {
+    if (instance == null) {
       instance = create(context);
     }
     return instance;
   }
 
-  private static HousesDatabase create(Context context){
+  private static HousesDatabase create(Context context) {
     return Room.databaseBuilder(context, HousesDatabase.class, DB_NAME).fallbackToDestructiveMigration().build();
   }
 
   public abstract HouseDao getHouseDao();
+
   public abstract ImageDao getImageDao();
+
   public abstract RentHouseDao getRentHouseDao();
+
   public abstract Sell_typeDao getSell_typeDao();
+
   public abstract SellHouseDao getSellHouseDao();
 
 }
