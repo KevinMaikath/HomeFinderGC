@@ -1,6 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection;
 
-import android.util.Log;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
 
@@ -20,16 +20,16 @@ public class SelectionRouter implements SelectionContract.Router {
 
 
     @Override
-    public void navigateToRemoveHouseScreen() {
+    public void navigateToRemoveHouseScreen(Context activity) {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, RemoveHouseActivity.class);
-        context.startActivity(intent);
+        activity.startActivity(intent);
     }
 
     @Override
-    public void navigateToAddHouseScreen() {
+    public void navigateToAddHouseScreen(Context activity) {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, AddHouseActivity.class);
-        context.startActivity(intent);
+        activity.startActivity(intent);
     }
 }

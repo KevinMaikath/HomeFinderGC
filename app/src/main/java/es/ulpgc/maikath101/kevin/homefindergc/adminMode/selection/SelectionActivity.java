@@ -32,14 +32,14 @@ public class SelectionActivity
         addHouseBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.goToAddHouseScreen();
+                presenter.goToAddHouseScreen(v.getContext());
             }
         });
 
         removeHouseBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.goToRemoveHouseScreen();
+                presenter.goToRemoveHouseScreen(v.getContext());
             }
         });
         // do the setup

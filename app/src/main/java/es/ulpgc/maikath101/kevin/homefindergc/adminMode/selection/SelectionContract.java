@@ -1,5 +1,8 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection;
 
+import android.app.Activity;
+import android.content.Context;
+
 import java.lang.ref.WeakReference;
 
 public interface SelectionContract {
@@ -15,17 +18,17 @@ public interface SelectionContract {
 
         void injectRouter(Router router);
 
-        void goToRemoveHouseScreen();
+        void goToRemoveHouseScreen(Context activity);
 
-        void goToAddHouseScreen();
+        void goToAddHouseScreen(Context activity);
     }
 
     interface Model {
     }
 
     interface Router {
-        void navigateToRemoveHouseScreen();
+        void navigateToRemoveHouseScreen(Context activity);
 
-        void navigateToAddHouseScreen();
+        void navigateToAddHouseScreen(Context activity);
     }
 }

@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,5 +52,8 @@ public class LoginActivity
     Toast.makeText(getBaseContext(), "El usuario o la contraseña son incorrectos", Toast.LENGTH_LONG).show();
   }
 
-
+  @Override
+  public Activity getActivity() {
+    return this;
+  }
 }

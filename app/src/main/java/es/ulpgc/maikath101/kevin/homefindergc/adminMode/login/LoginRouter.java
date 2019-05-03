@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
 
@@ -17,10 +18,10 @@ public class LoginRouter implements LoginContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
+  public void navigateToNextScreen(Activity activity) {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, SelectionActivity.class);
-    context.startActivity(intent);
+    activity.startActivity(intent);
   }
 
   @Override

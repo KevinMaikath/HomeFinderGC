@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
+import android.app.Activity;
+
 import java.lang.ref.WeakReference;
 
 public class LoginPresenter implements LoginContract.Presenter {
@@ -34,15 +36,15 @@ public class LoginPresenter implements LoginContract.Presenter {
   public void onSignInPressed(String user, String password) {
     boolean answer = model.checkCredentials(user, password);
     if (answer) {
-      router.navigateToNextScreen();
+      router.navigateToNextScreen(getActivity());
     } else {
       view.get().wrongCredentials();
     }
   }
 
   @Override
-  public void navigateToNextScreen() {
-    router.navigateToNextScreen();
+  public Activity getActivity(){
+    return view.get().getActivity();
   }
 
 

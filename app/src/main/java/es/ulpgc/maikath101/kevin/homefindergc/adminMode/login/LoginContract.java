@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
+import android.app.Activity;
+
 import java.lang.ref.WeakReference;
 
 public interface LoginContract {
@@ -8,6 +10,8 @@ public interface LoginContract {
     void injectPresenter(Presenter presenter);
 
     void wrongCredentials();
+
+    Activity getActivity();
   }
 
   interface Presenter {
@@ -19,7 +23,7 @@ public interface LoginContract {
 
     void onSignInPressed(String user, String password);
 
-    void navigateToNextScreen();
+    Activity getActivity();
   }
 
   interface Model {
@@ -27,7 +31,7 @@ public interface LoginContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    void navigateToNextScreen(Activity activity);
 
     LoginState getDataFromPreviousScreen();
   }
