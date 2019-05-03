@@ -1,19 +1,16 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
-import android.provider.MediaStore;
-import android.util.Log;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.Context;
+import android.provider.MediaStore;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
-
-import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
 public class AddHouseRouter implements AddHouseContract.Router {
 
   public static String TAG = AddHouseRouter.class.getSimpleName();
 
-
+  private static final int PICK_IMAGE = 100;
 
   private AppMediator mediator;
 
@@ -21,17 +18,11 @@ public class AddHouseRouter implements AddHouseContract.Router {
     this.mediator = mediator;
   }
 
-  @Override
-  public void passDataToNextScreen(AddHouseState state) {
-    mediator.setAddHouseState(state);
-  }
 
   @Override
-  public void openGallery() {
-    /*Context context = mediator.getApplicationContext();
-    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-    context.startActivity(intent);*/
-
-
+  public void openGallery(Activity activity) {
+    Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+    gallery.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+    activity.startActivityForResult(gallery, PICK_IMAGE);
   }
 }

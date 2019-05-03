@@ -1,34 +1,25 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
-import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.net.URI;
-
 import es.ulpgc.maikath101.kevin.homefindergc.R;
-
-import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
 public class AddHouseActivity
         extends AppCompatActivity implements AddHouseContract.View {
 
   public static String TAG = AddHouseActivity.class.getSimpleName();
   private static final int PICK_IMAGE = 100;
-  private Uri imageURI;
+  private Uri imageUri;
   private ImageView imageView;
   private EditText nameEditText;
   private EditText locationEditText;
@@ -67,7 +58,7 @@ public class AddHouseActivity
         if (checkFields()) {
           presenter.doneButtonPressed(nameEditText.getText().toString(),
                   locationEditText.getText().toString(), priceEditText.getText().toString(),
-                  descriptionEditText.getText().toString(), imageURI);
+                  descriptionEditText.getText().toString(), imageUri);
         } else {
           Toast.makeText(getApplicationContext(), "Por favor, rellene todos los campos",
                   Toast.LENGTH_SHORT).show();
@@ -86,7 +77,7 @@ public class AddHouseActivity
     addImageButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        openGallery();
+        openGallery(AddHouseActivity.this);
       }
     });
     // do the setup
@@ -104,19 +95,17 @@ public class AddHouseActivity
     imageView.setImageURI(viewModel.imageUri);
   }
 
-  private void openGallery(){
-    Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-    gallery.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-    startActivityForResult(gallery, PICK_IMAGE);
+  private void openGallery(Activity activity) {
+    presenter.openGallery(activity);
   }
 
   @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent data){
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
-      imageURI = data.getData();
-      imageView.setImageURI(imageURI);
-      saveImageFromRotation(imageURI);
+    if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+      imageUri = data.getData();
+      imageView.setImageURI(imageUri);
+      saveImageFromRotation(imageUri);
     }
   }
 
@@ -124,22 +113,24 @@ public class AddHouseActivity
     presenter.saveImageFromRotation(imageUri);
   }
 
-  private boolean checkFields(){
+  private boolean checkFields() {
     // Devuelve true si todos los campos están rellenos
-    if(!nameEditText.getText().toString().equals("") &&
-            !locationEditText.getText().toString().equals("") &&
-            !priceEditText.getText().toString().equals("")
-    && !descriptionEditText.getText().toString().equals("") && imageURI != null){
+    if (!nameEditText.getText().toString().equals("")
+            && !locationEditText.getText().toString().equals("")
+            && !priceEditText.getText().toString().equals("")
+            && !descriptionEditText.getText().toString().equals("") && imageUri != null) {
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
-  public void houseInsertedCorrectly(){
+  public void houseInsertedCorrectly() {
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        Toast.makeText(getApplicationContext(), "La casa ha sido añadida correctamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "La casa ha sido añadida correctamente",
+                Toast.LENGTH_SHORT).show();
       }
     });
   }

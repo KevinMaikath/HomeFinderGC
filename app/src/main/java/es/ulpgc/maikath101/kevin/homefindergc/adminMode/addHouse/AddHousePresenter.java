@@ -1,5 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.util.Log;
 
@@ -50,11 +51,16 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
                                 Uri imageUri) {
     model.doneButtonPressed(name, location, price, description, imageUri,
             new HouseRepositoryContract.OnHouseCompleteleyInsertedCallback() {
-      @Override
-      public void houseInserted() {
-        view.get().houseInsertedCorrectly();
-      }
-    });
+              @Override
+              public void houseInserted() {
+                view.get().houseInsertedCorrectly();
+              }
+            });
+  }
+
+  @Override
+  public void openGallery(Activity activity) {
+    router.openGallery(activity);
   }
 
 

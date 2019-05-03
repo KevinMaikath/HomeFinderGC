@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
+import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 
 import java.lang.ref.WeakReference;
@@ -28,6 +30,8 @@ interface AddHouseContract {
     void fetchData();
 
     void doneButtonPressed(String name, String location, String price, String description, Uri imageUri);
+
+    void openGallery(Activity activity);
   }
 
   interface Model {
@@ -36,9 +40,6 @@ interface AddHouseContract {
   }
 
   interface Router {
-
-    void passDataToNextScreen(AddHouseState state);
-
-    void openGallery();
+    void openGallery(Activity activity);
   }
 }
