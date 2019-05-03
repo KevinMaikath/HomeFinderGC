@@ -99,10 +99,10 @@ public class HomeDetailsActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        if (viewModel.current_image.url != null) {
-          loadImageFromURL(current_image, viewModel.current_image.url);
-        } else if (viewModel.current_image.imageUri != null){
+        if (viewModel.current_image.imageUri != null) {
           current_image.setImageURI(Uri.parse(viewModel.current_image.imageUri));
+        } else {
+          loadImageFromURL(current_image, viewModel.current_image.url);
         }
       }
     });
