@@ -86,6 +86,7 @@
         android:text="@string/loginTextView"
         android:textColor="#FFFCFC"
         android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toStartOf="@+id/guideline19"
         app:layout_constraintHorizontal_bias="0.496"

@@ -31,7 +31,8 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="30dp"
                 android:text="@string/home_details_label"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/current_image"

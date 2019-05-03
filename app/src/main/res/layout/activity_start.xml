@@ -36,7 +36,8 @@
                     android:paddingTop="10dp"
                     android:paddingBottom="30dp"
                     android:text="@string/start_label"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <include
                     android:id="@+id/recyclerView"
