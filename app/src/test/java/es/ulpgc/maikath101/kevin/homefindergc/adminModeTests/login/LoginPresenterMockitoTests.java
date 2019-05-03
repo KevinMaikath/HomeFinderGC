@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.login;
 
+import android.app.Activity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,11 +13,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -23,11 +27,6 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoginPresenterMockitoTests {
-
-
-  private static final String HELLO_STRING = "Hello World!";
-  private static final String BYE_STRING = "Bye World!";
-  private static final String EMPTY_STRING = "";
 
   @Mock
   private LoginContract.Model modelMock;
@@ -59,18 +58,33 @@ public class LoginPresenterMockitoTests {
   }
 
   @Test
-  public void navigateToSelectionScreen() {
-    // Given an initialized HelloPresenter
-    // and a hello message as passed state to ByePresenter
+  public void navigateToSelectionScreenRightCredentials() {
     configureLoginScreen(new LoginState());
 
     // When start a new screen is requested
-    presenter.navigateToNextScreen();
+    String user = "admin";
+    String passwd = "1234";
+    LoginActivity activity = new LoginActivity();
 
+    when(modelMock.checkCredentials(user,passwd)).thenReturn(true);
+    when(presenter.getActivity()).thenReturn(activity);
 
-    // Then router is called to pass the state and start the new screen
-    verify(routerMock, times(1)).navigateToNextScreen();
-    verify(routerMock, never()).getDataFromPreviousScreen();
+    presenter.onSignInPressed(user, passwd);
+
+    verify(routerMock, times(1)).navigateToNextScreen(activity);
   }
 
+  @Test
+  public void navigateToSelectionScreenWrongCredentials() {
+
+    configureLoginScreen(new LoginState());
+
+    String user = "admi";
+    String passwd = "1234";
+
+    when(modelMock.checkCredentials(user,passwd)).thenReturn(false);
+    presenter.onSignInPressed(user, passwd);
+
+    verify(viewMock, times(1)).wrongCredentials();
+  }
 }

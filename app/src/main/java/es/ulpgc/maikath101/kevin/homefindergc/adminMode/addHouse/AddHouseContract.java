@@ -8,7 +8,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
-interface AddHouseContract {
+public interface AddHouseContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

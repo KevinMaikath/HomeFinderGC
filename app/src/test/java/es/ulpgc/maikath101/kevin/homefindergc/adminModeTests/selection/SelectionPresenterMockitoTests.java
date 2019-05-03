@@ -51,20 +51,4 @@ public class SelectionPresenterMockitoTests {
     presenter.injectRouter(routerMock);
   }
 
-  @Test
-  public void navigateToAddHouseScreen() {
-    configureSelectionScreen(new SelectionState());
-    presenter.goToAddHouseScreen();
-
-    verify(routerMock, times(1)).navigateToAddHouseScreen();
-  }
-
-  @Test
-  public void navigateToRemoveHouseScreen() {
-    configureSelectionScreen(new SelectionState());
-    presenter.goToRemoveHouseScreen();
-
-    verify(routerMock, times(1)).navigateToRemoveHouseScreen();
-  }
-
 }
