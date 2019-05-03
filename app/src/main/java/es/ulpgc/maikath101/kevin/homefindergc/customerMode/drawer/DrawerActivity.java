@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartActivity;
@@ -18,7 +19,6 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
 
   public static String TAG = StartActivity.class.getSimpleName();
   private DrawerContract.Presenter presenter;
-  //private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
 
   @Override
@@ -74,6 +74,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);
+
     toggle.syncState();
   }
 

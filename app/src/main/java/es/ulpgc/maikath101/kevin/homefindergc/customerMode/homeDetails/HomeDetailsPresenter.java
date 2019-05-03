@@ -127,7 +127,7 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
 
   @Override
   public void distributionButtonClicked() {
-    viewModel.dataShown = "jaja";
+    viewModel.dataShown = model.getHouse().distribution;
     view.get().displayData(viewModel);
   }
 
