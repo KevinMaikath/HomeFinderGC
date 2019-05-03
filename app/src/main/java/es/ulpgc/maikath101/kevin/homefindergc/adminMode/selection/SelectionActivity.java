@@ -15,54 +15,54 @@ import es.ulpgc.maikath101.kevin.homefindergc.R;
 public class SelectionActivity
         extends AppCompatActivity implements SelectionContract.View {
 
-    public static String TAG = SelectionActivity.class.getSimpleName();
+  public static String TAG = SelectionActivity.class.getSimpleName();
 
-    private SelectionContract.Presenter presenter;
-    private Button addHouseBt;
-    private Button removeHouseBt;
+  private SelectionContract.Presenter presenter;
+  private Button addHouseBt;
+  private Button removeHouseBt;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selection);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_selection);
 
-        addHouseBt = findViewById(R.id.addHouseButton);
-        removeHouseBt = findViewById(R.id.removeHouseButton);
+    addHouseBt = findViewById(R.id.addHouseButton);
+    removeHouseBt = findViewById(R.id.removeHouseButton);
 
-        addHouseBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.goToAddHouseScreen(v.getContext());
-            }
-        });
+    addHouseBt.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.goToAddHouseScreen(v.getContext());
+      }
+    });
 
-        removeHouseBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.goToRemoveHouseScreen(v.getContext());
-            }
-        });
-        // do the setup
-        SelectionScreen.configure(this);
+    removeHouseBt.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.goToRemoveHouseScreen(v.getContext());
+      }
+    });
+    // do the setup
+    SelectionScreen.configure(this);
 
-        verifyPermissions();
+    verifyPermissions();
+  }
+
+  @Override
+  public void injectPresenter(SelectionContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
+
+  private void verifyPermissions() {
+    Log.e(TAG, "Verifying permisssions");
+    String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
+
+    if (ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) ==
+            PackageManager.PERMISSION_GRANTED) {
+
+    } else {
+      ActivityCompat.requestPermissions(this, permissions, 1);
     }
-
-    @Override
-    public void injectPresenter(SelectionContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
-
-    private void verifyPermissions(){
-        Log.e(TAG, "Verifying permisssions");
-        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
-
-        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) ==
-                PackageManager.PERMISSION_GRANTED) {
-
-        } else {
-            ActivityCompat.requestPermissions(this, permissions, 1);
-        }
-    }
+  }
 
 }
