@@ -86,7 +86,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void fetchStartHousesData() {
-    Log.e(TAG, "fetchData()");
+//    Log.e(TAG, "fetchData()");
     viewModel.topText = R.string.start_label;
     model.loadStartHouses(new HouseRepositoryContract.GetStartHousesCallback() {
       @Override

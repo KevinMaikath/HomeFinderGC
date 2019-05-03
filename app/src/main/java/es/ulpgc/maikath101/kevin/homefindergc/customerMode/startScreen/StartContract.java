@@ -13,7 +13,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
-interface StartContract {
+public interface StartContract {
 
   interface View{
     void injectPresenter(Presenter presenter);
