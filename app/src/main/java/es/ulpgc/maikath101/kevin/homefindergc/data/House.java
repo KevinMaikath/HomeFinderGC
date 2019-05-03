@@ -30,10 +30,11 @@ public class House {
   public final String parking;
   public final String floor_type;
   public final int surface;
+  public final String distribution;
 
-  public House(int id_house, int id_sell_type, int main_image, String refNumber,
-               String description, String name, String price, int rooms, String location,
-               boolean pool, int bathrooms, String parking, String floor_type, int surface) {
+  public House(int id_house, int id_sell_type, int main_image, String refNumber, String description,
+               String name, String price, int rooms, String location, boolean pool, int bathrooms,
+               String parking, String floor_type, int surface, String distribution) {
     this.id_house = id_house;
     this.id_sell_type = id_sell_type;
     this.main_image = main_image;
@@ -48,5 +49,6 @@ public class House {
     this.parking = parking;
     this.floor_type = floor_type;
     this.surface = surface;
+    this.distribution = distribution;
   }
 }

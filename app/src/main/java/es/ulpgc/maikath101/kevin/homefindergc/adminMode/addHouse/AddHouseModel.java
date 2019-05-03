@@ -35,7 +35,7 @@ public class AddHouseModel implements AddHouseContract.Model {
     final int intRandom = (int) Math.round(random) + (int) Math.round(random2);
 
     House house = new House(0, 111, 1, String.valueOf(intRandom) + "-OM", description, name,
-            price, 4, location, false, 4, "", "", 0);
+            price, 4, location, false, 4, "", "", 0,"");
 
 
     repository.insertHouse(house, new HouseRepositoryContract.OnHouseInsertedCallback() {
@@ -53,7 +53,7 @@ public class AddHouseModel implements AddHouseContract.Model {
 
             House houseToInsert = new House((int) houseId, 111, imageId,
                     String.valueOf(intRandom) + "-OM", description, name, price, 4, location, false,
-                    4, "", "", 0);
+                    4, "", "", 0,"");
 
             repository.updateHouse(houseToInsert);
 

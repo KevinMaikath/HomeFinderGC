@@ -12,7 +12,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Sell_type;
 
 @Database(entities = {House.class, RentHouse.class, Sell_type.class, SellHouse.class, Image.class},
-        version = 9)
+        version = 10)
 public abstract class HousesDatabase extends RoomDatabase {
 
   private static final String DB_NAME = "houses.db";
