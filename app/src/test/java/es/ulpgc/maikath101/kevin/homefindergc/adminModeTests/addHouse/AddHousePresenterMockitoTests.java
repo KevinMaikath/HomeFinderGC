@@ -1,32 +1,38 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.addHouse;
 
+import android.net.Uri;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHousePresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AddHousePresenterMockitoTests {
 
-
-  private static final String HELLO_STRING = "Hello World!";
-  private static final String BYE_STRING = "Bye World!";
-  private static final String EMPTY_STRING = "";
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.OnHouseCompleteleyInsertedCallback> houseCompleteleyInsertedCallbackArgumentCaptor;
 
   @Mock
   private AddHouseContract.Model modelMock;
@@ -58,12 +64,38 @@ public class AddHousePresenterMockitoTests {
   }
 
   @Test
-  public void navigateToSelectionScreen() {
-    // Given an initialized HelloPresenter
-    // and a hello message as passed state to ByePresenter
+  public void openGallery() {
     configureAddHouseScreen(new AddHouseState());
 
-    //
+    AddHouseActivity activity = new AddHouseActivity();
+
+    presenter.openGallery(activity);
+
+    verify(routerMock, times(1)).openGallery(activity);
+  }
+
+  @Test
+  public void fetchData() {
+    AddHouseState viewModel = new AddHouseState();
+    viewModel.imageUri = null;
+    configureAddHouseScreen(viewModel);
+
+    presenter.fetchData();
+
+    verify(viewMock, times(1)).displayData(viewModel);
+  }
+
+  @Test
+  public void doneButtonPressed() {
+    configureAddHouseScreen(new AddHouseState());
+
+    presenter.doneButtonPressed("", "", "", "", Uri.EMPTY);
+
+    verify(modelMock).doneButtonPressed(eq(""),eq(""),eq(""),eq(""), eq(Uri.EMPTY),
+            houseCompleteleyInsertedCallbackArgumentCaptor.capture());
+    houseCompleteleyInsertedCallbackArgumentCaptor.getValue().houseInserted();
+
+    verify(viewMock,times(1)).houseInsertedCorrectly();
   }
 
 }
