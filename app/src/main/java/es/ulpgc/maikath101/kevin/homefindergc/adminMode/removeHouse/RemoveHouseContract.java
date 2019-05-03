@@ -7,7 +7,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
-interface RemoveHouseContract {
+public interface RemoveHouseContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
