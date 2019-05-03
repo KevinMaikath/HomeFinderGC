@@ -5,10 +5,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
@@ -66,12 +64,9 @@ public class RemoveHouseActivity
 
   @Override
   public void displayData(final RemoveHouseViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
-
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        // listAdapter.setItems(viewModel.houses);
         listAdapter.setSimpleHouseAdaptersList(viewModel.simpleHouses);
       }
     });

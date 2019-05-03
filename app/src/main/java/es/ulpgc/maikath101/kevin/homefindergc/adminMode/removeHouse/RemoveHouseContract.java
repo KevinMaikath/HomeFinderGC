@@ -40,6 +40,5 @@ interface RemoveHouseContract {
   }
 
   interface Router {
-    RemoveHouseState getDataFromPreviousScreen();
   }
 }

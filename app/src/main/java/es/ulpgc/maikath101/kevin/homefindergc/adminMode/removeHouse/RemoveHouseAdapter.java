@@ -97,9 +97,9 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
       removeHouseButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          if (listener!= null) {
+          if (listener != null) {
             int position = getAdapterPosition();
-            if (position != RecyclerView.NO_POSITION){
+            if (position != RecyclerView.NO_POSITION) {
               SimpleHouse house = simpleHouseAdaptersList.get(position);
               listener.onItemClicked(house);
             }

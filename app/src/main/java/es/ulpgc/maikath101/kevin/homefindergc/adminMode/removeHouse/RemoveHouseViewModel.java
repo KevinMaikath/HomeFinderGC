@@ -7,7 +7,6 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class RemoveHouseViewModel {
 
-  public String data;
   public List<House> houses;
 
   public List<SimpleHouse> simpleHouses;
