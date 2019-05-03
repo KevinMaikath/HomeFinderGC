@@ -1,7 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
-import android.view.View;
-
 import java.lang.ref.WeakReference;
 
 public class LoginPresenter implements LoginContract.Presenter {

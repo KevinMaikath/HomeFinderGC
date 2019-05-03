@@ -1,38 +1,34 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
 
-import android.view.View;
-
 import java.lang.ref.WeakReference;
 
 public interface LoginContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void wrongCredentials();
-    }
+    void wrongCredentials();
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void onSignInPressed(String user, String password);
+    void onSignInPressed(String user, String password);
 
-        void navigateToNextScreen();
-    }
+    void navigateToNextScreen();
+  }
 
-    interface Model {
-        boolean checkCredentials(String user, String password);
-    }
+  interface Model {
+    boolean checkCredentials(String user, String password);
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(LoginState state);
-
-        LoginState getDataFromPreviousScreen();
-    }
+    LoginState getDataFromPreviousScreen();
+  }
 }
