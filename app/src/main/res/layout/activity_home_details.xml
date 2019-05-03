@@ -17,87 +17,98 @@
             android:id="@+id/floatingOptionsButton"
             layout="@layout/options_floating_button" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/topText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30sp"
-                android:paddingTop="10dp"
-                android:paddingBottom="30dp"
-                android:text="@string/home_details_label"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/current_image"
-                android:layout_width="250dp"
-                android:layout_height="200dp"
-                android:layout_marginBottom="15dp"
-                android:scaleType="fitCenter"/>
-
-            <include
-                android:id="@+id/image_list"
-                layout="@layout/home_details_image_recycler_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/button_summary"
+                <TextView
+                    android:id="@+id/topText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onSummaryButtonClicked"
-                    android:text="@string/resumen_label"
-                    android:textSize="10sp" />
+                    android:layout_marginTop="30sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="30dp"
+                    android:text="@string/home_details_label"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/button_description"
+                <ImageView
+                    android:id="@+id/current_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="15dp"
+                    android:maxWidth="300dp"
+                    android:maxHeight="250dp"
+                    android:scaleType="fitCenter" />
+
+                <include
+                    android:id="@+id/image_list"
+                    layout="@layout/home_details_image_recycler_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <Button
+                        android:id="@+id/button_summary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onSummaryButtonClicked"
+                        android:text="@string/resumen_label"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/button_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/button_summary"
+                        android:onClick="onDescriptionButtonClicked"
+                        android:text="@string/descripcion_label"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/button_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/button_description"
+                        android:onClick="onLocationButtonClicked"
+                        android:text="@string/ubicacion_label"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/button_distribution"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/button_location"
+                        android:onClick="onDistributionButtonClicked"
+                        android:text="@string/distribucion_label"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/button_summary"
-                    android:onClick="onDescriptionButtonClicked"
-                    android:text="@string/descripcion_label"
-                    android:textSize="10sp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
-                <Button
-                    android:id="@+id/button_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/button_description"
-                    android:onClick="onLocationButtonClicked"
-                    android:text="@string/ubicacion_label"
-                    android:textSize="10sp" />
-
-                <Button
-                    android:id="@+id/button_distribution"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/button_location"
-                    android:onClick="onDistributionButtonClicked"
-                    android:text="@string/distribucion_label"
-                    android:textSize="10sp" />
-
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/text_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
 
