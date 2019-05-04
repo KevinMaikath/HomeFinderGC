@@ -1,6 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
-import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
@@ -27,7 +26,7 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
   }
 
   @Override
-  public String getSummaryInfo(){
+  public String getSummaryInfo() {
     String info = house.name + "\n\n"
             + "Precio: " + house.price + "\n\n"
             + "Ref: " + house.refNumber + "\n\n"
@@ -42,8 +41,8 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
     return info;
   }
 
-  private String getExtraInfo(){
-    if (house.id_sell_type == 111){
+  private String getExtraInfo() {
+    if (house.id_sell_type == 111) {
       return "Comunidad: " + sellHouse.community;
     } else {
       return "Admite animales: " + rentHouse.animals + "\n\n"
@@ -51,8 +50,8 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
     }
   }
 
-  private String checkPool(){
-    if (house.pool){
+  private String checkPool() {
+    if (house.pool) {
       return "Si";
     } else {
       return "No";
