@@ -1,6 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
 import android.app.Activity;
+import android.util.Log;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -50,7 +51,13 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
 
     // update the view
     HomeDetailsState state = router.getDataFromStartScreen();
-    if (state != null) {
+    if (viewModel.current_house != null) {
+      model.setHouse(viewModel.current_house);
+
+      view.get().setImageList(viewModel);
+      view.get().displayData(viewModel);
+
+    } else if (state != null) {
       if (state.forSale) {
         model.loadSellHouseInfo(state.current_house_id, new HouseRepositoryContract.LoadCompleteSellHouseInfoCallback() {
 
@@ -84,28 +91,9 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
       }
     }
 
+
   }
 
-  /**
-   * @Override public void goToStart() {
-   * router.navigateToStartScreen();
-   * }
-   * @Override public void goToForSale() {
-   * router.navigateToForSaleScreen();
-   * }
-   * @Override public void goToForRent() {
-   * router.navigateToForRentScreen();
-   * }
-   * @Override public void goToHolidayRental() {
-   * router.navigateToHolidayRentalScreen();
-   * }
-   * @Override public void goToAboutUS() {
-   * router.navigateToAboutUsScreen();
-   * }
-   * @Override public void goToContact() {
-   * router.navigateToContactScreen();
-   * }
-   **/
   @Override
   public void summaryButtonClicked() {
     String info = model.changeToSummaryInfo();
