@@ -33,9 +33,9 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
             + "Superficie: " + house.surface + "\n\n"
             + "Habitaciones: " + house.rooms + "\n\n"
             + "Baños: " + house.bathrooms + "\n\n"
-            + "Piscina: " + checkPool() + "\n\n"
+            + "Piscina: " + checkYesNo(house.pool) + "\n\n"
             + "Parking: " + house.parking + "\n\n"
-            + "Tipo de suelo " + house.floor_type + "\n\n"
+            + "Tipo de suelo: " + house.floor_type + "\n\n"
             + getExtraInfo();
 
     return info;
@@ -45,13 +45,13 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
     if (house.id_sell_type == 111) {
       return "Comunidad: " + sellHouse.community;
     } else {
-      return "Admite animales: " + rentHouse.animals + "\n\n"
+      return "Admite animales: " + checkYesNo(rentHouse.animals) + "\n\n"
               + "Agua y luz: " + rentHouse.utilities;
     }
   }
 
-  private String checkPool() {
-    if (house.pool) {
+  private String checkYesNo(Boolean b) {
+    if (b) {
       return "Si";
     } else {
       return "No";
