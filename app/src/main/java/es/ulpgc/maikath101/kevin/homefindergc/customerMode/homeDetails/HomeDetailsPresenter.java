@@ -1,14 +1,12 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
 import android.app.Activity;
-import android.util.Log;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
-import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
@@ -45,15 +43,17 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    // HomeDetailsState state = router.getDataFromPreviousScreen();
-
-    // update the view
     HomeDetailsState state = router.getDataFromStartScreen();
     if (viewModel.current_house != null) {
       model.setHouse(viewModel.current_house);
 
+      if (viewModel.sellHouse != null){
+        model.setSellHouse(viewModel.sellHouse);
+      } else if (viewModel.rentHouse != null){
+        model.setRentHouse(viewModel.rentHouse);
+      }
+
+      viewModel.dataShown = model.getSummaryInfo();
       view.get().setImageList(viewModel);
       view.get().displayData(viewModel);
 
@@ -64,11 +64,14 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
           @Override
           public void setCompleteSellInfo(House house, List<Image> images, SellHouse sellHouse) {
             model.setHouse(house);
+            model.setSellHouse(sellHouse);
+
             viewModel.current_house = house;
             viewModel.image_list = images;
             viewModel.current_image = viewModel.image_list.get(0);
             viewModel.sellHouse = sellHouse;
 
+            viewModel.dataShown = model.getSummaryInfo();
             view.get().setImageList(viewModel);
             view.get().displayData(viewModel);
           }
@@ -79,11 +82,14 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
           @Override
           public void setCompleteRentInfo(House house, List<Image> images, RentHouse rentHouse) {
             model.setHouse(house);
+            model.setRentHouse(rentHouse);
+
             viewModel.current_house = house;
             viewModel.image_list = images;
             viewModel.current_image = viewModel.image_list.get(0);
             viewModel.rentHouse = rentHouse;
 
+            viewModel.dataShown = model.getSummaryInfo();
             view.get().setImageList(viewModel);
             view.get().displayData(viewModel);
           }
@@ -91,13 +97,11 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
       }
     }
 
-
   }
 
   @Override
   public void summaryButtonClicked() {
-    String info = model.changeToSummaryInfo();
-    viewModel.dataShown = info;
+    viewModel.dataShown = model.getSummaryInfo();
     view.get().displayData(viewModel);
   }
 

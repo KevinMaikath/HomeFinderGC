@@ -1,8 +1,11 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
+import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 
 public class HomeDetailsModel implements HomeDetailsContract.Model {
 
@@ -10,11 +13,8 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
   private HouseRepository repository;
 
   private House house;
-
-  private String summary_info = "Información de resumen";
-  private String description_info = "Descripción de la casa";
-  private String location_info = "Información sobre la localización";
-  private String distribution_info = "Información sobre la distribución";
+  private SellHouse sellHouse;
+  private RentHouse rentHouse;
 
   public HomeDetailsModel(HouseRepository repository) {
     this.repository = repository;
@@ -27,33 +27,57 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
   }
 
   @Override
+  public String getSummaryInfo(){
+    String info = house.name + "\n\n"
+            + "Precio: " + house.price + "\n\n"
+            + "Ref: " + house.refNumber + "\n\n"
+            + "Superficie: " + house.surface + "\n\n"
+            + "Habitaciones: " + house.rooms + "\n\n"
+            + "Baños: " + house.bathrooms + "\n\n"
+            + "Piscina: " + checkPool() + "\n\n"
+            + "Parking: " + house.parking + "\n\n"
+            + "Tipo de suelo " + house.floor_type + "\n\n"
+            + getExtraInfo();
+
+    return info;
+  }
+
+  private String getExtraInfo(){
+    if (house.id_sell_type == 111){
+      return "Comunidad: " + sellHouse.community;
+    } else {
+      return "Admite animales: " + rentHouse.animals + "\n\n"
+              + "Agua y luz: " + rentHouse.utilities;
+    }
+  }
+
+  private String checkPool(){
+    if (house.pool){
+      return "Si";
+    } else {
+      return "No";
+    }
+  }
+
+  @Override
   public House getHouse() {
     return house;
   }
 
   @Override
+  public void setSellHouse(SellHouse sellHouse) {
+    this.sellHouse = sellHouse;
+  }
+
+  @Override
+  public void setRentHouse(RentHouse rentHouse) {
+    this.rentHouse = rentHouse;
+  }
+
+
+  @Override
   public void setHouse(House house) {
     this.house = house;
-  }
-
-  @Override
-  public String changeToSummaryInfo() {
-    return summary_info;
-  }
-
-  @Override
-  public String changeToDescriptionInfo() {
-    return description_info;
-  }
-
-  @Override
-  public String changeToLocationInfo() {
-    return location_info;
-  }
-
-  @Override
-  public String changeToDistributionInfo() {
-    return distribution_info;
   }
 
   @Override

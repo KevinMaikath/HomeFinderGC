@@ -10,7 +10,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 
 public class HomeDetailsViewModel {
 
-  public String dataShown = "Información de resumen";
+  public String dataShown;
   public List<Image> image_list = new ArrayList<>();
   public House current_house;
   public Image current_image;

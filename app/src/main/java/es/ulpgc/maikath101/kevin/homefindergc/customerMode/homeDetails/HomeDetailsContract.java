@@ -6,6 +6,8 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
+import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 
 interface HomeDetailsContract {
 
@@ -25,19 +27,7 @@ interface HomeDetailsContract {
     void injectRouter(Router router);
 
     void fetchData();
-/**
-    void goToStart();
 
-    void goToForSale();
-
-    void goToForRent();
-
-    void goToHolidayRental();
-
-    void goToAboutUS();
-
-    void goToContact();
-**/
     void summaryButtonClicked();
 
     void descriptionButtonClicked();
@@ -52,17 +42,15 @@ interface HomeDetailsContract {
   interface Model {
     String fetchData();
 
+    String getSummaryInfo();
+
     House getHouse();
 
+    void setSellHouse(SellHouse sellHouse);
+
+    void setRentHouse(RentHouse rentHouse);
+
     void setHouse(House house);
-
-    String changeToSummaryInfo();
-
-    String changeToDescriptionInfo();
-
-    String changeToLocationInfo();
-
-    String changeToDistributionInfo();
 
     void loadSellHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteSellHouseInfoCallback loadCompleteSellHouseInfoCallback);
 
