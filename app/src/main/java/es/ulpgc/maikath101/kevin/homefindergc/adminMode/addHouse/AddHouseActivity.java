@@ -130,7 +130,8 @@ public class AddHouseActivity
       @Override
       public void run() {
         Toast.makeText(getApplicationContext(), "La casa ha sido añadida correctamente",
-                Toast.LENGTH_SHORT).show();
+                Toast.LENGTH_LONG).show();
+        finish();
       }
     });
   }

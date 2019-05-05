@@ -139,7 +139,6 @@ public class HouseRepository implements HouseRepositoryContract {
     return false;
   }
 
-
   private HouseDao getHouseDao() {
     return database.getHouseDao();
   }
