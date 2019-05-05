@@ -67,6 +67,7 @@ public class ContactActivity
     bodyemailEditText = findViewById(R.id.bodyemailEditText);
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
+    navigationView.setItemIconTintList(null);
     super.setNavigationView(navigationView);
     // navigationView.setNavigationItemSelectedListener(this);
 

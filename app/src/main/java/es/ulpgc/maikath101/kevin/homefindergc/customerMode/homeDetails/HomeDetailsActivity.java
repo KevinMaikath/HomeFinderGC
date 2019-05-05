@@ -70,6 +70,7 @@ public class HomeDetailsActivity
     image_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
+    navigationView.setItemIconTintList(null);
     super.setNavigationView(navigationView);
     // navigationView.setNavigationItemSelectedListener(this);
 

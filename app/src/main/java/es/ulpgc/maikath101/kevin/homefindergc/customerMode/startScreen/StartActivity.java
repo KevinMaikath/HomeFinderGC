@@ -51,6 +51,7 @@ public class StartActivity
     super.setDrawerLayout(drawerLayout);
 
     NavigationView navigationView = findViewById(R.id.navigation_view);
+    navigationView.setItemIconTintList(null);
     super.setNavigationView(navigationView);
 
     listAdapter = new StartHouseAdapter(new View.OnClickListener() {

@@ -41,6 +41,7 @@ public class AboutUsActivity extends DrawerActivity implements AboutUsContract.V
     toggle.syncState();
 **/
     NavigationView navigationView = findViewById(R.id.navigation_view);
+    navigationView.setItemIconTintList(null);
     super.setNavigationView(navigationView);
    // navigationView.setNavigationItemSelectedListener(this);
 
