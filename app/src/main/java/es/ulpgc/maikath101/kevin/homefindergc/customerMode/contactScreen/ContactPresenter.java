@@ -1,5 +1,8 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.contactScreen;
 
+import android.app.Activity;
+import android.content.Context;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
@@ -42,42 +45,11 @@ public class ContactPresenter extends DrawerPresenter implements ContactContract
     view.get().displayData(viewModel);
   }
 
-/**
   @Override
-  public void goToStart() {
-    router.navigateToStartScreen();
-  }
-
-  @Override
-  public void goToForSale() {
-    router.navigateToForSaleScreen();
-  }
-
-  @Override
-  public void goToForRent() {
-    router.navigateToForRentScreen();
-  }
-
-  @Override
-  public void goToHolidayRental() {
-    router.navigateToHolidayRentalScreen();
-  }
-
-  @Override
-  public void goToAboutUS() {
-    router.navigateToAboutUsScreen();
-  }
-
-  @Override
-  public void goToContact() {
-    router.navigateToContactScreen();
-  }
-**/
-  @Override
-  public void onSendButtonPressed(String name, String telephone, String country,
+  public void onSendButtonPressed(Context activity, String name, String telephone, String country,
                                   String zipcode, String address, String email,
                                   String subject, String bodyemail) {
-    router.sendEmail(name, telephone, country, zipcode, address, email, subject, bodyemail);
+    router.sendEmail(activity, name, telephone, country, zipcode, address, email, subject, bodyemail);
   }
 
 }

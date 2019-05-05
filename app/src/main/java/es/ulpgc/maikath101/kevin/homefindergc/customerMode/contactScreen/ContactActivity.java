@@ -50,12 +50,6 @@ public class ContactActivity
 
     drawerLayout = findViewById(R.id.drawer_layout);
     super.setDrawerLayout(drawerLayout);
-    /**
-     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-     this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-     drawerLayout.addDrawerListener(toggle);
-     toggle.syncState();
-     **/
 
     nameEditText = findViewById(R.id.nameEditText);
     telephoneEditText = findViewById(R.id.telephoneEditText);
@@ -95,36 +89,7 @@ public class ContactActivity
     // deal with the data
   }
 
-  /**
-   * @Override public void onBackPressed() {
-   * if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-   * drawerLayout.closeDrawer(GravityCompat.START);
-   * } else {
-   * super.onBackPressed();
-   * }
-   * }
-   * @Override public boolean onNavigationItemSelected(MenuItem item) {
-   * // Handle navigation view item clicks here.
-   * int id = item.getItemId();
-   * <p>
-   * if (id == R.id.nav_inicio) {
-   * presenter.goToStart();
-   * } else if (id == R.id.nav_se_vende) {
-   * presenter.goToForSale();
-   * } else if (id == R.id.nav_se_alquila) {
-   * presenter.goToForRent();
-   * } else if (id == R.id.nav_alquiler_vacacional) {
-   * presenter.goToHolidayRental();
-   * } else if (id == R.id.nav_sobre_nosotros) {
-   * presenter.goToAboutUS();
-   * } else if (id == R.id.nav_contacto) {
-   * presenter.goToContact();
-   * }
-   * <p>
-   * drawerLayout.closeDrawer(GravityCompat.START);
-   * return true;
-   * }
-   **/
+
   private boolean checkFields() {
     // Devuelve true si todos los campos están rellenos
     if (!nameEditText.getText().toString().equals("") && !telephoneEditText.getText().toString().equals("")
@@ -140,7 +105,7 @@ public class ContactActivity
 
   public void onSendButtonPressed(View view) {
     if (checkFields()) {
-      presenter.onSendButtonPressed(nameEditText.getText().toString(), telephoneEditText.getText().toString(),
+      presenter.onSendButtonPressed(this, nameEditText.getText().toString(), telephoneEditText.getText().toString(),
               countryEditText.getText().toString(), zipcodeEditText.getText().toString(),
               addressEditText.getText().toString(), emailEditText.getText().toString(),
               subjectEditText.getText().toString(), bodyemailEditText.getText().toString());

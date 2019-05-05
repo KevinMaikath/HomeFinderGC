@@ -18,7 +18,7 @@ public class ContactRouter extends AppCustomerRouter implements ContactContract.
   }
 
   @Override
-  public void sendEmail(String name, String telephone, String country, String zipcode,
+  public void sendEmail(Context activity, String name, String telephone, String country, String zipcode,
                         String address, String email, String subject, String bodyemail) {
 
     String[] TO = {"msalaguilo@gmail.com",
@@ -44,7 +44,7 @@ public class ContactRouter extends AppCustomerRouter implements ContactContract.
             bodyemail); // * configurar email aquí!
 
     try {
-      context.startActivity(Intent.createChooser(emailIntent, "Enviar email."));
+      activity.startActivity(Intent.createChooser(emailIntent, "Enviar email."));
       Log.i("EMAIL", "Enviando email...");
     }
     catch (android.content.ActivityNotFoundException e) {
