@@ -9,7 +9,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
 
-interface HomeDetailsContract {
+public interface HomeDetailsContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

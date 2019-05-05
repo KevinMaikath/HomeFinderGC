@@ -30,7 +30,7 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
     String info = house.name + "\n\n"
             + "Precio: " + house.price + "\n\n"
             + "Ref: " + house.refNumber + "\n\n"
-            + "Superficie: " + house.surface + "\n\n"
+            + "Superficie: " + house.surface + " m2" + "\n\n"
             + "Habitaciones: " + house.rooms + "\n\n"
             + "Baños: " + house.bathrooms + "\n\n"
             + "Piscina: " + checkYesNo(house.pool) + "\n\n"
