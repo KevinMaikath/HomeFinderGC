@@ -95,18 +95,4 @@ public class StartPresenterMockitoTests {
     verify(routerMock).navigateToHomeDetailScreen(activity);
   }
 
-  @Test
-  public void navigateToSelectionScreenWrongCredentials() {
-
-    configureStartScreen(new StartState());
-/**
- String user = "admi";
- String passwd = "1234";
-
- when(modelMock.checkCredentials(user,passwd)).thenReturn(false);
- presenter.onSignInPressed(user, passwd);
-
- verify(viewMock, times(1)).wrongCredentials();
- **/
-  }
 }
