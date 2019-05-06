@@ -28,6 +28,9 @@ public class DrawerPresenterMockitoTests {
   @Mock
   private DrawerContract.Router routerMock;
 
+  @Mock
+  private DrawerActivity drawerActivity;
+
   private DrawerContract.Presenter presenter;
 
 
@@ -49,13 +52,14 @@ public class DrawerPresenterMockitoTests {
     presenter.injectRouter(routerMock);
   }
 
+  // No encontramos la manera de realizar el test correctamente
   @Test
   public void goToStart() {
-    Activity activity = new DrawerActivity();
+     drawerActivity = new DrawerActivity();
 
-    presenter.goToStart(activity);
+    presenter.goToStart(drawerActivity);
 
-    verify(routerMock).navigateToStartScreen(activity);
+    verify(routerMock).navigateToStartScreen(drawerActivity);
   }
 
 }

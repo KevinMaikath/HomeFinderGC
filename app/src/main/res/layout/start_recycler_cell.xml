@@ -11,6 +11,7 @@
 
     <ImageView
         android:id="@+id/house_image"
+        android:contentDescription="@string/image"
         android:layout_width="175dp"
         android:layout_height="150dp"
         android:layout_alignParentStart="true"

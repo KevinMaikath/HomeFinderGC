@@ -7,6 +7,7 @@
 
     <ImageButton
         android:id="@+id/backToolbarButton"
+        android:contentDescription="@string/image"
         android:layout_width="30dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -36,6 +37,7 @@
 
     <ImageButton
         android:id="@+id/doneButton"
+        android:contentDescription="@string/image"
         android:layout_width="20dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"

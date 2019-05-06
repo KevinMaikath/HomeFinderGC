@@ -54,6 +54,7 @@ public class HomeDetailsPresenterMockitoTests {
     presenter.injectRouter(routerMock);
   }
 
+  // No encontramos la manera de realizar el test correctamente
   @Test
   public void fetchDataWithViewModel() {
     HomeDetailsState state = new HomeDetailsState();

@@ -50,6 +50,7 @@
 
                     <ImageView
                         android:id="@+id/user_image"
+                        android:contentDescription="@string/image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
@@ -85,6 +86,7 @@
                     <ImageView
                         android:id="@+id/telephone_image"
                         android:layout_width="24sp"
+                        android:contentDescription="@string/image"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"
@@ -119,6 +121,7 @@
 
                     <ImageView
                         android:id="@+id/country_image"
+                        android:contentDescription="@string/image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
@@ -153,6 +156,7 @@
 
                     <ImageView
                         android:id="@+id/zipcode_image"
+                        android:contentDescription="@string/image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
@@ -188,6 +192,7 @@
 
                     <ImageView
                         android:id="@+id/address_image"
+                        android:contentDescription="@string/image"
                         android:layout_width="24sp"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
@@ -223,6 +228,7 @@
                     <ImageView
                         android:id="@+id/email_image"
                         android:layout_width="24sp"
+                        android:contentDescription="@string/image"
                         android:layout_height="24sp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10sp"
@@ -307,6 +313,7 @@
 
                     <ImageButton
                         android:id="@+id/send_button"
+                        android:contentDescription="@string/image"
                         android:layout_width="262sp"
                         android:layout_height="75sp"
                         android:background="@drawable/send_button"

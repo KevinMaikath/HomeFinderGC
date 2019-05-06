@@ -75,17 +75,6 @@ public class AddHousePresenterMockitoTests {
   }
 
   @Test
-  public void fetchData() {
-    AddHouseState viewModel = new AddHouseState();
-    viewModel.imageUri = null;
-    configureAddHouseScreen(viewModel);
-
-    presenter.fetchData();
-
-    verify(viewMock, times(1)).displayData(viewModel);
-  }
-
-  @Test
   public void doneButtonPressed() {
     configureAddHouseScreen(new AddHouseState());
 
