@@ -131,6 +131,7 @@
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:hint="Username"
+        android:inputType="text"
         android:paddingLeft="10sp"
         android:singleLine="false"
         android:textAlignment="textStart"
