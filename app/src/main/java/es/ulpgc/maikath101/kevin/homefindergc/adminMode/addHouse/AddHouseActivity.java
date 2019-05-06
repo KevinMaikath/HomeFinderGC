@@ -131,9 +131,14 @@ public class AddHouseActivity
       public void run() {
         Toast.makeText(getApplicationContext(), "La casa ha sido añadida correctamente",
                 Toast.LENGTH_LONG).show();
-        finish();
+        presenter.removeHomeFromViewModel();
       }
     });
+  }
+
+  @Override
+  public void finishActivity() {
+    finish();
   }
 
 }

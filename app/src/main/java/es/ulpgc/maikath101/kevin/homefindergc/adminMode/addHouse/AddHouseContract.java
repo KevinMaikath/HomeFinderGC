@@ -1,7 +1,6 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
 import android.app.Activity;
-import android.content.Context;
 import android.net.Uri;
 
 import java.lang.ref.WeakReference;
@@ -16,6 +15,8 @@ public interface AddHouseContract {
     void displayData(AddHouseViewModel viewModel);
 
     void houseInsertedCorrectly();
+
+    void finishActivity();
   }
 
   interface Presenter {
@@ -32,6 +33,8 @@ public interface AddHouseContract {
     void doneButtonPressed(String name, String location, String price, String description, Uri imageUri);
 
     void openGallery(Activity activity);
+
+    void removeHomeFromViewModel();
   }
 
   interface Model {

@@ -2,10 +2,7 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
-
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 public class AddHousePresenter implements AddHouseContract.Presenter {
@@ -63,6 +60,12 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
   @Override
   public void openGallery(Activity activity) {
     router.openGallery(activity);
+  }
+
+  @Override
+  public void removeHomeFromViewModel() {
+    viewModel.imageUri = null;
+    view.get().finishActivity();
   }
 
 
