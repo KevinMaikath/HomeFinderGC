@@ -53,7 +53,6 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
         model.setRentHouse(viewModel.rentHouse);
       }
 
-      viewModel.dataShown = model.getSummaryInfo();
       view.get().setImageList(viewModel);
       view.get().displayData(viewModel);
 
