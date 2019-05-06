@@ -1,4 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc.adminMode.login;
+package es.ulpgc.maikath101.kevin.homefindergc.customerMode;
 
 
 import android.support.test.espresso.ViewInteraction;
