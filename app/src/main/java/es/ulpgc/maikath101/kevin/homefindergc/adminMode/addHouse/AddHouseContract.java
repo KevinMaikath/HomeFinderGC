@@ -3,9 +3,10 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 import android.app.Activity;
 import android.net.Uri;
 
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
+
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 public interface AddHouseContract {
 
@@ -30,7 +31,8 @@ public interface AddHouseContract {
 
     void fetchData();
 
-    void doneButtonPressed(String name, String location, String price, String description, Uri imageUri);
+    void doneButtonPressed(String name, String location, String price,
+                           String description, Uri imageUri);
 
     void openGallery(Activity activity);
 
@@ -38,7 +40,8 @@ public interface AddHouseContract {
   }
 
   interface Model {
-    void doneButtonPressed(String name, String location, String price, String description, Uri imageUri,
+    void doneButtonPressed(String name, String location, String price, String description,
+                           Uri imageUri,
                            HouseRepository.OnHouseCompleteleyInsertedCallback callback);
   }
 

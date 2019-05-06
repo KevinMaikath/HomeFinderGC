@@ -14,20 +14,22 @@ public class AddHouseModel implements AddHouseContract.Model {
 
   private HouseRepositoryContract repository;
 
-  public AddHouseModel(HouseRepositoryContract repository) {
+  AddHouseModel(HouseRepositoryContract repository) {
     this.repository = repository;
   }
 
   @Override
-  public void doneButtonPressed(final String name, final String location, final String price, final String description,
-                                final Uri imageUri, final HouseRepository.OnHouseCompleteleyInsertedCallback callback) {
+  public void doneButtonPressed(final String name, final String location, final String price,
+                                final String description, final Uri imageUri,
+                                final HouseRepository.OnHouseCompleteleyInsertedCallback callback) {
     final double random = Math.random() * 100 + 17 % 3 * 87;
     final double random2 = Math.random() * 1823 + 79 % 10 * 8;
 
     final int intRandom = (int) Math.round(random) + (int) Math.round(random2);
 
-    House house = new House(0, 111, 1, String.valueOf(intRandom) + "-OM", description, name,
-            price, 4, location, false, 4, "", "", 0,"");
+    House house = new House(0, 111, 1,
+            String.valueOf(intRandom) + "-OM", description, name, price, 4,
+            location, false, 4, "", "", 0,"");
 
 
     repository.insertHouse(house, new HouseRepositoryContract.OnHouseInsertedCallback() {
@@ -43,13 +45,13 @@ public class AddHouseModel implements AddHouseContract.Model {
             // id_image[0] = imageId;
             Log.e(TAG, String.valueOf(imageId));
 
-            House houseToInsert = new House((int) houseId, 111, imageId,
-                    String.valueOf(intRandom) + "-OM", description, name, price, 4, location, false,
-                    4, "", "", 0,"");
+            House houseToInsert = new House(houseId, 111, imageId,
+                    String.valueOf(intRandom) + "-OM", description, name, price, 4,
+                    location, false, 4, "", "", 0,"");
 
             repository.updateHouse(houseToInsert);
 
-            Image imageToInsert = new Image((int) imageId, "", houseId, imageUri.toString());
+            Image imageToInsert = new Image(imageId, "", houseId, imageUri.toString());
             repository.updateImage(imageToInsert);
 
             SellHouse sellhouse = new SellHouse(0, houseId, "No tiene comunidad");

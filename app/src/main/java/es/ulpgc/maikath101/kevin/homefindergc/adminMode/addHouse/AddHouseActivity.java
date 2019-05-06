@@ -3,8 +3,8 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
@@ -42,16 +42,13 @@ public class AddHouseActivity
     Toolbar toolbar = findViewById(R.id.addHouseToolbar);
     setSupportActionBar(toolbar);
 
-    ImageButton doneButton = toolbar.findViewById(R.id.doneButton);
-    ImageButton backButton = toolbar.findViewById(R.id.backToolbarButton);
-    ImageButton addImageButton = findViewById(R.id.add_image_button);
-
     imageView = findViewById(R.id.imageView9);
     nameEditText = findViewById(R.id.nameEditText);
     locationEditText = findViewById(R.id.locationEditText);
     priceEditText = findViewById(R.id.priceEditText);
     descriptionEditText = findViewById(R.id.desciptionEditText);
 
+    ImageButton doneButton = toolbar.findViewById(R.id.doneButton);
     doneButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -66,7 +63,7 @@ public class AddHouseActivity
       }
     });
 
-
+    ImageButton backButton = toolbar.findViewById(R.id.backToolbarButton);
     backButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -74,6 +71,7 @@ public class AddHouseActivity
       }
     });
 
+    ImageButton addImageButton = findViewById(R.id.add_image_button);
     addImageButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -125,6 +123,7 @@ public class AddHouseActivity
     }
   }
 
+  // TODO Javadoc
   public void houseInsertedCorrectly() {
     runOnUiThread(new Runnable() {
       @Override

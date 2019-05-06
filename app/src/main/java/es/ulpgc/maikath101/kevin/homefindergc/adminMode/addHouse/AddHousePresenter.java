@@ -2,8 +2,11 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse;
 
 import android.app.Activity;
 import android.net.Uri;
-import java.lang.ref.WeakReference;
+
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
+
+import java.lang.ref.WeakReference;
+
 
 public class AddHousePresenter implements AddHouseContract.Presenter {
 
