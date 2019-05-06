@@ -70,11 +70,6 @@ public class StartActivity
     // do the setup
     StartScreen.configure(this);
 
-    // POR DEFECTO SE CARGAN LAS CASAS QUE ESTÁN EN VENTA
-    presenter.fetchStartHousesData();
-
-    presenter.checkCurrentScreen();
-
     verifyPermissions();
   }
 

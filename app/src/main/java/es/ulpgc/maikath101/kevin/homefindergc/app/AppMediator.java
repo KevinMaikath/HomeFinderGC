@@ -99,5 +99,6 @@ public class AppMediator extends Application {
 
   public void changeStartScreenLayout(String layout){
     startState.currentScreen = layout;
+    startState.changedScreen = true;
   }
 }

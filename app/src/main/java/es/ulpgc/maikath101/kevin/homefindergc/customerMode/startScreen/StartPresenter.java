@@ -86,7 +86,6 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void fetchStartHousesData() {
-//    Log.e(TAG, "fetchData()");
     viewModel.topText = R.string.start_label;
     model.loadStartHouses(new HouseRepositoryContract.GetStartHousesCallback() {
       @Override
@@ -170,19 +169,24 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void checkCurrentScreen() {
-    switch (state.currentScreen) {
-      case "Start":
-        fetchStartHousesData();
-        break;
-      case "ForSale":
-        fetchForSaleHousesData();
-        break;
-      case "ForRent":
-        fetchForRentHousesData();
-        break;
-      case "HolidayRental":
-        fetchHolidayRentalHousesData();
-        break;
+    if (state.changedScreen) {
+      switch (state.currentScreen) {
+        case "Start":
+          fetchStartHousesData();
+          break;
+        case "ForSale":
+          fetchForSaleHousesData();
+          break;
+        case "ForRent":
+          fetchForRentHousesData();
+          break;
+        case "HolidayRental":
+          fetchHolidayRentalHousesData();
+          break;
+      }
+      state.changedScreen = false;
+    } else {
+      view.get().displayData(viewModel);
     }
   }
 
@@ -209,6 +213,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
       activity.finish();
     } else {
       state.currentScreen = "Start";
+      state.changedScreen = true;
       fetchStartHousesData();
     }
   }
