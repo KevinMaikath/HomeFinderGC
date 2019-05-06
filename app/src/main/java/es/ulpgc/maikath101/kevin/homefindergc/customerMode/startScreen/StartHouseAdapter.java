@@ -1,9 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
 import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +14,11 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 
+import es.ulpgc.maikath101.kevin.homefindergc.R;
+import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import es.ulpgc.maikath101.kevin.homefindergc.R;
-import es.ulpgc.maikath101.kevin.homefindergc.data.House;
-import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.ViewHolder> {
 
@@ -34,12 +31,12 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     this.clickListener = clickListener;
   }
 
-  public void addItem(SimpleHouse item){
+  public void addItem(SimpleHouse item) {
     houseList.add(item);
     notifyDataSetChanged();
   }
 
-  public void addItems(List<SimpleHouse> items){
+  public void addItems(List<SimpleHouse> items) {
     houseList.addAll(items);
     notifyDataSetChanged();
   }
@@ -67,8 +64,6 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
     holder.itemView.setOnClickListener(clickListener);
 
     holder.house_name.setText(houseList.get(position).apartmentName);
-    //holder.main_image.setImageResource(simpleHouseList.get(position).main_image);
-    //holder.main_image.setImageResource(R.drawable.password_eye);
     holder.price.setText(houseList.get(position).price);
     holder.ref_number.setText(houseList.get(position).referenceNumber);
 
@@ -80,8 +75,7 @@ public class StartHouseAdapter extends RecyclerView.Adapter<StartHouseAdapter.Vi
   }
 
 
-
-  private void loadImageFromURL(ImageView imageView, String imageUrl){
+  private void loadImageFromURL(ImageView imageView, String imageUrl) {
 
     RequestManager reqManager = Glide.with(imageView.getContext());
     RequestBuilder reqBuilder = reqManager.load(imageUrl);

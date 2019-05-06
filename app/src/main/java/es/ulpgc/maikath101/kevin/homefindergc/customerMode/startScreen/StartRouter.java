@@ -1,8 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.Context;
+import android.content.Intent;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppCustomerRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;

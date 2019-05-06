@@ -14,14 +14,15 @@ public class StartModel implements StartContract.Model {
 
   @Override
   public void loadStartHouses(final HouseRepositoryContract.GetStartHousesCallback callback) {
-    repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
-      @Override
-      public void onHousesInformationFetched(boolean error) {
-        if (!error) {
-          repository.getStartHouses(callback);
-        }
-      }
-    });
+    repository.loadHousesInformation(true,
+            new HouseRepositoryContract.FetchHousesInformationCallback() {
+              @Override
+              public void onHousesInformationFetched(boolean error) {
+                if (!error) {
+                  repository.getStartHouses(callback);
+                }
+              }
+            });
   }
 
   @Override
@@ -49,7 +50,8 @@ public class StartModel implements StartContract.Model {
   }
 
   @Override
-  public void loadHolidayRentalHouses(final HouseRepositoryContract.GetHolidayRentalHousesCallback callback) {
+  public void loadHolidayRentalHouses(
+          final HouseRepositoryContract.GetHolidayRentalHousesCallback callback) {
     repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
       @Override
       public void onHousesInformationFetched(boolean error) {

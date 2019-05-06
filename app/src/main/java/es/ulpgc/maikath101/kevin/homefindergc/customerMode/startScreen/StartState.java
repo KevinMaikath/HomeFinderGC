@@ -5,7 +5,7 @@ public class StartState extends StartViewModel {
   public String currentScreen;
   public boolean changedScreen;
 
-  public StartState(){
+  public StartState() {
     currentScreen = "Start";
     changedScreen = true;
   }
