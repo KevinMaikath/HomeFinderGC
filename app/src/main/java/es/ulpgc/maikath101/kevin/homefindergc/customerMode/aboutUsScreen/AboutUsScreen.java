@@ -1,10 +1,8 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen;
 
-import java.lang.ref.WeakReference;
-
 import android.support.v4.app.FragmentActivity;
-
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
+import java.lang.ref.WeakReference;
 
 public class AboutUsScreen {
 

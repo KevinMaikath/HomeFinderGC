@@ -1,10 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen;
 
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
+import java.lang.ref.WeakReference;
 
 public class AboutUsPresenter extends DrawerPresenter implements AboutUsContract.Presenter {
 
@@ -43,37 +40,4 @@ public class AboutUsPresenter extends DrawerPresenter implements AboutUsContract
     view.get().displayData(viewModel);
 
   }
-
-  /**
-  @Override
-  public void goToStart() {
-    router.navigateToStartScreen();
-  }
-
-  @Override
-  public void goToForSale() {
-    router.navigateToForSaleScreen();
-  }
-
-  @Override
-  public void goToForRent() {
-    router.navigateToForRentScreen();
-  }
-
-  @Override
-  public void goToHolidayRental() {
-    router.navigateToHolidayRentalScreen();
-  }
-
-  @Override
-  public void goToAboutUS() {
-    router.navigateToAboutUsScreen();
-  }
-
-  @Override
-  public void goToContact() {
-    router.navigateToContactScreen();
-  }
-  **/
-
 }

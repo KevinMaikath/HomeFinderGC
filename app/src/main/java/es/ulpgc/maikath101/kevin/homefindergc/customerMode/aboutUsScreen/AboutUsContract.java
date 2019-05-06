@@ -1,8 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.aboutUsScreen;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
+import java.lang.ref.WeakReference;
 
 interface AboutUsContract {
 
@@ -20,19 +19,6 @@ interface AboutUsContract {
     void injectRouter(Router router);
 
     void fetchData();
-    /**
-    void goToStart();
-
-    void goToForSale();
-
-    void goToForRent();
-
-    void goToHolidayRental();
-
-    void goToAboutUS();
-
-    void goToContact();
-     **/
   }
 
   interface Model {

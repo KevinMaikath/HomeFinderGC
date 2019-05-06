@@ -6,13 +6,13 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
 
-public class AboutUsActivity extends DrawerActivity implements AboutUsContract.View, NavigationView.OnNavigationItemSelectedListener {
+public class AboutUsActivity extends DrawerActivity implements AboutUsContract.View,
+        NavigationView.OnNavigationItemSelectedListener {
   public static String TAG = AboutUsActivity.class.getSimpleName();
 
   private AboutUsContract.Presenter presenter;
