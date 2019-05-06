@@ -1,15 +1,14 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
-import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 public class StartActivity
@@ -26,7 +24,6 @@ public class StartActivity
   public static String TAG = StartActivity.class.getSimpleName();
 
   private StartContract.Presenter presenter;
-  private FloatingActionButton floatingActionButton;
   private DrawerLayout drawerLayout;
   private TextView topText;
 
@@ -39,7 +36,7 @@ public class StartActivity
 
     topText = findViewById(R.id.topText);
 
-    floatingActionButton = findViewById(R.id.floatingOptionsButton);
+    FloatingActionButton floatingActionButton = findViewById(R.id.floatingOptionsButton);
     floatingActionButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -59,7 +56,7 @@ public class StartActivity
       @Override
       public void onClick(View view) {
         SimpleHouse item = (SimpleHouse) view.getTag();
-        presenter.selectHouse(view.getContext() , item);
+        presenter.selectHouse(view.getContext(),item);
       }
 
     });
@@ -113,13 +110,12 @@ public class StartActivity
     });
   }
 
-  private void verifyPermissions(){
+  private void verifyPermissions() {
     Log.e(TAG, "Verifying permisssions");
     String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
 
     if (ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) ==
             PackageManager.PERMISSION_GRANTED) {
-
     } else {
       ActivityCompat.requestPermissions(this, permissions, 1);
     }

@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "house_rent")
-public class RentHouse{
+public class RentHouse {
 
   @PrimaryKey(autoGenerate = true)
   public final int id_house_rent;

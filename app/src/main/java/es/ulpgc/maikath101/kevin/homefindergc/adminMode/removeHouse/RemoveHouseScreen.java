@@ -1,15 +1,18 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
-import java.lang.ref.WeakReference;
-
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
+import java.lang.ref.WeakReference;
+
 public class RemoveHouseScreen {
 
+  /**
+   * @param view
+   */
   public static void configure(RemoveHouseContract.View view) {
 
     WeakReference<FragmentActivity> context =

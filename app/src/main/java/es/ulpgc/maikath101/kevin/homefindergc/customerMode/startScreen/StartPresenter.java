@@ -95,16 +95,16 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
           final int finalI = i;
           model.loadImages(houses.get(i).main_image,
                   new HouseRepositoryContract.GetImageFromHouseCallback() {
-            @Override
-            public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house,
-                      houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
-                      image.imageUri);
-              Log.e(TAG, String.valueOf(image.url));
-              simpleHouses.add(house);
-            }
-          });
+                    @Override
+                    public void setImage(Image image) {
+                      SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house,
+                              houses.get(finalI).refNumber, houses.get(finalI).name,
+                              image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
+                              image.imageUri);
+                      Log.e(TAG, String.valueOf(image.url));
+                      simpleHouses.add(house);
+                    }
+                  });
         }
         viewModel.simpleHouseList = simpleHouses;
         view.get().displayData(viewModel);
@@ -153,16 +153,16 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
           final int finalI = i;
           model.loadImages(houses.get(i).main_image, new
                   HouseRepositoryContract.GetImageFromHouseCallback() {
-            @Override
-            public void setImage(Image image) {
-              SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house,
-                      houses.get(finalI).refNumber, houses.get(finalI).name,
-                      image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
-                      image.imageUri);
-              Log.e(TAG, String.valueOf(image.url));
-              simpleHouses.add(house);
-            }
-          });
+                    @Override
+                    public void setImage(Image image) {
+                      SimpleHouse house = new SimpleHouse(houses.get(finalI).id_house,
+                              houses.get(finalI).refNumber, houses.get(finalI).name,
+                              image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
+                              image.imageUri);
+                      Log.e(TAG, String.valueOf(image.url));
+                      simpleHouses.add(house);
+                    }
+                  });
         }
         viewModel.simpleHouseList = simpleHouses;
         view.get().displayData(viewModel);

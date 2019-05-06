@@ -1,8 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse;
 
-import java.util.List;
-
-import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
@@ -24,7 +21,8 @@ public class RemoveHouseModel implements RemoveHouseContract.Model {
 
   @Override
   public void loadAllHouses(final HouseRepositoryContract.GetAllHousesCallback callback) {
-    repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
+    repository.loadHousesInformation(true,
+            new HouseRepositoryContract.FetchHousesInformationCallback() {
       @Override
       public void onHousesInformationFetched(boolean error) {
         if (!error) {

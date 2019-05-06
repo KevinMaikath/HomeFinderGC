@@ -2,10 +2,10 @@ package es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,16 +18,14 @@ public class SelectionActivity
   public static String TAG = SelectionActivity.class.getSimpleName();
 
   private SelectionContract.Presenter presenter;
-  private Button addHouseBt;
-  private Button removeHouseBt;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_selection);
 
-    addHouseBt = findViewById(R.id.addHouseButton);
-    removeHouseBt = findViewById(R.id.removeHouseButton);
+    Button addHouseBt = findViewById(R.id.addHouseButton);
+    Button removeHouseBt = findViewById(R.id.removeHouseButton);
 
     addHouseBt.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -57,8 +55,8 @@ public class SelectionActivity
     Log.e(TAG, "Verifying permisssions");
     String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
 
-    if (ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) ==
-            PackageManager.PERMISSION_GRANTED) {
+    if (ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0])
+            == PackageManager.PERMISSION_GRANTED) {
 
     } else {
       ActivityCompat.requestPermissions(this, permissions, 1);
