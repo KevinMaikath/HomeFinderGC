@@ -13,7 +13,8 @@ public class SellHouse {
   public final int id_house_sell;
 
   @ForeignKey(entity = House.class, parentColumns = "id_house",
-          childColumns = "id_house", onDelete = CASCADE)
+          childColumns = "id_house",
+          onDelete = CASCADE)
   public final int id_house;
 
   public final String community;
