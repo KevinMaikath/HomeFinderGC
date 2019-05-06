@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/removeHouseButton"
-        android:layout_width="279dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -20,7 +20,7 @@
 
     <Button
         android:id="@+id/addHouseButton"
-        android:layout_width="279dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -61,14 +61,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.29" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.71" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline10"
