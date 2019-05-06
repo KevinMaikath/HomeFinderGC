@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.ulpgc.maikath101.kevin.homefindergc">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="21"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="21" />
 
     <application
+        android:name=".app.AppMediator"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/icono_app_azul_round"
         android:supportsRtl="true"
-        android:name=".app.AppMediator"
-        android:theme="@style/AppTheme"
-        android:roundIcon="@mipmap/icono_app_azul_round">
+        android:theme="@style/AppTheme">
 
 
-        <activity android:name=".adminMode.removeHouse.RemoveHouseActivity"
+        <activity
+            android:name=".adminMode.removeHouse.RemoveHouseActivity"
             android:label=""></activity>
         <activity android:name=".adminMode.addHouse.AddHouseActivity"></activity>
         <activity android:name=".adminMode.selection.SelectionActivity"></activity>
@@ -26,20 +30,21 @@
         <activity android:name=".customerMode.contactScreen.ContactActivity"></activity>
         <activity android:name=".customerMode.drawer.DrawerActivity"></activity>
 
-        <activity android:name=".adminMode.login.LoginActivity"
-            android:label="LoginScreen"
+        <activity
+            android:name=".adminMode.login.LoginActivity"
             android:icon="@drawable/icono_app_blanco"
-            android:screenOrientation="portrait"
-            >
+            android:label="Admin"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".customerMode.startScreen.StartActivity"
-            android:label="StartScreen"
-            android:icon="@drawable/icono_app_azul">
+        <activity
+            android:name=".customerMode.startScreen.StartActivity"
+            android:icon="@drawable/icono_app_azul"
+            android:label="HomeFinder GC">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -50,7 +55,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 
 
 </manifest>
