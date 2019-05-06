@@ -43,7 +43,9 @@ public class AddHousePresenter implements AddHouseContract.Presenter {
 
   @Override
   public void fetchData() {
-    view.get().displayData(viewModel);
+    if (viewModel.imageUri != null) {
+      view.get().displayData(viewModel);
+    }
   }
 
   @Override

@@ -82,7 +82,6 @@ public class AddHouseActivity
     });
     // do the setup
     AddHouseScreen.configure(this);
-
   }
 
   @Override
@@ -92,6 +91,7 @@ public class AddHouseActivity
 
   @Override
   public void displayData(AddHouseViewModel viewModel) {
+    imageUri = viewModel.imageUri;
     imageView.setImageURI(viewModel.imageUri);
   }
 
