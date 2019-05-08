@@ -87,4 +87,15 @@ public class LoginPresenterMockitoTests {
 
     verify(viewMock, times(1)).wrongCredentials();
   }
+
+  @Test
+  public void noNavigateWhenButtonNotPressed() {
+    configureLoginScreen(new LoginState());
+
+    LoginActivity activity = new LoginActivity();
+
+    verify(routerMock, times(0)).navigateToNextScreen(activity);
+
+
+  }
 }

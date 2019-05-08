@@ -1,6 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.addHouse;
 
 import android.net.Uri;
+import android.os.Parcel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,11 +13,13 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHousePresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseState;
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseViewModel;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
@@ -32,7 +35,8 @@ import static org.mockito.Mockito.when;
 public class AddHousePresenterMockitoTests {
 
   @Captor
-  private ArgumentCaptor<HouseRepositoryContract.OnHouseCompleteleyInsertedCallback> houseCompleteleyInsertedCallbackArgumentCaptor;
+  private ArgumentCaptor<HouseRepositoryContract.OnHouseCompleteleyInsertedCallback>
+          houseCompleteleyInsertedCallbackArgumentCaptor;
 
   @Mock
   private AddHouseContract.Model modelMock;
@@ -42,6 +46,9 @@ public class AddHousePresenterMockitoTests {
 
   @Mock
   private AddHouseContract.Router routerMock;
+
+  @Mock
+  private Uri uri;
 
   private AddHouseContract.Presenter presenter;
 
@@ -85,6 +92,34 @@ public class AddHousePresenterMockitoTests {
     houseCompleteleyInsertedCallbackArgumentCaptor.getValue().houseInserted();
 
     verify(viewMock,times(1)).houseInsertedCorrectly();
+  }
+
+  @Test
+  public void noFetchDataWhenUriNull() {
+    configureAddHouseScreen(new AddHouseState());
+
+    AddHouseViewModel viewModel = new AddHouseViewModel();
+    viewModel.imageUri = null;
+
+    presenter.fetchData();
+
+    verify(viewMock,times(0)).displayData(viewModel);
+  }
+
+  @Test
+  public void removeHouseFromViewModel() {
+    configureAddHouseScreen(new AddHouseState());
+
+    presenter.removeHomeFromViewModel();
+
+    verify(viewMock, times(1)).finishActivity();
+  }
+
+  @Test
+  public void doneButtonNotPressed() {
+    configureAddHouseScreen(new AddHouseState());
+
+    verify(viewMock,times(0)).houseInsertedCorrectly();
   }
 
 }
