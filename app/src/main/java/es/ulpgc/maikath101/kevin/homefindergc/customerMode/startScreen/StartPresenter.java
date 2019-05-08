@@ -57,7 +57,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void fetchForSaleHousesData() {
-    Log.e(TAG, "fetchData()");
+    // Log.e(TAG, "fetchData()");
     viewModel.topText = R.string.for_sale_label;
     model.loadForSaleHouses(new HouseRepositoryContract.GetForSaleHousesCallback() {
       @Override
@@ -73,7 +73,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
                               houses.get(finalI).refNumber, houses.get(finalI).name,
                               image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
                               image.imageUri);
-                      Log.e(TAG, String.valueOf(image.url));
+                      // Log.e(TAG, String.valueOf(image.url));
                       simpleHouses.add(house);
                     }
                   });
@@ -101,7 +101,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
                               houses.get(finalI).refNumber, houses.get(finalI).name,
                               image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
                               image.imageUri);
-                      Log.e(TAG, String.valueOf(image.url));
+                      // Log.e(TAG, String.valueOf(image.url));
                       simpleHouses.add(house);
                     }
                   });
@@ -114,7 +114,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void fetchForRentHousesData() {
-    Log.e(TAG, "fetchData()");
+    // Log.e(TAG, "fetchData()");
     viewModel.topText = R.string.for_rent_label;
     model.loadForRentHouses(new HouseRepositoryContract.GetForRentHousesCallback() {
       @Override
@@ -130,7 +130,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
                       houses.get(finalI).refNumber, houses.get(finalI).name,
                       image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
                       image.imageUri);
-              Log.e(TAG, String.valueOf(image.url));
+              // Log.e(TAG, String.valueOf(image.url));
               simpleHouses.add(house);
             }
           });
@@ -143,7 +143,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
 
   @Override
   public void fetchHolidayRentalHousesData() {
-    Log.e(TAG, "fetchData()");
+    // Log.e(TAG, "fetchData()");
     viewModel.topText = R.string.holiday_rental_label;
     model.loadHolidayRentalHouses(new HouseRepositoryContract.GetHolidayRentalHousesCallback() {
       @Override
@@ -159,7 +159,7 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
                               houses.get(finalI).refNumber, houses.get(finalI).name,
                               image.url, houses.get(finalI).price, houses.get(finalI).id_sell_type,
                               image.imageUri);
-                      Log.e(TAG, String.valueOf(image.url));
+                      // Log.e(TAG, String.valueOf(image.url));
                       simpleHouses.add(house);
                     }
                   });

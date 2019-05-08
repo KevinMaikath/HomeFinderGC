@@ -5,7 +5,10 @@ import android.app.Activity;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -16,10 +19,12 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartActi
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartContract;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartState;
+import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartViewModel;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -34,6 +39,22 @@ public class StartPresenterMockitoTests {
 
   @Mock
   private StartContract.Router routerMock;
+
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.GetForSaleHousesCallback>
+          getForSaleHousesCallbackArgumentCaptor;
+
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.GetStartHousesCallback>
+          getStartHousesCallbackArgumentCaptor;
+
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.GetForRentHousesCallback>
+          getForRentHousesCallbackArgumentCaptor;
+
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.GetHolidayRentalHousesCallback>
+          getHolidayRentalHousesCallbackArgumentCaptor;
 
   private StartContract.Presenter presenter;
 
@@ -136,6 +157,54 @@ public class StartPresenterMockitoTests {
     presenter.onBackPressed(startActivity);
 
     verify(startActivity, times(0)).finish();
+  }
+
+  @Test
+  public void fetchForSaleHousesData() {
+    configureStartScreen(new StartState());
+
+    presenter.fetchForSaleHousesData();
+
+    verify(modelMock).loadForSaleHouses(getForSaleHousesCallbackArgumentCaptor.capture());
+    getForSaleHousesCallbackArgumentCaptor.getValue().setForSaleHouses(Mockito.<House>anyList());
+
+    verify(viewMock,times(1)).displayData(Mockito.any(StartViewModel.class));
+  }
+
+  @Test
+  public void fetchForStartHousesData() {
+    configureStartScreen(new StartState());
+
+    presenter.fetchStartHousesData();
+
+    verify(modelMock).loadStartHouses(getStartHousesCallbackArgumentCaptor.capture());
+    getStartHousesCallbackArgumentCaptor.getValue().setStartHouses(Mockito.<House>anyList());
+
+    verify(viewMock,times(1)).displayData(Mockito.any(StartViewModel.class));
+  }
+
+  @Test
+  public void fetchForRentHousesData() {
+    configureStartScreen(new StartState());
+
+    presenter.fetchForRentHousesData();
+
+    verify(modelMock).loadForRentHouses(getForRentHousesCallbackArgumentCaptor.capture());
+    getForRentHousesCallbackArgumentCaptor.getValue().setForRentHouses(Mockito.<House>anyList());
+
+    verify(viewMock,times(1)).displayData(Mockito.any(StartViewModel.class));
+  }
+
+  @Test
+  public void fetchHolidayRentalHousesData() {
+    configureStartScreen(new StartState());
+
+    presenter.fetchHolidayRentalHousesData();
+
+    verify(modelMock).loadHolidayRentalHouses(getHolidayRentalHousesCallbackArgumentCaptor.capture());
+    getHolidayRentalHousesCallbackArgumentCaptor.getValue().setHolidayRentalHouses(Mockito.<House>anyList());
+
+    verify(viewMock,times(1)).displayData(Mockito.any(StartViewModel.class));
   }
 
 }
