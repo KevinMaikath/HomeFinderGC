@@ -19,6 +19,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -35,6 +36,14 @@ public class AddHouseModelMockitoTests {
   private AddHouseContract.Model model;
 
   private HouseRepositoryContract.OnHouseCompleteleyInsertedCallback onHouseCompleteleyInsertedCallback;
+
+  private HouseRepositoryContract.OnHouseCompleteleyInsertedCallback callback
+          = new HouseRepositoryContract.OnHouseCompleteleyInsertedCallback() {
+    @Override
+    public void houseInserted() {
+
+    }
+  };
 
   @Mock
   private AddHouseContract.View viewMock;
@@ -56,23 +65,5 @@ public class AddHouseModelMockitoTests {
 
     model = new AddHouseModel(repository);
   }
-
-  @Test
-  public void insertHouse() {
-    House house = Mockito.any(House.class);
-    Image image = Mockito.any(Image.class);
-
-    model.doneButtonPressed("","","","", Uri.EMPTY,
-            onHouseCompleteleyInsertedCallback);
-
-    repository.insertHouse(house, onHouseInsertedCallbackArgumentCaptor.capture());
-    onHouseInsertedCallbackArgumentCaptor.getValue().setHouseId(Mockito.anyInt());
-
-    repository.insertImage(image, onImageInsertedCallbackArgumentCaptor.capture());
-    onImageInsertedCallbackArgumentCaptor.getValue().setImageId(Mockito.anyInt());
-
-    verify(onHouseCompleteleyInsertedCallback).houseInserted();
-  }
-
 
 }

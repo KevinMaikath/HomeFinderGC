@@ -112,7 +112,6 @@ public class RemoveHouseModelMockitoTests {
     model.removeHouse(1, callbackDelete);
 
     verify(repository).deleteHouse(1, callbackDelete);
-
   }
 
 
