@@ -53,7 +53,7 @@ public class DrawerPresenter implements DrawerContract.Presenter {
   }
 
   @Override
-  public void goToAboutUS(Activity activity) {
+  public void goToAboutUs(Activity activity) {
     router.navigateToAboutUsScreen(activity);
     activity.finish();
   }

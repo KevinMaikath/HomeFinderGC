@@ -8,12 +8,12 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 
 public interface DrawerContract {
 
-  interface View{
+  interface View {
 
     void injectPresenter(Presenter presenter);
   }
 
-  interface Presenter{
+  interface Presenter {
 
     void injectView(WeakReference<View> view);
 
@@ -27,7 +27,7 @@ public interface DrawerContract {
 
     void goToHolidayRental(Activity activity);
 
-    void goToAboutUS(Activity activity);
+    void goToAboutUs(Activity activity);
 
     void goToContact(Activity activity);
 

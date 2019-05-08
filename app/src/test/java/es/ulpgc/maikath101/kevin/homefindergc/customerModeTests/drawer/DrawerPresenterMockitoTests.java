@@ -1,7 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerModeTests.drawer;
 
-import android.app.Activity;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,9 +14,8 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresenter;
 
-import static org.mockito.Mockito.ignoreStubs;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DrawerPresenterMockitoTests {
@@ -53,13 +50,58 @@ public class DrawerPresenterMockitoTests {
     presenter.injectRouter(routerMock);
   }
 
-  // No encontramos la manera de realizar el test correctamente
   @Test
   public void goToStart() {
-    drawerActivity = new DrawerActivity();
-
-    //when(drawerActivity.finish());
+    doNothing().when(drawerActivity).finish();
     presenter.goToStart(drawerActivity);
+
+    verify(routerMock).navigateToStartScreen(drawerActivity);
+  }
+
+  @Test
+  public void goToForSale() {
+    doNothing().when(drawerActivity).finish();
+    presenter.goToForSale(drawerActivity);
+
+    verify(routerMock).navigateToForSaleScreen(drawerActivity);
+  }
+
+  @Test
+  public void goToForRent() {
+    doNothing().when(drawerActivity).finish();
+    presenter.goToForRent(drawerActivity);
+
+    verify(routerMock).navigateToForRentScreen(drawerActivity);
+  }
+
+  @Test
+  public void goToHolidayRental() {
+    doNothing().when(drawerActivity).finish();
+    presenter.goToHolidayRental(drawerActivity);
+
+    verify(routerMock).navigateToHolidayRentalScreen(drawerActivity);
+  }
+
+  @Test
+  public void goToAboutUs() {
+    doNothing().when(drawerActivity).finish();
+    presenter.goToAboutUs(drawerActivity);
+
+    verify(routerMock).navigateToAboutUsScreen(drawerActivity);
+  }
+
+  @Test
+  public void goToContact() {
+    doNothing().when(drawerActivity).finish();
+    presenter.goToContact(drawerActivity);
+
+    verify(routerMock).navigateToContactScreen(drawerActivity);
+  }
+
+  @Test
+  public void onBackPressed() {
+    doNothing().when(drawerActivity).finish();
+    presenter.onBackPressed(drawerActivity);
 
     verify(routerMock).navigateToStartScreen(drawerActivity);
   }

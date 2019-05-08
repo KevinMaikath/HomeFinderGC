@@ -1,21 +1,18 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartActivity;
 
-public class DrawerActivity extends AppCompatActivity implements DrawerContract.View, NavigationView.OnNavigationItemSelectedListener{
+public class DrawerActivity extends AppCompatActivity implements DrawerContract.View,
+        NavigationView.OnNavigationItemSelectedListener {
 
   public static String TAG = StartActivity.class.getSimpleName();
   private DrawerContract.Presenter presenter;
@@ -42,7 +39,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     } else if (id == R.id.nav_alquiler_vacacional) {
       presenter.goToHolidayRental(this);
     } else if (id == R.id.nav_sobre_nosotros) {
-      presenter.goToAboutUS(this);
+      presenter.goToAboutUs(this);
     } else if (id == R.id.nav_contacto) {
       presenter.goToContact(this);
     }
@@ -70,7 +67,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     configureDrawerLayout();
   }
 
-  private void configureDrawerLayout(){
+  private void configureDrawerLayout() {
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawerLayout.addDrawerListener(toggle);
@@ -78,7 +75,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     toggle.syncState();
   }
 
-  public void setNavigationView(NavigationView navigationView){
+  public void setNavigationView(NavigationView navigationView) {
     navigationView.setNavigationItemSelectedListener(this);
   }
 

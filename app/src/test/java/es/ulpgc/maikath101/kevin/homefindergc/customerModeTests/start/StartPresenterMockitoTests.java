@@ -18,7 +18,11 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartPres
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen.StartState;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class StartPresenterMockitoTests {
@@ -45,24 +49,13 @@ public class StartPresenterMockitoTests {
   private void configureStartScreen(StartState state) {
 
     // Get a reference to the class under test
+//    presenter = spy(new StartPresenter(state));
     presenter = new StartPresenter(state);
+
 
     presenter.injectStartView(new WeakReference<>(viewMock));
     presenter.injectModel(modelMock);
     presenter.injectRouter(routerMock);
-  }
-
-  @Test
-  public void checkCurrentScreenAsStart() {
-    StartState state_start = new StartState();
-    state_start.currentScreen = "Start";
-    configureStartScreen(state_start);
-
-    // When start a new screen is requested
-
-    presenter.checkCurrentScreen();
-
-    // TODO EQUISDEE
   }
 
   @Test
@@ -71,6 +64,28 @@ public class StartPresenterMockitoTests {
     configureStartScreen(state);
 
     presenter.fetchData();
+
+    verify(viewMock).displayData(state);
+  }
+
+  @Test
+  public void checkCurrentScreenTrueChangedScreen() {
+    StartState state = new StartState();
+    state.changedScreen = true;
+    configureStartScreen(state);
+
+    presenter.checkCurrentScreen();
+
+    verify(viewMock, times(0)).displayData(state);
+  }
+
+  @Test
+  public void checkCurrentScreenFalseChangedScreen() {
+    StartState state = new StartState();
+    state.changedScreen = false;
+    configureStartScreen(state);
+
+    presenter.checkCurrentScreen();
 
     verify(viewMock).displayData(state);
   }
@@ -85,6 +100,9 @@ public class StartPresenterMockitoTests {
     SimpleHouse house = new SimpleHouse(1, "Ref", "name",
             "url", "price", 111, "uri");
 
+/**
+ HomeDetailsState mockState = mock(HomeDetailsState.class);
+ **/
     HomeDetailsState home_state = new HomeDetailsState();
     home_state.forSale = true;
     home_state.current_house_id = house.house_id;
@@ -93,6 +111,32 @@ public class StartPresenterMockitoTests {
 
     //verify(routerMock).passDataToHomeDetailScreen(home_state);
     verify(routerMock).navigateToHomeDetailScreen(activity);
+  }
+
+  @Test
+  public void onBackPressedStateIsStart() {
+    StartActivity startActivity = mock(StartActivity.class);
+
+    StartState state = new StartState();
+    state.currentScreen = "Start";
+    configureStartScreen(state);
+
+    presenter.onBackPressed(startActivity);
+
+    verify(startActivity).finish();
+  }
+
+  @Test
+  public void onBackPressedStateIsNotStart() {
+    StartActivity startActivity = mock(StartActivity.class);
+
+    StartState state = new StartState();
+    state.currentScreen = "For Sale";
+    configureStartScreen(state);
+
+    presenter.onBackPressed(startActivity);
+
+    verify(startActivity, times(0)).finish();
   }
 
 }

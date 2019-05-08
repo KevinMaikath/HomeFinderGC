@@ -24,7 +24,6 @@ public class AppCustomerRouter implements AppRouter {
 
     //cambiar estado a Start
     mediator.changeStartScreenLayout("Start");
-    //context.startActivity(intent);
     activity.startActivity(intent);
   }
 
@@ -35,7 +34,6 @@ public class AppCustomerRouter implements AppRouter {
 
     //cambiar estado a For Sale
     mediator.changeStartScreenLayout("ForSale");
-    //context.startActivity(intent);
     activity.startActivity(intent);
   }
 
@@ -46,7 +44,6 @@ public class AppCustomerRouter implements AppRouter {
 
     //cambiar estado a For Rent
     mediator.changeStartScreenLayout("ForRent");
-    //context.startActivity(intent);
     activity.startActivity(intent);
   }
 
@@ -57,7 +54,6 @@ public class AppCustomerRouter implements AppRouter {
 
     //cambiar estado a Holiday Rental
     mediator.changeStartScreenLayout("HolidayRental");
-    //context.startActivity(intent);
     activity.startActivity(intent);
   }
 
@@ -65,8 +61,6 @@ public class AppCustomerRouter implements AppRouter {
   public void navigateToAboutUsScreen(Activity activity) {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, AboutUsActivity.class);
-    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    //context.startActivity(intent);
     activity.startActivity(intent);
   }
 
@@ -74,7 +68,6 @@ public class AppCustomerRouter implements AppRouter {
   public void navigateToContactScreen(Activity activity) {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, ContactActivity.class);
-    //context.startActivity(intent);
     activity.startActivity(intent);
   }
 
