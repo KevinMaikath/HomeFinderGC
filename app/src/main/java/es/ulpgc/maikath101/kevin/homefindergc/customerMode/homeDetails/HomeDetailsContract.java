@@ -41,8 +41,6 @@ public interface HomeDetailsContract {
   }
 
   interface Model {
-    String fetchData();
-
     String getSummaryInfo();
 
     House getHouse();

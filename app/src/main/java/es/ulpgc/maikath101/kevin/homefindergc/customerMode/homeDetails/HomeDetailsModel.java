@@ -20,12 +20,6 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
   }
 
   @Override
-  public String fetchData() {
-    // Log.e(TAG, "fetchData()");
-    return "Hello";
-  }
-
-  @Override
   public String getSummaryInfo() {
     String info = house.name + "\n\n"
             + "Precio: " + house.price + "\n\n"
@@ -73,26 +67,30 @@ public class HomeDetailsModel implements HomeDetailsContract.Model {
     this.rentHouse = rentHouse;
   }
 
-
   @Override
   public void setHouse(House house) {
     this.house = house;
   }
 
   @Override
-  public void loadSellHouseInfo(final int current_house_id, final HouseRepositoryContract.LoadCompleteSellHouseInfoCallback callback) {
-    repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
-      @Override
-      public void onHousesInformationFetched(boolean error) {
-        if (!error) {
-          repository.getCompleteSellInfo(current_house_id, callback);
-        }
-      }
-    });
+  public void loadSellHouseInfo(final int current_house_id,
+                                final HouseRepositoryContract.LoadCompleteSellHouseInfoCallback
+                                        callback) {
+    repository.loadHousesInformation(true,
+            new HouseRepositoryContract.FetchHousesInformationCallback() {
+              @Override
+              public void onHousesInformationFetched(boolean error) {
+                if (!error) {
+                  repository.getCompleteSellInfo(current_house_id, callback);
+                }
+              }
+            });
   }
 
   @Override
-  public void loadRentHouseInfo(final int current_house_id, final HouseRepositoryContract.LoadCompleteRentHouseInfoCallback callback) {
+  public void loadRentHouseInfo(final int current_house_id,
+                                final HouseRepositoryContract.LoadCompleteRentHouseInfoCallback
+                                        callback) {
     repository.loadHousesInformation(true, new HouseRepositoryContract.FetchHousesInformationCallback() {
       @Override
       public void onHousesInformationFetched(boolean error) {
