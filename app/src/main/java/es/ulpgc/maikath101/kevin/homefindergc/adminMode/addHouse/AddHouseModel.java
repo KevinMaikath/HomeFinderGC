@@ -14,7 +14,7 @@ public class AddHouseModel implements AddHouseContract.Model {
 
   private HouseRepositoryContract repository;
 
-  AddHouseModel(HouseRepositoryContract repository) {
+  public AddHouseModel(HouseRepositoryContract repository) {
     this.repository = repository;
   }
 

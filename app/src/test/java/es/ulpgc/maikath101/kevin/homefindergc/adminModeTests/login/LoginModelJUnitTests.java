@@ -1,7 +1,5 @@
 package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.login;
 
-import android.util.Log;
-
 import org.junit.Test;
 
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginModel;
