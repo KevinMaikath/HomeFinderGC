@@ -1,5 +1,7 @@
 package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.adminModeTests.addHouse;
 
+import android.net.Uri;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -60,7 +62,7 @@ public class AddHouseModelMockitoTests {
     House house = Mockito.any(House.class);
     Image image = Mockito.any(Image.class);
 
-    model.doneButtonPressed("","","","",Uri.EMPTY,
+    model.doneButtonPressed("","","","", Uri.EMPTY,
             onHouseCompleteleyInsertedCallback);
 
     repository.insertHouse(house, onHouseInsertedCallbackArgumentCaptor.capture());
