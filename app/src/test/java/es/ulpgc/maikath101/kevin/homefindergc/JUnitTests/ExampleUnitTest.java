@@ -1,4 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc;
+package es.ulpgc.maikath101.kevin.homefindergc.JUnitTests;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.removeHouse;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.adminModeTests.removeHouse;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,24 +11,17 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginActivity;
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginContract;
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginPresenter;
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHousePresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseViewModel;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
-import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RemoveHousePresenterMockitoTests {

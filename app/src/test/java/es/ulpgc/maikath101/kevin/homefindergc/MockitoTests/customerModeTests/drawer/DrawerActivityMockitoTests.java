@@ -1,10 +1,7 @@
-package es.ulpgc.maikath101.kevin.homefindergc.customerModeTests.drawer;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.customerModeTests.drawer;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.view.menu.MenuItemImpl;
 import android.view.ActionProvider;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -12,17 +9,14 @@ import android.view.SubMenu;
 import android.view.View;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import es.ulpgc.maikath101.kevin.homefindergc.R;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerContract;
 
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)

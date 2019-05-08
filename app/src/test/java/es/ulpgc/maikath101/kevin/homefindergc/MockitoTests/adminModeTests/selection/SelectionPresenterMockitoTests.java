@@ -1,11 +1,9 @@
 
-package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.selection;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.adminModeTests.selection;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -19,7 +17,6 @@ import es.ulpgc.maikath101.kevin.homefindergc.adminMode.selection.SelectionState
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SelectionPresenterMockitoTests {

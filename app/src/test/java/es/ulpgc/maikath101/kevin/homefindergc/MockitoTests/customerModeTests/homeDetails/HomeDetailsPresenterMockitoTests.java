@@ -1,6 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc.customerModeTests.homeDetails;
-
-import android.app.Activity;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.customerModeTests.homeDetails;
 
 import org.junit.Before;
 import org.junit.Test;

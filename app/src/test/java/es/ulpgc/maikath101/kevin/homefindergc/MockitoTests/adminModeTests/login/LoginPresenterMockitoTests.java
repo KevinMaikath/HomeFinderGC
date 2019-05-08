@@ -1,12 +1,8 @@
-package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.login;
-
-import android.app.Activity;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.adminModeTests.login;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -19,8 +15,6 @@ import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginPresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyDouble;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

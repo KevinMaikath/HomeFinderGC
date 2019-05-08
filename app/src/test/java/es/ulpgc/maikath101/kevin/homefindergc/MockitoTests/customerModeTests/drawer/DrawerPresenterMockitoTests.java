@@ -1,4 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc.customerModeTests.drawer;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.customerModeTests.drawer;
 
 import org.junit.Before;
 import org.junit.Test;

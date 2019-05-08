@@ -1,7 +1,6 @@
-package es.ulpgc.maikath101.kevin.homefindergc.adminModeTests.addHouse;
+package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.adminModeTests.addHouse;
 
 import android.net.Uri;
-import android.os.Parcel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,23 +12,17 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHousePresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.addHouse.AddHouseViewModel;
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginContract;
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginPresenter;
-import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AddHousePresenterMockitoTests {
