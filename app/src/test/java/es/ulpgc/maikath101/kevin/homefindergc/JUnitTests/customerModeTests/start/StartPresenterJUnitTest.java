@@ -1,11 +1,8 @@
-package es.ulpgc.maikath101.kevin.homefindergc.JUnitTests;
+package es.ulpgc.maikath101.kevin.homefindergc.JUnitTests.customerModeTests.start;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import es.ulpgc.maikath101.kevin.homefindergc.data.SimpleHouse;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -14,7 +11,7 @@ import static org.junit.Assert.*;
  */
 
 
-public class ExampleUnitTest {
+public class StartPresenterJUnitTest {
   @Test
   public void addition_isCorrect() {
     assertEquals(4, 2 + 2);
