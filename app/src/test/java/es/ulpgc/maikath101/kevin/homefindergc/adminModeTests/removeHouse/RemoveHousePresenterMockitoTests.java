@@ -6,10 +6,12 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginActivity;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginContract;
@@ -18,6 +20,9 @@ import es.ulpgc.maikath101.kevin.homefindergc.adminMode.login.LoginState;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseContract;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHousePresenter;
 import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseState;
+import es.ulpgc.maikath101.kevin.homefindergc.adminMode.removeHouse.RemoveHouseViewModel;
+import es.ulpgc.maikath101.kevin.homefindergc.data.House;
+import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 
 import static org.mockito.ArgumentMatchers.eq;
@@ -31,6 +36,12 @@ public class RemoveHousePresenterMockitoTests {
   @Captor
   private ArgumentCaptor<HouseRepositoryContract.OnHouseDeletedCallback> onHouseDeletedCallbackArgumentCaptor;
 
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.GetAllHousesCallback> getAllHousesCallbackArgumentCaptor;
+
+  @Captor
+  private ArgumentCaptor<HouseRepositoryContract.GetImageFromHouseCallback> getImageFromHouseCallbackArgumentCaptor;
+
   @Mock
   private RemoveHouseContract.Model modelMock;
 
@@ -41,7 +52,6 @@ public class RemoveHousePresenterMockitoTests {
   private RemoveHouseContract.Router routerMock;
 
   private RemoveHouseContract.Presenter presenter;
-
 
   @Before
   public void configureMockito() {
@@ -61,7 +71,7 @@ public class RemoveHousePresenterMockitoTests {
   }
 
   @Test
-  public void removeHouse() {
+  public void removeHouseCompletely() {
     configureRemoveHouseScreen(new RemoveHouseState());
 
     presenter.removeHouse(1);
@@ -70,6 +80,18 @@ public class RemoveHousePresenterMockitoTests {
     onHouseDeletedCallbackArgumentCaptor.getValue().houseDeleted();
 
     verify(viewMock,times(1)).houseDeleted();
+  }
+
+  @Test
+  public void loadAllHouses() {
+    configureRemoveHouseScreen(new RemoveHouseState());
+
+    presenter.loadAllHouses();
+
+    verify(modelMock).loadAllHouses(getAllHousesCallbackArgumentCaptor.capture());
+    getAllHousesCallbackArgumentCaptor.getValue().setAllHouses(Mockito.<House>anyList());
+
+    verify(viewMock, times(1)).displayData(Mockito.any(RemoveHouseViewModel.class));
   }
 
 

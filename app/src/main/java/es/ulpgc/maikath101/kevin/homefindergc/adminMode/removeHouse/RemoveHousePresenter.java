@@ -67,7 +67,7 @@ public class RemoveHousePresenter implements RemoveHouseContract.Presenter {
                   });
         }
         viewModel.simpleHouses = list;
-        Log.e(TAG, String.valueOf(viewModel.simpleHouses.size()));
+        // Log.e(TAG, String.valueOf(viewModel.simpleHouses.size()));
         view.get().displayData(viewModel);
       }
     });

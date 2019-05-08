@@ -117,6 +117,4 @@ public class RemoveHouseAdapter extends RecyclerView.Adapter<RemoveHouseAdapter.
   public void setOnItemClickListener(OnItemClickListener listener) {
     mListener = listener;
   }
-
-
 }

@@ -77,4 +77,14 @@ public class SelectionPresenterMockitoTests {
     verify(routerMock, times(0)).navigateToAddHouseScreen(activity);
   }
 
+  @Test
+  public void noButtonPressed() {
+    configureSelectionScreen(new SelectionState());
+
+    SelectionActivity activity = new SelectionActivity();
+
+    verify(routerMock, times(0)).navigateToAddHouseScreen(activity);
+    verify(routerMock, times(0)).navigateToRemoveHouseScreen(activity);
+  }
+
 }
