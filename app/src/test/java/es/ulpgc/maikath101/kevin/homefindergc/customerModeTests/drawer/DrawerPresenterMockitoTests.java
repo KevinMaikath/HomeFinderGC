@@ -18,6 +18,7 @@ import es.ulpgc.maikath101.kevin.homefindergc.customerMode.drawer.DrawerPresente
 
 import static org.mockito.Mockito.ignoreStubs;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DrawerPresenterMockitoTests {
@@ -55,8 +56,9 @@ public class DrawerPresenterMockitoTests {
   // No encontramos la manera de realizar el test correctamente
   @Test
   public void goToStart() {
-     drawerActivity = new DrawerActivity();
+    drawerActivity = new DrawerActivity();
 
+    //when(drawerActivity.finish());
     presenter.goToStart(drawerActivity);
 
     verify(routerMock).navigateToStartScreen(drawerActivity);

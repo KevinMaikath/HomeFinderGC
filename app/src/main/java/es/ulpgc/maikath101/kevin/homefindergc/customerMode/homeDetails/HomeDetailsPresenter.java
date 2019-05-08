@@ -47,9 +47,9 @@ public class HomeDetailsPresenter extends DrawerPresenter implements HomeDetails
     if (viewModel.current_house != null) {
       model.setHouse(viewModel.current_house);
 
-      if (viewModel.sellHouse != null){
+      if (viewModel.sellHouse != null) {
         model.setSellHouse(viewModel.sellHouse);
-      } else if (viewModel.rentHouse != null){
+      } else if (viewModel.rentHouse != null) {
         model.setRentHouse(viewModel.rentHouse);
       }
 
