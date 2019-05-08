@@ -56,7 +56,7 @@ public class StartActivity
       @Override
       public void onClick(View view) {
         SimpleHouse item = (SimpleHouse) view.getTag();
-        presenter.selectHouse(view.getContext(),item);
+        presenter.selectHouse(view.getContext(), item);
       }
 
     });
@@ -114,9 +114,8 @@ public class StartActivity
     Log.e(TAG, "Verifying permisssions");
     String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
 
-    if (ContextCompat.checkSelfPermission(this.getApplicationContext(), permissions[0]) ==
-            PackageManager.PERMISSION_GRANTED) {
-    } else {
+    if (!(ContextCompat.checkSelfPermission(this.getApplicationContext(),
+            permissions[0]) == PackageManager.PERMISSION_GRANTED)) {
       ActivityCompat.requestPermissions(this, permissions, 1);
     }
   }

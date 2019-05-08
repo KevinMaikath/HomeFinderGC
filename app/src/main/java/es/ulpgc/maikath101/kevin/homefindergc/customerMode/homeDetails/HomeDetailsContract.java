@@ -1,13 +1,14 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.homeDetails;
 
-import java.lang.ref.WeakReference;
-
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 import es.ulpgc.maikath101.kevin.homefindergc.data.House;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepositoryContract;
 import es.ulpgc.maikath101.kevin.homefindergc.data.Image;
 import es.ulpgc.maikath101.kevin.homefindergc.data.RentHouse;
 import es.ulpgc.maikath101.kevin.homefindergc.data.SellHouse;
+
+import java.lang.ref.WeakReference;
+
 
 public interface HomeDetailsContract {
 
@@ -52,9 +53,13 @@ public interface HomeDetailsContract {
 
     void setHouse(House house);
 
-    void loadSellHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteSellHouseInfoCallback loadCompleteSellHouseInfoCallback);
+    void loadSellHouseInfo(int current_house_id,
+                           HouseRepositoryContract.LoadCompleteSellHouseInfoCallback
+                                   loadCompleteSellHouseInfoCallback);
 
-    void loadRentHouseInfo(int current_house_id, HouseRepositoryContract.LoadCompleteRentHouseInfoCallback loadCompleteRentHouseInfoCallback);
+    void loadRentHouseInfo(int current_house_id,
+                           HouseRepositoryContract.LoadCompleteRentHouseInfoCallback
+                                   loadCompleteRentHouseInfoCallback);
   }
 
   interface Router extends AppRouter {
