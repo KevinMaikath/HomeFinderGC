@@ -60,7 +60,7 @@ public class AddHouseModelMockitoTests {
     House house = Mockito.any(House.class);
     Image image = Mockito.any(Image.class);
 
-    model.doneButtonPressed("","","","","",
+    model.doneButtonPressed("","","","",Uri.EMPTY,
             onHouseCompleteleyInsertedCallback);
 
     repository.insertHouse(house, onHouseInsertedCallbackArgumentCaptor.capture());
@@ -69,6 +69,7 @@ public class AddHouseModelMockitoTests {
     repository.insertImage(image, onImageInsertedCallbackArgumentCaptor.capture());
     onImageInsertedCallbackArgumentCaptor.getValue().setImageId(Mockito.anyInt());
 
+    verify(onHouseCompleteleyInsertedCallback).houseInserted();
   }
 
 

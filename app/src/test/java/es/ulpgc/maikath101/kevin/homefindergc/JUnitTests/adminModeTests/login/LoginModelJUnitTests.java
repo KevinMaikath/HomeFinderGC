@@ -1,4 +1,4 @@
-package es.ulpgc.maikath101.kevin.homefindergc.MockitoTests.adminModeTests.login;
+package es.ulpgc.maikath101.kevin.homefindergc.JUnitTests.adminModeTests.login;
 
 import org.junit.Test;
 
