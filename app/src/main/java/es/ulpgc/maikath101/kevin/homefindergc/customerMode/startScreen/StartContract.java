@@ -16,7 +16,6 @@ public interface StartContract {
     void injectPresenter(Presenter presenter);
 
     void displayData(StartViewModel viewModel);
-
   }
 
   interface Presenter {
@@ -28,18 +27,43 @@ public interface StartContract {
 
     void fetchData();
 
+    /**
+     *  Comprueba el estado, de forma que se presente por pantalla
+     *  una lista de casas u otra
+     */
     void checkCurrentScreen();
 
     void onBackPressed(Activity activity);
 
+    /**
+     *  Pide la lista de casas correspondiente para la pantalla de Inicio
+     *  y la fija en el viewModel
+     */
     void fetchStartHousesData();
 
+    /**
+     *  Pide la lista de casas correspondiente para la pantalla de Se Vende
+     *  y la fija en el viewModel
+     */
     void fetchForSaleHousesData();
 
+    /**
+     *  Pide la lista de casas correspondiente para la pantalla de Se Alquila
+     *  y la fija en el viewModel
+     */
     void fetchForRentHousesData();
 
+    /**
+     *  Pide la lista de casas correspondiente para la pantalla de Alquiler Vacacional
+     *  y la fija en el viewModel
+     */
     void fetchHolidayRentalHousesData();
 
+    /**
+     *  Indica al router que se ha hecho click en una casa, pasandole el id de dicha casa
+     * @param activity Activity en la que se hace click
+     * @param item Casa específica en la que se ha hecho click
+     */
     void selectHouse(Context activity, SimpleHouse item);
   }
 
