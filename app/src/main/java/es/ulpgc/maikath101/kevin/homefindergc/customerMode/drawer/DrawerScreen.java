@@ -10,6 +10,10 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppRouter;
 
 public class DrawerScreen {
 
+  /**
+   * Configuración del Activity
+   * @param view
+   */
   public static void configure(DrawerContract.View view) {
 
     WeakReference<FragmentActivity> context =

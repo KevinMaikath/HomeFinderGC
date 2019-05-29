@@ -62,11 +62,18 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     }
   }
 
+  /**
+   * Metodo Setter del DrawerLayout. Tambien llama al configureDrawerLaayout
+   * @param drawerLayout DrawerLayout de la Activity
+   */
   public void setDrawerLayout(DrawerLayout drawerLayout) {
     this.drawerLayout = drawerLayout;
     configureDrawerLayout();
   }
 
+  /**
+   * Configura el DrawerLayout de la Activity
+   */
   private void configureDrawerLayout() {
     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -75,6 +82,10 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
     toggle.syncState();
   }
 
+  /**
+   * Metodo Setter del NavigationView
+   * @param navigationView NavigationView de la Activity
+   */
   public void setNavigationView(NavigationView navigationView) {
     navigationView.setNavigationItemSelectedListener(this);
   }
