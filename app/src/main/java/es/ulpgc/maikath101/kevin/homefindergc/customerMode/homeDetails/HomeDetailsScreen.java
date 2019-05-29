@@ -9,6 +9,11 @@ import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
 
 public class HomeDetailsScreen {
 
+  /**
+   * Configuracion del Activity
+   *
+   * @param view
+   */
   public static void configure(HomeDetailsContract.View view) {
 
     WeakReference<FragmentActivity> context =
