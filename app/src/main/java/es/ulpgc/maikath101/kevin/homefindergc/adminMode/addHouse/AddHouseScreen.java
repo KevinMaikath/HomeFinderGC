@@ -10,7 +10,10 @@ import java.lang.ref.WeakReference;
 
 public class AddHouseScreen {
 
-  // TODO Javadoc
+  /**
+   * Configuración del Activity
+   * @param view
+   */
   public static void configure(AddHouseContract.View view) {
 
     WeakReference<FragmentActivity> context =

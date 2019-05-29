@@ -111,6 +111,11 @@ public class AddHouseActivity
     presenter.saveImageFromRotation(imageUri);
   }
 
+
+  /**
+   * Comprueba que todos los parámetros han sido rellenados
+   * @return: True si están rellenados correctamente. False: si falta alguno por rellenar
+   */
   private boolean checkFields() {
     // Devuelve true si todos los campos están rellenos
     if (!nameEditText.getText().toString().equals("")
@@ -123,7 +128,9 @@ public class AddHouseActivity
     }
   }
 
-  // TODO Javadoc
+  /**
+   * Se muestra un Toast cuando la casa ha sido insertada en la base de datos
+   */
   public void houseInsertedCorrectly() {
     runOnUiThread(new Runnable() {
       @Override
