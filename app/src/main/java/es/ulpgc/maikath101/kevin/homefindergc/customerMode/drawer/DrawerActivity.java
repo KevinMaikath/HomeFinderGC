@@ -64,6 +64,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
 
   /**
    * Metodo Setter del DrawerLayout. Tambien llama al configureDrawerLaayout
+   *
    * @param drawerLayout DrawerLayout de la Activity
    */
   public void setDrawerLayout(DrawerLayout drawerLayout) {
@@ -84,6 +85,7 @@ public class DrawerActivity extends AppCompatActivity implements DrawerContract.
 
   /**
    * Metodo Setter del NavigationView
+   *
    * @param navigationView NavigationView de la Activity
    */
   public void setNavigationView(NavigationView navigationView) {

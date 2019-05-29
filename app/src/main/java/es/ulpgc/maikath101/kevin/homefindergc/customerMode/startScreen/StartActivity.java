@@ -110,6 +110,9 @@ public class StartActivity
     });
   }
 
+  /**
+   * Comprueba los permisos que tiene la aplicacion en el dispositivo
+   */
   private void verifyPermissions() {
     Log.e(TAG, "Verifying permisssions");
     String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};

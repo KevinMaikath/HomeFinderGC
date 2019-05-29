@@ -21,42 +21,49 @@ public interface DrawerContract {
 
     /**
      * Le pide al router que pase a la pantalla de Start y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void goToStart(Activity activity);
 
     /**
      * Le pide al router que pase a la pantalla de ForSale y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void goToForSale(Activity activity);
 
     /**
      * Le pide al router que pase a la pantalla de ForRent y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void goToForRent(Activity activity);
 
     /**
      * Le pide al router que pase a la pantalla de HolidayRental y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void goToHolidayRental(Activity activity);
 
     /**
      * Le pide al router que pase a la pantalla de AboutUs y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void goToAboutUs(Activity activity);
 
     /**
      * Le pide al router que pase a la pantalla de Contact y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void goToContact(Activity activity);
 
     /**
      * Le pide al router que pase a la pantalla de Start y termina la activity actual
+     *
      * @param activity Activity pasada al router y que será terminada
      */
     void onBackPressed(Activity activity);

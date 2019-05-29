@@ -1,12 +1,19 @@
 package es.ulpgc.maikath101.kevin.homefindergc.customerMode.startScreen;
 
 import android.support.v4.app.FragmentActivity;
+
 import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 import es.ulpgc.maikath101.kevin.homefindergc.data.HouseRepository;
+
 import java.lang.ref.WeakReference;
 
 public class StartScreen {
 
+  /**
+   * Configuracion del Activity
+   *
+   * @param view
+   */
   public static void configure(StartContract.View view) {
 
     WeakReference<FragmentActivity> context =

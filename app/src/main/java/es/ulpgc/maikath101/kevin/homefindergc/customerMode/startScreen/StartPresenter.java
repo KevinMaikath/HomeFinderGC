@@ -202,6 +202,12 @@ public class StartPresenter extends DrawerPresenter implements StartContract.Pre
     router.navigateToHomeDetailScreen(activity);
   }
 
+  /**
+   * Comprueba si una casa esta para vender o para alquilar
+   *
+   * @param house Casa a comprobar
+   * @return true si esta para vender
+   */
   private boolean checkForSale(SimpleHouse house) {
     if (house.sell_type_id == 111) {
       return true;

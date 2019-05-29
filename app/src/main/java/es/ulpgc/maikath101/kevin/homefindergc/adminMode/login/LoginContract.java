@@ -16,6 +16,7 @@ public interface LoginContract {
 
     /**
      * Método necesario para el router para pasar de pantalla
+     *
      * @return Activity (LoginActivity)
      */
     Activity getActivity();
@@ -30,13 +31,15 @@ public interface LoginContract {
 
     /**
      * Llama al modelo para comprobar las credenciales
-     * @param user: Usuario
+     *
+     * @param user:     Usuario
      * @param password: Contraseña
      */
     void onSignInPressed(String user, String password);
 
     /**
      * Consigue el activity (LoginActivity)
+     *
      * @return LoginActivity
      */
     Activity getActivity();
@@ -45,7 +48,8 @@ public interface LoginContract {
   interface Model {
     /**
      * Comprueba que las credenciales son correctas
-     * @param user: Usuario
+     *
+     * @param user:     Usuario
      * @param password: Contraseña
      * @return: True si son correctas. False si son incorrectas
      */
@@ -56,6 +60,7 @@ public interface LoginContract {
 
     /**
      * Pasa a la siguiente pantalla --> SelectionActivity
+     *
      * @param activity
      */
     void navigateToNextScreen(Activity activity);
