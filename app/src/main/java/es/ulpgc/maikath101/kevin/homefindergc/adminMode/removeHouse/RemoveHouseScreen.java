@@ -11,6 +11,7 @@ import java.lang.ref.WeakReference;
 public class RemoveHouseScreen {
 
   /**
+   * Configuración del Activity
    * @param view
    */
   public static void configure(RemoveHouseContract.View view) {

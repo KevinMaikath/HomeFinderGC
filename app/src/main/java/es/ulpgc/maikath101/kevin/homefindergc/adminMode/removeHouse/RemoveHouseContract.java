@@ -14,6 +14,9 @@ public interface RemoveHouseContract {
 
     void displayData(RemoveHouseViewModel viewModel);
 
+    /**
+     * Se vuelven a cargar todas las viviendas cuando una casa ha sido eliminada
+     */
     void houseDeleted();
   }
 
@@ -24,18 +27,38 @@ public interface RemoveHouseContract {
 
     void injectRouter(Router router);
 
+    /**
+     * Se cargan todas las viviendas cuando se carga el Activity o cuando se elimina alguna
+     */
     void loadAllHouses();
 
+    /**
+     * Llama al modelo para eliminar la vivienda con el id_house
+     * @param id_house: Id de la vivienda a eliminar
+     */
     void removeHouse(int id_house);
   }
 
   interface Model {
-    String fetchData();
 
+    /**
+     * Se llama al repositorio para cargar todas las viviendas
+     * @param callback
+     */
     void loadAllHouses(HouseRepositoryContract.GetAllHousesCallback callback);
 
+    /**
+     * Se cargan las imágenes de una vivienda
+     * @param id_image: Id de la vivienda para cargar su imagen principal
+     * @param callback: Método que llama el modelo cuando acaba de cargar las imágenes
+     */
     void loadImages(int id_image, HouseRepository.GetImageFromHouseCallback callback);
 
+    /**
+     * Se elimina la vivienda con el id_house
+     * @param id_house: Id de la vivienda a eliminar
+     * @param callback: Método que llama el modelo cuando ha eliminado la vivienda
+     */
     void removeHouse(int id_house, HouseRepository.OnHouseDeletedCallback callback);
   }
 

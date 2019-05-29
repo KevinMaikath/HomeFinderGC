@@ -84,6 +84,11 @@ public class RemoveHouseActivity
 
   }
 
+  /**
+   * Muestra una alerta en pantalla cuando se presiona una casa a eliminar
+   * @param referenceNumber: Número de referencia de la vivienda
+   * @param id_house: Id de la vivienda
+   */
   private void showAlert(final String referenceNumber, final int id_house) {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
 

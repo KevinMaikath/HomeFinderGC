@@ -14,12 +14,6 @@ public class RemoveHouseModel implements RemoveHouseContract.Model {
   }
 
   @Override
-  public String fetchData() {
-    // Log.e(TAG, "fetchData()");
-    return "Hello";
-  }
-
-  @Override
   public void loadAllHouses(final HouseRepositoryContract.GetAllHousesCallback callback) {
     repository.loadHousesInformation(true,
             new HouseRepositoryContract.FetchHousesInformationCallback() {
