@@ -97,7 +97,13 @@ public class AppMediator extends Application {
     return removeHouseState;
   }
 
-  public void changeStartScreenLayout(String layout){
+  /**
+   * Cambia el atributo currentScreen de StartState y lo marca como que ha sido cambiado
+   * para que se actualice la informacion
+   *
+   * @param layout String con la pantalla a mostrar
+   */
+  public void changeStartScreenLayout(String layout) {
     startState.currentScreen = layout;
     startState.changedScreen = true;
   }

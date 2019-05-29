@@ -22,7 +22,7 @@ public class AppCustomerRouter implements AppRouter {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
 
-    //cambiar estado a Start
+    //cambia estado a Start
     mediator.changeStartScreenLayout("Start");
     activity.startActivity(intent);
   }
@@ -32,7 +32,7 @@ public class AppCustomerRouter implements AppRouter {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
 
-    //cambiar estado a For Sale
+    //cambia estado a For Sale
     mediator.changeStartScreenLayout("ForSale");
     activity.startActivity(intent);
   }
@@ -42,7 +42,7 @@ public class AppCustomerRouter implements AppRouter {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
 
-    //cambiar estado a For Rent
+    //cambia estado a For Rent
     mediator.changeStartScreenLayout("ForRent");
     activity.startActivity(intent);
   }
@@ -52,7 +52,7 @@ public class AppCustomerRouter implements AppRouter {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, StartActivity.class);
 
-    //cambiar estado a Holiday Rental
+    //cambia estado a Holiday Rental
     mediator.changeStartScreenLayout("HolidayRental");
     activity.startActivity(intent);
   }
