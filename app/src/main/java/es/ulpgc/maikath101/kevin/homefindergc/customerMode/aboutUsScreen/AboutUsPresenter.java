@@ -30,14 +30,4 @@ public class AboutUsPresenter extends DrawerPresenter implements AboutUsContract
   public void injectRouter(AboutUsContract.Router router) {
     this.router = router;
   }
-
-  @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    // update the view
-    view.get().displayData(viewModel);
-
-  }
 }

@@ -63,7 +63,6 @@ public class ContactActivity
     NavigationView navigationView = findViewById(R.id.navigation_view);
     navigationView.setItemIconTintList(null);
     super.setNavigationView(navigationView);
-    // navigationView.setNavigationItemSelectedListener(this);
 
     // do the setup
     ContactScreen.configure(this);
@@ -72,9 +71,6 @@ public class ContactActivity
   @Override
   protected void onResume() {
     super.onResume();
-
-    // do some work
-    presenter.fetchData();
   }
 
   @Override
@@ -82,14 +78,11 @@ public class ContactActivity
     this.presenter = presenter;
   }
 
-  @Override
-  public void displayData(ContactViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
-
-    // deal with the data
-  }
-
-
+  /**
+   * Comprueba que todos los campos están rellenados correctamente antes de enviar el correo
+   *
+   * @return: True si están todos rellenos. False si falta alguno por rellenar
+   */
   private boolean checkFields() {
     // Devuelve true si todos los campos están rellenos
     if (!nameEditText.getText().toString().equals("") && !telephoneEditText.getText().toString().equals("")
@@ -103,6 +96,12 @@ public class ContactActivity
     return false;
   }
 
+  /**
+   * Llama a checkFields y en caso de estar rellenados todos los campos, llama al presenter para
+   * formar el correo. En caso contrario, muestra un Toast por pantalla.
+   *
+   * @param view
+   */
   public void onSendButtonPressed(View view) {
     if (checkFields()) {
       presenter.onSendButtonPressed(this, nameEditText.getText().toString(), telephoneEditText.getText().toString(),

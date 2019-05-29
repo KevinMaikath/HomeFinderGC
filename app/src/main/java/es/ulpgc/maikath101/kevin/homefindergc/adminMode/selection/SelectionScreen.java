@@ -9,6 +9,10 @@ import java.lang.ref.WeakReference;
 
 public class SelectionScreen {
 
+  /**
+   * Configuración del Activity
+   * @param view
+   */
   public static void configure(SelectionContract.View view) {
 
     WeakReference<FragmentActivity> context =

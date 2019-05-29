@@ -36,16 +36,6 @@ public class ContactPresenter extends DrawerPresenter implements ContactContract
   }
 
   @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchData()");
-
-    // set passed state
-
-    // update the view
-    view.get().displayData(viewModel);
-  }
-
-  @Override
   public void onSendButtonPressed(Context activity, String name, String telephone, String country,
                                   String zipcode, String address, String email,
                                   String subject, String bodyemail) {

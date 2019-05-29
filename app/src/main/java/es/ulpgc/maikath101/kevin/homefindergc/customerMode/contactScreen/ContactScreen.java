@@ -8,6 +8,10 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 
 public class ContactScreen {
 
+  /**
+   * Configuración del Activity
+   * @param view
+   */
   public static void configure(ContactContract.View view) {
 
     WeakReference<FragmentActivity> context =

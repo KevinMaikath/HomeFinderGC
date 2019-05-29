@@ -49,9 +49,6 @@ public class AboutUsActivity extends DrawerActivity implements AboutUsContract.V
   @Override
   protected void onResume() {
     super.onResume();
-
-    // do some work
-    presenter.fetchData();
   }
 
   @Override
@@ -59,10 +56,4 @@ public class AboutUsActivity extends DrawerActivity implements AboutUsContract.V
     this.presenter = presenter;
   }
 
-  @Override
-  public void displayData(AboutUsViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
-
-    // deal with the data}
-  }
 }
