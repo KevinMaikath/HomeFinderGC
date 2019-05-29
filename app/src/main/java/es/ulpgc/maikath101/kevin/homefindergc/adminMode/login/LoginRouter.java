@@ -23,10 +23,4 @@ public class LoginRouter implements LoginContract.Router {
     Intent intent = new Intent(context, SelectionActivity.class);
     activity.startActivity(intent);
   }
-
-  @Override
-  public LoginState getDataFromPreviousScreen() {
-    LoginState state = mediator.getLoginState();
-    return state;
-  }
 }

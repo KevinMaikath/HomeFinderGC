@@ -8,6 +8,11 @@ import es.ulpgc.maikath101.kevin.homefindergc.app.AppMediator;
 
 public class LoginScreen {
 
+
+  /**
+   * Configuración del Activity
+   * @param view
+   */
   public static void configure(LoginContract.View view) {
 
     WeakReference<FragmentActivity> context =
