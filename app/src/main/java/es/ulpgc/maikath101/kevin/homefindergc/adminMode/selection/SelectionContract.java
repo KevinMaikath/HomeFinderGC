@@ -17,8 +17,16 @@ public interface SelectionContract {
 
     void injectRouter(Router router);
 
+    /**
+     * Llama al router para navegar a la pantalla RemoveHouse
+     * @param activity: SelectionActivity
+     */
     void goToRemoveHouseScreen(Context activity);
 
+    /**
+     * Llama al router para navegar a la pantalla AddHouse
+     * @param activity: SelectionActivity
+     */
     void goToAddHouseScreen(Context activity);
   }
 
@@ -26,8 +34,17 @@ public interface SelectionContract {
   }
 
   interface Router {
+
+    /**
+     * Navega a la pantalla RemoveHouse
+     * @param activity: SelectionActivity
+     */
     void navigateToRemoveHouseScreen(Context activity);
 
+    /**
+     * Navega a la pantalla AddHouse
+     * @param activity: SelectionActivity
+     */
     void navigateToAddHouseScreen(Context activity);
   }
 }
