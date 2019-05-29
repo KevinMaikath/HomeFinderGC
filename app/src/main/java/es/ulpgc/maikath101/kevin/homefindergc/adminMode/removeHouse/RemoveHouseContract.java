@@ -43,7 +43,7 @@ public interface RemoveHouseContract {
 
     /**
      * Se llama al repositorio para cargar todas las viviendas
-     * @param callback
+     * @param callback: Método que llama el modelo cuando acaba de cargar las viviendas
      */
     void loadAllHouses(HouseRepositoryContract.GetAllHousesCallback callback);
 
